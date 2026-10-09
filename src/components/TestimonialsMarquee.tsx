@@ -102,7 +102,7 @@ export const TestimonialsMarquee: React.FC = () => {
   return (
     <section id="danh-gia" className="relative py-24 overflow-hidden bg-[#e5e5e5] border-b border-black/5">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-12 text-center">
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#000000] tracking-tight mb-4 uppercase">
+        <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[42px] font-black text-neutral-900 leading-normal tracking-tight mb-4 uppercase">
           2,000+ PHỤ HUYNH <span className="text-orange-600">TIN TƯỞNG GỬI GẮM</span>
         </h2>
 
