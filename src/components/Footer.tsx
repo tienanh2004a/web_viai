@@ -99,26 +99,26 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
             <ul className="space-y-2.5 text-xs">
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('lap-trinh-robot')}
+                  onClick={() => onSelectCourse?.('robotics-mam-non')}
                   className="hover:text-black transition-colors text-left font-medium"
                 >
-                  Lập trình Robot Offline (Lớp 1-8)
+                  Robotics Mầm Non (4 — 6 tuổi)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('luyen-thi-robosim')}
+                  onClick={() => onSelectCourse?.('robotics-tieu-hoc')}
                   className="hover:text-black transition-colors text-left font-medium"
                 >
-                  Luyện thi Đấu trường Online
+                  Robotics Tiểu Học (Lớp 1 — 5)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('ai-iot-robotics')}
+                  onClick={() => onSelectCourse?.('robotics-trung-hoc')}
                   className="hover:text-black transition-colors text-left font-medium"
                 >
-                  AI &amp; IoT Robotics Master
+                  Robotics &amp; AI Trung Học (Lớp 6 — 9)
                 </button>
               </li>
               <li>

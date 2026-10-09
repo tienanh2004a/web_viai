@@ -9,19 +9,19 @@ export const FaqSection: React.FC = () => {
       q: 'Khoá học tại VIAI Academy phù hợp với con từ độ tuổi nào?',
       a: (
         <div className="space-y-3 text-sm text-[#444444] leading-relaxed">
-          <p>VIAI Academy có lộ trình đào tạo chuẩn mực cho học sinh từ <strong>khối mầm non đến lớp 9 (4–15 tuổi)</strong>. Mỗi khoá được thiết kế vừa vặn với năng lực tư duy theo từng lứa tuổi:</p>
+          <p>VIAI Academy có lộ trình đào tạo chuẩn mực cho học sinh từ <strong>khối mầm non đến lớp 9 (4–15 tuổi)</strong>, chia theo 3 bậc học chuyên biệt:</p>
           <ul className="space-y-2 pl-2">
             <li className="flex items-start gap-2">
               <CheckCircle className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
-              <span><strong>VIAI Junior (Lớp 1-2):</strong> Ươm mầm tài năng, rèn luyện tư duy logic trực quan và làm quen robot.</span>
+              <span><strong>Khối Mầm non (4–6 tuổi):</strong> Khơi nguồn sáng tạo, làm quen robot qua mô hình trực quan, bánh răng, khối ghép thông minh và rèn luyện tư duy logic sớm.</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
-              <span><strong>VIAI Innovator (Lớp 3-9):</strong> Chắp cánh tương lai, lập trình chuyên sâu, giải thuật và AI thực tế.</span>
+              <span><strong>Khối Tiểu học (Lớp 1–5, 6–11 tuổi):</strong> Lắp ráp robot cơ khí, lập trình kéo thả Scratch/Blockly, điều khiển cảm biến và làm chủ sa bàn thi đấu thực tế.</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
-              <span><strong>VIAI Master:</strong> Khoá luyện thi công nghệ nâng cao và chuẩn bị cho các đấu trường quốc tế.</span>
+              <span><strong>Khối Trung học (Lớp 6–9, 11–15 tuổi):</strong> Lập trình văn bản Python/C++, vi điều khiển, ứng dụng Trí tuệ nhân tạo (AI) và luyện thi đấu trường Robocon toàn quốc.</span>
             </li>
           </ul>
         </div>
