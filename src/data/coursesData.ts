@@ -125,13 +125,13 @@ export const coursesData: Record<string, CourseDetail> = {
     ],
   },
 
-  // 2. KHỐI TIỂU HỌC (LỚP 1 — 5, 6 — 11 TUỔI)
+  // 2. KHỐI TIỂU HỌC (6 — 11 TUỔI)
   'robotics-tieu-hoc': {
     slug: 'robotics-tieu-hoc',
-    name: 'Robotics Khối Tiểu Học (Lớp 1 — 5)',
-    headline: 'Lắp ráp robot cơ khí, lập trình kéo thả Scratch/Blockly & làm chủ sa bàn thi đấu cho học sinh Lớp 1 đến Lớp 5',
+    name: 'Robotics Khối Tiểu Học (6 — 11 tuổi)',
+    headline: 'Lắp ráp robot cơ khí, lập trình kéo thả Scratch/Blockly & làm chủ sa bàn thi đấu cho học sinh từ 6 đến 11 tuổi',
     category: 'Đào tạo trực tiếp tại cơ sở',
-    age: 'Tiểu học (Lớp 1 — 5, 6 đến 11 tuổi)',
+    age: 'Khối Tiểu học (6 đến 11 tuổi)',
     duration: '48 buổi (12 tháng) / 4 học phần',
     classSize: 'Tối đa < 10 học viên (kèm 1-1)',
     format: 'Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)',
@@ -228,13 +228,13 @@ export const coursesData: Record<string, CourseDetail> = {
     ],
   },
 
-  // 3. KHỐI TRUNG HỌC (LỚP 6 — 9, 11 — 15 TUỔI)
+  // 3. KHỐI TRUNG HỌC (11 — 15 TUỔI)
   'robotics-trung-hoc': {
     slug: 'robotics-trung-hoc',
-    name: 'Robotics & AI Khối Trung Học (Lớp 6 — 9)',
-    headline: 'Lập trình văn bản Python/C++, vi điều khiển, thị giác máy tính AI & luyện thi đấu trường quốc gia cho học sinh Lớp 6 đến Lớp 9',
+    name: 'Robotics & AI Khối Trung Học (11 — 15 tuổi)',
+    headline: 'Lập trình văn bản Python/C++, vi điều khiển, thị giác máy tính AI & luyện thi đấu trường quốc gia cho học sinh từ 11 đến 15 tuổi',
     category: 'Khóa học Chuyên gia Nhí Nâng cao',
-    age: 'Trung học (Lớp 6 — 9, 11 đến 15 tuổi)',
+    age: 'Khối Trung học (11 đến 15 tuổi)',
     duration: '36 buổi (9 tháng) / 3 học phần',
     classSize: 'Tối đa ≤ 8 học viên (Chất lượng cao)',
     format: 'Offline thực hành phần cứng + Code Python/AI chuyên sâu',

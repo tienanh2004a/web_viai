@@ -17,11 +17,11 @@ export const FaqSection: React.FC = () => {
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
-              <span><strong>Khối Tiểu học (Lớp 1–5, 6–11 tuổi):</strong> Lắp ráp robot cơ khí, lập trình kéo thả Scratch/Blockly, điều khiển cảm biến và làm chủ sa bàn thi đấu thực tế.</span>
+              <span><strong>Khối Tiểu học (6–11 tuổi):</strong> Lắp ráp robot cơ khí, lập trình kéo thả Scratch/Blockly, điều khiển cảm biến và làm chủ sa bàn thi đấu thực tế.</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
-              <span><strong>Khối Trung học (Lớp 6–9, 11–15 tuổi):</strong> Lập trình văn bản Python/C++, vi điều khiển, ứng dụng Trí tuệ nhân tạo (AI) và luyện thi đấu trường Robocon toàn quốc.</span>
+              <span><strong>Khối Trung học (11–15 tuổi):</strong> Lập trình văn bản Python/C++, vi điều khiển, ứng dụng Trí tuệ nhân tạo (AI) và luyện thi đấu trường Robocon toàn quốc.</span>
             </li>
           </ul>
         </div>

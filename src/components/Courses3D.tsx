@@ -28,7 +28,7 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewCo
     {
       slug: 'robotics-tieu-hoc',
       title: 'Robotics Khối Tiểu Học',
-      age: 'Dành cho Lớp 1 — 5 (6–11 tuổi)',
+      age: 'Dành cho 6 — 11 tuổi',
       format: 'Offline & Sa bàn thi đấu',
       image: '/images/hocviensatathamgiacuocthi2.jpg',
       glow: 'purple' as const,
@@ -39,12 +39,12 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewCo
         'Rèn bản lĩnh đấu trường: Cọ xát thi đấu tại các giải Robocon cấp trường, cấp tỉnh.',
         'Sản phẩm thực tế: Tự tay chế tạo và lập trình robot hoàn chỉnh sau mỗi bài học.',
       ],
-      tag: 'Khối Tiểu Học (Lớp 1–5)',
+      tag: 'Khối Tiểu Học (6–11 tuổi)',
     },
     {
       slug: 'robotics-trung-hoc',
       title: 'Robotics & AI Khối Trung Học',
-      age: 'Dành cho Lớp 6 — 9 (11–15 tuổi)',
+      age: 'Dành cho 11 — 15 tuổi',
       format: 'Chuyên sâu & Luyện thi',
       image: '/images/hocviensatathamgiacuocthi1.jpg',
       glow: 'cyan' as const,
@@ -55,7 +55,7 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewCo
         'Luyện thi đấu trường lớn: Chuẩn bị cho các cuộc thi sáng tạo KHKT cấp tỉnh và toàn quốc.',
         'Bảo vệ đề án kỹ sư nhí: Cấp chứng nhận tốt nghiệp và video thuyết trình chuyên nghiệp.',
       ],
-      tag: 'Khối Trung Học (Lớp 6–9)',
+      tag: 'Khối Trung Học (11–15 tuổi)',
     },
   ];
 

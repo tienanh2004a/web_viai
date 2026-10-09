@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
                   onClick={() => onSelectCourse?.('robotics-tieu-hoc')}
                   className="hover:text-black transition-colors text-left font-medium"
                 >
-                  Robotics Tiểu Học (Lớp 1 — 5)
+                  Robotics Khối Tiểu Học (6 — 11 tuổi)
                 </button>
               </li>
               <li>
@@ -118,7 +118,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
                   onClick={() => onSelectCourse?.('robotics-trung-hoc')}
                   className="hover:text-black transition-colors text-left font-medium"
                 >
-                  Robotics &amp; AI Trung Học (Lớp 6 — 9)
+                  Robotics &amp; AI Khối Trung Học (11 — 15 tuổi)
                 </button>
               </li>
               <li>
