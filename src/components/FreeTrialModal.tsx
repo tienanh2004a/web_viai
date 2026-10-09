@@ -45,8 +45,14 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-fadeIn">
-      <div className="relative w-full max-w-lg rounded-3xl border border-gray-200 bg-white p-6 sm:p-8 shadow-2xl text-[#0c0a08] overflow-hidden">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fadeIn cursor-pointer"
+      onClick={handleReset}
+    >
+      <div 
+        className="relative w-full max-w-lg rounded-3xl border border-gray-200 bg-white p-6 sm:p-8 shadow-2xl text-[#0c0a08] overflow-hidden cursor-default"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Subtle warm ambient glow */}
         <div className="pointer-events-none absolute -top-20 -right-20 w-48 h-48 bg-orange-100/60 rounded-full blur-3xl" />
         <div className="pointer-events-none absolute -bottom-20 -left-20 w-48 h-48 bg-amber-100/60 rounded-full blur-3xl" />
@@ -54,7 +60,8 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
         {/* Close Button */}
         <button
           onClick={handleReset}
-          className="absolute top-5 right-5 p-2 rounded-xl text-zinc-400 hover:text-zinc-800 bg-gray-100 hover:bg-gray-200 transition-colors"
+          aria-label="Đóng cửa sổ"
+          className="absolute top-5 right-5 p-2 rounded-xl text-zinc-400 hover:text-zinc-900 bg-gray-100 hover:bg-gray-200 transition-colors cursor-pointer"
         >
           <X className="h-5 w-5" />
         </button>
@@ -180,9 +187,10 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                     onChange={(e) => setGrade(e.target.value)}
                     className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none"
                   >
+                    <option value="Khối Mầm non">Khối Mầm non (4–5 tuổi)</option>
                     <option value="Lớp 1 — 2">Lớp 1 — 2 (6-7 tuổi)</option>
                     <option value="Lớp 3 — 5">Lớp 3 — 5 (8-10 tuổi)</option>
-                    <option value="Lớp 6 — 8">Lớp 6 — 8 (11-14 tuổi)</option>
+                    <option value="Lớp 6 — 9">Lớp 6 — 9 (11-15 tuổi)</option>
                   </select>
                 </div>
 

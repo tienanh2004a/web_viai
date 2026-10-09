@@ -42,6 +42,15 @@ export const App: React.FC = () => {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  // Tự động mở bảng đăng ký học thử sau 4 giây mỗi khi người dùng mở web
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsTrialModalOpen(true);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleSelectCourse = (slug: string) => {
     window.location.hash = `#course/${slug}`;
     setSelectedCourseSlug(slug);
