@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 193 193" id="youtube">
+  <rect width="193" height="193" fill="#ff0000" rx="40"></rect>
+  <g transform="translate(193 0) scale(-1 1)">
+    <!-- Centered white play triangle matching YouTube proportions -->
+  </g>
+  <path fill="#ffffff" d="M78 57.5L135 96.5L78 135.5Z"></path>
+</svg>
