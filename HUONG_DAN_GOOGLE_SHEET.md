@@ -1,74 +1,186 @@
-# Hướng Dẫn Tích Hợp & Quản Lý Google Sheets Nhận Dữ Liệu Khách Hàng (VIAI Academy)
+# Hướng Dẫn Tự Động Phân Trang Tính Theo Cơ Sở & Tháng (VIAI Academy)
 
-Tài liệu này hướng dẫn chi tiết cách tạo Google Sheet nhận thông tin phụ huynh đăng ký học thử từ Website, cách lấy link Webhook, cách cấu hình và **nơi thay đổi link sau này một cách nhanh chóng nhất**.
+> **File Google Sheet của bạn:**  
+> `https://docs.google.com/spreadsheets/d/1pXD3YJVayZ84DKt6H_bKf0npYidx-48shNe61-pl8I4/edit`
 
----
-
-## BƯỚC 1: TẠO FILE GOOGLE SHEET
-
-1. Mở [Google Sheets](https://sheets.new) trên Google Drive của bạn.
-2. Đặt tên file bảng tính: `VIAI_Academy_DanhSach_DangKy_HocThu`.
-3. Đổi tên tab đầu tiên (ở góc dưới bên trái) thành: `DangKy` (viết liền không dấu).
-4. Tại dòng số 1, tạo các tiêu đề cột sau (in đậm để dễ nhìn):
-   - **Cột A:** `Thời gian`
-   - **Cột B:** `Họ tên phụ huynh`
-   - **Cột C:** `Số điện thoại`
-   - **Cột D:** `Cơ sở đăng ký`
-   - **Cột E:** `Khóa học / Độ tuổi`
-   - **Cột F:** `Ghi chú / Ngày hẹn`
-   - **Cột G:** `Nguồn đăng ký`
-   - **Cột H:** `Trạng thái tư vấn` *(Dành cho bộ phận Sale cập nhật: Chưa gọi, Đã gọi hẹn lịch, Đã nhập học...)*
+Tài liệu này cung cấp đoạn mã Google Apps Script thông minh để:
+1. **Tự động phân trang tính (Tab riêng)** cho từng cơ sở theo từng tháng:
+   - Ví dụ tháng này: `Hưng Yên Tháng 10`, `Hải Phòng Tháng 10`, `Ninh Bình Tháng 10`...
+   - Sang tháng sau hệ thống sẽ tự động tạo tab mới: `Hưng Yên Tháng 11`, `Hải Phòng Tháng 11`...
+2. **Cấu trúc cột chuẩn xác theo yêu cầu**:
+   - Cột A: **STT** (Tự động đếm 1, 2, 3...)
+   - Cột B: **Ngày đăng ký** (Nằm ngay sau STT, sắp xếp theo thời gian gửi)
+   - Cột C: **Tên phụ huynh**
+   - Cột D: **Số điện thoại** (Giữ số 0 ở đầu)
+   - Cột E: **Cơ sở**
+   - Cột F: **Độ tuổi học viên**
+   - Cột G: **Ghi chú** (Ngày hẹn học thử / Lời nhắn)
+   - Cột H: **Tình trạng chăm sóc** (**Mặc định ĐỂ TRỐNG** khi mới gửi từ web; có sẵn menu thả xuống để nhân viên nhận khách chọn: *Đang chăm sóc*, *Đã hẹn lịch test 1-1*, *Đã nhập học*, *Hẹn gọi lại sau*...).
 
 ---
 
-## BƯỚC 2: GẮN MÃ GOOGLE APPS SCRIPT (WEB APP)
+## BƯỚC 1: DÁN MÃ VÀO GOOGLE SHEET CỦA BẠN
 
-1. Trên thanh menu của Google Sheet, bấm vào: **Tiện ích mở rộng (Extensions)** -> **Apps Script**.
-2. Xóa hết code mẫu mặc định `function myFunction() {...}`.
-3. Sao chép và dán toàn bộ đoạn mã bên dưới vào:
+1. Mở file Google Sheet của bạn: [https://docs.google.com/spreadsheets/d/1pXD3YJVayZ84DKt6H_bKf0npYidx-48shNe61-pl8I4/edit](https://docs.google.com/spreadsheets/d/1pXD3YJVayZ84DKt6H_bKf0npYidx-48shNe61-pl8I4/edit)
+2. Trên thanh menu, bấm: **Tiện ích mở rộng (Extensions)** -> **Apps Script**.
+3. Xóa toàn bộ chữ có sẵn trong khung soạn thảo, sao chép và dán toàn bộ đoạn mã bên dưới vào:
 
 ```javascript
+/**
+ * GOOGLE APPS SCRIPT - TỰ ĐỘNG PHÂN TRANG THEO CƠ SỞ & THÁNG
+ * Hệ thống tuyển sinh VIAI Academy
+ */
+
 function doPost(e) {
   try {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("DangKy");
-    if (!sheet) {
-      sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    }
-    
-    // Đọc dữ liệu gửi từ Website
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
     var data = JSON.parse(e.postData.contents);
-    
-    var timestamp = data.timestamp || new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" });
-    var parentName = data.parentName || "";
-    var phone = data.phone || "";
-    var branch = data.branch || "";
-    var courseOrAge = data.courseOrAge || "";
-    var notes = data.notes || "";
-    var source = data.source || "Website";
-    var status = "Mới tiếp nhận (Chưa gọi)";
-    
-    // Ghi một dòng mới vào cuối bảng tính
-    sheet.appendRow([
-      timestamp,
-      parentName,
-      "'" + phone, // Dấu nháy đơn giữ nguyên số 0 ở đầu số điện thoại
-      branch,
-      courseOrAge,
-      notes,
-      source,
-      status
-    ]);
-    
+
+    var now = new Date();
+    var thangHienTai = now.getMonth() + 1; // 1 -> 12
+    var namHienTai = now.getFullYear();
+
+    // 1. Chuẩn hóa tên cơ sở
+    var rawBranch = (data.branch || "Hải Phòng").toString().toLowerCase();
+    var branchClean = "Hải Phòng";
+    if (rawBranch.indexOf("hưng yên") !== -1 || rawBranch.indexOf("hung yen") !== -1) {
+      branchClean = "Hưng Yên";
+    } else if (rawBranch.indexOf("ninh bình") !== -1 || rawBranch.indexOf("ninh binh") !== -1) {
+      branchClean = "Ninh Bình";
+    } else if (rawBranch.indexOf("hải phòng") !== -1 || rawBranch.indexOf("hai phong") !== -1) {
+      branchClean = "Hải Phòng";
+    } else {
+      branchClean = "Online Toàn Quốc";
+    }
+
+    // 2. Tên trang tính (Tab) tương ứng cơ sở và tháng (VD: "Hưng Yên Tháng 10")
+    var sheetName = branchClean + " Tháng " + thangHienTai;
+    var sheet = ss.getSheetByName(sheetName);
+
+    // Nếu trang tính của cơ sở và tháng này chưa có -> Tự động tạo mới
+    if (!sheet) {
+      sheet = ss.insertSheet(sheetName);
+      caiDatTieuDeTrangTinh(sheet, branchClean, thangHienTai, namHienTai);
+    }
+
+    // 3. Tính số thứ tự (STT) tự động
+    var lastRow = sheet.getLastRow();
+    var stt = (lastRow < 2) ? 1 : (lastRow); // Dòng 1 là tiêu đề
+
+    // 4. Định dạng thời gian đăng ký (GMT+7)
+    var ngayDangKy = Utilities.formatDate(now, "GMT+7", "dd/MM/yyyy HH:mm:ss");
+
+    // 5. Chuẩn bị các trường dữ liệu theo đúng thứ tự yêu cầu
+    var tenPhuHuynh = data.parentName || "";
+    var soDienThoai = "'" + (data.phone || "").toString().replace(/^'+/, ''); // Giữ nguyên số 0 đầu
+    var doTuoiHocVien = data.courseOrAge || "";
+    var ghiChu = data.notes || "";
+    var tinhTrangChamSoc = ""; // ĐỂ TRỐNG mặc định như yêu cầu của bạn
+
+    // 6. Ghi dòng dữ liệu mới vào cuối trang tính
+    var targetRow = sheet.getLastRow() + 1;
+    sheet.getRange(targetRow, 1, 1, 8).setValues([[
+      stt,
+      ngayDangKy,
+      tenPhuHuynh,
+      soDienThoai,
+      branchClean,
+      doTuoiHocVien,
+      ghiChu,
+      tinhTrangChamSoc
+    ]]);
+
+    // Căn giữa STT, Ngày đăng ký, Số điện thoại, Cơ sở
+    sheet.getRange(targetRow, 1).setHorizontalAlignment("center");
+    sheet.getRange(targetRow, 2).setHorizontalAlignment("center");
+    sheet.getRange(targetRow, 4).setHorizontalAlignment("center");
+    sheet.getRange(targetRow, 5).setHorizontalAlignment("center");
+
     return ContentService.createTextOutput(JSON.stringify({
       status: "success",
-      message: "Data recorded successfully"
+      sheet: sheetName,
+      row: targetRow
     })).setMimeType(ContentService.MimeType.JSON);
-    
+
   } catch (err) {
     return ContentService.createTextOutput(JSON.stringify({
       status: "error",
       message: err.toString()
     })).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+/**
+ * Hàm định dạng giao diện tiêu đề chuyên nghiệp và tạo menu thả xuống cho cột Tình trạng
+ */
+function caiDatTieuDeTrangTinh(sheet, branchName, thang, nam) {
+  // Tiêu đề 8 cột đúng thứ tự bạn yêu cầu
+  var headers = [
+    ["STT", "Ngày đăng ký", "Tên phụ huynh", "Số điện thoại", "Cơ sở", "Độ tuổi học viên", "Ghi chú", "Tình trạng chăm sóc"]
+  ];
+
+  sheet.getRange(1, 1, 1, 8).setValues(headers);
+
+  // Định dạng hàng tiêu đề: Nền cam đậm, chữ trắng, in đậm, căn giữa
+  var headerRange = sheet.getRange("A1:H1");
+  headerRange.setBackground("#c2410c")
+             .setFontColor("#ffffff")
+             .setFontWeight("bold")
+             .setHorizontalAlignment("center")
+             .setVerticalAlignment("middle");
+  
+  sheet.setRowHeight(1, 40);
+  sheet.setFrozenRows(1); // Cố định dòng tiêu đề khi cuộn chuột
+
+  // Độ rộng các cột cho đẹp mắt
+  sheet.setColumnWidth(1, 60);  // STT
+  sheet.setColumnWidth(2, 160); // Ngày đăng ký
+  sheet.setColumnWidth(3, 190); // Tên phụ huynh
+  sheet.setColumnWidth(4, 130); // Số điện thoại
+  sheet.setColumnWidth(5, 120); // Cơ sở
+  sheet.setColumnWidth(6, 170); // Độ tuổi học viên
+  sheet.setColumnWidth(7, 240); // Ghi chú
+  sheet.setColumnWidth(8, 180); // Tình trạng chăm sóc
+
+  // Tạo menu thả xuống (Dropdown) sẵn cho cột H (Tình trạng chăm sóc) từ dòng 2 đến dòng 1000
+  var rule = SpreadsheetApp.newDataValidation()
+    .requireValueInList([
+      "Đang chăm sóc", 
+      "Đã hẹn lịch test 1-1", 
+      "Đã nhập học", 
+      "Không nghe máy (Gọi lại)", 
+      "Phụ huynh từ chối"
+    ], true)
+    .setAllowInvalid(true)
+    .build();
+
+  sheet.getRange("H2:H1000").setDataValidation(rule);
+}
+
+/**
+ * HÀM TIỆN ÍCH: Tạo sẵn ngay 3 trang tính cho tháng này để bạn kiểm tra
+ * Bạn có thể chọn hàm này và bấm nút "Run" trên thanh công cụ để tạo ngay 3 tab!
+ */
+function taoSanCacTrangTinhThangNay() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var now = new Date();
+  var thang = now.getMonth() + 1;
+  var nam = now.getFullYear();
+  var coSoList = ["Hưng Yên", "Hải Phòng", "Ninh Bình"];
+
+  coSoList.forEach(function(cs) {
+    var sheetName = cs + " Tháng " + thang;
+    var sheet = ss.getSheetByName(sheetName);
+    if (!sheet) {
+      sheet = ss.insertSheet(sheetName);
+      caiDatTieuDeTrangTinh(sheet, cs, thang, nam);
+    }
+  });
+
+  // Xóa tab mặc định "Trang tính1" nếu còn trống
+  var defaultSheet = ss.getSheetByName("Trang tính1");
+  if (defaultSheet && defaultSheet.getLastRow() === 0 && ss.getSheets().length > 1) {
+    ss.deleteSheet(defaultSheet);
   }
 }
 ```
@@ -77,68 +189,36 @@ function doPost(e) {
 
 ---
 
-## BƯỚC 3: DEPLOY (XUẤT BẢN) ĐỂ LẤY LINK WEB APP
+## BƯỚC 2: TẠO TRƯỚC 3 TRANG TÍNH (TÙY CHỌN - 5 GIÂY)
+Trên thanh công cụ của Apps Script, ở ô chọn hàm bên cạnh nút **Run**, chọn:  
+👉 **`taoSanCacTrangTinhThangNay`** -> Bấm nút **Chạy (Run)**.
+- Quay lại file Google Sheet, bạn sẽ thấy ngay 3 tab tuyệt đẹp:
+  - `Hưng Yên Tháng 10`
+  - `Hải Phòng Tháng 10`
+  - `Ninh Bình Tháng 10`
+- Tab cũ `Trang tính1` sẽ tự động được xóa đi.
+
+---
+
+## BƯỚC 3: DEPLOY ĐỂ LẤY URL WEB APP
 
 1. Ở góc trên bên phải màn hình Apps Script, bấm nút xanh **Triển khai (Deploy)** -> **Tùy chọn triển khai mới (New deployment)**.
-2. Tại mục *Chọn loại (Select type)* hình bánh răng bên trái: Chọn **Ứng dụng web (Web app)**.
-3. Điền các trường cấu hình như sau:
-   - **Mô tả (Description):** `Webhook nhận khách hàng VIAI`
-   - **Thực thi dưới dạng (Execute as):** `Tôi (Me)` *(email của bạn)*
-   - **Ai có quyền truy cập (Who has access):** Chọn **Bất kỳ ai (Anyone)**  
-     *(⚠️ QUAN TRỌNG: Phải chọn "Anyone" để website gửi được dữ liệu vào sheet mà không bị bắt đăng nhập Google).*
-4. Bấm nút **Triển khai (Deploy)**.
-5. Google sẽ hiện hộp thoại yêu cầu cấp quyền:
-   - Bấm **Ủy quyền truy cập (Authorize access)** -> Chọn tài khoản Google của bạn.
-   - Nếu hiện cảnh báo *"Google chưa xác minh ứng dụng này"*: Bấm nút **Nâng cao (Advanced)** ở dưới -> Bấm **Đi tới... (không an toàn)** -> Bấm **Cho phép (Allow)**.
-6. Sau khi hoàn tất, Google sẽ cung cấp cho bạn một **URL ứng dụng web (Web app URL)** có dạng:
-   ```text
-   https://script.google.com/macros/s/AKfycbx.../exec
+2. Bấm vào biểu tượng hình bánh răng bên trái -> Chọn **Ứng dụng web (Web app)**.
+3. Thiết lập chính xác 3 ô sau:
+   - **Mô tả:** `Webhook VIAI Academy`
+   - **Thực thi dưới dạng (Execute as):** `Tôi (Me)`
+   - **Ai có quyền truy cập (Who has access):** Chọn **Bất kỳ ai (Anyone)** *(⚠️ Bắt buộc)*.
+4. Bấm **Triển khai (Deploy)**.
+5. Cấp quyền truy cập nếu Google yêu cầu (*Ủy quyền truy cập -> Chọn email của bạn -> Nâng cao -> Đi tới... (không an toàn) -> Cho phép*).
+6. Copy đường link **URL ứng dụng web** (có dạng `https://script.google.com/macros/s/AKfycb.../exec`).
+
+---
+
+## BƯỚC 4: GẮN LINK VÀO WEBSITE
+
+Sau khi lấy được link ở Bước 3, bạn chỉ cần gửi link đó cho tôi, hoặc dán trực tiếp vào:
+1. **Trong code:** File [src/config/leadConfig.ts](file:///d:/web_viai-main/web_viai-main/src/config/leadConfig.ts) dòng:
+   ```typescript
+   const FALLBACK_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycb.../exec';
    ```
-7. Hãy sao chép (Copy) đường link này!
-
----
-
-## BƯỚC 4: NƠI THAY ĐỔI LINK SHEET (RẤT QUAN TRỌNG)
-
-Khi bạn muốn gắn link lần đầu, hoặc **sau này muốn thay đổi sang file Google Sheet khác**, bạn có 2 lựa chọn cực kỳ dễ dàng:
-
-### 🌟 LỰA CHỌN A (Khuyên dùng - Không cần động vào mã nguồn):
-Bạn chỉ cần thao tác trên trang quản trị Vercel:
-1. Đăng nhập vào [Vercel Dashboard](https://vercel.com/tienanhgitce-6169/web-viai).
-2. Vào tab **Settings** -> Chọn mục **Environment Variables** ở cột trái.
-3. Thêm một biến mới:
-   - **Key:** `VITE_GOOGLE_SHEET_URL`
-   - **Value:** `<Dán_Link_Web_App_Google_Script_Của_Bạn>`
-4. Bấm **Save**.
-5. Vào tab **Deployments** trên Vercel, bấm dấu 3 chấm `...` ở bản deploy gần nhất -> Chọn **Redeploy**.  
-   👉 **Xong!** Website sẽ tự động gửi data về file Google Sheet mới ngay lập tức. Sau này nếu đổi file Sheet mới, bạn chỉ việc vào đây sửa lại Value của biến này!
-
----
-
-### 🌟 LỰA CHỌN B (Sửa trực tiếp trong code dự án):
-Nếu không muốn vào Vercel, bạn mở trực tiếp file cấu hình trong dự án:
-- Đường dẫn file: `src/config/leadConfig.ts`
-- Tìm đến dòng:
-  ```typescript
-  const FALLBACK_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbx.../exec';
-  ```
-- Dán URL mới vào giữa hai dấu nháy đơn, lưu lại và push lên GitHub.
-
----
-
-## BƯỚC 5: KINH NGHIỆM XỬ LÝ KHI DỮ LIỆU CÀNG NGÀY CÀNG NHIỀU
-
-Google Sheet có sức chứa tới **10 triệu ô dữ liệu** (hơn 100.000 lượt đăng ký). Khi chạy lâu dài, bạn áp dụng các cách sau để tối ưu:
-
-1. **Phân quyền cho đội kinh doanh (Sale):**
-   - Chỉ chia sẻ quyền **Chỉnh sửa (Editor)** cho nhân viên tuyển sinh.
-   - Khóa cột A, B, C (Thời gian, SĐT, Khách hàng) bằng tính năng *Dữ liệu > Bảo vệ trang tính và dải ô*, chỉ cho sale sửa cột H (Trạng thái tư vấn) và ghi chú để tránh bấm nhầm làm xóa số điện thoại.
-
-2. **Dùng Filter View (Chế độ xem bộ lọc riêng):**
-   - Sale phụ trách Hải Phòng tạo Filter View lọc riêng cơ sở Hải Phòng.
-   - Sale Hưng Yên và Ninh Bình tạo Filter View riêng của mình.
-   - Nhờ vậy 3 bạn sale ở 3 tỉnh mở cùng 1 file Sheet cùng lúc mà không làm xáo trộn màn hình của nhau.
-
-3. **Lưu trữ dữ liệu cũ (Archive theo năm):**
-   - Sau mỗi 6 tháng hoặc 1 năm (ví dụ hết năm 2026), bạn chỉ cần nhân bản file Google Sheet này thành `VIAI_KhachHang_2026_Archived`.
-   - File chính xóa các dòng cũ đi để tiếp tục nhận khách hàng năm 2027 mà **không cần phải đổi link Webhook!**
+2. **Hoặc trên Vercel:** Vào *Settings > Environment Variables* thêm biến `VITE_GOOGLE_SHEET_URL` = `<Link Web App của bạn>`.
