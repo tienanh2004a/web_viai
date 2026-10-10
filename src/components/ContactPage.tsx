@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   ArrowLeft, Phone, Mail, MapPin, Clock, 
-  ShieldCheck, ArrowRight, ChevronRight
+  ShieldCheck, ArrowRight, ChevronRight, BookOpen, Coins, User
 } from 'lucide-react';
 import { Footer } from './Footer';
 import { submitLeadToGoogleSheet } from '../services/leadService';
@@ -240,20 +240,66 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 <div className="py-6 px-4 text-center">
                   <div className="flex justify-center -mt-2 mb-3">
                     <img 
-                      src="/images/robot-success.png" 
+                      src="/images/robot-viai-success.png" 
                       alt="Đăng ký thành công" 
-                      className="h-28 sm:h-36 w-auto object-contain drop-shadow-sm select-none"
+                      className="h-32 sm:h-44 w-auto object-contain drop-shadow-sm select-none"
                     />
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mb-2 tracking-tight">
-                    Đăng ký <span className="text-[#f97316]">thành công!</span>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#142A4F] mb-3 tracking-tight">
+                    Đăng ký <span className="text-[#F36C21]">thành công!</span>
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-600 max-w-md mx-auto mb-5 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#4A5D78] max-w-md mx-auto mb-6 leading-relaxed">
                     Cảm ơn <strong>{parentName}</strong>. Thầy cô VIAI Academy sẽ gọi điện tư vấn buổi học thử 1-1 tại cơ sở <strong>{branch}</strong> theo số <strong>{phone}</strong> trong ít phút tới.
                   </p>
+
+                  {/* Card thông tin đăng ký */}
+                  <div className="max-w-xl mx-auto rounded-[20px] bg-[#FFF9F2]/70 border border-[#F5E6D3] p-4 sm:p-5 text-left mb-6 shadow-xs">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
+                          <BookOpen className="w-4 h-4" />
+                        </div>
+                        <div className="min-w-0">
+                          <span className="block text-xs text-[#6B7D96] font-medium">Khóa học</span>
+                          <span className="block text-xs sm:text-sm font-bold text-[#142A4F] truncate">{course}</span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
+                          <MapPin className="w-4 h-4" />
+                        </div>
+                        <div className="min-w-0">
+                          <span className="block text-xs text-[#6B7D96] font-medium">Địa điểm</span>
+                          <span className="block text-xs sm:text-sm font-bold text-[#142A4F] truncate">Cơ sở {branch}</span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
+                          <User className="w-4 h-4" />
+                        </div>
+                        <div className="min-w-0">
+                          <span className="block text-xs text-[#6B7D96] font-medium">Độ tuổi</span>
+                          <span className="block text-xs sm:text-sm font-bold text-[#142A4F] truncate">{course}</span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
+                          <Coins className="w-4 h-4" />
+                        </div>
+                        <div className="min-w-0">
+                          <span className="block text-xs text-[#6B7D96] font-medium">Chi phí buổi trải nghiệm</span>
+                          <span className="block text-xs sm:text-sm font-extrabold text-[#059669]">MIỄN PHÍ</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-sm shadow-md shadow-orange-500/25 transition-all cursor-pointer"
+                    className="w-full sm:w-auto px-8 py-3.5 rounded-[15px] bg-gradient-to-r from-[#FF922E] to-[#FF4D0D] hover:from-[#ff8519] hover:to-[#e63f00] text-white font-bold text-sm shadow-md shadow-orange-500/25 transition-all cursor-pointer"
                   >
                     Đăng ký cho bé khác
                   </button>

@@ -107,100 +107,106 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fadeIn cursor-pointer"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 md:p-6 bg-[#0B1528]/65 backdrop-blur-sm animate-fadeIn cursor-pointer"
       onClick={handleReset}
     >
       <div 
-        className="relative w-full max-w-lg rounded-3xl border border-gray-200 bg-white p-6 sm:p-8 shadow-2xl text-[#0c0a08] overflow-hidden cursor-default"
+        className={`relative w-full ${
+          submitted ? 'max-w-[1100px]' : 'max-w-lg'
+        } max-h-[94vh] overflow-y-auto rounded-[24px] sm:rounded-[32px] border border-amber-900/10 bg-[#FFFCF7] p-6 sm:p-8 md:p-12 shadow-2xl shadow-slate-950/25 text-[#142A4F] overflow-hidden cursor-default transition-all duration-300`}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Subtle warm ambient glow */}
-        <div className="pointer-events-none absolute -top-20 -right-20 w-48 h-48 bg-orange-100/60 rounded-full blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 -left-20 w-48 h-48 bg-amber-100/60 rounded-full blur-3xl" />
+        {/* Mảng trang trí hình học cong màu cam nhạt ở góc modal theo Ảnh 3 */}
+        <div className="pointer-events-none absolute -top-28 -right-28 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#FFF1E2] select-none" />
+        <div className="pointer-events-none absolute -bottom-28 -left-28 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#FFF1E2] select-none" />
 
         {/* Close Button */}
         <button
           onClick={handleReset}
           aria-label="Đóng cửa sổ"
-          className="absolute top-5 right-5 p-2 rounded-xl text-zinc-400 hover:text-zinc-900 bg-gray-100 hover:bg-gray-200 transition-colors cursor-pointer z-10"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-full text-zinc-400 hover:text-zinc-800 bg-amber-100/50 hover:bg-amber-100 transition-colors cursor-pointer z-20"
         >
           <X className="h-5 w-5" />
         </button>
 
         {submitted ? (
-          /* Success Screen - Thiết kế cao cấp theo Ảnh 4 */
-          <div className="text-center pt-2 pb-1">
-            {/* Mascot Robot minh họa 3D vẫy tay + Tick xanh */}
-            <div className="flex justify-center -mt-2 mb-3">
+          /* Success Screen - Thiết kế cao cấp rộng 1100px giống 100% Ảnh 3 */
+          <div className="relative z-10 text-center py-2 sm:py-4">
+            {/* Mascot Robot VIAI 3D vẫy tay cùng dấu kiểm xanh do user cung cấp */}
+            <div className="flex justify-center -mt-2 mb-2 sm:mb-4">
               <img 
-                src="/images/robot-success.png" 
-                alt="Đăng ký thành công" 
-                className="h-28 sm:h-36 w-auto object-contain drop-shadow-sm select-none"
+                src="/images/robot-viai-success.png" 
+                alt="Robot VIAI Đăng ký thành công" 
+                className="h-32 sm:h-44 md:h-52 w-auto object-contain drop-shadow-sm select-none"
               />
             </div>
 
-            {/* Tiêu đề Đăng ký thành công! */}
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mb-2 tracking-tight">
-              Đăng ký <span className="text-[#f97316]">thành công!</span>
+            {/* Tiêu đề Đăng ký thành công! (#142A4F và #F36C21) */}
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#142A4F] mb-3 tracking-tight">
+              Đăng ký <span className="text-[#F36C21]">thành công!</span>
             </h3>
 
-            {/* Đoạn mô tả nhẹ nhàng, lịch sự */}
-            <p className="text-xs sm:text-sm text-zinc-600 max-w-md mx-auto mb-5 leading-relaxed">
-              Cảm ơn {parentName ? <strong className="text-zinc-900">{parentName}</strong> : 'bạn'} đã đăng ký lớp học thử tại <strong className="text-orange-600">VIAI Academy</strong>.<br className="hidden sm:inline" />
-              Đội ngũ tư vấn sẽ liên hệ với bạn qua số điện thoại để xác nhận lịch học.
-            </p>
+            {/* Đoạn mô tả nhẹ nhàng, màu chữ xanh xám (#4A5D78) */}
+            <div className="text-xs sm:text-sm md:text-base text-[#4A5D78] max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed space-y-1">
+              <p>
+                Cảm ơn bạn đã đăng ký lớp học thử tại <strong className="text-[#F36C21] font-bold">VIAI Academy</strong>.
+              </p>
+              <p>
+                Đội ngũ tư vấn sẽ liên hệ với bạn qua số điện thoại để xác nhận lịch học.
+              </p>
+            </div>
 
-            {/* Bảng thông tin đặt lịch Grid 2x2 bo góc sang trọng */}
-            <div className="rounded-2xl border border-orange-100/80 bg-[#faf8f5] p-4 sm:p-5 text-left mb-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+            {/* Card thông tin đăng ký: Nền kem nhạt, bo góc 20px, 2 cột trên desktop */}
+            <div className="max-w-[780px] mx-auto rounded-[20px] bg-white/70 backdrop-blur-xs border border-[#F5E6D3] p-5 sm:p-7 text-left mb-6 sm:mb-7 shadow-xs">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 
                 {/* 1. Khóa học */}
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-orange-100/80 text-orange-600 flex items-center justify-center shrink-0">
-                    <BookOpen className="w-4 h-4" />
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-2xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
+                    <BookOpen className="w-5 h-5" />
                   </div>
                   <div className="min-w-0">
-                    <span className="block text-xs text-zinc-400 font-medium">Khóa học</span>
-                    <span className="block text-xs sm:text-sm font-bold text-zinc-900 truncate">
+                    <span className="block text-xs text-[#6B7D96] font-medium mb-0.5">Khóa học</span>
+                    <span className="block text-sm sm:text-base font-bold text-[#142A4F] truncate">
                       {defaultCourse && !defaultCourse.includes('Khối') ? defaultCourse : selectedCourse}
                     </span>
                   </div>
                 </div>
 
                 {/* 2. Địa điểm */}
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-orange-100/80 text-orange-600 flex items-center justify-center shrink-0">
-                    <MapPin className="w-4 h-4" />
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-2xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5" />
                   </div>
                   <div className="min-w-0">
-                    <span className="block text-xs text-zinc-400 font-medium">Địa điểm</span>
-                    <span className="block text-xs sm:text-sm font-bold text-zinc-900 truncate">
+                    <span className="block text-xs text-[#6B7D96] font-medium mb-0.5">Địa điểm</span>
+                    <span className="block text-sm sm:text-base font-bold text-[#142A4F] truncate">
                       {branch}
                     </span>
                   </div>
                 </div>
 
-                {/* 3. Độ tuổi / Khối lớp */}
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-orange-100/80 text-orange-600 flex items-center justify-center shrink-0">
-                    <User className="w-4 h-4" />
+                {/* 3. Độ tuổi */}
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-2xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
+                    <User className="w-5 h-5" />
                   </div>
                   <div className="min-w-0">
-                    <span className="block text-xs text-zinc-400 font-medium">Độ tuổi</span>
-                    <span className="block text-xs sm:text-sm font-bold text-zinc-900 truncate">
+                    <span className="block text-xs text-[#6B7D96] font-medium mb-0.5">Độ tuổi</span>
+                    <span className="block text-sm sm:text-base font-bold text-[#142A4F] truncate">
                       {selectedCourse}
                     </span>
                   </div>
                 </div>
 
                 {/* 4. Chi phí buổi trải nghiệm */}
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-orange-100/80 text-orange-600 flex items-center justify-center shrink-0">
-                    <Coins className="w-4 h-4" />
+                <div className="flex items-center gap-3.5">
+                  <div className="w-11 h-11 rounded-2xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
+                    <Coins className="w-5 h-5" />
                   </div>
                   <div className="min-w-0">
-                    <span className="block text-xs text-zinc-400 font-medium">Chi phí buổi trải nghiệm</span>
-                    <span className="block text-xs sm:text-sm font-extrabold text-emerald-600 tracking-wide">
+                    <span className="block text-xs text-[#6B7D96] font-medium mb-0.5">Chi phí buổi trải nghiệm</span>
+                    <span className="block text-sm sm:text-base font-extrabold text-[#059669] tracking-wide">
                       MIỄN PHÍ
                     </span>
                   </div>
@@ -209,18 +215,20 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
               </div>
             </div>
 
-            {/* Nút Hoàn tất → cam rực rỡ */}
-            <button
-              onClick={handleReset}
-              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-sm sm:text-base shadow-md shadow-orange-500/25 active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <span>Hoàn tất</span>
-              <ArrowRight className="h-4 w-4" />
-            </button>
+            {/* Nút Hoàn tất → Nền gradient cam (#FF922E đến #FF4D0D), bo góc 15px */}
+            <div className="max-w-[780px] mx-auto">
+              <button
+                onClick={handleReset}
+                className="w-full py-4 rounded-[15px] bg-gradient-to-r from-[#FF922E] to-[#FF4D0D] hover:from-[#ff8519] hover:to-[#e63f00] text-white font-bold text-base sm:text-lg shadow-lg shadow-orange-500/25 active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>Hoàn tất</span>
+                <ArrowRight className="h-5 w-5" />
+              </button>
 
-            <p className="text-xs text-center text-zinc-400 font-medium mt-3">
-              Hẹn gặp bạn tại lớp học nhé!
-            </p>
+              <p className="text-xs sm:text-sm text-center text-[#7A8B9E] font-medium mt-3.5">
+                Hẹn gặp bạn tại lớp học nhé!
+              </p>
+            </div>
           </div>
         ) : (
           /* Registration Form */
