@@ -112,42 +112,40 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
     >
       <div 
         className={`relative w-full ${
-          submitted ? 'max-w-[1100px]' : 'max-w-lg'
-        } max-h-[94vh] overflow-y-auto rounded-[24px] sm:rounded-[32px] border border-amber-900/10 bg-[#FFFCF7] p-6 sm:p-8 md:p-12 shadow-2xl shadow-slate-950/25 text-[#142A4F] overflow-hidden cursor-default transition-all duration-300`}
+          submitted 
+            ? 'max-w-[1100px] p-6 sm:p-8 md:p-10' 
+            : 'max-w-lg p-5 sm:p-7'
+        } max-h-[96vh] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden rounded-[24px] sm:rounded-[32px] border border-amber-900/10 bg-[#FFFCF7] shadow-2xl shadow-slate-950/25 text-[#142A4F] cursor-default transition-all duration-300`}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Mảng trang trí hình học cong màu cam nhạt ở góc modal theo Ảnh 3 */}
-        <div className="pointer-events-none absolute -top-28 -right-28 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#FFF1E2] select-none" />
-        <div className="pointer-events-none absolute -bottom-28 -left-28 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#FFF1E2] select-none" />
-
         {/* Close Button */}
         <button
           onClick={handleReset}
           aria-label="Đóng cửa sổ"
-          className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-full text-zinc-400 hover:text-zinc-800 bg-amber-100/50 hover:bg-amber-100 transition-colors cursor-pointer z-20"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 rounded-full text-zinc-400 hover:text-zinc-800 bg-amber-100/50 hover:bg-amber-100 transition-colors cursor-pointer z-20"
         >
           <X className="h-5 w-5" />
         </button>
 
         {submitted ? (
           /* Success Screen - Thiết kế cao cấp rộng 1100px giống 100% Ảnh 3 */
-          <div className="relative z-10 text-center py-2 sm:py-4">
+          <div className="relative z-10 text-center py-1 sm:py-2">
             {/* Mascot Robot VIAI 3D vẫy tay cùng dấu kiểm xanh do user cung cấp */}
-            <div className="flex justify-center -mt-2 mb-2 sm:mb-4">
+            <div className="flex justify-center -mt-1 mb-2 sm:mb-3">
               <img 
                 src="/images/robot-viai-success.png" 
                 alt="Robot VIAI Đăng ký thành công" 
-                className="h-32 sm:h-44 md:h-52 w-auto object-contain drop-shadow-sm select-none"
+                className="h-28 sm:h-36 md:h-44 w-auto object-contain drop-shadow-sm select-none"
               />
             </div>
 
             {/* Tiêu đề Đăng ký thành công! (#142A4F và #F36C21) */}
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#142A4F] mb-3 tracking-tight">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#142A4F] mb-2 sm:mb-3 tracking-tight">
               Đăng ký <span className="text-[#F36C21]">thành công!</span>
             </h3>
 
             {/* Đoạn mô tả nhẹ nhàng, màu chữ xanh xám (#4A5D78) */}
-            <div className="text-xs sm:text-sm md:text-base text-[#4A5D78] max-w-xl mx-auto mb-6 sm:mb-8 leading-relaxed space-y-1">
+            <div className="text-xs sm:text-sm md:text-base text-[#4A5D78] max-w-xl mx-auto mb-5 sm:mb-6 leading-relaxed space-y-0.5">
               <p>
                 Cảm ơn bạn đã đăng ký lớp học thử tại <strong className="text-[#F36C21] font-bold">VIAI Academy</strong>.
               </p>
@@ -157,12 +155,12 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
             </div>
 
             {/* Card thông tin đăng ký: Nền kem nhạt, bo góc 20px, 2 cột trên desktop */}
-            <div className="max-w-[780px] mx-auto rounded-[20px] bg-white/70 backdrop-blur-xs border border-[#F5E6D3] p-5 sm:p-7 text-left mb-6 sm:mb-7 shadow-xs">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <div className="max-w-[780px] mx-auto rounded-[20px] bg-white/70 backdrop-blur-xs border border-[#F5E6D3] p-4 sm:p-6 text-left mb-5 sm:mb-6 shadow-xs">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-5">
                 
                 {/* 1. Khóa học */}
                 <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 rounded-2xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
+                  <div className="w-10 sm:w-11 h-10 sm:h-11 rounded-2xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
                     <BookOpen className="w-5 h-5" />
                   </div>
                   <div className="min-w-0">
@@ -175,7 +173,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
 
                 {/* 2. Địa điểm */}
                 <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 rounded-2xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
+                  <div className="w-10 sm:w-11 h-10 sm:h-11 rounded-2xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div className="min-w-0">
@@ -188,8 +186,8 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
 
                 {/* 3. Độ tuổi */}
                 <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 rounded-2xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
-                    <User className="w-5 h-5" />
+                  <div className="w-10 sm:w-11 h-10 sm:h-11 rounded-2xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
+                    <User className="w-4 h-4" />
                   </div>
                   <div className="min-w-0">
                     <span className="block text-xs text-[#6B7D96] font-medium mb-0.5">Độ tuổi</span>
@@ -201,7 +199,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
 
                 {/* 4. Chi phí buổi trải nghiệm */}
                 <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 rounded-2xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
+                  <div className="w-10 sm:w-11 h-10 sm:h-11 rounded-2xl bg-[#FFEAD7] text-[#F36C21] flex items-center justify-center shrink-0">
                     <Coins className="w-5 h-5" />
                   </div>
                   <div className="min-w-0">
@@ -219,13 +217,13 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
             <div className="max-w-[780px] mx-auto">
               <button
                 onClick={handleReset}
-                className="w-full py-4 rounded-[15px] bg-gradient-to-r from-[#FF922E] to-[#FF4D0D] hover:from-[#ff8519] hover:to-[#e63f00] text-white font-bold text-base sm:text-lg shadow-lg shadow-orange-500/25 active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-3.5 sm:py-4 rounded-[15px] bg-gradient-to-r from-[#FF922E] to-[#FF4D0D] hover:from-[#ff8519] hover:to-[#e63f00] text-white font-bold text-base sm:text-lg shadow-lg shadow-orange-500/25 active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Hoàn tất</span>
                 <ArrowRight className="h-5 w-5" />
               </button>
 
-              <p className="text-xs sm:text-sm text-center text-[#7A8B9E] font-medium mt-3.5">
+              <p className="text-xs sm:text-sm text-center text-[#7A8B9E] font-medium mt-3">
                 Hẹn gặp bạn tại lớp học nhé!
               </p>
             </div>
@@ -233,20 +231,20 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
         ) : (
           /* Registration Form */
           <div>
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-orange-600 mb-2">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-orange-600 mb-1.5">
               <Sparkles className="h-4 w-4" />
               <span>TẶNG 1 BUỔI TRẢI NGHIỆM 1-1 TRỊ GIÁ 500K</span>
             </div>
 
-            <h3 className="text-2xl font-extrabold text-[#0c0a08] mb-2">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-[#0c0a08] mb-1.5">
               Đặt Lịch Học Thử 1-1 Miễn Phí
             </h3>
 
-            <p className="text-xs sm:text-sm text-zinc-600 mb-6">
+            <p className="text-xs sm:text-sm text-zinc-600 mb-4 sm:mb-5">
               45 phút đánh giá tư duy + 90 phút trực tiếp điều khiển robot trên sa bàn cùng giảng viên. Hoàn toàn không ràng buộc.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-3.5">
               {/* Parent Name */}
               <div>
                 <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
