@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, CheckCircle2, Sparkles, MapPin, Calendar, Phone, User, Bot } from 'lucide-react';
+import { X, Sparkles, MapPin, Calendar, Phone, User, Bot, BookOpen, Coins, ArrowRight } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { submitLeadToGoogleSheet } from '../services/leadService';
 
@@ -17,7 +17,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   const [parentName, setParentName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [phoneError, setPhoneError] = useState('');
-  const [selectedCourse, setSelectedCourse] = useState('Khối Tiểu học (7–10 tuổi)');
+  const [selectedCourse, setSelectedCourse] = useState('Khối Tiểu học (Lớp 1 – 5)');
   const [branch, setBranch] = useState('Cơ sở Hải Phòng');
   const [preferredDate, setPreferredDate] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,9 +28,9 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
       if (defaultCourse.includes('Mầm non')) {
         setSelectedCourse('Khối Mầm non (4–6 tuổi)');
       } else if (defaultCourse.includes('Trung học') || defaultCourse.includes('THCS')) {
-        setSelectedCourse('Khối Trung học (11–15 tuổi)');
+        setSelectedCourse('Khối Trung học (Lớp 6 – 9)');
       } else if (defaultCourse.includes('Tiểu học')) {
-        setSelectedCourse('Khối Tiểu học (7–10 tuổi)');
+        setSelectedCourse('Khối Tiểu học (Lớp 1 – 5)');
       }
     }
   }, [defaultCourse, isOpen]);
@@ -122,54 +122,105 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
         <button
           onClick={handleReset}
           aria-label="Đóng cửa sổ"
-          className="absolute top-5 right-5 p-2 rounded-xl text-zinc-400 hover:text-zinc-900 bg-gray-100 hover:bg-gray-200 transition-colors cursor-pointer"
+          className="absolute top-5 right-5 p-2 rounded-xl text-zinc-400 hover:text-zinc-900 bg-gray-100 hover:bg-gray-200 transition-colors cursor-pointer z-10"
         >
           <X className="h-5 w-5" />
         </button>
 
         {submitted ? (
-          /* Success Screen */
-          <div className="text-center py-6">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 mb-4 transition-transform duration-300 scale-105">
-              <CheckCircle2 className="h-8 w-8" />
+          /* Success Screen - Thiết kế cao cấp theo Ảnh 4 */
+          <div className="text-center pt-2 pb-1">
+            {/* Mascot Robot minh họa 3D vẫy tay + Tick xanh */}
+            <div className="flex justify-center -mt-2 mb-3">
+              <img 
+                src="/images/robot-success.png" 
+                alt="Đăng ký thành công" 
+                className="h-28 sm:h-36 w-auto object-contain drop-shadow-sm select-none"
+              />
             </div>
 
-            <h3 className="text-2xl font-extrabold text-[#0c0a08] mb-2">
-              Đăng Ký Thành Công!
+            {/* Tiêu đề Đăng ký thành công! */}
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mb-2 tracking-tight">
+              Đăng ký <span className="text-[#f97316]">thành công!</span>
             </h3>
 
-            <p className="text-sm text-zinc-600 max-w-sm mx-auto mb-6 leading-relaxed">
-              Cảm ơn <strong className="text-orange-600">{parentName}</strong> đã đặt lịch học thử 1-1 cho con. 
-              Thầy cô tại <strong>VIAI Academy</strong> sẽ liên hệ qua số điện thoại <strong>{phoneNumber}</strong> trong ít phút để xác nhận khung giờ đẹp nhất!
+            {/* Đoạn mô tả nhẹ nhàng, lịch sự */}
+            <p className="text-xs sm:text-sm text-zinc-600 max-w-md mx-auto mb-5 leading-relaxed">
+              Cảm ơn {parentName ? <strong className="text-zinc-900">{parentName}</strong> : 'bạn'} đã đăng ký lớp học thử tại <strong className="text-orange-600">VIAI Academy</strong>.<br className="hidden sm:inline" />
+              Đội ngũ tư vấn sẽ liên hệ với bạn qua số điện thoại để xác nhận lịch học.
             </p>
 
-            <div className="rounded-2xl border border-gray-200 bg-[#faf9f6] p-4 text-left text-xs space-y-2 mb-6">
-              <div className="flex justify-between">
-                <span className="text-zinc-500">Khoá học đăng ký:</span>
-                <span className="font-semibold text-zinc-900">{selectedCourse}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-zinc-500">Cơ sở:</span>
-                <span className="font-semibold text-orange-700">{branch}</span>
-              </div>
-              {preferredDate && (
-                <div className="flex justify-between">
-                  <span className="text-zinc-500">Ngày học dự kiến:</span>
-                  <span className="font-semibold text-zinc-800">{preferredDate}</span>
+            {/* Bảng thông tin đặt lịch Grid 2x2 bo góc sang trọng */}
+            <div className="rounded-2xl border border-orange-100/80 bg-[#faf8f5] p-4 sm:p-5 text-left mb-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                
+                {/* 1. Khóa học */}
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-orange-100/80 text-orange-600 flex items-center justify-center shrink-0">
+                    <BookOpen className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-xs text-zinc-400 font-medium">Khóa học</span>
+                    <span className="block text-xs sm:text-sm font-bold text-zinc-900 truncate">
+                      {defaultCourse && !defaultCourse.includes('Khối') ? defaultCourse : selectedCourse}
+                    </span>
+                  </div>
                 </div>
-              )}
-              <div className="flex justify-between">
-                <span className="text-zinc-500">Chi phí buổi trải nghiệm:</span>
-                <span className="font-bold text-emerald-600">0 VNĐ (Miễn phí 100%)</span>
+
+                {/* 2. Địa điểm */}
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-orange-100/80 text-orange-600 flex items-center justify-center shrink-0">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-xs text-zinc-400 font-medium">Địa điểm</span>
+                    <span className="block text-xs sm:text-sm font-bold text-zinc-900 truncate">
+                      {branch}
+                    </span>
+                  </div>
+                </div>
+
+                {/* 3. Độ tuổi / Khối lớp */}
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-orange-100/80 text-orange-600 flex items-center justify-center shrink-0">
+                    <User className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-xs text-zinc-400 font-medium">Độ tuổi</span>
+                    <span className="block text-xs sm:text-sm font-bold text-zinc-900 truncate">
+                      {selectedCourse}
+                    </span>
+                  </div>
+                </div>
+
+                {/* 4. Chi phí buổi trải nghiệm */}
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-orange-100/80 text-orange-600 flex items-center justify-center shrink-0">
+                    <Coins className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block text-xs text-zinc-400 font-medium">Chi phí buổi trải nghiệm</span>
+                    <span className="block text-xs sm:text-sm font-extrabold text-emerald-600 tracking-wide">
+                      MIỄN PHÍ
+                    </span>
+                  </div>
+                </div>
+
               </div>
             </div>
 
+            {/* Nút Hoàn tất → cam rực rỡ */}
             <button
               onClick={handleReset}
-              className="w-full py-3.5 rounded-xl bg-[#c2410c] hover:bg-[#9a3412] text-white font-bold text-sm shadow-xs transition-all cursor-pointer"
+              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-sm sm:text-base shadow-md shadow-orange-500/25 active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
-              Hoàn tất &amp; Đóng
+              <span>Hoàn tất</span>
+              <ArrowRight className="h-4 w-4" />
             </button>
+
+            <p className="text-xs text-center text-zinc-400 font-medium mt-3">
+              Hẹn gặp bạn tại lớp học nhé!
+            </p>
           </div>
         ) : (
           /* Registration Form */
@@ -204,35 +255,31 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                 />
               </div>
 
-              {/* Phone Number - Bắt buộc 10 số */}
+              {/* Phone Number - Bỏ ghi chú thừa, giữ logic */}
               <div>
                 <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
                   <Phone className="h-3.5 w-3.5 text-orange-600" />
-                  <span>Số điện thoại (Nhận lịch hẹn qua Zalo) *</span>
+                  <span>Số điện thoại *</span>
                 </label>
                 <input
                   type="tel"
                   required
                   maxLength={10}
-                  placeholder="Ví dụ: 0912345678 (10 số)"
+                  placeholder="Ví dụ: 0912345678"
                   value={phoneNumber}
                   onChange={handlePhoneChange}
                   className={`w-full rounded-xl border ${
                     phoneError ? 'border-red-500 ring-1 ring-red-500 bg-red-50/20' : 'border-gray-200 bg-[#faf9f6]'
                   } px-3.5 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors`}
                 />
-                {phoneError ? (
+                {phoneError && (
                   <p className="text-xs text-red-500 font-medium mt-1">
                     {phoneError}
-                  </p>
-                ) : (
-                  <p className="text-xs text-zinc-400 mt-1">
-                    Bắt buộc đúng 10 chữ số (bắt đầu bằng số 0)
                   </p>
                 )}
               </div>
 
-              {/* Course Selection - 3 Khóa Mầm non, Tiểu học, Trung học ngay sau SĐT */}
+              {/* Course Selection - Khối mầm non giữ nguyên, khối tiểu học Lớp 1 - 5, trung học Lớp 6 - 9 */}
               <div>
                 <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
                   <Bot className="h-3.5 w-3.5 text-orange-600" />
@@ -244,8 +291,8 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                   className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
                 >
                   <option value="Khối Mầm non (4–6 tuổi)">Khối Mầm non (4–6 tuổi)</option>
-                  <option value="Khối Tiểu học (7–10 tuổi)">Khối Tiểu học (7–10 tuổi)</option>
-                  <option value="Khối Trung học (11–15 tuổi)">Khối Trung học (11–15 tuổi)</option>
+                  <option value="Khối Tiểu học (Lớp 1 – 5)">Khối Tiểu học (Lớp 1 – 5)</option>
+                  <option value="Khối Trung học (Lớp 6 – 9)">Khối Trung học (Lớp 6 – 9)</option>
                 </select>
               </div>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Phone, Mail, MapPin, CheckCircle2, Clock, 
+  Phone, Mail, MapPin, Clock, 
   ShieldCheck, ArrowRight
 } from 'lucide-react';
 import { submitLeadToGoogleSheet } from '../services/leadService';
@@ -9,7 +9,7 @@ export const ContactSection: React.FC = () => {
   const [parentName, setParentName] = useState('');
   const [phone, setPhone] = useState('');
   const [phoneError, setPhoneError] = useState('');
-  const [course, setCourse] = useState('Khối Tiểu học (7–10 tuổi)');
+  const [course, setCourse] = useState('Khối Tiểu học (Lớp 1 – 5)');
   const [branch, setBranch] = useState('Hải Phòng');
   const [extraInfo, setExtraInfo] = useState('');
   const [agreed, setAgreed] = useState(true);
@@ -89,7 +89,7 @@ export const ContactSection: React.FC = () => {
   return (
     <section id="lien-he" className="relative bg-white border-t border-black/8">
       
-      {/* 1. THÔNG TIN LIÊN HỆ TRỰC TIẾP — Side-by-side layout, không dùng icon stack rập khuôn */}
+      {/* 1. THÔNG TIN LIÊN HỆ TRỰC TIẾP — Side-by-side layout */}
       <div className="py-14 sm:py-16 border-b border-black/8">
         <div className="container max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           
@@ -102,7 +102,7 @@ export const ContactSection: React.FC = () => {
             </p>
           </div>
 
-          {/* 4 Thẻ thông tin nhanh — Side-by-side icon layout */}
+          {/* 4 Thẻ thông tin nhanh */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             
             {/* Thẻ 1: Hotline */}
@@ -183,17 +183,23 @@ export const ContactSection: React.FC = () => {
 
           <div className="max-w-2xl mx-auto rounded-3xl bg-white p-6 sm:p-9 shadow-md border border-black/8">
             {submitted ? (
-              <div className="py-8 px-4 text-center space-y-3">
-                <CheckCircle2 className="h-12 w-12 text-emerald-600 mx-auto" />
-                <h3 className="text-xl font-bold text-[#111827]">
-                  Đăng ký học thử thành công!
+              <div className="py-6 px-4 text-center">
+                <div className="flex justify-center -mt-2 mb-3">
+                  <img 
+                    src="/images/robot-success.png" 
+                    alt="Đăng ký thành công" 
+                    className="h-28 sm:h-36 w-auto object-contain drop-shadow-sm select-none"
+                  />
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111827] mb-2 tracking-tight">
+                  Đăng ký <span className="text-[#f97316]">thành công!</span>
                 </h3>
-                <p className="text-sm text-[#4b5563] max-w-md mx-auto leading-relaxed">
+                <p className="text-xs sm:text-sm text-zinc-600 max-w-md mx-auto mb-5 leading-relaxed">
                   Cảm ơn <strong>{parentName}</strong>. Thầy cô VIAI Academy sẽ gọi điện tư vấn buổi học thử 1-1 tại cơ sở <strong>{branch}</strong> theo số <strong>{phone}</strong> trong ít phút tới.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-4 px-5 py-2.5 rounded-xl bg-[#c2410c] hover:bg-[#9a3412] text-white font-medium text-sm transition-colors cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-sm shadow-md shadow-orange-500/25 transition-all cursor-pointer"
                 >
                   Đăng ký cho bé khác
                 </button>
@@ -224,20 +230,16 @@ export const ContactSection: React.FC = () => {
                     type="tel"
                     required
                     maxLength={10}
-                    placeholder="Ví dụ: 0912345678 (bắt buộc 10 số)"
+                    placeholder="Ví dụ: 0912345678"
                     value={phone}
                     onChange={handlePhoneChange}
                     className={`w-full px-4 py-3 rounded-xl border ${
                       phoneError ? 'border-red-500 ring-2 ring-red-500/20 bg-red-50/20' : 'border-neutral-300 bg-white'
                     } text-sm text-[#111827] placeholder:text-neutral-400 focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all`}
                   />
-                  {phoneError ? (
+                  {phoneError && (
                     <p className="text-xs text-red-500 font-medium mt-1">
                       {phoneError}
-                    </p>
-                  ) : (
-                    <p className="text-xs text-neutral-400 mt-1">
-                      Bắt buộc đúng 10 chữ số (bắt đầu bằng số 0)
                     </p>
                   )}
                 </div>
@@ -253,8 +255,8 @@ export const ContactSection: React.FC = () => {
                     className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all cursor-pointer"
                   >
                     <option value="Khối Mầm non (4–6 tuổi)">Khối Mầm non (4–6 tuổi)</option>
-                    <option value="Khối Tiểu học (7–10 tuổi)">Khối Tiểu học (7–10 tuổi)</option>
-                    <option value="Khối Trung học (11–15 tuổi)">Khối Trung học (11–15 tuổi)</option>
+                    <option value="Khối Tiểu học (Lớp 1 – 5)">Khối Tiểu học (Lớp 1 – 5)</option>
+                    <option value="Khối Trung học (Lớp 6 – 9)">Khối Trung học (Lớp 6 – 9)</option>
                   </select>
                 </div>
 
