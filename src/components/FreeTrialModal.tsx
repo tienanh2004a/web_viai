@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, CheckCircle2, Sparkles, MapPin, Calendar, Phone, User, Bot } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { submitLeadToGoogleSheet } from '../services/leadService';
@@ -12,29 +12,76 @@ interface FreeTrialModalProps {
 export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   isOpen,
   onClose,
-  defaultCourse = 'Lập trình Robot 3D & RoboSim',
+  defaultCourse,
 }) => {
   const [parentName, setParentName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+  const [selectedCourse, setSelectedCourse] = useState('Khối Tiểu học (7–10 tuổi)');
   const [branch, setBranch] = useState('Cơ sở Hải Phòng');
-  const [grade, setGrade] = useState('Lớp 3 — 5');
   const [preferredDate, setPreferredDate] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    if (defaultCourse) {
+      if (defaultCourse.includes('Mầm non')) {
+        setSelectedCourse('Khối Mầm non (4–6 tuổi)');
+      } else if (defaultCourse.includes('Trung học') || defaultCourse.includes('THCS')) {
+        setSelectedCourse('Khối Trung học (11–15 tuổi)');
+      } else if (defaultCourse.includes('Tiểu học')) {
+        setSelectedCourse('Khối Tiểu học (7–10 tuổi)');
+      }
+    }
+  }, [defaultCourse, isOpen]);
+
   if (!isOpen) return null;
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Chỉ giữ lại chữ số và giới hạn tối đa 10 số
+    const val = e.target.value.replace(/\D/g, '').slice(0, 10);
+    setPhoneNumber(val);
+    if (phoneError) {
+      if (val.length === 10 && val.startsWith('0')) {
+        setPhoneError('');
+      }
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!parentName || !phoneNumber || isSubmitting) return;
+    if (!parentName || isSubmitting) return;
+
+    // Kiểm tra số điện thoại bắt buộc đúng 10 số và bắt đầu bằng số 0
+    if (!phoneNumber) {
+      setPhoneError('Vui lòng nhập số điện thoại');
+      return;
+    }
+    if (!phoneNumber.startsWith('0')) {
+      setPhoneError('Số điện thoại phải bắt đầu bằng số 0');
+      return;
+    }
+    if (phoneNumber.length !== 10) {
+      setPhoneError(`Số điện thoại phải gồm đúng 10 số (hiện có ${phoneNumber.length} số)`);
+      return;
+    }
+    setPhoneError('');
 
     setIsSubmitting(true);
+    const extraNotes = [];
+    if (defaultCourse && !defaultCourse.includes('Khối')) {
+      extraNotes.push(`Khoá quan tâm: ${defaultCourse}`);
+    }
+    if (preferredDate) {
+      extraNotes.push(`Ngày học dự kiến: ${preferredDate}`);
+    }
+
     await submitLeadToGoogleSheet({
       parentName,
       phone: phoneNumber,
       branch,
-      courseOrAge: `${defaultCourse} (${grade})`,
-      notes: preferredDate ? `Ngày học dự kiến: ${preferredDate}` : '',
+      courseOrAge: selectedCourse,
+      notes: extraNotes.join(' | '),
       source: 'Popup Học Thử 1-1',
     });
     setIsSubmitting(false);
@@ -54,6 +101,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
     setSubmitted(false);
     setParentName('');
     setPhoneNumber('');
+    setPhoneError('');
     onClose();
   };
 
@@ -97,17 +145,19 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
 
             <div className="rounded-2xl border border-gray-200 bg-[#faf9f6] p-4 text-left text-xs space-y-2 mb-6">
               <div className="flex justify-between">
-                <span className="text-zinc-500">Khoá học:</span>
-                <span className="font-semibold text-zinc-900">{defaultCourse}</span>
+                <span className="text-zinc-500">Khoá học đăng ký:</span>
+                <span className="font-semibold text-zinc-900">{selectedCourse}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-zinc-500">Địa điểm:</span>
+                <span className="text-zinc-500">Cơ sở:</span>
                 <span className="font-semibold text-orange-700">{branch}</span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-zinc-500">Độ tuổi của con:</span>
-                <span className="font-semibold text-zinc-800">{grade}</span>
-              </div>
+              {preferredDate && (
+                <div className="flex justify-between">
+                  <span className="text-zinc-500">Ngày học dự kiến:</span>
+                  <span className="font-semibold text-zinc-800">{preferredDate}</span>
+                </div>
+              )}
               <div className="flex justify-between">
                 <span className="text-zinc-500">Chi phí buổi trải nghiệm:</span>
                 <span className="font-bold text-emerald-600">0 VNĐ (Miễn phí 100%)</span>
@@ -154,7 +204,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                 />
               </div>
 
-              {/* Phone Number */}
+              {/* Phone Number - Bắt buộc 10 số */}
               <div>
                 <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
                   <Phone className="h-3.5 w-3.5 text-orange-600" />
@@ -163,11 +213,40 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                 <input
                   type="tel"
                   required
-                  placeholder="Ví dụ: 0905 123 456"
+                  maxLength={10}
+                  placeholder="Ví dụ: 0912345678 (10 số)"
                   value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
+                  onChange={handlePhoneChange}
+                  className={`w-full rounded-xl border ${
+                    phoneError ? 'border-red-500 ring-1 ring-red-500 bg-red-50/20' : 'border-gray-200 bg-[#faf9f6]'
+                  } px-3.5 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors`}
                 />
+                {phoneError ? (
+                  <p className="text-xs text-red-500 font-medium mt-1">
+                    {phoneError}
+                  </p>
+                ) : (
+                  <p className="text-xs text-zinc-400 mt-1">
+                    Bắt buộc đúng 10 chữ số (bắt đầu bằng số 0)
+                  </p>
+                )}
+              </div>
+
+              {/* Course Selection - 3 Khóa Mầm non, Tiểu học, Trung học ngay sau SĐT */}
+              <div>
+                <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
+                  <Bot className="h-3.5 w-3.5 text-orange-600" />
+                  <span>Khoá học quan tâm cho bé *</span>
+                </label>
+                <select
+                  value={selectedCourse}
+                  onChange={(e) => setSelectedCourse(e.target.value)}
+                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
+                >
+                  <option value="Khối Mầm non (4–6 tuổi)">Khối Mầm non (4–6 tuổi)</option>
+                  <option value="Khối Tiểu học (7–10 tuổi)">Khối Tiểu học (7–10 tuổi)</option>
+                  <option value="Khối Trung học (11–15 tuổi)">Khối Trung học (11–15 tuổi)</option>
+                </select>
               </div>
 
               {/* Branch Selection */}
@@ -179,7 +258,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                 <select
                   value={branch}
                   onChange={(e) => setBranch(e.target.value)}
-                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none"
+                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
                 >
                   <option value="Cơ sở Hải Phòng">Cơ sở Hải Phòng</option>
                   <option value="Cơ sở Hưng Yên">Cơ sở Hưng Yên</option>
@@ -188,37 +267,18 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                 </select>
               </div>
 
-              {/* Grade Selection */}
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
-                    <Bot className="h-3.5 w-3.5 text-orange-600" />
-                    <span>Độ tuổi / Lớp</span>
-                  </label>
-                  <select
-                    value={grade}
-                    onChange={(e) => setGrade(e.target.value)}
-                    className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none"
-                  >
-                    <option value="Khối Mầm non">Khối Mầm non (4–5 tuổi)</option>
-                    <option value="Lớp 1 — 2">Lớp 1 — 2 (6-7 tuổi)</option>
-                    <option value="Lớp 3 — 5">Lớp 3 — 5 (8-10 tuổi)</option>
-                    <option value="Lớp 6 — 9">Lớp 6 — 9 (11-15 tuổi)</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
-                    <Calendar className="h-3.5 w-3.5 text-orange-600" />
-                    <span>Ngày dự kiến</span>
-                  </label>
-                  <input
-                    type="date"
-                    value={preferredDate}
-                    onChange={(e) => setPreferredDate(e.target.value)}
-                    className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none"
-                  />
-                </div>
+              {/* Preferred Date */}
+              <div>
+                <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
+                  <Calendar className="h-3.5 w-3.5 text-orange-600" />
+                  <span>Ngày dự kiến (không bắt buộc)</span>
+                </label>
+                <input
+                  type="date"
+                  value={preferredDate}
+                  onChange={(e) => setPreferredDate(e.target.value)}
+                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors"
+                />
               </div>
 
               {/* Submit CTA */}

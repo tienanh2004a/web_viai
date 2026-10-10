@@ -8,21 +8,47 @@ import { submitLeadToGoogleSheet } from '../services/leadService';
 export const ContactSection: React.FC = () => {
   const [parentName, setParentName] = useState('');
   const [phone, setPhone] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+  const [course, setCourse] = useState('Khối Tiểu học (7–10 tuổi)');
   const [branch, setBranch] = useState('Hải Phòng');
   const [extraInfo, setExtraInfo] = useState('');
   const [agreed, setAgreed] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value.replace(/\D/g, '').slice(0, 10);
+    setPhone(val);
+    if (phoneError && val.length === 10 && val.startsWith('0')) {
+      setPhoneError('');
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!parentName || !phone || isSubmitting) return;
+    if (!parentName || isSubmitting) return;
+
+    // Kiểm tra số điện thoại bắt buộc đúng 10 số và bắt đầu bằng số 0
+    if (!phone) {
+      setPhoneError('Vui lòng nhập số điện thoại');
+      return;
+    }
+    if (!phone.startsWith('0')) {
+      setPhoneError('Số điện thoại phải bắt đầu bằng số 0');
+      return;
+    }
+    if (phone.length !== 10) {
+      setPhoneError(`Số điện thoại phải gồm đúng 10 số (hiện có ${phone.length} số)`);
+      return;
+    }
+    setPhoneError('');
 
     setIsSubmitting(true);
     await submitLeadToGoogleSheet({
       parentName,
       phone,
       branch,
+      courseOrAge: course,
       notes: extraInfo,
       source: 'Form Liên Hệ Cuối Trang',
     });
@@ -197,11 +223,39 @@ export const ContactSection: React.FC = () => {
                   <input
                     type="tel"
                     required
-                    placeholder="Ví dụ: 0912 345 678"
+                    maxLength={10}
+                    placeholder="Ví dụ: 0912345678 (bắt buộc 10 số)"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] placeholder:text-neutral-400 focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
+                    onChange={handlePhoneChange}
+                    className={`w-full px-4 py-3 rounded-xl border ${
+                      phoneError ? 'border-red-500 ring-2 ring-red-500/20 bg-red-50/20' : 'border-neutral-300 bg-white'
+                    } text-sm text-[#111827] placeholder:text-neutral-400 focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all`}
                   />
+                  {phoneError ? (
+                    <p className="text-xs text-red-500 font-medium mt-1">
+                      {phoneError}
+                    </p>
+                  ) : (
+                    <p className="text-xs text-neutral-400 mt-1">
+                      Bắt buộc đúng 10 chữ số (bắt đầu bằng số 0)
+                    </p>
+                  )}
+                </div>
+
+                {/* Khoá học quan tâm - 3 khóa */}
+                <div>
+                  <label className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
+                    Khoá học quan tâm cho bé <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    value={course}
+                    onChange={(e) => setCourse(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all cursor-pointer"
+                  >
+                    <option value="Khối Mầm non (4–6 tuổi)">Khối Mầm non (4–6 tuổi)</option>
+                    <option value="Khối Tiểu học (7–10 tuổi)">Khối Tiểu học (7–10 tuổi)</option>
+                    <option value="Khối Trung học (11–15 tuổi)">Khối Trung học (11–15 tuổi)</option>
+                  </select>
                 </div>
 
                 {/* Lựa chọn cơ sở */}
