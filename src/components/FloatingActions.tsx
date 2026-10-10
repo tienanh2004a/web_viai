@@ -23,10 +23,10 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ onOpenTrialMod
       {/* Free Trial Pill CTA */}
       <button
         onClick={onOpenTrialModal}
-        className="pointer-events-auto group inline-flex h-11 items-center gap-2 rounded-full bg-orange-600 hover:bg-orange-700 pl-4 pr-5 text-white shadow-lg hover:scale-105 active:scale-95 transition-all duration-200"
+        className="pointer-events-auto group inline-flex h-11 items-center gap-2 rounded-full bg-[#c2410c] hover:bg-[#9a3412] pl-4 pr-5 text-white shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
       >
         <Sparkles className="h-4 w-4 text-amber-200" />
-        <span className="text-xs sm:text-sm font-semibold">Học thử miễn phí</span>
+        <span className="text-xs sm:text-sm font-bold">Học thử miễn phí</span>
         <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
       </button>
     </div>

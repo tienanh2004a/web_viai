@@ -439,21 +439,21 @@ export const RobotCanvas3D: React.FC = () => {
 
       {/* Speech Bubble "Hi!" */}
       {showHi && (
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 z-30 pointer-events-none animate-bounce">
-          <div className="relative bg-[#ffffff] text-[#000000] px-5 py-2.5 rounded-2xl shadow-2xl border-2 border-orange-500 flex items-center gap-2">
-            <span className="font-heading font-black text-xl sm:text-2xl tracking-wider text-orange-600">
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 z-30 pointer-events-none transition-all duration-300 ease-out">
+          <div className="relative bg-[#ffffff] text-[#111827] px-5 py-2.5 rounded-2xl shadow-xl border-2 border-[#c2410c] flex items-center gap-2">
+            <span className="font-heading font-black text-xl sm:text-2xl tracking-wider text-[#c2410c]">
               Hi! 👋
             </span>
-            <span className="text-xs sm:text-sm font-bold text-gray-800">
+            <span className="text-xs sm:text-sm font-bold text-[#111827]">
               Chào bạn, tớ là VIAI Bot!
             </span>
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-orange-500" />
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-[#c2410c]" />
           </div>
         </div>
       )}
 
       {/* Click invitation hint */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 pointer-events-none text-[11px] font-mono text-[#555555] bg-white/90 px-3.5 py-1 rounded-full border border-black/5 shadow-xs">
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 pointer-events-none text-xs text-[#4b5563] bg-white/95 px-4 py-1.5 rounded-full border border-black/8 shadow-xs font-semibold">
         Ấn vào robot để chào 👋
       </div>
     </div>

@@ -60,26 +60,23 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewCo
   ];
 
   return (
-    <section id="khoa-hoc" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#e5e5e5]">
+    <section id="khoa-hoc" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#f5f5f7]">
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-xs md:text-sm uppercase tracking-widest font-semibold text-orange-600 mb-2">
-            LỘ TRÌNH ĐÀO TẠO
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-4">
-            Chương trình học <span className="text-orange-600">Robotics &amp; AI</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#111827] mb-4">
+            Chương trình đào tạo <span className="text-[#c2410c]">Robotics &amp; AI</span>
           </h2>
 
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#555555] leading-relaxed">
-            Từ nền tảng tư duy tiểu học đến luyện thi chuyên sâu đấu trường toàn quốc. Nhấp vào từng khoá học để xem chi tiết khung chương trình và học cụ.
+          <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#4b5563] leading-relaxed">
+            Lộ trình bài bản từ khám phá mầm non đến lập trình chuyên sâu và luyện thi đấu trường toàn quốc. Nhấp vào từng khoá học để xem chi tiết học phần và bộ học cụ.
           </p>
         </div>
 
         {/* 3D Tilt Cards for Courses */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {courses.map((course) => (
-            <TiltCard key={course.slug} glowColor={course.glow} className="flex flex-col h-full rounded-[32px] border border-black/5 bg-[#ffffff] group overflow-hidden shadow-none">
+            <TiltCard key={course.slug} glowColor={course.glow} className="flex flex-col h-full rounded-2xl border border-black/8 bg-white group overflow-hidden shadow-2xs hover:shadow-md transition-shadow">
               {/* Course Thumbnail Image (Clickable) */}
               <div
                 onClick={() => onViewCourseDetail(course.slug)}
@@ -90,22 +87,22 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewCo
                   alt={course.title}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-                {/* Badge Tag - Dayos Mint chip or clean white */}
-                <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] px-3 py-1 text-xs font-bold text-[#000000] shadow-none border border-black/5">
-                  <Sparkles className="h-3.5 w-3.5 text-orange-600" />
+                {/* Badge Tag */}
+                <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-bold text-[#111827] shadow-xs border border-black/5">
+                  <Sparkles className="h-3.5 w-3.5 text-[#c2410c]" />
                   {course.tag}
                 </span>
 
                 {/* Age & Format */}
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-semibold text-white">
-                  <span className="bg-[#000000] px-2.5 py-1 rounded-[6px] text-white">
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-semibold text-white">
+                  <span className="bg-black/85 backdrop-blur-xs px-2.5 py-1 rounded-md text-white">
                     {course.age}
                   </span>
-                  <span className="flex items-center gap-1 bg-black/70 backdrop-blur-xs px-2.5 py-1 rounded-[6px] text-white">
+                  <span className="flex items-center gap-1 bg-black/85 backdrop-blur-xs px-2.5 py-1 rounded-md text-white">
                     {course.format.includes('Online') ? (
-                      <Monitor className="h-3 w-3 text-cyan-300" />
+                      <Monitor className="h-3 w-3 text-sky-300" />
                     ) : (
                       <MapPin className="h-3 w-3 text-orange-300" />
                     )}
@@ -118,19 +115,19 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewCo
               <div className="p-6 sm:p-7 flex-1 flex flex-col">
                 <h3
                   onClick={() => onViewCourseDetail(course.slug)}
-                  className="text-xl sm:text-2xl font-bold text-neutral-900 tracking-tight mb-3 group-hover:text-orange-600 transition-colors cursor-pointer"
+                  className="text-xl sm:text-2xl font-bold text-[#111827] tracking-tight mb-3 group-hover:text-[#c2410c] transition-colors cursor-pointer"
                 >
                   {course.title}
                 </h3>
 
-                <p className="text-sm text-[#444444] mb-6 leading-relaxed">
+                <p className="text-sm text-[#4b5563] mb-6 leading-relaxed">
                   {course.desc}
                 </p>
 
                 {/* Feature Bullets */}
                 <div className="space-y-2.5 mb-8 flex-1">
                   {course.features.map((feat, fIdx) => (
-                    <div key={fIdx} className="flex items-start gap-2 text-xs sm:text-sm text-[#333333] leading-relaxed">
+                    <div key={fIdx} className="flex items-start gap-2 text-sm text-[#374151] leading-relaxed">
                       <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </div>
@@ -141,7 +138,7 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewCo
                 <div className="space-y-2.5 mt-auto pt-2">
                   <button
                     onClick={() => onViewCourseDetail(course.slug)}
-                    className="w-full flex items-center justify-center gap-2 rounded-[8px] bg-[#f3f3f3] hover:bg-neutral-200 p-3 text-xs sm:text-sm font-semibold text-[#000000] transition-all"
+                    className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#f5f5f7] hover:bg-neutral-200 p-3.5 text-sm font-semibold text-[#111827] transition-all cursor-pointer"
                   >
                     <BookOpen className="h-4 w-4 text-neutral-600" />
                     <span>Xem chi tiết đề cương &amp; học cụ</span>
@@ -150,9 +147,9 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewCo
 
                   <button
                     onClick={() => onOpenTrialModal(course.title)}
-                    className="w-full flex items-center justify-center gap-2 rounded-[8px] bg-[#000000] hover:bg-[#222222] p-3 text-xs sm:text-sm font-semibold text-white active:scale-98 transition-all"
+                    className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#c2410c] hover:bg-[#9a3412] p-3.5 text-sm font-bold text-white active:scale-98 transition-all cursor-pointer shadow-xs"
                   >
-                    <Sparkles className="h-3.5 w-3.5 text-amber-300" />
+                    <Sparkles className="h-4 w-4 text-amber-200" />
                     <span>Đặt buổi học thử 1-1 miễn phí</span>
                   </button>
                 </div>

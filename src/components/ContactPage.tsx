@@ -189,11 +189,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({
           <div className="max-w-2xl mx-auto px-4 sm:px-6 relative z-10">
             
             <div className="text-center mb-10">
-              <span className="inline-block text-xs font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 border border-orange-200 px-3.5 py-1 rounded-full mb-3">
-                Đặt buổi học thử 1-1
-              </span>
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-neutral-900 mb-3">
-                Để lại thông tin, <span className="text-orange-600">chúng tôi gọi lại</span>
+                Để lại thông tin, <span className="text-orange-600">chúng tôi sẽ liên hệ lại</span>
               </h2>
               <p className="text-sm text-neutral-600 max-w-lg mx-auto leading-relaxed">
                 Phản hồi trong vòng 30 phút (hỗ trợ tư vấn chu đáo mọi ngày trong tuần)
@@ -305,7 +302,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       <span>ĐẶT BUỔI HỌC THỬ 1-1 MIỄN PHÍ</span>
                       <ArrowRight className="h-4 w-4" />
                     </button>
-                    <p className="text-[11px] text-neutral-500 text-center mt-2.5 flex items-center justify-center gap-1">
+                    <p className="text-xs text-neutral-500 text-center mt-2.5 flex items-center justify-center gap-1">
                       <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
                       <span>Thông tin được bảo mật 100%. Trải nghiệm hoàn toàn miễn phí.</span>
                     </p>

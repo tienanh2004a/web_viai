@@ -112,16 +112,15 @@ export const FaqSection: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#e5e5e5] border-b border-black/5">
+    <section id="faq" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#f5f5f7] border-b border-black/8">
       <div className="relative mx-auto max-w-4xl">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-black text-neutral-900 leading-[1.3] sm:leading-[1.35] tracking-tight mb-4 uppercase">
-            BỐ MẸ THƯỜNG HỎI GÌ
-            <span className="block mt-2 sm:mt-3 text-orange-600">VỀ VIAI ACADEMY?</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#111827] leading-tight tracking-tight mb-4 uppercase">
+            Bố mẹ thường hỏi gì <span className="block mt-2 text-[#c2410c]">về VIAI Academy?</span>
           </h2>
 
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-neutral-600 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#4b5563] leading-relaxed">
             Tổng hợp câu trả lời chi tiết và minh bạch nhất cho các câu hỏi phổ biến của phụ huynh.
           </p>
         </div>
@@ -133,20 +132,20 @@ export const FaqSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="overflow-hidden rounded-[24px] border border-black/5 bg-[#ffffff] shadow-none transition-all duration-300"
+                className="overflow-hidden rounded-2xl border border-black/8 bg-white shadow-2xs transition-all duration-200"
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="flex w-full items-center justify-between gap-4 p-6 text-left"
+                  className="flex w-full items-center justify-between gap-4 p-6 text-left cursor-pointer"
                 >
-                  <span className="font-bold text-[#000000] text-base sm:text-lg">
+                  <h3 className="font-bold text-[#111827] text-base sm:text-lg">
                     {faq.q}
-                  </span>
+                  </h3>
                   <div
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-300 ${
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-200 ${
                       isOpen
-                        ? 'rotate-180 bg-[#000000] text-white'
-                        : 'bg-[#f3f3f3] text-[#000000]'
+                        ? 'rotate-180 bg-[#111827] text-white'
+                        : 'bg-[#f5f5f7] text-[#111827]'
                     }`}
                   >
                     <ChevronDown className="h-4 w-4" />
@@ -154,7 +153,7 @@ export const FaqSection: React.FC = () => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 border-t border-neutral-100 animate-fadeIn text-[#444444] text-sm">
+                  <div className="px-6 pb-6 pt-1 border-t border-black/5 animate-fadeIn text-[#4b5563] text-sm">
                     {faq.a}
                   </div>
                 )}
@@ -164,15 +163,15 @@ export const FaqSection: React.FC = () => {
         </div>
 
         {/* Fast Zalo Contact Box */}
-        <div className="rounded-[24px] border border-black/5 bg-[#ffffff] p-8 sm:p-10 text-center shadow-none">
-          <p className="text-base text-[#000000] font-semibold mb-5">
+        <div className="rounded-2xl border border-black/8 bg-white p-8 sm:p-10 text-center shadow-2xs">
+          <p className="text-base text-[#111827] font-bold mb-5">
             Ba mẹ vẫn còn câu hỏi khác cần được tư vấn chi tiết cho con?
           </p>
           <a
             href="https://zalo.me/0837312860"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-[8px] bg-[#000000] hover:bg-[#222222] px-7 py-3.5 text-sm font-semibold text-white transition-all"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#111827] hover:bg-[#1f2937] px-7 py-3.5 text-sm font-bold text-white transition-all shadow-xs"
           >
             <MessageCircle className="h-4 w-4" />
             <span>Nhắn Zalo Thầy Cô (0837.312.860) — Phản hồi trong 3 phút</span>

@@ -27,17 +27,17 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
   }, [courseSlug]);
 
   const glowShadow = {
-    orange: 'text-orange-700 border-orange-200 bg-orange-50',
-    purple: 'text-purple-700 border-purple-200 bg-purple-50',
-    cyan: 'text-sky-700 border-sky-200 bg-sky-50',
+    orange: 'text-[#c2410c] border-orange-200 bg-orange-50',
+    purple: 'text-stone-800 border-stone-200 bg-stone-50',
+    cyan: 'text-sky-800 border-sky-200 bg-sky-50',
   }[course.glowColor];
 
   const allSlugs = Object.keys(coursesData);
 
   return (
-    <div className="min-h-screen bg-[#e5e5e5] text-[#000000] flex flex-col font-sans">
+    <div className="min-h-screen bg-[#f5f5f7] text-[#111827] flex flex-col font-sans">
       {/* Top Breadcrumb & Return Bar */}
-      <nav aria-label="Breadcrumb" className="sticky top-0 z-40 bg-[#e5e5e5]/90 backdrop-blur-md border-b border-black/5 py-3.5 px-4 sm:px-6 lg:px-8">
+      <nav aria-label="Breadcrumb" className="sticky top-0 z-40 bg-[#f5f5f7]/95 backdrop-blur-md border-b border-black/8 py-3.5 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <button
@@ -110,33 +110,33 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
               {/* Specs Pills */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
                 <div className="bg-white border border-gray-200/90 rounded-2xl p-3 shadow-xs">
-                  <span className="text-[11px] font-mono text-zinc-400 block mb-0.5 uppercase tracking-wide">ĐỘ TUỔI</span>
-                  <span className="text-xs sm:text-sm font-bold text-[#0c0a08] flex items-center gap-1">
-                    <Users className="h-3.5 w-3.5 text-orange-600 shrink-0" />
+                  <span className="text-xs font-bold text-zinc-500 block mb-0.5 uppercase tracking-wide">ĐỘ TUỔI</span>
+                  <span className="text-sm font-bold text-[#0c0a08] flex items-center gap-1">
+                    <Users className="h-3.5 w-3.5 text-[#c2410c] shrink-0" />
                     <span>{course.age.split(' ')[0]} {course.age.split(' ')[1]}</span>
                   </span>
                 </div>
 
                 <div className="bg-white border border-gray-200/90 rounded-2xl p-3 shadow-xs">
-                  <span className="text-[11px] font-mono text-zinc-400 block mb-0.5 uppercase tracking-wide">THỜI LƯỢNG</span>
-                  <span className="text-xs sm:text-sm font-bold text-[#0c0a08] flex items-center gap-1">
-                    <Clock className="h-3.5 w-3.5 text-orange-600 shrink-0" />
+                  <span className="text-xs font-bold text-zinc-500 block mb-0.5 uppercase tracking-wide">THỜI LƯỢNG</span>
+                  <span className="text-sm font-bold text-[#0c0a08] flex items-center gap-1">
+                    <Clock className="h-3.5 w-3.5 text-[#c2410c] shrink-0" />
                     <span>{course.duration.split(' ')[0]} {course.duration.split(' ')[1]}</span>
                   </span>
                 </div>
 
                 <div className="bg-white border border-gray-200/90 rounded-2xl p-3 shadow-xs">
-                  <span className="text-[11px] font-mono text-zinc-400 block mb-0.5 uppercase tracking-wide">SĨ SỐ LỚP</span>
-                  <span className="text-xs sm:text-sm font-bold text-[#0c0a08] flex items-center gap-1">
-                    <Award className="h-3.5 w-3.5 text-orange-600 shrink-0" />
+                  <span className="text-xs font-bold text-zinc-500 block mb-0.5 uppercase tracking-wide">SĨ SỐ LỚP</span>
+                  <span className="text-sm font-bold text-[#0c0a08] flex items-center gap-1">
+                    <Award className="h-3.5 w-3.5 text-[#c2410c] shrink-0" />
                     <span>≤ 12 HV/lớp</span>
                   </span>
                 </div>
 
                 <div className="bg-white border border-gray-200/90 rounded-2xl p-3 shadow-xs">
-                  <span className="text-[11px] font-mono text-zinc-400 block mb-0.5 uppercase tracking-wide">HÌNH THỨC</span>
-                  <span className="text-xs sm:text-sm font-bold text-[#0c0a08] flex items-center gap-1">
-                    <MapPin className="h-3.5 w-3.5 text-orange-600 shrink-0" />
+                  <span className="text-xs font-bold text-zinc-500 block mb-0.5 uppercase tracking-wide">HÌNH THỨC</span>
+                  <span className="text-sm font-bold text-[#0c0a08] flex items-center gap-1">
+                    <MapPin className="h-3.5 w-3.5 text-[#c2410c] shrink-0" />
                     <span className="truncate">{course.format.split(' ')[0]}</span>
                   </span>
                 </div>
@@ -292,7 +292,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                     </p>
 
                     <div className="mt-auto pt-4 border-t border-gray-100 space-y-2">
-                      <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block mb-1">KẾT QUẢ ĐẠT ĐƯỢC:</span>
+                      <span className="text-xs font-bold text-zinc-500 uppercase tracking-wider block mb-1">KẾT QUẢ ĐẠT ĐƯỢC:</span>
                       {mod.outcomes.map((out, oIdx) => (
                         <div key={oIdx} className="flex items-start gap-2 text-xs text-zinc-700">
                           <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -508,9 +508,9 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[11px] font-bold text-zinc-500">{other.category.split(' ')[0]}</span>
+                    <span className="text-xs font-bold text-zinc-500">{other.category.split(' ')[0]}</span>
                     {isCurrent ? (
-                      <span className="text-[10px] bg-orange-600 text-white font-bold px-2 py-0.5 rounded-full">Đang xem</span>
+                      <span className="text-xs bg-[#c2410c] text-white font-bold px-2.5 py-0.5 rounded-full">Đang xem</span>
                     ) : (
                       <ChevronRight className="h-4 w-4 text-zinc-400" />
                     )}

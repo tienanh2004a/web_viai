@@ -87,7 +87,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#e5e5e5] text-[#000000] flex flex-col font-sans selection:bg-black selection:text-white">
+    <div className="min-h-screen bg-[#f5f5f7] text-[#111827] flex flex-col font-sans selection:bg-[#c2410c] selection:text-white">
       {/* View 1: Course Detail Page */}
       {currentView === 'course-detail' ? (
         <CourseDetailPage

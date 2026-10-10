@@ -34,7 +34,7 @@ export const ContactSection: React.FC = () => {
       address: 'Số 158 Đường Chu Văn An, Phường An Tảo, TP. Hưng Yên',
       area: 'Chu Văn An • An Tảo',
       phone: '0344533898',
-      feature: 'Trung tâm nghiên cứu STEM & AI, phòng luyện thi RoboSim miền Bắc',
+      feature: 'Trung tâm nghiên cứu STEM & AI, phòng luyện thi Robocon miền Bắc',
       mapUrl: 'https://maps.google.com/?q=Số+158+Chu+Văn+An,+Phường+An+Tảo,+Hưng+Yên',
     },
     {
@@ -49,36 +49,36 @@ export const ContactSection: React.FC = () => {
   ];
 
   return (
-    <section id="lien-he" className="relative bg-white border-t border-neutral-200/80">
+    <section id="lien-he" className="relative bg-white border-t border-black/8">
       
-      {/* 1. THÔNG TIN NHANH — Chuẩn phong cách Sata Robo tối giản */}
-      <div className="py-14 sm:py-16 border-b border-neutral-200/70">
+      {/* 1. THÔNG TIN LIÊN HỆ TRỰC TIẾP — Side-by-side layout, không dùng icon stack rập khuôn */}
+      <div className="py-14 sm:py-16 border-b border-black/8">
         <div className="container max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           
           <div className="text-center mb-10 sm:mb-12">
-            <p className="text-xs md:text-sm uppercase tracking-widest font-semibold text-orange-600 mb-2">
-              THÔNG TIN NHANH
-            </p>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900">
-              Cách liên hệ VIAI Academy
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#111827]">
+              Liên hệ trực tiếp với <span className="text-[#c2410c]">VIAI Academy</span>
             </h2>
+            <p className="text-base text-[#4b5563] mt-2">
+              Đội ngũ thầy cô luôn sẵn sàng tư vấn chi tiết lộ trình học phù hợp nhất cho con
+            </p>
           </div>
 
-          {/* 4 Thẻ thông tin nhanh */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* 4 Thẻ thông tin nhanh — Side-by-side icon layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             
             {/* Thẻ 1: Hotline */}
             <a
               href="tel:0344533898"
-              className="group bg-white p-6 rounded-2xl border border-neutral-200 hover:border-orange-300 hover:shadow-md transition-all h-full block cursor-pointer"
+              className="group bg-[#f5f5f7] p-5 sm:p-6 rounded-2xl border border-black/6 hover:border-[#c2410c]/40 hover:bg-white hover:shadow-sm transition-all h-full block cursor-pointer"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-orange-50 text-orange-500 mb-4 group-hover:scale-105 transition-transform">
-                <Phone className="w-6 h-6" />
+              <div className="flex items-center gap-3 mb-2">
+                <Phone className="w-5 h-5 text-[#c2410c] shrink-0" />
+                <span className="text-xs uppercase tracking-wider text-[#4b5563] font-bold">
+                  Hotline tư vấn
+                </span>
               </div>
-              <p className="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-1">
-                Hotline
-              </p>
-              <p className="font-semibold text-neutral-900 text-base group-hover:text-orange-600 transition-colors">
+              <p className="font-extrabold text-[#111827] text-lg group-hover:text-[#c2410c] transition-colors pl-8">
                 0344533898
               </p>
             </a>
@@ -86,41 +86,41 @@ export const ContactSection: React.FC = () => {
             {/* Thẻ 2: Email */}
             <a
               href="mailto:contact@viai.edu.vn"
-              className="group bg-white p-6 rounded-2xl border border-neutral-200 hover:border-orange-300 hover:shadow-md transition-all h-full block cursor-pointer"
+              className="group bg-[#f5f5f7] p-5 sm:p-6 rounded-2xl border border-black/6 hover:border-[#c2410c]/40 hover:bg-white hover:shadow-sm transition-all h-full block cursor-pointer"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-orange-50 text-orange-500 mb-4 group-hover:scale-105 transition-transform">
-                <Mail className="w-6 h-6" />
+              <div className="flex items-center gap-3 mb-2">
+                <Mail className="w-5 h-5 text-[#c2410c] shrink-0" />
+                <span className="text-xs uppercase tracking-wider text-[#4b5563] font-bold">
+                  Email chính thức
+                </span>
               </div>
-              <p className="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-1">
-                Email
-              </p>
-              <p className="font-semibold text-neutral-900 text-base break-all group-hover:text-orange-600 transition-colors">
+              <p className="font-bold text-[#111827] text-sm break-all group-hover:text-[#c2410c] transition-colors pl-8">
                 contact@viai.edu.vn
               </p>
             </a>
 
             {/* Thẻ 3: Địa chỉ các cơ sở */}
-            <div className="bg-white p-6 rounded-2xl border border-neutral-200 hover:border-orange-300 hover:shadow-md transition-all h-full">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-orange-50 text-orange-500 mb-4">
-                <MapPin className="w-6 h-6" />
+            <div className="bg-[#f5f5f7] p-5 sm:p-6 rounded-2xl border border-black/6 h-full">
+              <div className="flex items-center gap-3 mb-2">
+                <MapPin className="w-5 h-5 text-[#c2410c] shrink-0" />
+                <span className="text-xs uppercase tracking-wider text-[#4b5563] font-bold">
+                  Hệ thống cơ sở
+                </span>
               </div>
-              <p className="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-1">
-                Địa chỉ
-              </p>
-              <p className="font-semibold text-neutral-900 text-sm leading-snug">
+              <p className="font-bold text-[#111827] text-sm pl-8">
                 Hải Phòng • Hưng Yên • Ninh Bình
               </p>
             </div>
 
             {/* Thẻ 4: Tốc độ phản hồi */}
-            <div className="bg-white p-6 rounded-2xl border border-neutral-200 hover:border-orange-300 hover:shadow-md transition-all h-full">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-orange-50 text-orange-500 mb-4">
-                <Clock className="w-6 h-6" />
+            <div className="bg-[#f5f5f7] p-5 sm:p-6 rounded-2xl border border-black/6 h-full">
+              <div className="flex items-center gap-3 mb-2">
+                <Clock className="w-5 h-5 text-[#c2410c] shrink-0" />
+                <span className="text-xs uppercase tracking-wider text-[#4b5563] font-bold">
+                  Tốc độ phản hồi
+                </span>
               </div>
-              <p className="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-1">
-                Tốc độ phản hồi
-              </p>
-              <p className="font-semibold text-neutral-900 text-sm leading-snug">
+              <p className="font-bold text-[#111827] text-sm pl-8">
                 Trong vòng 30 phút
               </p>
             </div>
@@ -131,34 +131,31 @@ export const ContactSection: React.FC = () => {
       </div>
 
       {/* 2. FORM ĐẶT BUỔI HỌC THỬ 1-1 MIỄN PHÍ */}
-      <div id="dang-ky" className="relative overflow-hidden bg-neutral-50/70 py-16 sm:py-20 border-b border-neutral-200/70">
+      <div id="dang-ky" className="relative overflow-hidden bg-[#fafaf9] py-16 sm:py-20 border-b border-black/8">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 relative z-10">
           
           <div className="text-center mb-10">
-            <span className="inline-block text-xs font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 border border-orange-200 px-3.5 py-1 rounded-full mb-3">
-              Đặt buổi học thử 1-1
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-neutral-900 mb-3">
-              Để lại thông tin, <span className="text-orange-600">chúng tôi gọi lại</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#111827] mb-3">
+              Để lại thông tin, <span className="text-[#c2410c]">chúng tôi sẽ liên hệ lại</span>
             </h2>
-            <p className="text-sm text-neutral-600 max-w-lg mx-auto leading-relaxed">
-              Phản hồi trong vòng 30 phút (hỗ trợ tư vấn chu đáo mọi ngày trong tuần)
+            <p className="text-base text-[#4b5563] max-w-lg mx-auto leading-relaxed">
+              Thầy cô phản hồi trong vòng 30 phút và tư vấn buổi học thử 1-1 miễn phí cho bé
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 sm:p-9 shadow-lg shadow-orange-950/5 border border-neutral-200">
+          <div className="rounded-3xl bg-white p-6 sm:p-9 shadow-md border border-black/8">
             {submitted ? (
               <div className="py-8 px-4 text-center space-y-3">
                 <CheckCircle2 className="h-12 w-12 text-emerald-600 mx-auto" />
-                <h3 className="text-xl font-bold text-neutral-900">
+                <h3 className="text-xl font-bold text-[#111827]">
                   Đăng ký học thử thành công!
                 </h3>
-                <p className="text-sm text-neutral-600 max-w-md mx-auto leading-relaxed">
+                <p className="text-sm text-[#4b5563] max-w-md mx-auto leading-relaxed">
                   Cảm ơn <strong>{parentName}</strong>. Thầy cô VIAI Academy sẽ gọi điện tư vấn buổi học thử 1-1 tại cơ sở <strong>{branch}</strong> theo số <strong>{phone}</strong> trong ít phút tới.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-4 px-5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-medium text-xs transition-colors cursor-pointer"
+                  className="mt-4 px-5 py-2.5 rounded-xl bg-[#c2410c] hover:bg-[#9a3412] text-white font-medium text-sm transition-colors cursor-pointer"
                 >
                   Đăng ký cho bé khác
                 </button>
@@ -167,7 +164,7 @@ export const ContactSection: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Họ tên phụ huynh */}
                 <div>
-                  <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
+                  <label className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
                     Họ và tên phụ huynh <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -176,13 +173,13 @@ export const ContactSection: React.FC = () => {
                     placeholder="Ví dụ: Nguyễn Văn An"
                     value={parentName}
                     onChange={(e) => setParentName(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] placeholder:text-neutral-400 focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
                   />
                 </div>
 
                 {/* Số điện thoại */}
                 <div>
-                  <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
+                  <label className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
                     Số điện thoại liên hệ <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -191,53 +188,52 @@ export const ContactSection: React.FC = () => {
                     placeholder="Ví dụ: 0912 345 678"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] placeholder:text-neutral-400 focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
                   />
                 </div>
 
-                {/* Chọn cơ sở */}
+                {/* Lựa chọn cơ sở */}
                 <div>
-                  <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
-                    Chọn cơ sở học tập thuận tiện <span className="text-red-500">*</span>
+                  <label className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
+                    Chọn cơ sở thuận tiện cho bé
                   </label>
                   <select
                     value={branch}
                     onChange={(e) => setBranch(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-neutral-900 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all cursor-pointer"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
                   >
-                    <option value="Hải Phòng">Cơ sở 1: Hải Phòng (42 Lạch Tray, Quận Ngô Quyền)</option>
-                    <option value="Hưng Yên">Cơ sở 2: TP. Hưng Yên (158 Chu Văn An, Phường An Tảo)</option>
-                    <option value="Ninh Bình">Cơ sở 3: TP. Ninh Bình (86 Đinh Tiên Hoàng, Phường Đông Thành)</option>
-                    <option value="Online">Học Online 1-1 toàn quốc qua RoboSim</option>
+                    <option value="Hải Phòng">Cơ sở Hải Phòng (42 Lạch Tray, Q. Ngô Quyền)</option>
+                    <option value="Hưng Yên">Cơ sở Hưng Yên (158 Chu Văn An, TP. Hưng Yên)</option>
+                    <option value="Ninh Bình">Cơ sở Ninh Bình (86 Đinh Tiên Hoàng, TP. Ninh Bình)</option>
+                    <option value="Online Toàn Quốc">Học Trực Tuyến Toàn Quốc (Phòng Lab 3D)</option>
                   </select>
                 </div>
 
-                {/* Thông tin thêm */}
+                {/* Ghi chú thêm */}
                 <div>
-                  <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
-                    Thông tin về bé <span className="text-xs text-neutral-400 font-normal">(Tuổi, trường học — không bắt buộc)</span>
+                  <label className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
+                    Độ tuổi của con hoặc mong muốn riêng (không bắt buộc)
                   </label>
                   <input
                     type="text"
-                    placeholder="Ví dụ: Bé Nam 8 tuổi, trường Tiểu học Chu Văn An"
+                    placeholder="Ví dụ: Bé 8 tuổi, chưa từng học lập trình..."
                     value={extraInfo}
                     onChange={(e) => setExtraInfo(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] placeholder:text-neutral-400 focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
                   />
                 </div>
 
-                {/* Checkbox bảo mật */}
-                <div className="pt-1">
-                  <label className="flex items-start gap-2.5 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={agreed}
-                      onChange={(e) => setAgreed(e.target.checked)}
-                      className="mt-0.5 h-4 w-4 rounded text-orange-600 focus:ring-orange-500 border-neutral-300 cursor-pointer"
-                    />
-                    <span className="text-xs text-neutral-600 leading-relaxed">
-                      Tôi đồng ý với chính sách bảo mật thông tin và cho phép VIAI Academy liên hệ tư vấn lịch học thử cho con.
-                    </span>
+                {/* Đồng ý cam kết */}
+                <div className="flex items-center gap-2 pt-2">
+                  <input
+                    type="checkbox"
+                    id="agreed"
+                    checked={agreed}
+                    onChange={(e) => setAgreed(e.target.checked)}
+                    className="h-4 w-4 rounded border-neutral-300 text-[#c2410c] focus:ring-[#c2410c]"
+                  />
+                  <label htmlFor="agreed" className="text-xs sm:text-sm text-[#4b5563] cursor-pointer">
+                    Tôi đồng ý nhận điện thoại tư vấn lịch học thử 1-1 miễn phí từ VIAI Academy
                   </label>
                 </div>
 
@@ -246,14 +242,14 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="submit"
                     disabled={!agreed}
-                    className="w-full py-3.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm tracking-wide uppercase transition-all shadow-sm active:scale-98 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#c2410c] hover:bg-[#9a3412] disabled:opacity-50 text-white font-bold py-3.5 px-6 transition-all shadow-xs cursor-pointer active:scale-98"
                   >
                     <span>ĐẶT BUỔI HỌC THỬ 1-1 MIỄN PHÍ</span>
                     <ArrowRight className="h-4 w-4" />
                   </button>
-                  <p className="text-[11px] text-neutral-500 text-center mt-2.5 flex items-center justify-center gap-1">
-                    <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
-                    <span>Thông tin được bảo mật 100%. Trải nghiệm hoàn toàn miễn phí.</span>
+                  <p className="text-xs text-[#4b5563] text-center mt-3 flex items-center justify-center gap-1.5">
+                    <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
+                    <span>Thông tin bảo mật 100%. Buổi trải nghiệm hoàn toàn miễn phí.</span>
                   </p>
                 </div>
               </form>
@@ -263,19 +259,16 @@ export const ContactSection: React.FC = () => {
         </div>
       </div>
 
-      {/* 3. 3 CƠ SỞ ĐANG HOẠT ĐỘNG */}
-      <div className="relative overflow-hidden bg-white py-16 sm:py-20 border-b border-neutral-200/70">
+      {/* 3. 3 CƠ SỞ ĐANG HOẠT ĐỘNG — Không dùng kicker label thừa */}
+      <div className="relative overflow-hidden bg-white py-16 sm:py-20 border-b border-black/8">
         <div className="container max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           
           <div className="text-center mb-12 sm:mb-14">
-            <p className="text-xs md:text-sm uppercase tracking-widest font-semibold text-orange-600 mb-2">
-              HỆ THỐNG CƠ SỞ
-            </p>
-            <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-3">
+            <h3 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#111827] mb-3">
               3 cơ sở đang hoạt động
             </h3>
-            <p className="text-sm md:text-base text-neutral-600 max-w-xl mx-auto leading-relaxed">
-              Tìm cơ sở gần nhà để trực tiếp trải nghiệm phòng Lab Robotics và sa bàn thi đấu chuẩn quốc tế
+            <p className="text-base text-[#4b5563] max-w-xl mx-auto leading-relaxed">
+              Trực tiếp trải nghiệm phòng Lab Robotics và sa bàn thi đấu tiêu chuẩn cùng thầy cô
             </p>
           </div>
 
@@ -283,38 +276,38 @@ export const ContactSection: React.FC = () => {
             {campuses.map((campus) => (
               <div
                 key={campus.id}
-                className="bg-white rounded-2xl border-2 border-orange-200 p-6 sm:p-7 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between"
+                className="bg-white rounded-2xl border border-black/8 p-6 sm:p-7 shadow-2xs hover:border-[#c2410c]/30 hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-start gap-3.5 mb-4">
-                    <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 bg-orange-100 text-orange-600">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-orange-50 text-[#c2410c]">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg text-neutral-900 leading-snug">
+                      <h4 className="font-bold text-lg text-[#111827] leading-snug">
                         {campus.name}
                       </h4>
-                      <p className="text-xs text-neutral-500 font-medium mt-0.5">
+                      <p className="text-xs text-[#4b5563] font-medium mt-0.5">
                         {campus.area}
                       </p>
                     </div>
                   </div>
 
-                  <p className="text-sm text-neutral-700 leading-relaxed mb-3">
+                  <p className="text-sm text-[#111827] leading-relaxed mb-3">
                     {campus.address}
                   </p>
 
-                  <p className="text-xs text-neutral-500 italic mb-4 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#4b5563] italic mb-4 leading-relaxed">
                     {campus.feature}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-neutral-100 flex items-center justify-between">
+                <div className="pt-4 border-t border-black/5 flex items-center justify-between">
                   <a
                     href={`tel:${campus.phone}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-700 hover:text-orange-600 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#111827] hover:text-[#c2410c] transition-colors"
                   >
-                    <Phone className="h-3.5 w-3.5 text-orange-600" />
+                    <Phone className="h-4 w-4 text-[#c2410c]" />
                     <span>{campus.phone}</span>
                   </a>
 
@@ -322,7 +315,7 @@ export const ContactSection: React.FC = () => {
                     href={campus.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-bold text-orange-600 hover:text-orange-700 transition-colors"
+                    className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#c2410c] hover:underline transition-colors"
                   >
                     <span>Chỉ đường →</span>
                   </a>
@@ -334,18 +327,15 @@ export const ContactSection: React.FC = () => {
         </div>
       </div>
 
-      {/* 4. KẾT NỐI — 4 Icon chính hãng hiển thị hoàn hảo 100% */}
-      <div className="py-14 sm:py-16 bg-neutral-50/50">
+      {/* 4. KẾT NỐI — Không dùng kicker label thừa */}
+      <div className="py-14 sm:py-16 bg-[#fafaf9]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
           <div>
-            <p className="text-xs md:text-sm uppercase tracking-widest font-semibold text-orange-600 mb-2">
-              KẾT NỐI
-            </p>
-            <h3 className="text-2xl sm:text-4xl font-bold tracking-tight text-neutral-900">
+            <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#111827]">
               Theo dõi VIAI Academy
             </h3>
-            <p className="text-sm text-neutral-600 mt-2">
-              Cập nhật các giải đấu Robotics, lịch học thử và video chế tạo mới nhất
+            <p className="text-base text-[#4b5563] mt-2">
+              Cập nhật các giải đấu Robotics, lịch học thử và video chế tạo mới nhất của các bé
             </p>
           </div>
 
@@ -357,16 +347,16 @@ export const ContactSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook VIAI Academy"
-              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-neutral-200 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
+              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-black/8 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
             >
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 shadow-xs bg-[#1877F2]/10">
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-105 shadow-2xs bg-[#1877F2]/10">
                 <img 
                   src="/icons/facebook.svg" 
                   alt="Facebook" 
-                  className="w-11 h-11 object-contain drop-shadow-xs" 
+                  className="w-10 h-10 object-contain" 
                 />
               </div>
-              <span className="text-sm font-bold text-neutral-800">Facebook</span>
+              <span className="text-sm font-bold text-[#111827]">Facebook</span>
             </a>
 
             {/* TikTok */}
@@ -375,16 +365,16 @@ export const ContactSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok VIAI Academy"
-              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-neutral-200 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
+              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-black/8 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
             >
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 shadow-xs bg-neutral-100">
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-105 shadow-2xs bg-neutral-100">
                 <img 
                   src="/icons/tiktok.svg" 
                   alt="TikTok" 
-                  className="w-11 h-11 object-contain drop-shadow-xs" 
+                  className="w-10 h-10 object-contain" 
                 />
               </div>
-              <span className="text-sm font-bold text-neutral-800">TikTok</span>
+              <span className="text-sm font-bold text-[#111827]">TikTok</span>
             </a>
 
             {/* YouTube */}
@@ -393,16 +383,16 @@ export const ContactSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube VIAI Academy"
-              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-neutral-200 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
+              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-black/8 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
             >
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 shadow-xs bg-[#FF0000]/10">
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-105 shadow-2xs bg-[#FF0000]/10">
                 <img 
                   src="/icons/youtube.svg" 
                   alt="YouTube" 
-                  className="w-11 h-11 object-contain drop-shadow-xs" 
+                  className="w-10 h-10 object-contain" 
                 />
               </div>
-              <span className="text-sm font-bold text-neutral-800">YouTube</span>
+              <span className="text-sm font-bold text-[#111827]">YouTube</span>
             </a>
 
             {/* Zalo */}
@@ -411,16 +401,16 @@ export const ContactSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Zalo VIAI Academy"
-              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-neutral-200 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
+              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-black/8 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
             >
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 shadow-xs bg-[#0068FF]/10">
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-105 shadow-2xs bg-[#0068FF]/10">
                 <img 
                   src="/icons/zalo.svg" 
                   alt="Zalo" 
-                  className="w-11 h-11 object-contain drop-shadow-xs" 
+                  className="w-10 h-10 object-contain" 
                 />
               </div>
-              <span className="text-sm font-bold text-neutral-800">Zalo</span>
+              <span className="text-sm font-bold text-[#111827]">Zalo</span>
             </a>
 
           </div>

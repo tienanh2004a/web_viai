@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, RotateCcw, Compass, Crosshair, Cpu, Award, Zap, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, Terminal } from 'lucide-react';
+import { Play, RotateCcw, Compass, Crosshair, Cpu, Award, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, Terminal } from 'lucide-react';
 
 interface Position {
   x: number;
@@ -136,13 +136,7 @@ export const RoboSimPlayground: React.FC = () => {
       <div className="relative mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-1.5 mb-4">
-            <Zap className="h-4 w-4 text-orange-600" />
-            <span className="text-[11px] font-bold uppercase tracking-wider text-orange-800">
-              ĐỘC QUYỀN TẠI VIAI ACADEMY
-            </span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0c0a08] mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#111827] mb-4">
             Trải Nghiệm Trực Quan Sa Bàn{' '}
             <span className="text-gradient-warm">RoboSim 3D</span>
           </h2>
@@ -190,7 +184,7 @@ export const RoboSimPlayground: React.FC = () => {
                     }`}
                   >
                     {/* Obstacle Icon */}
-                    {isObs && <div className="text-[10px] font-mono font-bold text-red-500">OBST</div>}
+                    {isObs && <div className="text-xs font-mono font-bold text-red-500">OBST</div>}
 
                     {/* Target Flag */}
                     {isTarget && (
@@ -243,13 +237,13 @@ export const RoboSimPlayground: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-3 font-mono text-xs">
                 <div className="bg-[#faf9f6] p-2.5 rounded-xl border border-gray-200/80">
-                  <span className="text-zinc-500 block text-[11px]">TỌA ĐỘ (X, Y)</span>
+                  <span className="text-zinc-500 block text-xs">TỌA ĐỘ (X, Y)</span>
                   <span className="text-zinc-900 font-bold text-sm">
                     [{robotPos.x}, {robotPos.y}]
                   </span>
                 </div>
                 <div className="bg-[#faf9f6] p-2.5 rounded-xl border border-gray-200/80">
-                  <span className="text-zinc-500 block text-[11px]">HƯỚNG ĐẦU ROBOT</span>
+                  <span className="text-zinc-500 block text-xs">HƯỚNG ĐẦU ROBOT</span>
                   <span className="text-orange-600 font-bold text-sm">{robotAngle}°</span>
                 </div>
               </div>
@@ -321,7 +315,7 @@ export const RoboSimPlayground: React.FC = () => {
             </div>
 
             {/* Terminal Live Logs */}
-            <div className="rounded-2xl border border-gray-200 bg-[#18181b] p-3 font-mono text-[11px] text-zinc-300 h-28 overflow-y-auto">
+            <div className="rounded-2xl border border-gray-200 bg-[#18181b] p-3 font-mono text-xs text-zinc-300 h-28 overflow-y-auto">
               <div className="flex items-center gap-1.5 text-zinc-400 border-b border-zinc-800 pb-1 mb-1.5">
                 <Terminal className="h-3 w-3 text-orange-400" />
                 <span>ROBOSIM LIVE CONSOLE</span>

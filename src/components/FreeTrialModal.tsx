@@ -69,7 +69,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
         {submitted ? (
           /* Success Screen */
           <div className="text-center py-6">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 mb-4 animate-bounce">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 mb-4 transition-transform duration-300 scale-105">
               <CheckCircle2 className="h-8 w-8" />
             </div>
 
@@ -103,7 +103,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
 
             <button
               onClick={handleReset}
-              className="w-full py-3.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm shadow-xs transition-all"
+              className="w-full py-3.5 rounded-xl bg-[#c2410c] hover:bg-[#9a3412] text-white font-bold text-sm shadow-xs transition-all cursor-pointer"
             >
               Hoàn tất &amp; Đóng
             </button>
@@ -217,7 +217,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                 <span>Xác Nhận Đặt Lịch Học Thử 0 Đồng</span>
               </button>
 
-              <p className="text-[11px] text-center text-zinc-500">
+              <p className="text-xs text-center text-zinc-500 font-medium">
                 🔒 Cam kết bảo mật thông tin 100%. Trung tâm chỉ liên hệ để xếp lịch học thử.
               </p>
             </form>

@@ -66,19 +66,12 @@ export const Commitments3D: React.FC = () => {
       <div className="relative mx-auto max-w-7xl">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-1.5 mb-4">
-            <ShieldCheck className="h-4 w-4 text-orange-600" />
-            <span className="text-[11px] font-bold uppercase tracking-wider text-orange-800">
-              QUYỀN LỢI CỦA PHỤ HUYNH
-            </span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c0a08] tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight mb-4">
             5 Cam Kết Vàng Với{' '}
             <span className="text-gradient-warm">Phụ Huynh &amp; Học Viên</span>
           </h2>
 
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-zinc-600">
+          <p className="max-w-2xl mx-auto text-base sm:text-lg text-slate-600">
             Trải nghiệm thẻ 3D tương tác góc nghiêng. Rõ ràng, minh bạch bằng văn bản — đặt sự tiến bộ của con lên hàng đầu.
           </p>
         </div>
@@ -94,7 +87,7 @@ export const Commitments3D: React.FC = () => {
                     {item.step}
                   </span>
                   <div className="flex items-center gap-2">
-                    <span className="text-[11px] font-semibold text-orange-700 bg-orange-50 border border-orange-200/80 px-2.5 py-0.5 rounded-full">
+                    <span className="text-xs font-semibold text-orange-700 bg-orange-50 border border-orange-200/80 px-2.5 py-0.5 rounded-full">
                       {item.badge}
                     </span>
                     <div className="p-2 rounded-xl bg-orange-50 text-orange-600 border border-orange-100">
@@ -103,7 +96,7 @@ export const Commitments3D: React.FC = () => {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-[#0c0a08] mb-4 leading-snug">
+                <h3 className="text-xl font-bold text-[#111827] mb-4 leading-snug">
                   {item.title}
                 </h3>
 
@@ -131,7 +124,7 @@ export const Commitments3D: React.FC = () => {
                     {item.step}
                   </span>
                   <div className="flex items-center gap-2">
-                    <span className="text-[11px] font-semibold text-orange-700 bg-orange-50 border border-orange-200/80 px-2.5 py-0.5 rounded-full">
+                    <span className="text-xs font-semibold text-orange-700 bg-orange-50 border border-orange-200/80 px-2.5 py-0.5 rounded-full">
                       {item.badge}
                     </span>
                     <div className="p-2 rounded-xl bg-orange-50 text-orange-600 border border-orange-100">

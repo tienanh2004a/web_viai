@@ -7,19 +7,12 @@ export const ArenaAndAwards: React.FC = () => {
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-4 py-1.5 mb-4">
-            <Trophy className="h-4 w-4 text-orange-600" />
-            <span className="text-[11px] font-bold uppercase tracking-wider text-orange-800">
-              ĐẤU TRƯỜNG &amp; THÀNH TỰU
-            </span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0c0a08] tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight mb-4">
             Đồng Hành Tổ Chức &amp;{' '}
-            <span className="text-gradient-warm">Chinh Phục Đấu Trường 2026</span>
+            <span className="text-[#c2410c]">Chinh Phục Đấu Trường 2026</span>
           </h2>
 
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-zinc-600">
+          <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#4b5563]">
             Học viên VIAI Academy mang chính sản phẩm do mình tự tay lắp ráp và lập trình ra sân đấu cấp thành phố — và mang vinh quang về cho gia đình.
           </p>
         </div>
@@ -52,23 +45,23 @@ export const ArenaAndAwards: React.FC = () => {
           </div>
 
           {/* Northern Region Final */}
-          <div className="relative overflow-hidden rounded-2xl border border-purple-200 bg-[#faf8ff] p-6 shadow-xs">
+          <div className="relative overflow-hidden rounded-2xl border border-stone-200 bg-[#fafaf9] p-6 shadow-xs">
             <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2 text-purple-700 font-mono text-xs font-bold uppercase tracking-wider">
-                <Trophy className="h-4 w-4 text-purple-600" />
+              <div className="flex items-center gap-2 text-[#c2410c] font-mono text-xs font-bold uppercase tracking-wider">
+                <Trophy className="h-4 w-4 text-[#c2410c]" />
                 <span>CHUNG KẾT KHU VỰC MIỀN BẮC</span>
               </div>
-              <span className="rounded-full bg-purple-100 border border-purple-200 px-3 py-0.5 text-xs font-bold text-purple-800">
-                Vé Vàng VIAI8
+              <span className="rounded-full bg-orange-100 border border-orange-200 px-3 py-0.5 text-xs font-bold text-orange-900">
+                Vé Vàng VIAI
               </span>
             </div>
 
             <div className="flex items-center gap-2 text-zinc-600 text-sm mb-1">
-              <MapPin className="h-4 w-4 text-purple-600" />
+              <MapPin className="h-4 w-4 text-[#c2410c]" />
               <span>Địa điểm: Khu vực miền Bắc</span>
             </div>
 
-            <div className="text-4xl font-black text-purple-700 my-2">
+            <div className="text-4xl font-black text-[#111827] my-2">
               13 / 09 / 2026
             </div>
             <p className="text-xs text-zinc-500">
@@ -89,15 +82,15 @@ export const ArenaAndAwards: React.FC = () => {
               />
             </div>
             <div className="p-4 bg-white border-t border-gray-100">
-              <span className="text-[11px] font-mono text-orange-600 font-bold block mb-1">THỰC CHIẾN SA BÀN</span>
-              <p className="text-sm font-bold text-[#0c0a08]">
+              <span className="text-xs text-[#c2410c] font-bold block mb-1">THỰC CHIẾN SA BÀN</span>
+              <p className="text-sm font-bold text-[#111827]">
                 Vào trận — Học viên điều khiển robot xử lý nhiệm vụ thực tế
               </p>
             </div>
           </div>
 
           {/* Card 2 */}
-          <div className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xs hover:border-purple-300 transition-all">
+          <div className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xs hover:border-[#c2410c]/30 transition-all">
             <div className="aspect-[4/3] overflow-hidden bg-gray-100">
               <img
                 src="/images/nhataitro.jpg"
@@ -106,8 +99,8 @@ export const ArenaAndAwards: React.FC = () => {
               />
             </div>
             <div className="p-4 bg-white border-t border-gray-100">
-              <span className="text-[11px] font-mono text-purple-600 font-bold block mb-1">ĐỒNG HÀNH &amp; TÀI TRỢ</span>
-              <p className="text-sm font-bold text-[#0c0a08]">
+              <span className="text-xs text-[#c2410c] font-bold block mb-1">ĐỒNG HÀNH &amp; TÀI TRỢ</span>
+              <p className="text-sm font-bold text-[#111827]">
                 Lễ trao giải Robotics Khu vực miền Bắc — Vinh danh học viên
               </p>
             </div>
@@ -123,8 +116,8 @@ export const ArenaAndAwards: React.FC = () => {
               />
             </div>
             <div className="p-4 bg-white border-t border-gray-100">
-              <span className="text-[11px] font-mono text-emerald-600 font-bold block mb-1">KẾT QUẢ ĐẠT ĐƯỢC</span>
-              <p className="text-sm font-bold text-[#0c0a08]">
+              <span className="text-xs text-emerald-700 font-bold block mb-1">KẾT QUẢ ĐẠT ĐƯỢC</span>
+              <p className="text-sm font-bold text-[#111827]">
                 Giải Ba Bảng B2 — Học viên tự hào nâng cúp và giấy chứng nhận
               </p>
             </div>
