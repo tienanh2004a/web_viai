@@ -186,10 +186,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
         {/* 3. FORM ĐẶT BUỔI HỌC THỬ 1-1 MIỄN PHÍ — Gọn gàng, khoảng cách chuẩn mực */}
         <section id="dang-ky" className="relative overflow-hidden bg-neutral-50/70 py-16 sm:py-20 border-b border-neutral-200/70">
-          <div className="max-w-2xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
             
             <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-neutral-900 mb-3">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-neutral-900 mb-3 whitespace-nowrap">
                 Để lại thông tin, <span className="text-orange-600">chúng tôi sẽ liên hệ lại</span>
               </h2>
               <p className="text-sm text-neutral-600 max-w-lg mx-auto leading-relaxed">
@@ -197,7 +197,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               </p>
             </div>
 
-            <div className="rounded-3xl bg-white p-6 sm:p-9 shadow-lg shadow-orange-950/5 border border-neutral-200">
+            <div className="max-w-2xl mx-auto rounded-3xl bg-white p-6 sm:p-9 shadow-lg shadow-orange-950/5 border border-neutral-200">
               {submitted ? (
                 <div className="py-8 px-4 text-center space-y-3">
                   <CheckCircle2 className="h-12 w-12 text-emerald-600 mx-auto" />

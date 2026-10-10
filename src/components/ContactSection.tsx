@@ -132,10 +132,10 @@ export const ContactSection: React.FC = () => {
 
       {/* 2. FORM ĐẶT BUỔI HỌC THỬ 1-1 MIỄN PHÍ */}
       <div id="dang-ky" className="relative overflow-hidden bg-[#fafaf9] py-16 sm:py-20 border-b border-black/8">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
           
           <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#111827] mb-3">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-[#111827] mb-3 whitespace-nowrap">
               Để lại thông tin, <span className="text-[#c2410c]">chúng tôi sẽ liên hệ lại</span>
             </h2>
             <p className="text-base text-[#4b5563] max-w-lg mx-auto leading-relaxed">
@@ -143,7 +143,7 @@ export const ContactSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 sm:p-9 shadow-md border border-black/8">
+          <div className="max-w-2xl mx-auto rounded-3xl bg-white p-6 sm:p-9 shadow-md border border-black/8">
             {submitted ? (
               <div className="py-8 px-4 text-center space-y-3">
                 <CheckCircle2 className="h-12 w-12 text-emerald-600 mx-auto" />
