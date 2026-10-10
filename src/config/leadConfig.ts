@@ -6,8 +6,7 @@
  * 2. Cách 2: Dán trực tiếp URL Web App Google Apps Script vào giá trị FALLBACK_WEBAPP_URL bên dưới.
  */
 
-// Dán link Web App của Google Apps Script vào đây (nếu không dùng biến môi trường Vercel)
-const FALLBACK_WEBAPP_URL = '';
+const FALLBACK_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbz3LV4HiAXAXV9jGFoCaYo29slFHIBam54LqfVxeh6rrvxWS9g6F0d9qtDSuVrxx1J1bg/exec';
 
 export const GOOGLE_SHEET_WEBAPP_URL: string =
   (import.meta.env.VITE_GOOGLE_SHEET_URL as string) || FALLBACK_WEBAPP_URL;
