@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, CheckCircle2, Sparkles, MapPin, Calendar, Phone, User, Bot } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { submitLeadToGoogleSheet } from '../services/leadService';
 
 interface FreeTrialModalProps {
   isOpen: boolean;
@@ -18,13 +19,25 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   const [branch, setBranch] = useState('Cơ sở Hải Phòng');
   const [grade, setGrade] = useState('Lớp 3 — 5');
   const [preferredDate, setPreferredDate] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!parentName || !phoneNumber) return;
+    if (!parentName || !phoneNumber || isSubmitting) return;
+
+    setIsSubmitting(true);
+    await submitLeadToGoogleSheet({
+      parentName,
+      phone: phoneNumber,
+      branch,
+      courseOrAge: `${defaultCourse} (${grade})`,
+      notes: preferredDate ? `Ngày học dự kiến: ${preferredDate}` : '',
+      source: 'Popup Học Thử 1-1',
+    });
+    setIsSubmitting(false);
 
     // Trigger colorful celebratory confetti blast
     confetti({
@@ -211,10 +224,11 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
               {/* Submit CTA */}
               <button
                 type="submit"
-                className="w-full mt-2 py-3.5 rounded-[8px] bg-[#000000] hover:bg-[#222222] font-semibold text-sm text-white active:scale-98 transition-all flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full mt-2 py-3.5 rounded-[8px] bg-[#111827] hover:bg-[#1f2937] disabled:opacity-50 font-semibold text-sm text-white active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Sparkles className="h-4 w-4 text-amber-300" />
-                <span>Xác Nhận Đặt Lịch Học Thử 0 Đồng</span>
+                <span>{isSubmitting ? 'ĐANG GỬI THÔNG TIN...' : 'Xác Nhận Đặt Lịch Học Thử 0 Đồng'}</span>
               </button>
 
               <p className="text-xs text-center text-zinc-500 font-medium">

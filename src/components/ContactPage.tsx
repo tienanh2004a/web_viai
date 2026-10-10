@@ -4,6 +4,7 @@ import {
   ShieldCheck, ArrowRight, ChevronRight
 } from 'lucide-react';
 import { Footer } from './Footer';
+import { submitLeadToGoogleSheet } from '../services/leadService';
 
 interface ContactPageProps {
   onBackToHome: () => void;
@@ -21,6 +22,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
   const [branch, setBranch] = useState('Hải Phòng');
   const [extraInfo, setExtraInfo] = useState('');
   const [agreed, setAgreed] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -31,9 +33,19 @@ export const ContactPage: React.FC<ContactPageProps> = ({
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!parentName || !phone) return;
+    if (!parentName || !phone || isSubmitting) return;
+
+    setIsSubmitting(true);
+    await submitLeadToGoogleSheet({
+      parentName,
+      phone,
+      branch,
+      notes: extraInfo,
+      source: 'Trang Liên Hệ Độc Lập',
+    });
+    setIsSubmitting(false);
     setSubmitted(true);
   };
 
@@ -296,10 +308,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   <div className="pt-2">
                     <button
                       type="submit"
-                      disabled={!agreed}
-                      className="w-full py-3.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm tracking-wide uppercase transition-all shadow-sm active:scale-98 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
+                      disabled={!agreed || isSubmitting}
+                      className="w-full py-3.5 rounded-xl bg-[#c2410c] hover:bg-[#9a3412] text-white font-bold text-sm tracking-wide uppercase transition-all shadow-sm active:scale-98 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
                     >
-                      <span>ĐẶT BUỔI HỌC THỬ 1-1 MIỄN PHÍ</span>
+                      <span>{isSubmitting ? 'ĐANG GỬI THÔNG TIN...' : 'ĐẶT BUỔI HỌC THỬ 1-1 MIỄN PHÍ'}</span>
                       <ArrowRight className="h-4 w-4" />
                     </button>
                     <p className="text-xs text-neutral-500 text-center mt-2.5 flex items-center justify-center gap-1">

@@ -3,6 +3,7 @@ import {
   Phone, Mail, MapPin, CheckCircle2, Clock, 
   ShieldCheck, ArrowRight
 } from 'lucide-react';
+import { submitLeadToGoogleSheet } from '../services/leadService';
 
 export const ContactSection: React.FC = () => {
   const [parentName, setParentName] = useState('');
@@ -10,11 +11,22 @@ export const ContactSection: React.FC = () => {
   const [branch, setBranch] = useState('Hải Phòng');
   const [extraInfo, setExtraInfo] = useState('');
   const [agreed, setAgreed] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!parentName || !phone) return;
+    if (!parentName || !phone || isSubmitting) return;
+
+    setIsSubmitting(true);
+    await submitLeadToGoogleSheet({
+      parentName,
+      phone,
+      branch,
+      notes: extraInfo,
+      source: 'Form Liên Hệ Cuối Trang',
+    });
+    setIsSubmitting(false);
     setSubmitted(true);
   };
 
@@ -241,10 +253,10 @@ export const ContactSection: React.FC = () => {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    disabled={!agreed}
+                    disabled={!agreed || isSubmitting}
                     className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#c2410c] hover:bg-[#9a3412] disabled:opacity-50 text-white font-bold py-3.5 px-6 transition-all shadow-xs cursor-pointer active:scale-98"
                   >
-                    <span>ĐẶT BUỔI HỌC THỬ 1-1 MIỄN PHÍ</span>
+                    <span>{isSubmitting ? 'ĐANG GỬI THÔNG TIN...' : 'ĐẶT BUỔI HỌC THỬ 1-1 MIỄN PHÍ'}</span>
                     <ArrowRight className="h-4 w-4" />
                   </button>
                   <p className="text-xs text-[#4b5563] text-center mt-3 flex items-center justify-center gap-1.5">
