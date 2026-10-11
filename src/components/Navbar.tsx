@@ -149,7 +149,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] bg-[#ffffff] border-b border-neutral-200 p-6 shadow-2xl transition-all max-h-[85vh] overflow-y-auto z-40">
+        <div className="lg:hidden fixed inset-x-0 top-[65px] bg-[#ffffff] border-b border-neutral-200 p-6 shadow-2xl transition-all max-h-[85vh] overflow-y-auto z-50">
           <div className="flex flex-col gap-3">
             <button
               onClick={() => {

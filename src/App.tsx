@@ -138,7 +138,7 @@ export const App: React.FC = () => {
           <Footer onSelectCourse={handleSelectCourse} onGoContact={handleGoContact} />
 
           {/* Floating Action Buttons */}
-          <FloatingActions onOpenTrialModal={() => handleOpenTrialModal()} />
+          <FloatingActions onOpenTrialModal={() => handleOpenTrialModal()} hide={isTrialModalOpen} />
         </>
       )}
 

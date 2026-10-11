@@ -19,9 +19,10 @@ export const Hero3D: React.FC<Hero3DProps> = ({ onOpenTrialModal }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left Column: Headline & Value Proposition */}
           <div className="lg:col-span-7 flex flex-col z-20">
-            {/* Main H1 Headline - Balanced size, clean 2-line structure */}
-            <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight text-[#111827] leading-[1.16] mb-6 uppercase">
-              LẬP TRÌNH ROBOT &amp; AI <span className="text-[#c2410c] block sm:inline">CÙNG CON TỪ SỚM</span>
+            {/* Main H1 Headline - Balanced size, clean 2-line structure with comfortable diacritic spacing */}
+            <h1 className="text-3xl sm:text-5xl lg:text-[50px] font-extrabold tracking-tight text-[#111827] leading-[1.3] sm:leading-[1.25] mb-6 uppercase">
+              LẬP TRÌNH ROBOT &amp; AI
+              <span className="text-[#c2410c] block mt-2 sm:mt-2.5">CÙNG CON TỪ SỚM</span>
             </h1>
 
             {/* Subtitle - 3 campuses: Hải Phòng, Hưng Yên, Ninh Bình & < 10 students */}
