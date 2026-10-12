@@ -7,15 +7,16 @@ Tài liệu này cung cấp đoạn mã Google Apps Script thông minh để:
 1. **Tự động phân trang tính (Tab riêng)** cho từng cơ sở theo từng tháng:
    - Ví dụ tháng này: `Hưng Yên Tháng 10`, `Hải Phòng Tháng 10`, `Ninh Bình Tháng 10`...
    - Sang tháng sau hệ thống sẽ tự động tạo tab mới: `Hưng Yên Tháng 11`, `Hải Phòng Tháng 11`...
-2. **Cấu trúc cột chuẩn xác theo yêu cầu**:
+2. **Cấu trúc cột chuẩn xác theo yêu cầu (9 Cột)**:
    - Cột A: **STT** (Tự động đếm 1, 2, 3...)
    - Cột B: **Ngày đăng ký** (Nằm ngay sau STT, sắp xếp theo thời gian gửi)
    - Cột C: **Tên phụ huynh**
    - Cột D: **Số điện thoại** (Giữ số 0 ở đầu)
    - Cột E: **Cơ sở**
    - Cột F: **Độ tuổi học viên**
-   - Cột G: **Ghi chú** (Ngày hẹn học thử / Lời nhắn)
-   - Cột H: **Tình trạng chăm sóc** (**Mặc định ĐỂ TRỐNG** khi mới gửi từ web; có sẵn menu thả xuống để nhân viên nhận khách chọn: *Đang chăm sóc*, *Đã hẹn lịch test 1-1*, *Đã nhập học*, *Hẹn gọi lại sau*...).
+   - Cột G: **Ngày học dự kiến** (Tách riêng khỏi Ghi chú, nằm bên phải Độ tuổi học viên)
+   - Cột H: **Ghi chú** (Khóa quan tâm / Lời nhắn)
+   - Cột I: **Tình trạng chăm sóc** (**Mặc định ĐỂ TRỐNG** khi mới gửi từ web; có sẵn menu thả xuống để nhân viên nhận khách chọn: *Đang chăm sóc*, *Đã hẹn lịch test 1-1*, *Đã nhập học*, *Hẹn gọi lại sau*...).
 
 ---
 
@@ -77,31 +78,34 @@ function doPost(e) {
     // 4. Định dạng thời gian đăng ký (GMT+7)
     var ngayDangKy = Utilities.formatDate(now, "GMT+7", "dd/MM/yyyy HH:mm:ss");
 
-    // 5. Chuẩn bị các trường dữ liệu theo đúng thứ tự yêu cầu
+    // 5. Chuẩn bị các trường dữ liệu theo đúng thứ tự 9 cột yêu cầu
     var tenPhuHuynh = data.parentName || "";
     var soDienThoai = "'" + (data.phone || "").toString().replace(/^'+/, ''); // Giữ nguyên số 0 đầu
     var doTuoiHocVien = data.courseOrAge || "";
+    var ngayHocDuKien = (data.preferredDate || data.trialDate || "").toString(); // Tách riêng ngày học dự kiến
     var ghiChu = data.notes || "";
     var tinhTrangChamSoc = ""; // ĐỂ TRỐNG mặc định như yêu cầu của bạn
 
-    // 6. Ghi dòng dữ liệu mới vào cuối trang tính
+    // 6. Ghi dòng dữ liệu mới vào cuối trang tính (9 Cột: A -> I)
     var targetRow = sheet.getLastRow() + 1;
-    sheet.getRange(targetRow, 1, 1, 8).setValues([[
+    sheet.getRange(targetRow, 1, 1, 9).setValues([[
       stt,
       ngayDangKy,
       tenPhuHuynh,
       soDienThoai,
       branchClean,
       doTuoiHocVien,
+      ngayHocDuKien,
       ghiChu,
       tinhTrangChamSoc
     ]]);
 
-    // Căn giữa STT, Ngày đăng ký, Số điện thoại, Cơ sở
+    // Căn giữa STT, Ngày đăng ký, Số điện thoại, Cơ sở, Ngày học dự kiến
     sheet.getRange(targetRow, 1).setHorizontalAlignment("center");
     sheet.getRange(targetRow, 2).setHorizontalAlignment("center");
     sheet.getRange(targetRow, 4).setHorizontalAlignment("center");
     sheet.getRange(targetRow, 5).setHorizontalAlignment("center");
+    sheet.getRange(targetRow, 7).setHorizontalAlignment("center");
 
     return ContentService.createTextOutput(JSON.stringify({
       status: "success",
@@ -121,15 +125,15 @@ function doPost(e) {
  * Hàm định dạng giao diện tiêu đề chuyên nghiệp và tạo menu thả xuống cho cột Tình trạng
  */
 function caiDatTieuDeTrangTinh(sheet, branchName, thang, nam) {
-  // Tiêu đề 8 cột đúng thứ tự bạn yêu cầu
+  // Tiêu đề 9 cột đúng chuẩn
   var headers = [
-    ["STT", "Ngày đăng ký", "Tên phụ huynh", "Số điện thoại", "Cơ sở", "Độ tuổi học viên", "Ghi chú", "Tình trạng chăm sóc"]
+    ["STT", "Ngày đăng ký", "Tên phụ huynh", "Số điện thoại", "Cơ sở", "Độ tuổi học viên", "Ngày học dự kiến", "Ghi chú", "Tình trạng chăm sóc"]
   ];
 
-  sheet.getRange(1, 1, 1, 8).setValues(headers);
+  sheet.getRange(1, 1, 1, 9).setValues(headers);
 
   // Định dạng hàng tiêu đề: Nền cam đậm, chữ trắng, in đậm, căn giữa
-  var headerRange = sheet.getRange("A1:H1");
+  var headerRange = sheet.getRange("A1:I1");
   headerRange.setBackground("#c2410c")
              .setFontColor("#ffffff")
              .setFontWeight("bold")
@@ -146,10 +150,11 @@ function caiDatTieuDeTrangTinh(sheet, branchName, thang, nam) {
   sheet.setColumnWidth(4, 130); // Số điện thoại
   sheet.setColumnWidth(5, 120); // Cơ sở
   sheet.setColumnWidth(6, 170); // Độ tuổi học viên
-  sheet.setColumnWidth(7, 240); // Ghi chú
-  sheet.setColumnWidth(8, 180); // Tình trạng chăm sóc
+  sheet.setColumnWidth(7, 150); // Ngày học dự kiến (MỚI)
+  sheet.setColumnWidth(8, 220); // Ghi chú
+  sheet.setColumnWidth(9, 180); // Tình trạng chăm sóc (Cột I)
 
-  // Tạo menu thả xuống (Dropdown) sẵn cho cột H (Tình trạng chăm sóc) từ dòng 2 đến dòng 1000
+  // Tạo menu thả xuống (Dropdown) sẵn cho cột I (Tình trạng chăm sóc) từ dòng 2 đến dòng 1000
   var rule = SpreadsheetApp.newDataValidation()
     .requireValueInList([
       "Đang chăm sóc", 
@@ -161,7 +166,7 @@ function caiDatTieuDeTrangTinh(sheet, branchName, thang, nam) {
     .setAllowInvalid(true)
     .build();
 
-  sheet.getRange("H2:H1000").setDataValidation(rule);
+  sheet.getRange("I2:I1000").setDataValidation(rule);
 }
 
 /**

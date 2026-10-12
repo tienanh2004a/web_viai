@@ -5,6 +5,7 @@ export interface LeadPayload {
   phone: string;
   branch?: string;
   courseOrAge?: string;
+  preferredDate?: string; // Ngày học dự kiến (tách riêng cột)
   notes?: string;
   source?: string;
   honeypot?: string; // Bẫy bot: nếu có giá trị -> chắc chắn là bot
@@ -59,6 +60,7 @@ export async function submitLeadToGoogleSheet(payload: LeadPayload): Promise<{ s
     phone: cleanPhone,
     branch: payload.branch || 'Hải Phòng',
     courseOrAge: payload.courseOrAge || 'Chưa chọn',
+    preferredDate: payload.preferredDate || '',
     notes: payload.notes || '',
     source: payload.source || 'Website VIAI Academy',
   };

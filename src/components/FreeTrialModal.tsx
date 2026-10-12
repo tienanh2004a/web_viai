@@ -9,6 +9,23 @@ interface FreeTrialModalProps {
   defaultCourse?: string;
 }
 
+const getTodayString = () => {
+  const d = new Date();
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
+const formatDisplayDateVN = (isoDateStr: string) => {
+  if (!isoDateStr) return '';
+  const parts = isoDateStr.split('-');
+  if (parts.length === 3) {
+    return `${parts[2]}/${parts[1]}/${parts[0]}`;
+  }
+  return isoDateStr;
+};
+
 export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   isOpen,
   onClose,
@@ -20,6 +37,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   const [selectedCourse, setSelectedCourse] = useState('Khối Tiểu học (Lớp 1 – 5)');
   const [branch, setBranch] = useState('Cơ sở Hải Phòng');
   const [preferredDate, setPreferredDate] = useState('');
+  const [dateError, setDateError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [botHoneypot, setBotHoneypot] = useState('');
@@ -29,6 +47,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
     if (isOpen) {
       setFormOpenedTime(Date.now());
       setBotHoneypot('');
+      setDateError('');
     }
     if (defaultCourse) {
       if (defaultCourse.includes('Mầm non')) {
@@ -54,6 +73,21 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
     }
   };
 
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setPreferredDate(val);
+    if (!val) {
+      setDateError('');
+      return;
+    }
+    const today = getTodayString();
+    if (val < today) {
+      setDateError('Chỉ có thể chọn hôm nay hoặc ngày trong tương lai.');
+    } else {
+      setDateError('');
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!parentName || isSubmitting) return;
@@ -71,22 +105,29 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
       setPhoneError(`Số điện thoại phải gồm đúng 10 số (hiện có ${phoneNumber.length} số)`);
       return;
     }
-    setPhoneError('');
+    // Kiểm tra ngày học dự kiến: Không cho phép chọn ngày quá khứ
+    if (preferredDate) {
+      const today = getTodayString();
+      if (preferredDate < today) {
+        setDateError('Chỉ có thể chọn hôm nay hoặc ngày trong tương lai.');
+        return;
+      }
+    }
+    setDateError('');
 
     setIsSubmitting(true);
     const extraNotes = [];
     if (defaultCourse && !defaultCourse.includes('Khối')) {
       extraNotes.push(`Khoá quan tâm: ${defaultCourse}`);
     }
-    if (preferredDate) {
-      extraNotes.push(`Ngày học dự kiến: ${preferredDate}`);
-    }
 
+    // Tách riêng Ngày học dự kiến, không ghép vào cột Ghi chú nữa
     await submitLeadToGoogleSheet({
       parentName,
       phone: phoneNumber,
       branch,
       courseOrAge: selectedCourse,
+      preferredDate: preferredDate ? formatDisplayDateVN(preferredDate) : '',
       notes: extraNotes.join(' | '),
       source: 'Popup Học Thử 1-1',
       honeypot: botHoneypot,
@@ -110,6 +151,8 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
     setParentName('');
     setPhoneNumber('');
     setPhoneError('');
+    setPreferredDate('');
+    setDateError('');
     onClose();
   };
 
@@ -366,10 +409,18 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                   id="modal-preferred-date"
                   name="preferredDate"
                   type="date"
+                  min={getTodayString()}
                   value={preferredDate}
-                  onChange={(e) => setPreferredDate(e.target.value)}
-                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors"
+                  onChange={handleDateChange}
+                  className={`w-full rounded-xl border ${
+                    dateError ? 'border-red-500 ring-1 ring-red-500 bg-red-50/20' : 'border-gray-200 bg-[#faf9f6]'
+                  } px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors`}
                 />
+                {dateError && (
+                  <p className="text-xs text-red-500 font-medium mt-1">
+                    {dateError}
+                  </p>
+                )}
               </div>
 
               {/* Submit CTA */}
