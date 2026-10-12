@@ -69,6 +69,14 @@ function doPost(e) {
     if (!sheet) {
       sheet = ss.insertSheet(sheetName);
       caiDatTieuDeTrangTinh(sheet, branchClean, thangHienTai, namHienTai);
+    } else {
+      // TỰ ĐỘNG NÂNG CẤP CHO TAB ĐÃ CÓ TỪ TRƯỚC (như "Hải Phòng Tháng 10"):
+      // Nếu cột 7 chưa có "Ngày học dự kiến" -> Tự động chèn thêm 1 cột vào trước Ghi chú!
+      var col7Header = (sheet.getRange(1, 7).getValue() || "").toString();
+      if (col7Header.indexOf("Ngày học") === -1 && sheet.getLastRow() >= 1) {
+        sheet.insertColumnBefore(7);
+        caiDatTieuDeTrangTinh(sheet, branchClean, thangHienTai, namHienTai);
+      }
     }
 
     // 3. Tính số thứ tự (STT) tự động
@@ -170,7 +178,25 @@ function caiDatTieuDeTrangTinh(sheet, branchName, thang, nam) {
 }
 
 /**
- * HÀM TIỆN ÍCH: Tạo sẵn ngay 3 trang tính cho tháng này để bạn kiểm tra
+ * HÀM TIỆN ÍCH 1: NÂNG CẤP TẤT CẢ CÁC TAB HIỆN CÓ LÊN 9 CỘT NGAY LẬP TỨC
+ * Bạn chọn hàm này và bấm nút "Run" trên thanh công cụ Apps Script để tự động chèn cột "Ngày học dự kiến"!
+ */
+function NANG_CAP_TAT_CA_TAB_LEN_9_COT() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheets = ss.getSheets();
+  sheets.forEach(function(sheet) {
+    if (sheet.getLastRow() >= 1) {
+      var col7Header = (sheet.getRange(1, 7).getValue() || "").toString();
+      if (col7Header.indexOf("Ngày học") === -1) {
+        sheet.insertColumnBefore(7);
+      }
+      caiDatTieuDeTrangTinh(sheet);
+    }
+  });
+}
+
+/**
+ * HÀM TIỆN ÍCH 2: Tạo sẵn ngay 3 trang tính cho tháng này để bạn kiểm tra
  * Bạn có thể chọn hàm này và bấm nút "Run" trên thanh công cụ để tạo ngay 3 tab!
  */
 function taoSanCacTrangTinhThangNay() {
@@ -185,6 +211,12 @@ function taoSanCacTrangTinhThangNay() {
     var sheet = ss.getSheetByName(sheetName);
     if (!sheet) {
       sheet = ss.insertSheet(sheetName);
+      caiDatTieuDeTrangTinh(sheet, cs, thang, nam);
+    } else {
+      var col7 = (sheet.getRange(1, 7).getValue() || "").toString();
+      if (col7.indexOf("Ngày học") === -1) {
+        sheet.insertColumnBefore(7);
+      }
       caiDatTieuDeTrangTinh(sheet, cs, thang, nam);
     }
   });
