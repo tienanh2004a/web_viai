@@ -21,41 +21,38 @@ const getTodayString = () => {
 const validateDateVN = (str: string): string => {
   if (!str) return '';
   const parts = str.split('/');
-  if (parts.length !== 3) {
-    return 'Vui lòng nhập đúng định dạng ngày/tháng/năm (dd/mm/yyyy).';
-  }
-  if (parts[2].length !== 4) {
-    return 'Năm phải gồm đúng 4 chữ số (Ví dụ: 2026).';
+  if (parts.length !== 3 || parts[2].length !== 4) {
+    return 'Hãy nhập lại ngày dự kiến';
   }
   const day = parseInt(parts[0], 10);
   const month = parseInt(parts[1], 10);
   const year = parseInt(parts[2], 10);
 
-  if (isNaN(year)) {
-    return 'Năm không hợp lệ.';
+  if (isNaN(day) || isNaN(month) || isNaN(year)) {
+    return 'Hãy nhập lại ngày dự kiến';
   }
 
   const now = new Date();
   const currentYear = now.getFullYear();
   if (year < currentYear || year > currentYear + 3) {
-    return `Năm dự kiến phải từ ${currentYear} đến ${currentYear + 3}.`;
+    return 'Hãy nhập lại ngày dự kiến';
   }
 
-  if (isNaN(month) || month < 1 || month > 12) {
-    return 'Tháng không hợp lệ (từ 01 đến 12).';
+  if (month < 1 || month > 12) {
+    return 'Hãy nhập lại ngày dự kiến';
   }
 
   // Số ngày tối đa của tháng tương ứng (tự động tính năm nhuận)
   const daysInMonth = new Date(year, month, 0).getDate();
-  if (isNaN(day) || day < 1 || day > daysInMonth) {
-    return `Tháng ${month}/${year} chỉ có tối đa ${daysInMonth} ngày.`;
+  if (day < 1 || day > daysInMonth) {
+    return 'Hãy nhập lại ngày dự kiến';
   }
 
   const chosenDate = new Date(year, month - 1, day, 23, 59, 59);
   now.setHours(0, 0, 0, 0);
 
   if (chosenDate < now) {
-    return 'Chỉ có thể chọn hôm nay hoặc ngày trong tương lai.';
+    return 'Hãy nhập lại ngày dự kiến';
   }
 
   return '';
@@ -137,9 +134,9 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
     } else if (formatted.length === 0) {
       setDateError('');
     } else if (digits.length >= 2 && parseInt(digits.slice(0, 2), 10) > 31) {
-      setDateError('Ngày trong tháng không thể lớn hơn 31.');
+      setDateError('Hãy nhập lại ngày dự kiến');
     } else if (digits.length >= 4 && (parseInt(digits.slice(2, 4), 10) > 12 || parseInt(digits.slice(2, 4), 10) < 1)) {
-      setDateError('Tháng phải từ 01 đến 12.');
+      setDateError('Hãy nhập lại ngày dự kiến');
     } else {
       setDateError('');
     }
@@ -190,11 +187,8 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
     // Cột Độ tuổi học viên (Cột F) giữ nguyên độ tuổi chuẩn như ảnh 2
     const studentAgeGroup = mapCourseToAgeGroup(selectedCourse);
 
-    // Cột Ghi chú (Cột H) để thông tin khoá học: "Khoá quan tâm: Robotics Khối..."
-    const extraNotes = [`Khoá quan tâm: ${selectedCourse}`];
-    if (defaultCourse && !defaultCourse.includes('Khối') && defaultCourse !== selectedCourse) {
-      extraNotes.push(`Chủ đề: ${defaultCourse}`);
-    }
+    // Cột Ghi chú (Cột H) chỉ để đúng thông tin khoá học: "Khoá quan tâm: Robotics Khối..."
+    const notesContent = `Khoá quan tâm: ${selectedCourse}`;
 
     // Tách riêng Ngày học dự kiến, gửi định dạng chuẩn dd/mm/yyyy
     await submitLeadToGoogleSheet({
@@ -203,7 +197,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
       branch,
       courseOrAge: studentAgeGroup,
       preferredDate: preferredDate.trim(),
-      notes: extraNotes.join(' | '),
+      notes: notesContent,
       source: 'Popup Học Thử 1-1',
       honeypot: botHoneypot,
       fillDurationMs: Date.now() - formOpenedTime,
@@ -498,7 +492,11 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                     onChange={handleDateInputChange}
                     onBlur={() => {
                       if (preferredDate && preferredDate.length > 0) {
-                        setDateError(validateDateVN(preferredDate));
+                        if (preferredDate.length < 10) {
+                          setDateError('Hãy nhập lại ngày dự kiến');
+                        } else {
+                          setDateError(validateDateVN(preferredDate));
+                        }
                       }
                     }}
                     className={`w-full rounded-xl border ${

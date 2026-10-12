@@ -16,7 +16,7 @@ export const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<'home' | 'course-detail'>('home');
   const [selectedCourseSlug, setSelectedCourseSlug] = useState<string>('lap-trinh-robot');
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
-  const [modalCourseName, setModalCourseName] = useState('Lập trình Robot 3D & RoboSim');
+  const [modalCourseName, setModalCourseName] = useState('Robotics Khối Tiểu Học (6 — 11 tuổi)');
 
   // Sync with browser URL hash
   useEffect(() => {
