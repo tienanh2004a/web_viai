@@ -254,10 +254,13 @@ export const ContactSection: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Họ tên phụ huynh */}
                 <div>
-                  <label className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
+                  <label htmlFor="contact-parent-name" className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
                     Họ và tên phụ huynh <span className="text-red-500">*</span>
                   </label>
                   <input
+                    id="contact-parent-name"
+                    name="parentName"
+                    autoComplete="name"
                     type="text"
                     required
                     placeholder="Ví dụ: Nguyễn Văn An"
@@ -269,10 +272,13 @@ export const ContactSection: React.FC = () => {
 
                 {/* Số điện thoại */}
                 <div>
-                  <label className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
+                  <label htmlFor="contact-phone-number" className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
                     Số điện thoại liên hệ <span className="text-red-500">*</span>
                   </label>
                   <input
+                    id="contact-phone-number"
+                    name="phoneNumber"
+                    autoComplete="tel"
                     type="tel"
                     required
                     maxLength={10}
@@ -292,10 +298,12 @@ export const ContactSection: React.FC = () => {
 
                 {/* Khoá học quan tâm - 3 khóa */}
                 <div>
-                  <label className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
+                  <label htmlFor="contact-course-select" className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
                     Khoá học quan tâm cho bé <span className="text-red-500">*</span>
                   </label>
                   <select
+                    id="contact-course-select"
+                    name="course"
                     value={course}
                     onChange={(e) => setCourse(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all cursor-pointer"
@@ -308,10 +316,12 @@ export const ContactSection: React.FC = () => {
 
                 {/* Lựa chọn cơ sở */}
                 <div>
-                  <label className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
+                  <label htmlFor="contact-branch-select" className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
                     Chọn cơ sở thuận tiện cho bé
                   </label>
                   <select
+                    id="contact-branch-select"
+                    name="branch"
                     value={branch}
                     onChange={(e) => setBranch(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
@@ -325,10 +335,12 @@ export const ContactSection: React.FC = () => {
 
                 {/* Ghi chú thêm */}
                 <div>
-                  <label className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
+                  <label htmlFor="contact-extra-info" className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">
                     Độ tuổi của con hoặc mong muốn riêng (không bắt buộc)
                   </label>
                   <input
+                    id="contact-extra-info"
+                    name="extraInfo"
                     type="text"
                     placeholder="Ví dụ: Bé 8 tuổi, chưa từng học lập trình..."
                     value={extraInfo}

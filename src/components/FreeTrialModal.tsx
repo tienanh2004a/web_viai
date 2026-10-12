@@ -247,11 +247,14 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-3.5">
               {/* Parent Name */}
               <div>
-                <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
+                <label htmlFor="modal-parent-name" className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
                   <User className="h-3.5 w-3.5 text-orange-600" />
                   <span>Họ và tên Phụ huynh *</span>
                 </label>
                 <input
+                  id="modal-parent-name"
+                  name="parentName"
+                  autoComplete="name"
                   type="text"
                   required
                   placeholder="Ví dụ: Nguyễn Văn An"
@@ -263,11 +266,14 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
 
               {/* Phone Number - Bỏ ghi chú thừa, giữ logic */}
               <div>
-                <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
+                <label htmlFor="modal-phone-number" className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
                   <Phone className="h-3.5 w-3.5 text-orange-600" />
                   <span>Số điện thoại *</span>
                 </label>
                 <input
+                  id="modal-phone-number"
+                  name="phoneNumber"
+                  autoComplete="tel"
                   type="tel"
                   required
                   maxLength={10}
@@ -285,13 +291,15 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                 )}
               </div>
 
-              {/* Course Selection - Khối mầm non giữ nguyên, khối tiểu học Lớp 1 - 5, trung học Lớp 6 - 9 */}
+              {/* Course Selection */}
               <div>
-                <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
+                <label htmlFor="modal-course-select" className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
                   <Bot className="h-3.5 w-3.5 text-orange-600" />
                   <span>Khoá học quan tâm cho bé *</span>
                 </label>
                 <select
+                  id="modal-course-select"
+                  name="selectedCourse"
                   value={selectedCourse}
                   onChange={(e) => setSelectedCourse(e.target.value)}
                   className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
@@ -304,11 +312,13 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
 
               {/* Branch Selection */}
               <div>
-                <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
+                <label htmlFor="modal-branch-select" className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
                   <MapPin className="h-3.5 w-3.5 text-orange-600" />
                   <span>Chọn Cơ sở thuận tiện cho gia đình *</span>
                 </label>
                 <select
+                  id="modal-branch-select"
+                  name="branch"
                   value={branch}
                   onChange={(e) => setBranch(e.target.value)}
                   className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
@@ -322,11 +332,13 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
 
               {/* Preferred Date */}
               <div>
-                <label className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
+                <label htmlFor="modal-preferred-date" className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
                   <Calendar className="h-3.5 w-3.5 text-orange-600" />
                   <span>Ngày dự kiến (không bắt buộc)</span>
                 </label>
                 <input
+                  id="modal-preferred-date"
+                  name="preferredDate"
                   type="date"
                   value={preferredDate}
                   onChange={(e) => setPreferredDate(e.target.value)}

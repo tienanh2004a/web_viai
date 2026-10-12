@@ -308,10 +308,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {/* Họ tên phụ huynh */}
                   <div>
-                    <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
+                    <label htmlFor="page-parent-name" className="block text-xs font-semibold text-neutral-700 mb-1.5">
                       Họ và tên phụ huynh <span className="text-red-500">*</span>
                     </label>
                     <input
+                      id="page-parent-name"
+                      name="parentName"
+                      autoComplete="name"
                       type="text"
                       required
                       placeholder="Ví dụ: Nguyễn Văn An"
@@ -323,10 +326,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
                   {/* Số điện thoại */}
                   <div>
-                    <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
+                    <label htmlFor="page-phone-number" className="block text-xs font-semibold text-neutral-700 mb-1.5">
                       Số điện thoại liên hệ <span className="text-red-500">*</span>
                     </label>
                     <input
+                      id="page-phone-number"
+                      name="phoneNumber"
+                      autoComplete="tel"
                       type="tel"
                       required
                       maxLength={10}
@@ -346,10 +352,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
                   {/* Khoá học quan tâm - 3 khóa */}
                   <div>
-                    <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
+                    <label htmlFor="page-course-select" className="block text-xs font-semibold text-neutral-700 mb-1.5">
                       Khoá học quan tâm cho bé <span className="text-red-500">*</span>
                     </label>
                     <select
+                      id="page-course-select"
+                      name="course"
                       value={course}
                       onChange={(e) => setCourse(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-neutral-900 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all cursor-pointer"
@@ -362,10 +370,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
                   {/* Chọn cơ sở */}
                   <div>
-                    <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
+                    <label htmlFor="page-branch-select" className="block text-xs font-semibold text-neutral-700 mb-1.5">
                       Chọn cơ sở học tập thuận tiện <span className="text-red-500">*</span>
                     </label>
                     <select
+                      id="page-branch-select"
+                      name="branch"
                       value={branch}
                       onChange={(e) => setBranch(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-neutral-900 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all cursor-pointer"
@@ -379,10 +389,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
                   {/* Thông tin thêm */}
                   <div>
-                    <label className="block text-xs font-semibold text-neutral-700 mb-1.5">
+                    <label htmlFor="page-extra-info" className="block text-xs font-semibold text-neutral-700 mb-1.5">
                       Thông tin về bé <span className="text-xs text-neutral-400 font-normal">(Tuổi, trường học — không bắt buộc)</span>
                     </label>
                     <input
+                      id="page-extra-info"
+                      name="extraInfo"
                       type="text"
                       placeholder="Ví dụ: Bé Nam 8 tuổi, trường Tiểu học Chu Văn An"
                       value={extraInfo}
@@ -393,8 +405,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
                   {/* Checkbox bảo mật */}
                   <div className="pt-1">
-                    <label className="flex items-start gap-2.5 cursor-pointer">
+                    <label htmlFor="page-agreed-checkbox" className="flex items-start gap-2.5 cursor-pointer">
                       <input
+                        id="page-agreed-checkbox"
+                        name="agreed"
                         type="checkbox"
                         checked={agreed}
                         onChange={(e) => setAgreed(e.target.checked)}
