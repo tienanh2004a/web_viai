@@ -94,11 +94,11 @@ function doPost(e) {
     var ngayDangKy = Utilities.formatDate(now, "GMT+7", "dd/MM/yyyy HH:mm:ss");
 
     // 5. Chuẩn bị các trường dữ liệu theo đúng thứ tự 9 cột yêu cầu
-    var tenPhuHuynh = data.parentName || "";
+    var tenPhuHuynh = data.parentName || data.fullName || "";
     var soDienThoai = "'" + (data.phone || "").toString().replace(/^'+/, ''); // Giữ nguyên số 0 đầu
-    var doTuoiHocVien = data.courseOrAge || "";
+    var doTuoiHocVien = data.courseOrAge || data.studentAge || "";
     var ngayHocDuKien = (data.preferredDate || data.trialDate || "").toString(); // Tách riêng ngày học dự kiến
-    var ghiChu = data.notes || "";
+    var ghiChu = data.notes || data.parentNote || "";
     var tinhTrangChamSoc = ""; // ĐỂ TRỐNG mặc định như yêu cầu của bạn
 
     // 6. Ghi dòng dữ liệu mới vào cuối trang tính (9 Cột: A -> I)
