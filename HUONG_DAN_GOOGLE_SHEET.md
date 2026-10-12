@@ -1,7 +1,7 @@
 # Hướng Dẫn Tự Động Phân Trang Tính Theo Cơ Sở & Tháng (VIAI Academy)
 
 > **File Google Sheet của bạn:**  
-> `https://docs.google.com/spreadsheets/d/1pXD3YJVayZ84DKt6H_bKf0npYidx-48shNe61-pl8I4/edit`
+> `https://docs.google.com/spreadsheets/d/1MnHflgcv237Xl8gMH_6_BXKV4-IlwbeRzeoeusCQlBw/edit`
 
 Tài liệu này cung cấp đoạn mã Google Apps Script thông minh để:
 1. **Tự động phân trang tính (Tab riêng)** cho từng cơ sở theo từng tháng:
@@ -22,7 +22,7 @@ Tài liệu này cung cấp đoạn mã Google Apps Script thông minh để:
 
 ## BƯỚC 1: DÁN MÃ VÀO GOOGLE SHEET CỦA BẠN
 
-1. Mở file Google Sheet của bạn: [https://docs.google.com/spreadsheets/d/1pXD3YJVayZ84DKt6H_bKf0npYidx-48shNe61-pl8I4/edit](https://docs.google.com/spreadsheets/d/1pXD3YJVayZ84DKt6H_bKf0npYidx-48shNe61-pl8I4/edit)
+1. Mở file Google Sheet của bạn: [https://docs.google.com/spreadsheets/d/1MnHflgcv237Xl8gMH_6_BXKV4-IlwbeRzeoeusCQlBw/edit](https://docs.google.com/spreadsheets/d/1MnHflgcv237Xl8gMH_6_BXKV4-IlwbeRzeoeusCQlBw/edit)
 2. Trên thanh menu, bấm: **Tiện ích mở rộng (Extensions)** -> **Apps Script**.
 3. Xóa toàn bộ chữ có sẵn trong khung soạn thảo, sao chép và dán toàn bộ đoạn mã bên dưới vào:
 
