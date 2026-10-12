@@ -22,8 +22,14 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   const [preferredDate, setPreferredDate] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [botHoneypot, setBotHoneypot] = useState('');
+  const [formOpenedTime, setFormOpenedTime] = useState<number>(Date.now());
 
   useEffect(() => {
+    if (isOpen) {
+      setFormOpenedTime(Date.now());
+      setBotHoneypot('');
+    }
     if (defaultCourse) {
       if (defaultCourse.includes('Mầm non')) {
         setSelectedCourse('Khối Mầm non (4–6 tuổi)');
@@ -83,6 +89,8 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
       courseOrAge: selectedCourse,
       notes: extraNotes.join(' | '),
       source: 'Popup Học Thử 1-1',
+      honeypot: botHoneypot,
+      fillDurationMs: Date.now() - formOpenedTime,
     });
     setIsSubmitting(false);
 
@@ -245,6 +253,24 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-3.5">
+              {/* Bẫy Honeypot ẩn dành cho bot spam tự động (người dùng thật không thấy và không ảnh hưởng giao diện) */}
+              <div 
+                className="absolute -left-[9999px] -top-[9999px] opacity-0 pointer-events-none select-none h-0 w-0 overflow-hidden" 
+                aria-hidden="true" 
+                tabIndex={-1}
+              >
+                <label htmlFor="modal-website-trap">Website Address</label>
+                <input
+                  id="modal-website-trap"
+                  type="text"
+                  name="website_url_check"
+                  value={botHoneypot}
+                  onChange={(e) => setBotHoneypot(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               {/* Parent Name */}
               <div>
                 <label htmlFor="modal-parent-name" className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">

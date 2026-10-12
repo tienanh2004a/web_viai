@@ -7,18 +7,56 @@ export interface LeadPayload {
   courseOrAge?: string;
   notes?: string;
   source?: string;
+  honeypot?: string; // Bẫy bot: nếu có giá trị -> chắc chắn là bot
+  fillDurationMs?: number; // Thời gian điền form: nếu < 1200ms -> nghi vấn bot tự động
 }
+
+// Danh sách các số điện thoại spam giả mạo phổ biến
+const OBVIOUS_SPAM_PHONES = new Set([
+  '0000000000',
+  '0111111111',
+  '0222222222',
+  '0333333333',
+  '0444444444',
+  '0555555555',
+  '0666666666',
+  '0777777777',
+  '0888888888',
+  '0999999999',
+]);
 
 /**
  * Gửi thông tin đăng ký học thử lên Google Sheet qua Apps Script Web App
+ * Đã tích hợp lớp bảo vệ Honeypot & Anti-Spam Bot nhiều tầng
  */
 export async function submitLeadToGoogleSheet(payload: LeadPayload): Promise<{ success: boolean; message?: string }> {
+  // LỚP 1: Bẫy Honeypot - Nếu ô ẩn có dữ liệu, bot đã dính bẫy
+  if (payload.honeypot && payload.honeypot.trim().length > 0) {
+    console.warn('[Anti-Spam] Phát hiện và chặn bot tự động qua Honeypot trap.');
+    // Trả về true giả lập để bot tưởng đã gửi thành công và rời đi, không ghi vào Google Sheet
+    return { success: true, message: 'Spam dropped via honeypot' };
+  }
+
+  // LỚP 2: Kiểm tra tốc độ điền form - Người thật mất ít nhất 1.5 - 2s
+  if (payload.fillDurationMs !== undefined && payload.fillDurationMs < 1200) {
+    console.warn(`[Anti-Spam] Phát hiện gửi form quá nhanh (${payload.fillDurationMs}ms), chặn nghi vấn bot.`);
+    return { success: true, message: 'Spam dropped via speed check' };
+  }
+
+  const cleanPhone = payload.phone.replace(/\D/g, '').trim();
+
+  // LỚP 3: Lọc số rác hiển nhiên lặp lại
+  if (OBVIOUS_SPAM_PHONES.has(cleanPhone)) {
+    console.warn('[Anti-Spam] Số điện thoại rác lặp lại, bỏ qua không ghi sheet.');
+    return { success: true, message: 'Spam dropped via phone pattern' };
+  }
+
   const url = GOOGLE_SHEET_WEBAPP_URL.trim();
 
   const dataToSend = {
     timestamp: new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' }),
     parentName: payload.parentName.trim(),
-    phone: payload.phone.trim(),
+    phone: cleanPhone,
     branch: payload.branch || 'Hải Phòng',
     courseOrAge: payload.courseOrAge || 'Chưa chọn',
     notes: payload.notes || '',

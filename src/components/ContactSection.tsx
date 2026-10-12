@@ -15,6 +15,8 @@ export const ContactSection: React.FC = () => {
   const [agreed, setAgreed] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [botHoneypot, setBotHoneypot] = useState('');
+  const [formMountedTime] = useState<number>(() => Date.now());
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value.replace(/\D/g, '').slice(0, 10);
@@ -51,6 +53,8 @@ export const ContactSection: React.FC = () => {
       courseOrAge: course,
       notes: extraInfo,
       source: 'Form Liên Hệ Cuối Trang',
+      honeypot: botHoneypot,
+      fillDurationMs: Date.now() - formMountedTime,
     });
     setIsSubmitting(false);
     setSubmitted(true);
@@ -252,6 +256,24 @@ export const ContactSection: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Bẫy Honeypot ẩn dành cho bot spam tự động (người dùng thật không thấy và không ảnh hưởng giao diện) */}
+                <div 
+                  className="absolute -left-[9999px] -top-[9999px] opacity-0 pointer-events-none select-none h-0 w-0 overflow-hidden" 
+                  aria-hidden="true" 
+                  tabIndex={-1}
+                >
+                  <label htmlFor="contact-website-trap">Website Address</label>
+                  <input
+                    id="contact-website-trap"
+                    type="text"
+                    name="website_url_check"
+                    value={botHoneypot}
+                    onChange={(e) => setBotHoneypot(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 {/* Họ tên phụ huynh */}
                 <div>
                   <label htmlFor="contact-parent-name" className="block text-xs font-bold text-[#111827] mb-1.5 uppercase tracking-wider">

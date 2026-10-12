@@ -36,6 +36,13 @@ function doPost(e) {
     var ss = SpreadsheetApp.getActiveSpreadsheet();
     var data = JSON.parse(e.postData.contents);
 
+    // LỚP BẢO VỆ CHỐNG SPAM: Nếu bot tự động điền vào ô Honeypot -> Hủy ngay lập tức
+    if (data.honeypot && data.honeypot.toString().trim() !== "") {
+      return ContentService.createTextOutput(JSON.stringify({
+        status: "ignored_bot"
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
+
     var now = new Date();
     var thangHienTai = now.getMonth() + 1; // 1 -> 12
     var namHienTai = now.getFullYear();
