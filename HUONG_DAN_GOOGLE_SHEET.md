@@ -32,6 +32,13 @@ Tài liệu này cung cấp đoạn mã Google Apps Script thông minh để:
  * Hệ thống tuyển sinh VIAI Academy
  */
 
+function doGet(e) {
+  return ContentService.createTextOutput(JSON.stringify({
+    status: "active",
+    message: "Hệ thống VIAI Lead API đang hoạt động bình thường!"
+  })).setMimeType(ContentService.MimeType.JSON);
+}
+
 function doPost(e) {
   try {
     var ss = SpreadsheetApp.getActiveSpreadsheet();
