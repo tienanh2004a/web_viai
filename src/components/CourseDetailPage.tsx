@@ -9,6 +9,7 @@ import { coursesData, type CourseDetail } from '../data/coursesData';
 interface CourseDetailPageProps {
   courseSlug: string;
   onBackToHome: () => void;
+  onBackToCourses?: () => void;
   onOpenTrialModal: (courseName?: string) => void;
   onSelectCourse: (slug: string) => void;
 }
@@ -16,6 +17,7 @@ interface CourseDetailPageProps {
 export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
   courseSlug,
   onBackToHome,
+  onBackToCourses,
   onOpenTrialModal,
   onSelectCourse,
 }) => {
@@ -42,13 +44,19 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           <div className="flex items-center gap-3">
             <button
               onClick={onBackToHome}
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#000000] bg-white border border-black/5 px-4 py-2 rounded-[8px] hover:bg-neutral-100 transition-all"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#000000] bg-white border border-black/5 px-4 py-2 rounded-[8px] hover:bg-neutral-100 transition-all cursor-pointer"
             >
               <ArrowLeft className="h-4 w-4" />
               <span>Trang chủ</span>
             </button>
             <span className="text-neutral-400 hidden sm:inline">/</span>
-            <span className="text-xs sm:text-sm text-[#555555] hidden sm:inline">Khoá học</span>
+            <button
+              type="button"
+              onClick={onBackToCourses || onBackToHome}
+              className="text-xs sm:text-sm text-[#555555] hover:text-[#c2410c] hover:underline font-semibold hidden sm:inline cursor-pointer transition-colors"
+            >
+              Khoá học
+            </button>
             <span className="text-neutral-400 hidden sm:inline">/</span>
             <span className="text-xs sm:text-sm font-bold text-[#000000] truncate max-w-[200px] sm:max-w-none">
               {course.name}

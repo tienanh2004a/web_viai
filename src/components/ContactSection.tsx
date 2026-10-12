@@ -4,12 +4,13 @@ import {
   ShieldCheck, ArrowRight, BookOpen, Coins, User
 } from 'lucide-react';
 import { submitLeadToGoogleSheet } from '../services/leadService';
+import { mapCourseToAgeGroup } from './FreeTrialModal';
 
 export const ContactSection: React.FC = () => {
   const [parentName, setParentName] = useState('');
   const [phone, setPhone] = useState('');
   const [phoneError, setPhoneError] = useState('');
-  const [course, setCourse] = useState('Khối Tiểu học (Lớp 1 – 5)');
+  const [course, setCourse] = useState('Robotics Khối Tiểu Học (6 — 11 tuổi)');
   const [branch, setBranch] = useState('Hải Phòng');
   const [extraInfo, setExtraInfo] = useState('');
   const [agreed, setAgreed] = useState(true);
@@ -46,12 +47,18 @@ export const ContactSection: React.FC = () => {
     setPhoneError('');
 
     setIsSubmitting(true);
+    // Cột Độ tuổi học viên (Cột F) giữ nguyên độ tuổi chuẩn như ảnh 2
+    const studentAgeGroup = mapCourseToAgeGroup(course);
+
+    // Cột Ghi chú (Cột H) để thông tin khoá học: "Khoá quan tâm: Robotics Khối..."
+    const notesContent = `Khoá quan tâm: ${course}${extraInfo.trim() ? ` | Lời nhắn: ${extraInfo.trim()}` : ''}`;
+
     await submitLeadToGoogleSheet({
       parentName,
       phone,
       branch,
-      courseOrAge: course,
-      notes: extraInfo,
+      courseOrAge: studentAgeGroup,
+      notes: notesContent,
       source: 'Form Liên Hệ Cuối Trang',
       honeypot: botHoneypot,
       fillDurationMs: Date.now() - formMountedTime,
@@ -330,9 +337,9 @@ export const ContactSection: React.FC = () => {
                     onChange={(e) => setCourse(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all cursor-pointer"
                   >
-                    <option value="Khối Mầm non (4–6 tuổi)">Khối Mầm non (4–6 tuổi)</option>
-                    <option value="Khối Tiểu học (Lớp 1 – 5)">Khối Tiểu học (Lớp 1 – 5)</option>
-                    <option value="Khối Trung học (Lớp 6 – 9)">Khối Trung học (Lớp 6 – 9)</option>
+                    <option value="Robotics Khối Mầm Non (4 — 6 tuổi)">Robotics Khối Mầm Non (4 — 6 tuổi)</option>
+                    <option value="Robotics Khối Tiểu Học (6 — 11 tuổi)">Robotics Khối Tiểu Học (6 — 11 tuổi)</option>
+                    <option value="Robotics & AI Khối Trung Học (11 — 15 tuổi)">Robotics & AI Khối Trung Học (11 — 15 tuổi)</option>
                   </select>
                 </div>
 

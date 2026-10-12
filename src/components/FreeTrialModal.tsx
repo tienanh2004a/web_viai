@@ -61,13 +61,15 @@ const validateDateVN = (str: string): string => {
   return '';
 };
 
-const getQuickDateString = (daysAhead: number): string => {
-  const d = new Date();
-  d.setDate(d.getDate() + daysAhead);
-  const day = String(d.getDate()).padStart(2, '0');
-  const month = String(d.getMonth() + 1).padStart(2, '0');
-  const year = d.getFullYear();
-  return `${day}/${month}/${year}`;
+// Ánh xạ khoá học sang Cột Độ tuổi học viên trên Google Sheet (giữ nguyên độ tuổi chuẩn như ảnh 2)
+export const mapCourseToAgeGroup = (courseName: string): string => {
+  if (courseName.includes('Mầm') || courseName.includes('mam-non')) {
+    return 'Khối Mầm non (4 – 6 tuổi)';
+  }
+  if (courseName.includes('Trung') || courseName.includes('trung-hoc')) {
+    return 'Khối Trung học (Lớp 6 – 9)';
+  }
+  return 'Khối Tiểu học (Lớp 1 – 5)';
 };
 
 export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
@@ -78,7 +80,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   const [parentName, setParentName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [phoneError, setPhoneError] = useState('');
-  const [selectedCourse, setSelectedCourse] = useState('Khối Tiểu học (Lớp 1 – 5)');
+  const [selectedCourse, setSelectedCourse] = useState('Robotics Khối Tiểu Học (6 — 11 tuổi)');
   const [branch, setBranch] = useState('Cơ sở Hải Phòng');
   const [preferredDate, setPreferredDate] = useState(''); // Định dạng dd/mm/yyyy
   const [dateError, setDateError] = useState('');
@@ -95,12 +97,12 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
       setDateError('');
     }
     if (defaultCourse) {
-      if (defaultCourse.includes('Mầm non')) {
-        setSelectedCourse('Khối Mầm non (4–6 tuổi)');
-      } else if (defaultCourse.includes('Trung học') || defaultCourse.includes('THCS')) {
-        setSelectedCourse('Khối Trung học (Lớp 6 – 9)');
-      } else if (defaultCourse.includes('Tiểu học')) {
-        setSelectedCourse('Khối Tiểu học (Lớp 1 – 5)');
+      if (defaultCourse.includes('Mầm') || defaultCourse.includes('mam-non')) {
+        setSelectedCourse('Robotics Khối Mầm Non (4 — 6 tuổi)');
+      } else if (defaultCourse.includes('Trung') || defaultCourse.includes('trung-hoc')) {
+        setSelectedCourse('Robotics & AI Khối Trung Học (11 — 15 tuổi)');
+      } else {
+        setSelectedCourse('Robotics Khối Tiểu Học (6 — 11 tuổi)');
       }
     }
   }, [defaultCourse, isOpen]);
@@ -185,9 +187,13 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
     setDateError('');
 
     setIsSubmitting(true);
-    const extraNotes = [];
-    if (defaultCourse && !defaultCourse.includes('Khối')) {
-      extraNotes.push(`Khoá quan tâm: ${defaultCourse}`);
+    // Cột Độ tuổi học viên (Cột F) giữ nguyên độ tuổi chuẩn như ảnh 2
+    const studentAgeGroup = mapCourseToAgeGroup(selectedCourse);
+
+    // Cột Ghi chú (Cột H) để thông tin khoá học: "Khoá quan tâm: Robotics Khối..."
+    const extraNotes = [`Khoá quan tâm: ${selectedCourse}`];
+    if (defaultCourse && !defaultCourse.includes('Khối') && defaultCourse !== selectedCourse) {
+      extraNotes.push(`Chủ đề: ${defaultCourse}`);
     }
 
     // Tách riêng Ngày học dự kiến, gửi định dạng chuẩn dd/mm/yyyy
@@ -195,7 +201,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
       parentName,
       phone: phoneNumber,
       branch,
-      courseOrAge: selectedCourse,
+      courseOrAge: studentAgeGroup,
       preferredDate: preferredDate.trim(),
       notes: extraNotes.join(' | '),
       source: 'Popup Học Thử 1-1',
@@ -442,9 +448,9 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                   onChange={(e) => setSelectedCourse(e.target.value)}
                   className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
                 >
-                  <option value="Khối Mầm non (4–6 tuổi)">Khối Mầm non (4–6 tuổi)</option>
-                  <option value="Khối Tiểu học (Lớp 1 – 5)">Khối Tiểu học (Lớp 1 – 5)</option>
-                  <option value="Khối Trung học (Lớp 6 – 9)">Khối Trung học (Lớp 6 – 9)</option>
+                  <option value="Robotics Khối Mầm Non (4 — 6 tuổi)">Robotics Khối Mầm Non (4 — 6 tuổi)</option>
+                  <option value="Robotics Khối Tiểu Học (6 — 11 tuổi)">Robotics Khối Tiểu Học (6 — 11 tuổi)</option>
+                  <option value="Robotics & AI Khối Trung Học (11 — 15 tuổi)">Robotics & AI Khối Trung Học (11 — 15 tuổi)</option>
                 </select>
               </div>
 
@@ -530,37 +536,6 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                     aria-hidden="true"
                     className="sr-only pointer-events-none opacity-0 absolute"
                   />
-                </div>
-
-                {/* Các nút chọn nhanh ngày học */}
-                <div className="flex items-center gap-1.5 mt-2 flex-wrap">
-                  <span className="text-[11px] text-zinc-600 font-medium mr-1">Chọn nhanh:</span>
-                  {[
-                    { label: 'Hôm nay', days: 0 },
-                    { label: 'Ngày mai', days: 1 },
-                    { label: '3 ngày tới', days: 3 },
-                    { label: 'Cuối tuần', days: ((6 - new Date().getDay() + 7) % 7) || 7 },
-                  ].map((quick) => {
-                    const qDate = getQuickDateString(quick.days);
-                    const isSelected = preferredDate === qDate;
-                    return (
-                      <button
-                        key={quick.label}
-                        type="button"
-                        onClick={() => {
-                          setPreferredDate(qDate);
-                          setDateError('');
-                        }}
-                        className={`text-[11px] px-2.5 py-1 rounded-lg font-medium transition-all cursor-pointer ${
-                          isSelected
-                            ? 'bg-orange-600 text-white shadow-xs'
-                            : 'bg-zinc-100 text-zinc-700 hover:bg-orange-50 hover:text-orange-700 border border-zinc-200/60'
-                        }`}
-                      >
-                        {quick.label}
-                      </button>
-                    );
-                  })}
                 </div>
 
                 {dateError && (

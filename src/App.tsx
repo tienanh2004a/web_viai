@@ -26,6 +26,12 @@ export const App: React.FC = () => {
         const slug = hash.replace('#course/', '');
         setSelectedCourseSlug(slug);
         setCurrentView('course-detail');
+      } else if (hash === '#khoa-hoc') {
+        setCurrentView('home');
+        setTimeout(() => {
+          const el = document.getElementById('khoa-hoc');
+          el?.scrollIntoView({ behavior: 'smooth' });
+        }, 80);
       } else if (hash === '#lien-he' || hash === '#contact') {
         setCurrentView('home');
         setTimeout(() => {
@@ -64,6 +70,19 @@ export const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleBackToCourses = () => {
+    window.location.hash = '#khoa-hoc';
+    setCurrentView('home');
+    setTimeout(() => {
+      const el = document.getElementById('khoa-hoc');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 600, behavior: 'smooth' });
+      }
+    }, 80);
+  };
+
   const handleGoContact = () => {
     if (currentView !== 'home') {
       window.location.hash = '#lien-he';
@@ -93,6 +112,7 @@ export const App: React.FC = () => {
         <CourseDetailPage
           courseSlug={selectedCourseSlug}
           onBackToHome={handleBackToHome}
+          onBackToCourses={handleBackToCourses}
           onOpenTrialModal={handleOpenTrialModal}
           onSelectCourse={handleSelectCourse}
         />
