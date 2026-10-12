@@ -69,6 +69,17 @@ export const mapCourseToAgeGroup = (courseName: string): string => {
   return 'Khối Tiểu học (Lớp 1 – 5)';
 };
 
+// Lấy chỉ độ tuổi ngắn gọn để hiển thị trên thẻ xác nhận (4 - 6 tuổi, 6 - 11 tuổi, 11 - 15 tuổi)
+export const getDisplayAgeOnly = (courseName: string): string => {
+  if (courseName.includes('Mầm') || courseName.includes('mam-non') || courseName.includes('4 — 6') || courseName.includes('4 - 6')) {
+    return '4 - 6 tuổi';
+  }
+  if (courseName.includes('Trung') || courseName.includes('trung-hoc') || courseName.includes('11 — 15') || courseName.includes('11 - 15')) {
+    return '11 - 15 tuổi';
+  }
+  return '6 - 11 tuổi';
+};
+
 export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   isOpen,
   onClose,
@@ -286,7 +297,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                   <div className="min-w-0">
                     <span className="block text-xs text-[#6B7D96] font-medium mb-0.5">Khóa học</span>
                     <span className="block text-sm sm:text-base font-bold text-[#142A4F] truncate">
-                      {defaultCourse && !defaultCourse.includes('Khối') ? defaultCourse : selectedCourse}
+                      {selectedCourse}
                     </span>
                   </div>
                 </div>
@@ -312,7 +323,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                   <div className="min-w-0">
                     <span className="block text-xs text-[#6B7D96] font-medium mb-0.5">Độ tuổi</span>
                     <span className="block text-sm sm:text-base font-bold text-[#142A4F] truncate">
-                      {selectedCourse}
+                      {getDisplayAgeOnly(selectedCourse)}
                     </span>
                   </div>
                 </div>
