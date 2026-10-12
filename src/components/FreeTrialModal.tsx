@@ -21,19 +21,37 @@ const getTodayString = () => {
 const validateDateVN = (str: string): string => {
   if (!str) return '';
   const parts = str.split('/');
-  if (parts.length !== 3 || parts[2].length !== 4) {
+  if (parts.length !== 3) {
     return 'Vui lòng nhập đúng định dạng ngày/tháng/năm (dd/mm/yyyy).';
+  }
+  if (parts[2].length !== 4) {
+    return 'Năm phải gồm đúng 4 chữ số (Ví dụ: 2026).';
   }
   const day = parseInt(parts[0], 10);
   const month = parseInt(parts[1], 10);
   const year = parseInt(parts[2], 10);
 
-  if (isNaN(day) || isNaN(month) || isNaN(year) || month < 1 || month > 12 || day < 1 || day > 31) {
-    return 'Ngày hoặc tháng không hợp lệ.';
+  if (isNaN(year)) {
+    return 'Năm không hợp lệ.';
+  }
+
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  if (year < currentYear || year > currentYear + 3) {
+    return `Năm dự kiến phải từ ${currentYear} đến ${currentYear + 3}.`;
+  }
+
+  if (isNaN(month) || month < 1 || month > 12) {
+    return 'Tháng không hợp lệ (từ 01 đến 12).';
+  }
+
+  // Số ngày tối đa của tháng tương ứng (tự động tính năm nhuận)
+  const daysInMonth = new Date(year, month, 0).getDate();
+  if (isNaN(day) || day < 1 || day > daysInMonth) {
+    return `Tháng ${month}/${year} chỉ có tối đa ${daysInMonth} ngày.`;
   }
 
   const chosenDate = new Date(year, month - 1, day, 23, 59, 59);
-  const now = new Date();
   now.setHours(0, 0, 0, 0);
 
   if (chosenDate < now) {
@@ -41,6 +59,15 @@ const validateDateVN = (str: string): string => {
   }
 
   return '';
+};
+
+const getQuickDateString = (daysAhead: number): string => {
+  const d = new Date();
+  d.setDate(d.getDate() + daysAhead);
+  const day = String(d.getDate()).padStart(2, '0');
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const year = d.getFullYear();
+  return `${day}/${month}/${year}`;
 };
 
 export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
@@ -94,10 +121,10 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   // Người dùng gõ ngày/tháng/năm tự động thêm dấu /
   const handleDateInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const raw = e.target.value.replace(/[^\d/]/g, '');
-    const digits = raw.replace(/\D/g, '').slice(0, 8);
+    const digits = raw.replace(/\D/g, '').slice(0, 8); // Tối đa đúng 8 chữ số: 2 ngày, 2 tháng, 4 năm
     let formatted = digits;
     if (digits.length > 4) {
-      formatted = `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4)}`;
+      formatted = `${digits.slice(0, 2)}/${digits.slice(2, 4)}/${digits.slice(4, 8)}`;
     } else if (digits.length > 2) {
       formatted = `${digits.slice(0, 2)}/${digits.slice(2)}`;
     }
@@ -106,6 +133,12 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
     if (formatted.length === 10) {
       setDateError(validateDateVN(formatted));
     } else if (formatted.length === 0) {
+      setDateError('');
+    } else if (digits.length >= 2 && parseInt(digits.slice(0, 2), 10) > 31) {
+      setDateError('Ngày trong tháng không thể lớn hơn 31.');
+    } else if (digits.length >= 4 && (parseInt(digits.slice(2, 4), 10) > 12 || parseInt(digits.slice(2, 4), 10) < 1)) {
+      setDateError('Tháng phải từ 01 đến 12.');
+    } else {
       setDateError('');
     }
   };
@@ -491,11 +524,43 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                     ref={datePickerRef}
                     type="date"
                     min={getTodayString()}
+                    max={`${new Date().getFullYear() + 3}-12-31`}
                     onChange={handleNativePickerChange}
                     tabIndex={-1}
                     aria-hidden="true"
                     className="sr-only pointer-events-none opacity-0 absolute"
                   />
+                </div>
+
+                {/* Các nút chọn nhanh ngày học */}
+                <div className="flex items-center gap-1.5 mt-2 flex-wrap">
+                  <span className="text-[11px] text-zinc-600 font-medium mr-1">Chọn nhanh:</span>
+                  {[
+                    { label: 'Hôm nay', days: 0 },
+                    { label: 'Ngày mai', days: 1 },
+                    { label: '3 ngày tới', days: 3 },
+                    { label: 'Cuối tuần', days: ((6 - new Date().getDay() + 7) % 7) || 7 },
+                  ].map((quick) => {
+                    const qDate = getQuickDateString(quick.days);
+                    const isSelected = preferredDate === qDate;
+                    return (
+                      <button
+                        key={quick.label}
+                        type="button"
+                        onClick={() => {
+                          setPreferredDate(qDate);
+                          setDateError('');
+                        }}
+                        className={`text-[11px] px-2.5 py-1 rounded-lg font-medium transition-all cursor-pointer ${
+                          isSelected
+                            ? 'bg-orange-600 text-white shadow-xs'
+                            : 'bg-zinc-100 text-zinc-700 hover:bg-orange-50 hover:text-orange-700 border border-zinc-200/60'
+                        }`}
+                      >
+                        {quick.label}
+                      </button>
+                    );
+                  })}
                 </div>
 
                 {dateError && (
