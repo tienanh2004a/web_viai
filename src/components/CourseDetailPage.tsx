@@ -4,12 +4,13 @@ import {
   Sparkles, Calendar, Cpu, ArrowRight, ShieldCheck, 
   BookOpen, Layers, Gift, ChevronRight, ListOrdered, Bot
 } from 'lucide-react';
-import { coursesData, PRIMARY_COURSE_SLUGS, type CourseDetail } from '../data/coursesData';
+import { coursesData, PRIMARY_COURSE_SLUGS, getGradeLevelByCourseSlug, type CourseDetail } from '../data/coursesData';
 
 interface CourseDetailPageProps {
   courseSlug: string;
   onBackToHome: () => void;
   onBackToCourses?: () => void;
+  onBackToLevel?: (levelId: 'mam-non' | 'tieu-hoc' | 'trung-hoc') => void;
   onOpenTrialModal: (courseName?: string) => void;
   onSelectCourse: (slug: string) => void;
 }
@@ -18,10 +19,12 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
   courseSlug,
   onBackToHome,
   onBackToCourses,
+  onBackToLevel,
   onOpenTrialModal,
   onSelectCourse,
 }) => {
   const course: CourseDetail = coursesData[courseSlug] || coursesData['robotics-mam-non'];
+  const parentLevel = getGradeLevelByCourseSlug(courseSlug);
   const [activeTab, setActiveTab] = useState<'syllabus' | 'hardware' | 'skills' | 'schedule'>('syllabus');
   const [selectedModuleId, setSelectedModuleId] = useState<string>('HP1');
 
@@ -45,20 +48,37 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <button
-              onClick={onBackToHome}
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#000000] bg-white border border-black/5 px-4 py-2 rounded-[8px] hover:bg-neutral-100 transition-all cursor-pointer"
+              onClick={parentLevel && onBackToLevel ? () => onBackToLevel(parentLevel.id) : onBackToHome}
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#000000] bg-white border border-black/5 px-4 py-2 rounded-[8px] hover:bg-orange-50 hover:border-orange-200 transition-all cursor-pointer"
             >
-              <ArrowLeft className="h-4 w-4" />
-              <span>Trang chủ</span>
+              <ArrowLeft className="h-4 w-4 text-[#c2410c]" />
+              <span>{parentLevel ? `Quay lại ${parentLevel.shortName}` : 'Trang chủ'}</span>
             </button>
             <span className="text-neutral-400 hidden sm:inline">/</span>
             <button
               type="button"
-              onClick={onBackToCourses || onBackToHome}
+              onClick={onBackToHome}
               className="text-xs sm:text-sm text-[#555555] hover:text-[#c2410c] hover:underline font-semibold hidden sm:inline cursor-pointer transition-colors"
             >
-              Khoá học
+              Trang chủ
             </button>
+            {parentLevel ? (
+              <button
+                type="button"
+                onClick={() => onBackToLevel ? onBackToLevel(parentLevel.id) : onBackToCourses?.()}
+                className="text-xs sm:text-sm text-[#555555] hover:text-[#c2410c] hover:underline font-semibold hidden sm:inline cursor-pointer transition-colors"
+              >
+                {parentLevel.name}
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={onBackToCourses || onBackToHome}
+                className="text-xs sm:text-sm text-[#555555] hover:text-[#c2410c] hover:underline font-semibold hidden sm:inline cursor-pointer transition-colors"
+              >
+                Khoá học
+              </button>
+            )}
             <span className="text-neutral-400 hidden sm:inline">/</span>
             <span className="text-xs sm:text-sm font-bold text-[#000000] truncate max-w-[200px] sm:max-w-none">
               {course.name}

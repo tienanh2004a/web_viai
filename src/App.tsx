@@ -9,12 +9,14 @@ import { FreeTrialModal } from './components/FreeTrialModal';
 import { FloatingActions } from './components/FloatingActions';
 import { Footer } from './components/Footer';
 import { CourseDetailPage } from './components/CourseDetailPage';
+import { GradeLevelPage } from './components/GradeLevelPage';
 
 export const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState<'home' | 'course-detail'>('home');
-  const [selectedCourseSlug, setSelectedCourseSlug] = useState<string>('lap-trinh-robot');
+  const [currentView, setCurrentView] = useState<'home' | 'grade-level' | 'course-detail'>('home');
+  const [selectedLevelId, setSelectedLevelId] = useState<'mam-non' | 'tieu-hoc' | 'trung-hoc'>('tieu-hoc');
+  const [selectedCourseSlug, setSelectedCourseSlug] = useState<string>('robotics-lop-3-4');
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
-  const [modalCourseName, setModalCourseName] = useState('Robotics Lớp 3 — 4');
+  const [modalCourseName, setModalCourseName] = useState('Robotics Tiểu Học');
 
   // Sync with browser URL hash
   useEffect(() => {
@@ -24,6 +26,12 @@ export const App: React.FC = () => {
         const slug = hash.replace('#course/', '');
         setSelectedCourseSlug(slug);
         setCurrentView('course-detail');
+      } else if (hash.startsWith('#cap-hoc/')) {
+        const level = hash.replace('#cap-hoc/', '') as any;
+        if (['mam-non', 'tieu-hoc', 'trung-hoc'].includes(level)) {
+          setSelectedLevelId(level);
+        }
+        setCurrentView('grade-level');
       } else if (hash === '#khoa-hoc') {
         setCurrentView('home');
         setTimeout(() => {
@@ -59,6 +67,13 @@ export const App: React.FC = () => {
     window.location.hash = `#course/${slug}`;
     setSelectedCourseSlug(slug);
     setCurrentView('course-detail');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleViewGradeLevel = (levelId: 'mam-non' | 'tieu-hoc' | 'trung-hoc') => {
+    window.location.hash = `#cap-hoc/${levelId}`;
+    setSelectedLevelId(levelId);
+    setCurrentView('grade-level');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -105,17 +120,28 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#f5f5f7] text-[#111827] flex flex-col font-sans selection:bg-[#c2410c] selection:text-white">
-      {/* View 1: Course Detail Page */}
+      {/* View 1: Course Detail Page (Nội dung chi tiết 52 bài học của khóa con) */}
       {currentView === 'course-detail' ? (
         <CourseDetailPage
           courseSlug={selectedCourseSlug}
           onBackToHome={handleBackToHome}
           onBackToCourses={handleBackToCourses}
+          onBackToLevel={handleViewGradeLevel}
           onOpenTrialModal={handleOpenTrialModal}
           onSelectCourse={handleSelectCourse}
         />
+      ) : currentView === 'grade-level' ? (
+        /* View 2: Grade Level Page (Trang giới thiệu 1 trong 3 cấp học & các khóa con) */
+        <GradeLevelPage
+          levelId={selectedLevelId}
+          onBackToHome={handleBackToHome}
+          onBackToCourses={handleBackToCourses}
+          onSelectCourse={handleSelectCourse}
+          onOpenTrialModal={handleOpenTrialModal}
+          onSwitchLevel={handleViewGradeLevel}
+        />
       ) : (
-        /* View 2: Full Interactive 3D Landing Page */
+        /* View 3: Full Interactive Landing Page */
         <>
           {/* Top Sticky Navigation */}
           <Navbar 
@@ -133,16 +159,16 @@ export const App: React.FC = () => {
             {/* 2. About Us & Competition Journey (Hưng Yên & Miền Bắc) */}
             <AboutUsSection onOpenTrialModal={() => handleOpenTrialModal()} />
 
-            {/* 3. Courses with 3D Tilt Cards */}
+            {/* 3. Courses: 3 Cấp học (Mầm Non, Tiểu Học, THCS) */}
             <Courses3D 
               onOpenTrialModal={handleOpenTrialModal} 
-              onViewCourseDetail={handleSelectCourse}
+              onViewGradeLevel={handleViewGradeLevel}
             />
 
             {/* 4. Frequently Asked Questions (FAQ) */}
             <FaqSection />
 
-            {/* 7. Contact & 3 Campuses (Hải Phòng, Hưng Yên, Ninh Bình) */}
+            {/* 5. Contact & 3 Campuses (Hải Phòng, Hưng Yên, Ninh Bình) */}
             <ContactSection />
           </main>
 

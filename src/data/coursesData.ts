@@ -2689,3 +2689,160 @@ coursesData['robotics-tieu-hoc'] = coursesData['robotics-lop-3-4'];
 coursesData['luyen-thi-robosim'] = coursesData['robotics-lop-3-4'];
 coursesData['robotics-trung-hoc'] = coursesData['robotics-lop-6-7'];
 coursesData['ai-iot-robotics'] = coursesData['robotics-ai-lop-8-9'];
+
+export interface GradeLevel {
+  id: 'mam-non' | 'tieu-hoc' | 'trung-hoc';
+  slug: string;
+  name: string;
+  shortName: string;
+  academicName: string;
+  badge: string;
+  tagline: string;
+  headline: string;
+  ageRange: string;
+  displayAge: string;
+  coverImage: string;
+  hardwareKitSummary: string;
+  description: string;
+  detailedOverview: string;
+  highlights: {
+    title: string;
+    desc: string;
+  }[];
+  childCourseSlugs: string[];
+  learningOutcomes: string[];
+  methodology: string;
+}
+
+export const GRADE_LEVELS: Record<string, GradeLevel> = {
+  'mam-non': {
+    id: 'mam-non',
+    slug: 'mam-non',
+    name: 'Robotics Mầm Non',
+    shortName: 'Khối Mầm Non',
+    academicName: 'Ươm Mầm Sáng Tạo',
+    badge: 'MẦM NON (4 — 6 TUỔI)',
+    tagline: 'Khơi nguồn đam mê công nghệ & tư duy trực quan',
+    headline: 'Khơi nguồn đam mê công nghệ & kích thích tư duy sáng tạo cho trẻ mầm non từ 4 đến 6 tuổi thông qua phương pháp vừa học vừa chơi',
+    ageRange: '4 — 6 tuổi',
+    displayAge: '4 — 6 tuổi',
+    coverImage: '/images/courses/mam-non.png',
+    hardwareKitSummary: 'Bộ khối ghép cơ khí an toàn ABS bo tròn, động cơ thông minh & thẻ lệnh Screen-Free VIAI-Kids',
+    description: 'Chương trình được thiết kế đặc thù cho lứa tuổi mầm non theo phương pháp "Vừa học vừa chơi" (Play-based Learning). Bé được tự tay thao tác với các khối ghép an toàn, động cơ chuyển động trực quan và làm quen tư duy lập trình thẻ lệnh không nhìn màn hình máy tính.',
+    detailedOverview: 'Tại VIAI, giai đoạn 4 — 6 tuổi là thời kỳ vàng để nuôi dưỡng trí tò mò khoa học và phát triển sự khéo léo của đôi bàn tay. Bé không bị gò bó vào lý thuyết mà được tiếp cận công nghệ thông qua các hoạt động tương tác vật lý sinh động, chế tạo các mô hình động vật, xe cộ biết chuyển động và hiểu bản chất vận hành của thế giới xung quanh.',
+    highlights: [
+      {
+        title: 'Kỹ năng vận động tinh & Khéo léo',
+        desc: 'Thao tác lắp ghép ngón tay, phối hợp tay - mắt nhịp nhàng với bộ khối ghép ABS chuẩn châu Âu.'
+      },
+      {
+        title: 'Tư duy logic & Trình tự hành động',
+        desc: 'Hiểu khái niệm nguyên nhân - kết quả và thực hiện các bước tuần tự để hoàn thành sản phẩm hoàn chỉnh.'
+      },
+      {
+        title: 'Lập trình thẻ Screen-Free an toàn',
+        desc: 'Xây dựng thuật toán tuần tự, rẽ nhánh thông qua thẻ lệnh mã màu thông minh, bảo vệ thị lực tối đa cho trẻ nhỏ.'
+      }
+    ],
+    childCourseSlugs: ['robotics-mam-non'],
+    learningOutcomes: [
+      'Nhận biết và phân biệt các cơ cấu chuyển động cơ bản: bánh răng, ròng rọc, đòn bẩy',
+      'Tự tay lắp ráp hơn 40 mô hình robot thông minh theo từng chủ đề thực tế',
+      'Phát triển khả năng quan sát, tư duy hình học không gian 3D trực quan',
+      'Tự tin thuyết trình giới thiệu sản phẩm của mình trước lớp và bố mẹ'
+    ],
+    methodology: 'Play-based Learning (Học qua trải nghiệm & trò chơi sáng tạo) kết hợp tiêu chuẩn STEM quốc tế.'
+  },
+  'tieu-hoc': {
+    id: 'tieu-hoc',
+    slug: 'tieu-hoc',
+    name: 'Robotics Tiểu Học',
+    shortName: 'Khối Tiểu Học',
+    academicName: 'Tư Duy Toàn Diện & RoboSim',
+    badge: 'TIỂU HỌC (LỚP 1 — 5)',
+    tagline: 'Nền tảng thuật toán, mô phỏng 3D & cơ cấu chuyển động',
+    headline: 'Xây dựng nền tảng tư duy thuật toán, làm chủ mô phỏng 3D RoboSim và chế tạo robot cơ cấu đa tầng cho học sinh Tiểu học',
+    ageRange: 'Lớp 1 — 5',
+    displayAge: '6 — 11 tuổi',
+    coverImage: '/images/courses/tieu-hoc-2.png',
+    hardwareKitSummary: 'Hệ sinh thái Alpha + Beta, cảm biến đa tầng & phần mềm mô phỏng 3D RoboSim chuẩn quốc tế',
+    description: 'Chương trình chuẩn hóa toàn diện từ cơ cấu cơ khí, bản vẽ kỹ thuật đến lập trình thuật toán và mô phỏng 3D. Được chia thành 3 khóa học con tương ứng với từng giai đoạn nhận thức (Lớp 1-2, Lớp 3-4, Lớp 5), giúp học sinh tự tin biến ý tưởng thành robot thực tế.',
+    detailedOverview: 'Bậc Tiểu học là giai đoạn hình thành tư duy trừu tượng và tư duy thuật toán. Lộ trình Robotics Tiểu Học tại VIAI kết hợp phương pháp Virtual-to-Physical độc quyền: học sinh học bản chất cơ cấu cơ học, thực hành trên nền tảng số RoboSim 3D để kiểm thử giải thuật, sau đó trực tiếp lắp ráp và lập trình cho Robot vật lý chạy trên sa bàn thi đấu.',
+    highlights: [
+      {
+        title: '3 Khóa học con chuyên sâu theo lứa tuổi',
+        desc: 'Lớp 1 — 2 (Cơ cấu & Screen-Free), Lớp 3 — 4 (Mô phỏng RoboSim & Beta Set), Lớp 5 (Động lực học & Tiền Trung học).'
+      },
+      {
+        title: 'Làm chủ cơ cấu cơ giới & lực truyền động',
+        desc: 'Phân tích bản vẽ lắp ráp 3D, hiểu sâu nguyên lý bánh răng đa tầng, trục khuỷu, hệ bánh xe vi sai và cảm biến.'
+      },
+      {
+        title: 'Tư duy Virtual-to-Physical độc quyền',
+        desc: 'Lập trình mô phỏng 3D trên RoboSim trước khi chuyển giao mã nguồn sang robot thực tế, tối ưu thuật toán vượt sa bàn.'
+      }
+    ],
+    childCourseSlugs: ['robotics-lop-1-2', 'robotics-lop-3-4', 'robotics-lop-5'],
+    learningOutcomes: [
+      'Thành thạo tư duy thuật toán: tuần tự, rẽ nhánh nếu - thì, vòng lặp và biến số',
+      'Đọc hiểu bản vẽ kỹ thuật 3D và tự thiết kế các cơ cấu truyền động cơ khí phức hợp',
+      'Làm chủ phần mềm mô phỏng 3D RoboSim, tính toán tọa độ và tối ưu lộ trình di chuyển',
+      'Chế tạo robot thi đấu thực chiến và rèn luyện kỹ năng làm việc nhóm'
+    ],
+    methodology: 'Virtual-to-Physical Learning kết hợp Project-based Learning (Học qua dự án thực tế 4 học phần 52 buổi).'
+  },
+  'trung-hoc': {
+    id: 'trung-hoc',
+    slug: 'trung-hoc',
+    name: 'Robotics Trung Học Cơ Sở',
+    shortName: 'Khối Trung Học Cơ Sở',
+    academicName: 'Chinh Phục Đấu Trường & AI',
+    badge: 'TRUNG HỌC CƠ SỞ (LỚP 6 — 9)',
+    tagline: 'Lập trình thực chiến Python/C++, giải thuật PID, Vision AI & AGV',
+    headline: 'Nâng tầm tư duy lập trình chuyên sâu với Python/C++, thuật toán PID đối kháng, thị giác AI và kiến tạo Robot AGV',
+    ageRange: 'Lớp 6 — 9',
+    displayAge: '11 — 15 tuổi',
+    coverImage: '/images/courses/trung-hoc-1.png',
+    hardwareKitSummary: 'Robot thi đấu AGV đối kháng, vi điều khiển nâng cao, Vision AI & hệ thống Arena thực tế',
+    description: 'Chương trình đào tạo đỉnh cao dành cho học sinh THCS. Học sinh chuyển đổi từ tư duy khối sang viết mã nguồn văn bản Python/C++, nghiên cứu thuật toán điều khiển PID, thị giác máy tính và chế tạo robot công nghiệp tự hành AGV thi đấu đối kháng.',
+    detailedOverview: 'Bậc Trung học cơ sở tại VIAI trang bị năng lực nghiên cứu khoa học thực thụ. Học sinh được học cùng các giảng viên chuyên gia, làm việc với linh kiện công nghiệp, viết giải thuật điều khiển tự hành và phát triển các dự án có tính ứng dụng cao, sẵn sàng tham gia các cuộc thi Sáng tạo Khoa học Kỹ thuật cấp Tỉnh/Thành phố và Quốc gia.',
+    highlights: [
+      {
+        title: '2 Khóa học con bứt phá chuyên sâu',
+        desc: 'Lớp 6 — 7 (Chiến thuật đấu trường & Thuật toán PID) và Lớp 8 — 9 (Chuyên sâu AI, Computer Vision & Robot AGV).'
+      },
+      {
+        title: 'Lập trình mã lệnh thực chiến C++ / Python',
+        desc: 'Học sinh trực tiếp code giải thuật bám line tốc độ cao, xử lý dữ liệu cảm biến đa luồng và điều khiển động cơ PID.'
+      },
+      {
+        title: 'Huấn luyện thi đấu & Bảo trợ Sáng tạo KHKT',
+        desc: 'Được bảo trợ chuyên môn hoàn thiện hồ sơ dự thi Sáng tạo KHKT các cấp và các giải đấu Robotics uy tín.'
+      }
+    ],
+    childCourseSlugs: ['robotics-lop-6-7', 'robotics-ai-lop-8-9'],
+    learningOutcomes: [
+      'Thành thạo lập trình code văn bản Python và C/C++ ứng dụng vào phần cứng vi điều khiển',
+      'Ứng dụng thuật toán điều khiển tự động PID và xử lý ảnh cơ bản với Computer Vision',
+      'Thiết kế và chế tạo Robot tự hành AGV phục vụ các bài toán vận chuyển thông minh',
+      'Tư duy phản biện, giải quyết vấn đề kỹ thuật phức tạp và tư duy nghiên cứu khoa học'
+    ],
+    methodology: 'Research & Competition-Driven Learning (Đào tạo định hướng nghiên cứu & Chinh phục giải đấu).'
+  }
+};
+
+export const PRIMARY_GRADE_LEVEL_IDS = ['mam-non', 'tieu-hoc', 'trung-hoc'] as const;
+
+export const getGradeLevelByCourseSlug = (courseSlug: string): GradeLevel | undefined => {
+  if (courseSlug === 'robotics-mam-non' || courseSlug === 'lap-trinh-robot') {
+    return GRADE_LEVELS['mam-non'];
+  }
+  if (['robotics-lop-1-2', 'robotics-lop-3-4', 'robotics-lop-5', 'robotics-tieu-hoc', 'luyen-thi-robosim'].includes(courseSlug)) {
+    return GRADE_LEVELS['tieu-hoc'];
+  }
+  if (['robotics-lop-6-7', 'robotics-ai-lop-8-9', 'robotics-trung-hoc', 'ai-iot-robotics'].includes(courseSlug)) {
+    return GRADE_LEVELS['trung-hoc'];
+  }
+  return undefined;
+};
+
