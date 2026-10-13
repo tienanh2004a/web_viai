@@ -120,7 +120,9 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
       setDateError('');
     }
     if (defaultCourse) {
-      if (defaultCourse.includes('1 — 2') || defaultCourse.includes('1 - 2')) {
+      if (defaultCourse.includes('Mầm') || defaultCourse.includes('mam-non')) {
+        setSelectedCourse('Robotics Mầm Non');
+      } else if (defaultCourse.includes('1 — 2') || defaultCourse.includes('1 - 2')) {
         setSelectedCourse('Robotics Lớp 1 — 2');
       } else if (defaultCourse.includes('3 — 4') || defaultCourse.includes('3 - 4')) {
         setSelectedCourse('Robotics Lớp 3 — 4');
@@ -129,7 +131,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
       } else if (defaultCourse.includes('6 — 7') || defaultCourse.includes('6 - 7')) {
         setSelectedCourse('Robotics Lớp 6 — 7');
       } else if (defaultCourse.includes('8 — 9') || defaultCourse.includes('8 - 9')) {
-        setSelectedCourse('Robotics & AI Lớp 8 — 9');
+        setSelectedCourse('Robotics Lớp 8 — 9');
       } else if (defaultCourse.includes('Trung') || defaultCourse.includes('trung-hoc')) {
         setSelectedCourse('Robotics Lớp 6 — 7');
       } else {
@@ -476,11 +478,12 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                   onChange={(e) => setSelectedCourse(e.target.value)}
                   className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
                 >
+                  <option value="Robotics Mầm Non">Robotics Mầm Non</option>
                   <option value="Robotics Lớp 1 — 2">Robotics Lớp 1 — 2</option>
                   <option value="Robotics Lớp 3 — 4">Robotics Lớp 3 — 4</option>
                   <option value="Robotics Lớp 5">Robotics Lớp 5</option>
                   <option value="Robotics Lớp 6 — 7">Robotics Lớp 6 — 7</option>
-                  <option value="Robotics & AI Lớp 8 — 9">Robotics & AI Lớp 8 — 9</option>
+                  <option value="Robotics Lớp 8 — 9">Robotics Lớp 8 — 9</option>
                 </select>
               </div>
 

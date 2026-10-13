@@ -142,7 +142,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
                   onClick={() => onSelectCourse?.('robotics-ai-lop-8-9')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics &amp; AI Lớp 8 — 9
+                  Robotics Lớp 8 — 9
                 </button>
               </li>
             </ul>

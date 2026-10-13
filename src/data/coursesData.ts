@@ -68,7 +68,7 @@ export const coursesData: Record<string, CourseDetail> = {
   'robotics-mam-non': {
   "slug": "robotics-mam-non",
   "code": "Sata-Kids",
-  "name": "Robotics Khối Mầm Non",
+  "name": "Robotics Mầm Non",
   "academicName": "Ươm Mầm Sáng Tạo",
   "headline": "Khơi nguồn đam mê công nghệ & kích thích tư duy sáng tạo cho trẻ mầm non từ 4 đến 6 tuổi",
   "category": "Mầm non (4 — 6 tuổi)",
@@ -2233,7 +2233,7 @@ export const coursesData: Record<string, CourseDetail> = {
   'robotics-ai-lop-8-9': {
   "slug": "robotics-ai-lop-8-9",
   "code": "Sata7",
-  "name": "Robotics & AI Lớp 8 — 9",
+  "name": "Robotics Lớp 8 — 9",
   "academicName": "Kiến Tạo Tương Lai",
   "headline": "Lập trình Python/C++, Thị giác máy tính AI OpenCV, Xe tự hành AGV & Đồ án KHKT cho Lớp 8 — 9",
   "category": "Khối Trung học (Lớp 8 — 9)",

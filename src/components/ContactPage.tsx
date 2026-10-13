@@ -371,11 +371,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       onChange={(e) => setCourse(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-neutral-900 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all cursor-pointer"
                     >
+                      <option value="Robotics Mầm Non">Robotics Mầm Non</option>
                       <option value="Robotics Lớp 1 — 2">Robotics Lớp 1 — 2</option>
                       <option value="Robotics Lớp 3 — 4">Robotics Lớp 3 — 4</option>
                       <option value="Robotics Lớp 5">Robotics Lớp 5</option>
                       <option value="Robotics Lớp 6 — 7">Robotics Lớp 6 — 7</option>
-                      <option value="Robotics & AI Lớp 8 — 9">Robotics & AI Lớp 8 — 9</option>
+                      <option value="Robotics Lớp 8 — 9">Robotics Lớp 8 — 9</option>
                     </select>
                   </div>
 
