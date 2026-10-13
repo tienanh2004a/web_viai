@@ -34,6 +34,15 @@
     letter-spacing: -0.01em;
     line-height: 1.25;
   }
+
+  /* Chống triệt để hiện tượng tự động phóng to màn hình (auto-zoom) trên iOS Safari & Mobile */
+  @media screen and (max-width: 768px) {
+    input,
+    select,
+    textarea {
+      font-size: 16px !important;
+    }
+  }
 }
 
 /* Animations */

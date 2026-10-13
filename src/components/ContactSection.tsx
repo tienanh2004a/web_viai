@@ -282,7 +282,7 @@ export const ContactSection: React.FC = () => {
                     placeholder="Ví dụ: Nguyễn Văn An"
                     value={parentName}
                     onChange={(e) => setParentName(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] placeholder:text-neutral-400 focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-base sm:text-sm text-[#111827] placeholder:text-neutral-400 focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
                   />
                 </div>
 
@@ -303,7 +303,7 @@ export const ContactSection: React.FC = () => {
                     onChange={handlePhoneChange}
                     className={`w-full px-4 py-3 rounded-xl border ${
                       phoneError ? 'border-red-500 ring-2 ring-red-500/20 bg-red-50/20' : 'border-neutral-300 bg-white'
-                    } text-sm text-[#111827] placeholder:text-neutral-400 focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all`}
+                    } text-base sm:text-sm text-[#111827] placeholder:text-neutral-400 focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all`}
                   />
                   {phoneError && (
                     <p className="text-xs text-red-500 font-medium mt-1">
@@ -322,7 +322,7 @@ export const ContactSection: React.FC = () => {
                     name="course"
                     value={course}
                     onChange={(e) => setCourse(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all cursor-pointer"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-base sm:text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all cursor-pointer"
                   >
                     <option value="Robotics Mầm Non">Robotics Mầm Non</option>
                     <option value="Robotics Lớp 1 — 2">Robotics Lớp 1 — 2</option>
@@ -343,7 +343,7 @@ export const ContactSection: React.FC = () => {
                     name="branch"
                     value={branch}
                     onChange={(e) => setBranch(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-base sm:text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
                   >
                     <option value="Hải Phòng">Cơ sở Hải Phòng (42 Lạch Tray, Q. Ngô Quyền)</option>
                     <option value="Hưng Yên">Cơ sở Hưng Yên (158 Chu Văn An, TP. Hưng Yên)</option>
@@ -364,7 +364,7 @@ export const ContactSection: React.FC = () => {
                     placeholder="Ví dụ: Bé 8 tuổi, chưa từng học lập trình..."
                     value={extraInfo}
                     onChange={(e) => setExtraInfo(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] placeholder:text-neutral-400 focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-base sm:text-sm text-[#111827] placeholder:text-neutral-400 focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
                   />
                 </div>
 

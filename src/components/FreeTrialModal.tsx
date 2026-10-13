@@ -118,7 +118,16 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
       setFormOpenedTime(Date.now());
       setBotHoneypot('');
       setDateError('');
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
     if (defaultCourse) {
       if (defaultCourse.includes('Mầm') || defaultCourse.includes('mam-non')) {
         setSelectedCourse('Robotics Mầm Non');
@@ -252,6 +261,10 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   };
 
   const handleReset = () => {
+    // Thu hồi bàn phím ảo điện thoại và thoát focus ngay lập tức
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
     setSubmitted(false);
     setParentName('');
     setPhoneNumber('');
@@ -434,7 +447,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                   placeholder="Ví dụ: Nguyễn Văn An"
                   value={parentName}
                   onChange={(e) => setParentName(e.target.value)}
-                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
+                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-base sm:text-sm text-zinc-900 placeholder-zinc-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                 />
               </div>
 
@@ -456,7 +469,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                   onChange={handlePhoneChange}
                   className={`w-full rounded-xl border ${
                     phoneError ? 'border-red-500 ring-1 ring-red-500 bg-red-50/20' : 'border-gray-200 bg-[#faf9f6]'
-                  } px-3.5 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors`}
+                  } px-3.5 py-2.5 text-base sm:text-sm text-zinc-900 placeholder-zinc-400 focus:border-orange-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors`}
                 />
                 {phoneError && (
                   <p className="text-xs text-red-500 font-medium mt-1">
@@ -476,7 +489,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                   name="selectedCourse"
                   value={selectedCourse}
                   onChange={(e) => setSelectedCourse(e.target.value)}
-                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
+                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-base sm:text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
                 >
                   <option value="Robotics Mầm Non">Robotics Mầm Non</option>
                   <option value="Robotics Lớp 1 — 2">Robotics Lớp 1 — 2</option>
@@ -498,7 +511,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                   name="branch"
                   value={branch}
                   onChange={(e) => setBranch(e.target.value)}
-                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
+                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-base sm:text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
                 >
                   <option value="Cơ sở Hải Phòng">Cơ sở Hải Phòng</option>
                   <option value="Cơ sở Hưng Yên">Cơ sở Hưng Yên</option>
@@ -540,7 +553,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                     }}
                     className={`w-full rounded-xl border ${
                       dateError ? 'border-red-500 ring-1 ring-red-500 bg-red-50/20' : 'border-gray-200 bg-[#faf9f6]'
-                    } pl-3.5 pr-11 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors`}
+                    } pl-3.5 pr-11 py-2.5 text-base sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors`}
                   />
 
                   {/* Nút mở popup lịch trực tiếp */}

@@ -329,7 +329,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       placeholder="Ví dụ: Nguyễn Văn An"
                       value={parentName}
                       onChange={(e) => setParentName(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-base sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all"
                     />
                   </div>
 
@@ -350,7 +350,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       onChange={handlePhoneChange}
                       className={`w-full px-4 py-3 rounded-xl border ${
                         phoneError ? 'border-red-500 ring-2 ring-red-500/20 bg-red-50/20' : 'border-neutral-300 bg-white'
-                      } text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all`}
+                      } text-base sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all`}
                     />
                     {phoneError && (
                       <p className="text-xs text-red-500 font-medium mt-1">
@@ -369,7 +369,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       name="course"
                       value={course}
                       onChange={(e) => setCourse(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-neutral-900 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all cursor-pointer"
+                      className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-base sm:text-sm text-neutral-900 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all cursor-pointer"
                     >
                       <option value="Robotics Mầm Non">Robotics Mầm Non</option>
                       <option value="Robotics Lớp 1 — 2">Robotics Lớp 1 — 2</option>
@@ -390,7 +390,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       name="branch"
                       value={branch}
                       onChange={(e) => setBranch(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-neutral-900 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all cursor-pointer"
+                      className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-base sm:text-sm text-neutral-900 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all cursor-pointer"
                     >
                       <option value="Hải Phòng">Cơ sở 1: Hải Phòng (42 Lạch Tray, Quận Ngô Quyền)</option>
                       <option value="Hưng Yên">Cơ sở 2: TP. Hưng Yên (158 Chu Văn An, Phường An Tảo)</option>
@@ -411,7 +411,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       placeholder="Ví dụ: Bé Nam 8 tuổi, trường Tiểu học Chu Văn An"
                       value={extraInfo}
                       onChange={(e) => setExtraInfo(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-base sm:text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all"
                     />
                   </div>
 
