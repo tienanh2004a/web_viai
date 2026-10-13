@@ -56,7 +56,9 @@ export const BranchOnlineIcon = ({ color = '#0284C7', className = 'w-5 h-5' }: {
 );
 
 export const COURSE_OPTIONS = [
-  { value: 'Robotics Mầm Non', label: 'Robotics Mầm Non', robotColor: '#F59E0B' },
+  { value: 'Robotics Mầm Non — Lớp Cơ Bản', label: 'Robotics Mầm Non — Lớp Cơ Bản', robotColor: '#F59E0B' },
+  { value: 'Robotics Mầm Non — Lớp Nâng Cao', label: 'Robotics Mầm Non — Lớp Nâng Cao', robotColor: '#F59E0B' },
+  { value: 'Robotics Mầm Non — Lớp Chuyên Sâu', label: 'Robotics Mầm Non — Lớp Chuyên Sâu', robotColor: '#F59E0B' },
   { value: 'Robotics Lớp 1 — 2', label: 'Robotics Lớp 1 — 2', robotColor: '#0284C7' },
   { value: 'Robotics Lớp 3 — 4', label: 'Robotics Lớp 3 — 4', robotColor: '#EA580C' },
   { value: 'Robotics Lớp 5', label: 'Robotics Lớp 5', robotColor: '#10B981' },

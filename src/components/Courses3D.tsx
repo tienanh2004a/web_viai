@@ -110,7 +110,7 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewGr
                       {childCount > 1 ? `Gồm ${childCount} khóa học con theo độ tuổi:` : 'Gồm 1 khóa học nền tảng:'}
                     </span>
                     <span className="block text-xs font-semibold text-gray-700">
-                      {levelId === 'mam-non' && '• Robotics Mầm Non (4 — 6 tuổi)'}
+                      {levelId === 'mam-non' && '• Lớp Cơ Bản • Lớp Nâng Cao • Lớp Chuyên Sâu'}
                       {levelId === 'tieu-hoc' && '• Lớp 1 — 2 • Lớp 3 — 4 • Lớp 5 (Tiền Trung Học)'}
                       {levelId === 'trung-hoc' && '• Lớp 6 — 7 (Đấu trường) • Lớp 8 — 9 (AI & AGV)'}
                     </span>
