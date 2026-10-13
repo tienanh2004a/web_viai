@@ -4,7 +4,7 @@ import confetti from 'canvas-confetti';
 import { submitLeadToGoogleSheet } from '../services/leadService';
 
 // Cute Robot Icon SVG chuẩn EdTech/Robotics
-const CuteRobotIcon = ({ color = '#EA580C', className = 'w-5 h-5' }: { color?: string; className?: string }) => (
+export const CuteRobotIcon = ({ color = '#EA580C', className = 'w-5 h-5' }: { color?: string; className?: string }) => (
   <svg 
     className={`${className} shrink-0`} 
     viewBox="0 0 24 24" 
@@ -23,7 +23,7 @@ const CuteRobotIcon = ({ color = '#EA580C', className = 'w-5 h-5' }: { color?: s
 );
 
 // Icon Cơ sở Trường học EdTech
-const BranchBuildingIcon = ({ color = '#059669', className = 'w-5 h-5' }: { color?: string; className?: string }) => (
+export const BranchBuildingIcon = ({ color = '#059669', className = 'w-5 h-5' }: { color?: string; className?: string }) => (
   <svg 
     className={`${className} shrink-0`} 
     viewBox="0 0 24 24" 
@@ -41,7 +41,7 @@ const BranchBuildingIcon = ({ color = '#059669', className = 'w-5 h-5' }: { colo
 );
 
 // Icon Học Online Toàn Quốc
-const BranchOnlineIcon = ({ color = '#0284C7', className = 'w-5 h-5' }: { color?: string; className?: string }) => (
+export const BranchOnlineIcon = ({ color = '#0284C7', className = 'w-5 h-5' }: { color?: string; className?: string }) => (
   <svg 
     className={`${className} shrink-0`} 
     viewBox="0 0 24 24" 
@@ -55,7 +55,7 @@ const BranchOnlineIcon = ({ color = '#0284C7', className = 'w-5 h-5' }: { color?
   </svg>
 );
 
-const COURSE_OPTIONS = [
+export const COURSE_OPTIONS = [
   { value: 'Robotics Mầm Non', label: 'Robotics Mầm Non', robotColor: '#F59E0B' },
   { value: 'Robotics Lớp 1 — 2', label: 'Robotics Lớp 1 — 2', robotColor: '#0284C7' },
   { value: 'Robotics Lớp 3 — 4', label: 'Robotics Lớp 3 — 4', robotColor: '#EA580C' },
@@ -64,7 +64,7 @@ const COURSE_OPTIONS = [
   { value: 'Robotics Lớp 8 — 9', label: 'Robotics Lớp 8 — 9', robotColor: '#EC4899' },
 ];
 
-const BRANCH_OPTIONS = [
+export const BRANCH_OPTIONS = [
   {
     value: 'Cơ sở Hải Phòng',
     label: 'Cơ sở Hải Phòng',
