@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { 
   ArrowLeft, Sparkles, CheckCircle2, Cpu, ArrowRight, 
   Layers, BookOpen, ShieldCheck, Trophy, Compass, Users, Clock,
-  Check, Gift, Calendar
-} from 'lucide-react';
+  } from 'lucide-react';
 import { 
   GRADE_LEVELS, 
   PRIMARY_GRADE_LEVEL_IDS, 
@@ -30,18 +29,10 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
   onSwitchLevel,
 }) => {
   const currentLevel: GradeLevel = GRADE_LEVELS[levelId] || GRADE_LEVELS['tieu-hoc'];
-  const [selectedCurriculumSlug, setSelectedCurriculumSlug] = useState<string>('mam-non-co-ban');
-
+  
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (levelId === 'mam-non') {
-      setSelectedCurriculumSlug('mam-non-co-ban');
-    } else {
-      setSelectedCurriculumSlug(currentLevel.childCourseSlugs[0] || '');
-    }
-  }, [levelId, currentLevel.childCourseSlugs]);
-
-  const activeCurriculumCourse: CourseDetail | undefined = coursesData[selectedCurriculumSlug];
+  }, [levelId]);
 
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#111827] flex flex-col font-sans selection:bg-[#c2410c] selection:text-white">
@@ -158,10 +149,10 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                     <span>Lộ trình</span>
                   </div>
                   <div className="text-base sm:text-lg font-extrabold text-[#111827]">
-                    {currentLevel.id === 'mam-non' ? '3 Lộ trình / Khóa' : '4 Học phần'}
+                    4 Học phần
                   </div>
                   <div className="text-[11px] text-gray-500">
-                    {currentLevel.id === 'mam-non' ? '12 buổi + 1 buổi Free' : '52 buổi / năm học'}
+                    52 buổi / năm học
                   </div>
                 </div>
 
@@ -279,7 +270,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                     {/* Bottom Stats Banner */}
                     <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-semibold text-white">
                       <span className="bg-orange-600/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-white font-bold">
-                        {childCourse.modules.length} Lộ trình · {childCourse.modules.length * 13} buổi (12+1 Free)
+                        4 Học phần · 52 buổi
                       </span>
                       <span className="bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded text-[11px] text-amber-200">
                         ⭐ {childCourse.rating} ({childCourse.totalStudents}+ học viên)
@@ -308,7 +299,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                       {/* 3 Lộ trình nổi bật */}
                       <div className="space-y-2 mb-6">
                         <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block">
-                          3 Lộ Trình Đào Tạo Chuẩn:
+                          4 Học Phần Đào Tạo Chuẩn:
                         </span>
                         {childCourse.modules.slice(0, 3).map((mod, idx) => (
                           <div
@@ -316,10 +307,10 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                             className="flex items-center justify-between text-xs p-2 rounded-xl bg-orange-50/60 border border-orange-100 text-gray-700 font-medium"
                           >
                             <span className="truncate pr-2 font-semibold text-gray-900">
-                              Lộ trình {idx + 1}: {mod.name}
+                              HP {idx + 1}: {mod.name}
                             </span>
                             <span className="text-[11px] text-orange-700 bg-orange-100/80 px-2 py-0.5 rounded-md shrink-0 font-bold">
-                              12 + 1 Free
+                              13 buổi
                             </span>
                           </div>
                         ))}
@@ -355,144 +346,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
         </div>
       </section>
 
-      {/* 5. KHUNG CHƯƠNG TRÌNH & CHI TIẾT 3 LỘ TRÌNH (BẢNG SHEET THEO YÊU CẦU ẢNH 3) */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-orange-100">
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-4 py-1 text-xs font-bold text-emerald-800 shadow-2xs mb-3">
-              <Calendar className="h-3.5 w-3.5 text-emerald-600" />
-              <span>LỘ TRÌNH CHI TIẾT 12 BUỔI CHÍNH + 1 BUỔI FREE</span>
-            </div>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#111827] tracking-tight mb-3">
-              Giáo Trình Từng Buổi Học Thuộc <span className="text-[#c2410c]">{currentLevel.name}</span>
-            </h2>
-            <p className="text-sm sm:text-base text-gray-600">
-              Mỗi khóa học gồm 3 lộ trình độc lập, mỗi lộ trình 12 bài học theo chủ đề + 1 buổi Free ôn tập &amp; thuyết trình cho phụ huynh.
-            </p>
-
-            {/* Course Switcher Tabs */}
-            {currentLevel.childCourseSlugs.length > 1 && (
-              <div className="flex items-center justify-center gap-2 sm:gap-3 flex-wrap mt-8">
-                {currentLevel.childCourseSlugs.map((slug) => {
-                  const c = coursesData[slug];
-                  if (!c) return null;
-                  const isSelected = selectedCurriculumSlug === slug;
-                  return (
-                    <button
-                      key={slug}
-                      onClick={() => setSelectedCurriculumSlug(slug)}
-                      className={`px-4 sm:px-6 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                        isSelected
-                          ? 'bg-[#111827] text-white shadow-md scale-105'
-                          : 'bg-[#faf8f5] text-gray-700 border border-gray-200 hover:bg-orange-50 hover:border-orange-300'
-                      }`}
-                    >
-                      {c.name}
-                    </button>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-
-          {/* 3 Columns of 3 Lộ Trình for the selected course */}
-          {activeCurriculumCourse && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
-              {activeCurriculumCourse.modules.slice(0, 3).map((module, mIdx) => (
-                <div
-                  key={module.id}
-                  className="rounded-3xl border-2 border-orange-100 bg-[#faf8f5] overflow-hidden shadow-xs hover:shadow-lg transition-all flex flex-col h-full"
-                >
-                  {/* Module Header */}
-                  <div className="bg-gradient-to-r from-orange-500 to-amber-600 p-5 text-white">
-                    <div className="flex items-center justify-between gap-2 mb-1">
-                      <span className="text-xs uppercase font-extrabold tracking-wider bg-white/20 px-2.5 py-0.5 rounded-full">
-                        Lộ trình {mIdx + 1}
-                      </span>
-                      <span className="text-[11px] font-bold text-amber-100 bg-black/20 px-2 py-0.5 rounded-md">
-                        13 Buổi (12 + 1 Free)
-                      </span>
-                    </div>
-                    <h3 className="text-base sm:text-lg font-black leading-snug">
-                      {module.name}
-                    </h3>
-                  </div>
-
-                  {/* Body Topics & Lessons */}
-                  <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
-                    <div className="space-y-4">
-                      {module.topics && module.topics.length > 0 ? (
-                        module.topics.map((tp, tIdx) => {
-                          const isFreeTopic = tp.title.includes('Free') || tp.title.includes('Tặng');
-                          if (isFreeTopic) return null; // Rendered separately below
-                          return (
-                            <div key={tIdx} className="bg-white rounded-2xl p-3.5 border border-gray-200/80 shadow-2xs">
-                              <div className="text-xs font-bold text-[#c2410c] uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                                <span className="h-1.5 w-1.5 rounded-full bg-[#c2410c]" />
-                                <span>Chủ đề: {tp.title}</span>
-                              </div>
-                              <ul className="space-y-1.5 text-xs text-gray-700">
-                                {tp.lessons.map((ls, lIdx) => (
-                                  <li key={lIdx} className="flex items-start gap-2">
-                                    <span className="text-orange-400 font-bold shrink-0 mt-0.5">•</span>
-                                    <span className="font-medium text-gray-800">{ls}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          );
-                        })
-                      ) : (
-                        <div className="bg-white rounded-2xl p-4 border border-gray-200/80">
-                          <p className="text-xs text-gray-600 leading-relaxed">{module.description}</p>
-                        </div>
-                      )}
-
-                      {/* Khối màu xanh lá TẶNG FREE đúng như trong ảnh 3 */}
-                      <div className="bg-emerald-50 rounded-2xl p-4 border-2 border-emerald-300 text-emerald-950 shadow-xs">
-                        <div className="flex items-center gap-2 mb-2 pb-2 border-b border-emerald-200">
-                          <Gift className="h-4 w-4 text-emerald-700 shrink-0" />
-                          <span className="text-xs font-black uppercase tracking-wider text-emerald-800">
-                            TẶNG FREE (Buổi 13)
-                          </span>
-                        </div>
-                        <ul className="space-y-1.5 text-xs font-medium text-emerald-900">
-                          <li className="flex items-start gap-1.5">
-                            <Check className="h-3.5 w-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                            <span>Ôn tập củng cố kiến thức</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <Check className="h-3.5 w-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                            <span>Thuyết trình demo cho giáo viên</span>
-                          </li>
-                          <li className="flex items-start gap-1.5">
-                            <Check className="h-3.5 w-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                            <span>Thuyết trình cho phụ huynh về sản phẩm</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    {/* Bottom CTA for this Roadmap */}
-                    <div className="pt-3 border-t border-gray-200/80">
-                      <button
-                        onClick={() => onOpenTrialModal(`${activeCurriculumCourse.name} - ${module.name}`)}
-                        className="w-full flex items-center justify-center gap-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs py-2.5 px-4 transition-all shadow-xs cursor-pointer active:scale-98"
-                      >
-                        <Sparkles className="h-3.5 w-3.5 text-amber-200" />
-                        <span>Đăng ký học thử Lộ trình {mIdx + 1}</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* 6. PHƯƠNG PHÁP & CAM KẾT CHẤT LƯỢNG (ĐÃ BỎ HOÀN TOÀN KHỐI ẢNH 1 VÀ CHỈNH SỬA UI HIỆN ĐẠI) */}
+      {/* 5. PHƯƠNG PHÁP & CAM KẾT CHẤT LƯỢNG (ĐÃ BỎ HOÀN TOÀN KHỐI ẢNH 1 VÀ CHỈNH SỬA UI HIỆN ĐẠI) */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#faf8f5]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -570,7 +424,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
         </div>
       </section>
 
-      {/* 7. CALL TO ACTION BANNER CUỐI TRANG */}
+      {/* 6. CALL TO ACTION BANNER CUỐI TRANG */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 text-white">
         <div className="max-w-5xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold text-white">

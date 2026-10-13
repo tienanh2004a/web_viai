@@ -76,12 +76,12 @@ export const coursesData: Record<string, CourseDetail> = {
   "code": "Sata-Kids-Basic",
   "name": "Robotics Mầm Non — Lớp Cơ Bản",
   "academicName": "Khám Phá & Lắp Ghép Cơ Bản",
-  "headline": "Khám phá thế giới hình khối, máy công cụ và nhen nhóm tư duy logic đầu đời cho trẻ 4 — 6 tuổi",
-  "category": "Mầm non (4 — 6 tuổi)",
-  "grade": "Mầm non (4 — 6 tuổi)",
-  "age": "Mầm non (4 — 6 tuổi)",
-  "displayAge": "4 - 6 tuổi",
-  "duration": "39 buổi / 3 lộ trình (12 buổi chính + 1 buổi Free / lộ trình)",
+  "headline": "Khám phá thế giới hình khối, máy công cụ và nhen nhóm tư duy logic đầu đời cho trẻ",
+  "category": "Mầm non",
+  "grade": "Mầm non",
+  "age": "Mầm non",
+  "displayAge": "Mầm non",
+  "duration": "52 buổi",
   "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
   "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
   "rating": 4.96,
@@ -89,7 +89,7 @@ export const coursesData: Record<string, CourseDetail> = {
   "coverImage": "/images/courses/mam-non.png",
   "badge": "LỚP CƠ BẢN",
   "glowColor": "orange",
-  "overview": "Chương trình Lớp Cơ Bản được thiết kế đặc thù cho trẻ mầm non 4-6 tuổi theo phương pháp 'Vừa học vừa chơi' (Play-based Learning). Bé làm quen với các chi tiết khối ghép an toàn, bánh răng cơ khí, chế tạo các máy công cụ quen thuộc như cối xay gió, máy trộn và xe trượt vui nhộn.",
+  "overview": "Chương trình Lớp Cơ Bản được thiết kế đặc thù cho trẻ mầm non theo phương pháp 'Vừa học vừa chơi' (Play-based Learning). Bé làm quen với các chi tiết khối ghép an toàn, bánh răng cơ khí, chế tạo các máy công cụ quen thuộc như cối xay gió, máy trộn và xe trượt vui nhộn.",
   "hardwareKit": {
     "name": "Bộ Học Cụ Robot Mầm Non VIAI-Kids An Toàn Chuẩn Châu Âu",
     "description": "Mỗi học viên được trang bị 01 bộ khối ghép cơ khí bo tròn không sắc nhọn, động cơ giảm tốc an toàn cho trẻ nhỏ.",
@@ -163,100 +163,66 @@ export const coursesData: Record<string, CourseDetail> = {
   ],
   "modules": [
     {
-      "id": "LT1",
-      "title": "Lộ trình 1",
+      "id": "HP1",
+      "title": "Học phần 1",
       "name": "Khám Phá Thế Giới & Máy Công Cụ Đầu Tiên",
-      "number": "Lộ trình 1",
-      "duration": "13 buổi (12 buổi chính + 1 buổi Free)",
+      "number": "Học phần 1",
+      "duration": "13 buổi - 90 phút/buổi",
       "sessionsCount": 13,
       "hoursCount": 19.5,
       "projectsCount": 9,
       "description": "Bé làm quen các khối ghép cơ bản, khám phá các chuyển động xung quanh và chế tạo các máy công cụ đầu tiên.",
       "achievement": "Bé nhận biết màu sắc, hình khối, lắp ghép thuần thục và tự tin thuyết trình sản phẩm.",
-      "topics": [
-        {
-          "title": "Xin chào Weir",
-          "lessons": [
-            "Chào Weir",
-            "Tháp truyền hình Neon",
-            "Nhà là ca sĩ"
-          ]
-        },
-        {
-          "title": "Sở thú vui nhộn",
-          "lessons": [
-            "Người hâm mộ thể thao",
-            "Buzz, Buzz, Chú ong nhỏ",
-            "Con thuyền của sa mạc",
-            "Wow - Khủng long kia"
-          ]
-        },
-        {
-          "title": "Máy công cụ",
-          "lessons": [
-            "Cối xay gió tự động",
-            "Máy trộn cầm tay rực rỡ"
-          ]
-        },
-        {
-          "title": "Tặng Free",
-          "lessons": [
-            "Ôn tập",
-            "Thuyết trình demo cho giáo viên",
-            "Thuyết trình cho phụ huynh về sản phẩm"
-          ]
-        }
-      ],
       "lessons": [
         {
           "sessionNumber": 1,
-          "title": "Chào Weir (Chủ đề: Xin chào Weir)",
+          "title": "Chào Weir",
           "type": "Dự án"
         },
         {
           "sessionNumber": 2,
-          "title": "Tháp truyền hình Neon (Chủ đề: Xin chào Weir)",
+          "title": "Tháp truyền hình Neon",
           "type": "Dự án"
         },
         {
           "sessionNumber": 3,
-          "title": "Nhà là ca sĩ (Chủ đề: Xin chào Weir)",
+          "title": "Nhà là ca sĩ",
           "type": "Dự án"
         },
         {
           "sessionNumber": 4,
-          "title": "Người hâm mộ thể thao (Chủ đề: Sở thú vui nhộn)",
+          "title": "Người hâm mộ thể thao",
           "type": "Dự án"
         },
         {
           "sessionNumber": 5,
-          "title": "Buzz, Buzz, Chú ong nhỏ (Chủ đề: Sở thú vui nhộn)",
-          "type": "Dự án"
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
         },
         {
           "sessionNumber": 6,
-          "title": "Con thuyền của sa mạc (Chủ đề: Sở thú vui nhộn)",
+          "title": "Buzz, Buzz, Chú ong nhỏ",
           "type": "Dự án"
         },
         {
           "sessionNumber": 7,
-          "title": "Wow - Khủng long kia (Chủ đề: Sở thú vui nhộn)",
+          "title": "Con thuyền của sa mạc",
           "type": "Dự án"
         },
         {
           "sessionNumber": 8,
-          "title": "Cối xay gió tự động (Chủ đề: Máy công cụ)",
+          "title": "Wow - Khủng long kia",
           "type": "Dự án"
         },
         {
           "sessionNumber": 9,
-          "title": "Máy trộn cầm tay rực rỡ (Chủ đề: Máy công cụ)",
+          "title": "Cối xay gió tự động",
           "type": "Dự án"
         },
         {
           "sessionNumber": 10,
-          "title": "Ôn tập kiến thức lắp ghép & cơ chế",
-          "type": "Ôn tập"
+          "title": "Máy trộn cầm tay rực rỡ",
+          "type": "Dự án"
         },
         {
           "sessionNumber": 11,
@@ -265,116 +231,81 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 12,
-          "title": "Hoàn thiện mô hình tốt nghiệp lộ trình",
-          "type": "Dự án"
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
         },
         {
           "sessionNumber": 13,
-          "title": "TẶNG FREE: Báo cáo & Thuyết trình sản phẩm cho Phụ huynh",
-          "type": "Tặng Free"
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
         }
       ],
       "outcomes": [
-        "Thao tác lắp ghép khéo léo",
-        "Nhận biết các cơ cấu truyền động",
-        "Tự tin giới thiệu sản phẩm"
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
       ]
     },
     {
-      "id": "LT2",
-      "title": "Lộ trình 2",
+      "id": "HP2",
+      "title": "Học phần 2",
       "name": "Công Viên Trò Chơi & Mùa Xuân Rực Rỡ",
-      "number": "Lộ trình 2",
-      "duration": "13 buổi (12 buổi chính + 1 buổi Free)",
+      "number": "Học phần 2",
+      "duration": "13 buổi - 90 phút/buổi",
       "sessionsCount": 13,
       "hoursCount": 19.5,
       "projectsCount": 9,
       "description": "Khám phá các phương tiện di chuyển trong công viên và các mô hình cơ khí mô phỏng thiên nhiên bốn mùa.",
       "achievement": "Lắp ráp thành thạo mô hình bánh xe lăn, đệm khí và hiểu nguyên lý hoạt động của thiết bị gia đình.",
-      "topics": [
-        {
-          "title": "Công viên trò chơi",
-          "lessons": [
-            "Tàu đệm khí",
-            "Bánh xe lăn",
-            "Tàu lượn",
-            "Công viên trò chơi"
-          ]
-        },
-        {
-          "title": "Mùa xuân đến",
-          "lessons": [
-            "Hoa nở",
-            "Che ô trong mưa xuân",
-            "Đi chơi trong mùa xuân"
-          ]
-        },
-        {
-          "title": "Không gì làm khó bé",
-          "lessons": [
-            "Thiên thần nhỏ báo thức",
-            "Máy hút bụi của bé"
-          ]
-        },
-        {
-          "title": "Tặng Free",
-          "lessons": [
-            "Ôn tập",
-            "Thuyết trình demo cho giáo viên",
-            "Thuyết trình cho phụ huynh về sản phẩm"
-          ]
-        }
-      ],
       "lessons": [
         {
           "sessionNumber": 1,
-          "title": "Tàu đệm khí (Chủ đề: Công viên trò chơi)",
+          "title": "Tàu đệm khí",
           "type": "Dự án"
         },
         {
           "sessionNumber": 2,
-          "title": "Bánh xe lăn (Chủ đề: Công viên trò chơi)",
+          "title": "Bánh xe lăn",
           "type": "Dự án"
         },
         {
           "sessionNumber": 3,
-          "title": "Tàu lượn (Chủ đề: Công viên trò chơi)",
+          "title": "Tàu lượn",
           "type": "Dự án"
         },
         {
           "sessionNumber": 4,
-          "title": "Công viên trò chơi (Chủ đề: Công viên trò chơi)",
+          "title": "Công viên trò chơi",
           "type": "Dự án"
         },
         {
           "sessionNumber": 5,
-          "title": "Hoa nở (Chủ đề: Mùa xuân đến)",
-          "type": "Dự án"
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
         },
         {
           "sessionNumber": 6,
-          "title": "Che ô trong mưa xuân (Chủ đề: Mùa xuân đến)",
+          "title": "Hoa nở",
           "type": "Dự án"
         },
         {
           "sessionNumber": 7,
-          "title": "Đi chơi trong mùa xuân (Chủ đề: Mùa xuân đến)",
+          "title": "Che ô trong mưa xuân",
           "type": "Dự án"
         },
         {
           "sessionNumber": 8,
-          "title": "Thiên thần nhỏ báo thức (Chủ đề: Không gì làm khó bé)",
+          "title": "Đi chơi trong mùa xuân",
           "type": "Dự án"
         },
         {
           "sessionNumber": 9,
-          "title": "Máy hút bụi của bé (Chủ đề: Không gì làm khó bé)",
+          "title": "Thiên thần nhỏ báo thức",
           "type": "Dự án"
         },
         {
           "sessionNumber": 10,
-          "title": "Ôn tập cơ cấu ròng rọc & bánh răng",
-          "type": "Ôn tập"
+          "title": "Máy hút bụi của bé",
+          "type": "Dự án"
         },
         {
           "sessionNumber": 11,
@@ -383,61 +314,31 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 12,
-          "title": "Sáng tạo mô hình tự chọn",
-          "type": "Dự án"
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
         },
         {
           "sessionNumber": 13,
-          "title": "TẶNG FREE: Báo cáo & Thuyết trình sản phẩm cho Phụ huynh",
-          "type": "Tặng Free"
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
         }
       ],
       "outcomes": [
-        "Hiểu cơ cấu chuyển động phức hợp",
-        "Tư duy sáng tạo hình không gian",
-        "Kỹ năng làm việc nhóm"
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
       ]
     },
     {
-      "id": "LT3",
-      "title": "Lộ trình 3",
+      "id": "HP3",
+      "title": "Học phần 3",
       "name": "Thế Giới Động Vật & Thị Trấn Hạnh Phúc",
-      "number": "Lộ trình 3",
-      "duration": "13 buổi (12 buổi chính + 1 buổi Free)",
+      "number": "Học phần 3",
+      "duration": "13 buổi - 90 phút/buổi",
       "sessionsCount": 13,
       "hoursCount": 19.5,
       "projectsCount": 9,
       "description": "Khám phá các chuyển động uốn lượn, mô phỏng hành vi động vật và xây dựng mô hình thị trấn đáng yêu.",
       "achievement": "Lắp ráp mô hình chuyển động phức tạp, phối hợp màu sắc và nhịp điệu âm thanh.",
-      "topics": [
-        {
-          "title": "Sở thú sôi động",
-          "lessons": [
-            "Nóng, nóng, quạt máy của bé",
-            "Rắn, rắn rình rập",
-            "Voi vòi voi voi",
-            "Chú chim biết hát",
-            "Sở thú diệu kì"
-          ]
-        },
-        {
-          "title": "Thị trấn hạnh phúc",
-          "lessons": [
-            "Bốn mùa của cây",
-            "Ngôi nhà của bé",
-            "Nhịp cầu âm nhạc",
-            "Thị trấn vui vẻ"
-          ]
-        },
-        {
-          "title": "Tặng Free",
-          "lessons": [
-            "Ôn tập",
-            "Thuyết trình demo cho giáo viên",
-            "Thuyết trình cho phụ huynh về sản phẩm"
-          ]
-        }
-      ],
       "lessons": [
         {
           "sessionNumber": 1,
@@ -461,33 +362,33 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 5,
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
+        },
+        {
+          "sessionNumber": 6,
           "title": "Sở thú diệu kì",
           "type": "Dự án"
         },
         {
-          "sessionNumber": 6,
+          "sessionNumber": 7,
           "title": "Bốn mùa của cây",
           "type": "Dự án"
         },
         {
-          "sessionNumber": 7,
+          "sessionNumber": 8,
           "title": "Ngôi nhà của bé",
           "type": "Dự án"
         },
         {
-          "sessionNumber": 8,
+          "sessionNumber": 9,
           "title": "Nhịp cầu âm nhạc",
           "type": "Dự án"
         },
         {
-          "sessionNumber": 9,
+          "sessionNumber": 10,
           "title": "Thị trấn vui vẻ",
           "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Ôn tập tổng kết lộ trình cơ bản",
-          "type": "Ôn tập"
         },
         {
           "sessionNumber": 11,
@@ -496,19 +397,101 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 12,
-          "title": "Dự án tốt nghiệp Lớp Cơ Bản",
-          "type": "Dự án"
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
         },
         {
           "sessionNumber": 13,
-          "title": "TẶNG FREE: Lễ tổng kết & Báo cáo tốt nghiệp cho Phụ huynh",
-          "type": "Tặng Free"
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
         }
       ],
       "outcomes": [
-        "Hoàn thành khóa cơ bản xuất sắc",
-        "Sẵn sàng lên lớp nâng cao",
-        "Trao chứng chỉ tốt nghiệp Lớp Cơ Bản"
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
+      ]
+    },
+    {
+      "id": "HP4",
+      "title": "Học phần 4",
+      "name": "Kỹ Sư Nhí Sáng Tạo & Đồ Án Tốt Nghiệp",
+      "number": "Học phần 4",
+      "duration": "13 buổi - 90 phút/buổi",
+      "sessionsCount": 13,
+      "hoursCount": 19.5,
+      "projectsCount": 9,
+      "description": "Tự do thiết kế và lắp ráp các cỗ máy công viên giải trí, chuẩn bị cho đồ án tốt nghiệp xuất sắc.",
+      "achievement": "Hoàn thành đồ án tốt nghiệp khóa cơ bản, tự tin thuyết trình trước phụ huynh và thầy cô.",
+      "lessons": [
+        {
+          "sessionNumber": 1,
+          "title": "Vòng quay ngựa gỗ",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 2,
+          "title": "Chiếc cầu bập bênh",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 3,
+          "title": "Cối xay gió Hà Lan",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 4,
+          "title": "Siêu xe bứt phá nhí",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 5,
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
+        },
+        {
+          "sessionNumber": 6,
+          "title": "Xe kéo chở hàng",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 7,
+          "title": "Chú ếch bật nhảy",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 8,
+          "title": "Bông hoa cơ khí",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 9,
+          "title": "Ngọn hải đăng rực sáng",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 10,
+          "title": "Robot thám hiểm nhí",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 11,
+          "title": "Thuyết trình demo cho giáo viên",
+          "type": "Thuyết trình"
+        },
+        {
+          "sessionNumber": 12,
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
+        },
+        {
+          "sessionNumber": 13,
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
+        }
+      ],
+      "outcomes": [
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
       ]
     }
   ]
@@ -518,12 +501,12 @@ export const coursesData: Record<string, CourseDetail> = {
   "code": "Sata-Kids-Adv",
   "name": "Robotics Mầm Non — Lớp Nâng Cao",
   "academicName": "Cơ Cấu Thông Minh & Sáng Tạo",
-  "headline": "Nâng cấp cơ cấu cơ học, cánh tay robot, phương tiện giao thông và thiết bị thông minh cho bé 4 — 6 tuổi",
-  "category": "Mầm non (4 — 6 tuổi)",
-  "grade": "Mầm non (4 — 6 tuổi)",
-  "age": "Mầm non (4 — 6 tuổi)",
-  "displayAge": "4 - 6 tuổi",
-  "duration": "39 buổi / 3 lộ trình (12 buổi chính + 1 buổi Free / lộ trình)",
+  "headline": "Nâng cấp cơ cấu cơ học, cánh tay robot, phương tiện giao thông và thiết bị thông minh cho bé",
+  "category": "Mầm non",
+  "grade": "Mầm non",
+  "age": "Mầm non",
+  "displayAge": "Mầm non",
+  "duration": "52 buổi",
   "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
   "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
   "rating": 4.98,
@@ -605,100 +588,66 @@ export const coursesData: Record<string, CourseDetail> = {
   ],
   "modules": [
     {
-      "id": "LT1",
-      "title": "Lộ trình 1",
+      "id": "HP1",
+      "title": "Học phần 1",
       "name": "Thể Thao & Siêu Thị Thông Minh",
-      "number": "Lộ trình 1",
-      "duration": "13 buổi (12 buổi chính + 1 buổi Free)",
+      "number": "Học phần 1",
+      "duration": "13 buổi - 90 phút/buổi",
       "sessionsCount": 13,
       "hoursCount": 19.5,
       "projectsCount": 9,
       "description": "Nâng cấp cơ cấu cơ học với bánh răng tỷ số truyền, động cơ điều khiển hai chiều và cảm biến thông minh.",
       "achievement": "Bé hiểu nguyên lý đòn bẩy tỷ số truyền, lực ma sát và thiết bị cảm biến tự động.",
-      "topics": [
-        {
-          "title": "Thể dục thể thao",
-          "lessons": [
-            "Đánh bóng",
-            "Đua xe",
-            "Chèo thuyền"
-          ]
-        },
-        {
-          "title": "Siêu thị thông minh",
-          "lessons": [
-            "Cánh cửa thông minh",
-            "Xe đẩy hàng",
-            "Xe nâng"
-          ]
-        },
-        {
-          "title": "Đồ chơi vui vẻ",
-          "lessons": [
-            "Chú cá robot",
-            "Xe tay ga",
-            "Máy chụp ảnh"
-          ]
-        },
-        {
-          "title": "Tặng Free",
-          "lessons": [
-            "Ôn tập",
-            "Thuyết trình demo cho giáo viên",
-            "Thuyết trình cho phụ huynh về sản phẩm"
-          ]
-        }
-      ],
       "lessons": [
         {
           "sessionNumber": 1,
-          "title": "Đánh bóng (Chủ đề: Thể dục thể thao)",
+          "title": "Đánh bóng",
           "type": "Dự án"
         },
         {
           "sessionNumber": 2,
-          "title": "Đua xe (Chủ đề: Thể dục thể thao)",
+          "title": "Đua xe",
           "type": "Dự án"
         },
         {
           "sessionNumber": 3,
-          "title": "Chèo thuyền (Chủ đề: Thể dục thể thao)",
+          "title": "Chèo thuyền",
           "type": "Dự án"
         },
         {
           "sessionNumber": 4,
-          "title": "Cánh cửa thông minh (Chủ đề: Siêu thị thông minh)",
+          "title": "Cánh cửa thông minh",
           "type": "Dự án"
         },
         {
           "sessionNumber": 5,
-          "title": "Xe đẩy hàng (Chủ đề: Siêu thị thông minh)",
-          "type": "Dự án"
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
         },
         {
           "sessionNumber": 6,
-          "title": "Xe nâng (Chủ đề: Siêu thị thông minh)",
+          "title": "Xe đẩy hàng",
           "type": "Dự án"
         },
         {
           "sessionNumber": 7,
-          "title": "Chú cá robot (Chủ đề: Đồ chơi vui vẻ)",
+          "title": "Xe nâng",
           "type": "Dự án"
         },
         {
           "sessionNumber": 8,
-          "title": "Xe tay ga (Chủ đề: Đồ chơi vui vẻ)",
+          "title": "Chú cá robot",
           "type": "Dự án"
         },
         {
           "sessionNumber": 9,
-          "title": "Máy chụp ảnh (Chủ đề: Đồ chơi vui vẻ)",
+          "title": "Xe tay ga",
           "type": "Dự án"
         },
         {
           "sessionNumber": 10,
-          "title": "Ôn tập cơ cấu truyền động nâng cao",
-          "type": "Ôn tập"
+          "title": "Máy chụp ảnh",
+          "type": "Dự án"
         },
         {
           "sessionNumber": 11,
@@ -707,116 +656,81 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 12,
-          "title": "Dự án robot thông minh tự sáng tạo",
-          "type": "Dự án"
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
         },
         {
           "sessionNumber": 13,
-          "title": "TẶNG FREE: Báo cáo & Thuyết trình sản phẩm cho Phụ huynh",
-          "type": "Tặng Free"
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
         }
       ],
       "outcomes": [
-        "Làm chủ cơ cấu xe nâng & bánh răng",
-        "Lắp ráp mô hình chuyển động đa trục",
-        "Thuyết trình tự tin"
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
       ]
     },
     {
-      "id": "LT2",
-      "title": "Lộ trình 2",
+      "id": "HP2",
+      "title": "Học phần 2",
       "name": "Kỹ Sư Robot & Nhà Hàng Thông Minh",
-      "number": "Lộ trình 2",
-      "duration": "13 buổi (12 buổi chính + 1 buổi Free)",
+      "number": "Học phần 2",
+      "duration": "13 buổi - 90 phút/buổi",
       "sessionsCount": 13,
       "hoursCount": 19.5,
       "projectsCount": 9,
       "description": "Lắp ráp các mô hình cánh tay robot, robot phục vụ và tự động hóa phục vụ nhà hàng, dịch vụ.",
       "achievement": "Làm quen tư duy robot công nghiệp, cánh tay gắp thả và cơ cấu xoay đa chiều.",
-      "topics": [
-        {
-          "title": "Robot của bé",
-          "lessons": [
-            "Xe trẻ em",
-            "Robot cánh tay",
-            "Robot phục vụ",
-            "Robot kỹ thuật",
-            "Robot đối kháng"
-          ]
-        },
-        {
-          "title": "Nhà hàng thông minh",
-          "lessons": [
-            "Máy ép trái cây",
-            "Ghế xoay",
-            "Ghế thông minh"
-          ]
-        },
-        {
-          "title": "Công viên của bé",
-          "lessons": [
-            "Xe buýt tham quan"
-          ]
-        },
-        {
-          "title": "Tặng Free",
-          "lessons": [
-            "Ôn tập",
-            "Thuyết trình demo cho giáo viên",
-            "Thuyết trình cho phụ huynh về sản phẩm"
-          ]
-        }
-      ],
       "lessons": [
         {
           "sessionNumber": 1,
-          "title": "Xe trẻ em (Chủ đề: Robot của bé)",
+          "title": "Xe trẻ em",
           "type": "Dự án"
         },
         {
           "sessionNumber": 2,
-          "title": "Robot cánh tay (Chủ đề: Robot của bé)",
+          "title": "Robot cánh tay",
           "type": "Dự án"
         },
         {
           "sessionNumber": 3,
-          "title": "Robot phục vụ (Chủ đề: Robot của bé)",
+          "title": "Robot phục vụ",
           "type": "Dự án"
         },
         {
           "sessionNumber": 4,
-          "title": "Robot kỹ thuật (Chủ đề: Robot của bé)",
+          "title": "Robot kỹ thuật",
           "type": "Dự án"
         },
         {
           "sessionNumber": 5,
-          "title": "Robot đối kháng (Chủ đề: Robot của bé)",
-          "type": "Dự án"
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
         },
         {
           "sessionNumber": 6,
-          "title": "Máy ép trái cây (Chủ đề: Nhà hàng thông minh)",
+          "title": "Robot đối kháng",
           "type": "Dự án"
         },
         {
           "sessionNumber": 7,
-          "title": "Ghế xoay (Chủ đề: Nhà hàng thông minh)",
+          "title": "Máy ép trái cây",
           "type": "Dự án"
         },
         {
           "sessionNumber": 8,
-          "title": "Ghế thông minh (Chủ đề: Nhà hàng thông minh)",
+          "title": "Ghế xoay",
           "type": "Dự án"
         },
         {
           "sessionNumber": 9,
-          "title": "Xe buýt tham quan (Chủ đề: Công viên của bé)",
+          "title": "Ghế thông minh",
           "type": "Dự án"
         },
         {
           "sessionNumber": 10,
-          "title": "Ôn tập kỹ thuật lắp ghép cánh tay cơ khí",
-          "type": "Ôn tập"
+          "title": "Xe buýt tham quan",
+          "type": "Dự án"
         },
         {
           "sessionNumber": 11,
@@ -825,61 +739,31 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 12,
-          "title": "Đấu trường robot đối kháng mini",
-          "type": "Dự án"
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
         },
         {
           "sessionNumber": 13,
-          "title": "TẶNG FREE: Báo cáo & Thuyết trình sản phẩm cho Phụ huynh",
-          "type": "Tặng Free"
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
         }
       ],
       "outcomes": [
-        "Cơ chế cánh tay robot",
-        "Tư duy giải quyết vấn đề kỹ thuật",
-        "Hợp tác đối kháng lành mạnh"
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
       ]
     },
     {
-      "id": "LT3",
-      "title": "Lộ trình 3",
+      "id": "HP3",
+      "title": "Học phần 3",
       "name": "Âm Nhạc Vui Nhộn & Phương Tiện Giao Thông",
-      "number": "Lộ trình 3",
-      "duration": "13 buổi (12 buổi chính + 1 buổi Free)",
+      "number": "Học phần 3",
+      "duration": "13 buổi - 90 phút/buổi",
       "sessionsCount": 13,
       "hoursCount": 19.5,
       "projectsCount": 9,
       "description": "Kết hợp nhịp điệu chuyển động cơ khí, âm nhạc và mô hình phương tiện hàng không, đường thủy.",
       "achievement": "Lắp ráp mô hình chuyển động cánh quạt trực thăng, tàu biển và hệ thống cơ khí nhịp điệu.",
-      "topics": [
-        {
-          "title": "Âm thanh vui nhộn",
-          "lessons": [
-            "Tàu cướp biển",
-            "Đu quay khổng lồ",
-            "Tay trống cừ khôi",
-            "Cối xoay gió mini",
-            "Âm nhạc vui nhộn"
-          ]
-        },
-        {
-          "title": "Phương tiện giao thông",
-          "lessons": [
-            "Con thuyền",
-            "Xe ba bánh",
-            "Máy bay cánh bằng",
-            "Máy bay trực thăng"
-          ]
-        },
-        {
-          "title": "Tặng Free",
-          "lessons": [
-            "Ôn tập",
-            "Thuyết trình demo cho giáo viên",
-            "Thuyết trình cho phụ huynh về sản phẩm"
-          ]
-        }
-      ],
       "lessons": [
         {
           "sessionNumber": 1,
@@ -903,33 +787,33 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 5,
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
+        },
+        {
+          "sessionNumber": 6,
           "title": "Âm nhạc vui nhộn",
           "type": "Dự án"
         },
         {
-          "sessionNumber": 6,
+          "sessionNumber": 7,
           "title": "Con thuyền",
           "type": "Dự án"
         },
         {
-          "sessionNumber": 7,
+          "sessionNumber": 8,
           "title": "Xe ba bánh",
           "type": "Dự án"
         },
         {
-          "sessionNumber": 8,
+          "sessionNumber": 9,
           "title": "Máy bay cánh bằng",
           "type": "Dự án"
         },
         {
-          "sessionNumber": 9,
+          "sessionNumber": 10,
           "title": "Máy bay trực thăng",
           "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Ôn tập tổng kết khóa nâng cao",
-          "type": "Ôn tập"
         },
         {
           "sessionNumber": 11,
@@ -938,19 +822,101 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 12,
-          "title": "Dự án tốt nghiệp Lớp Nâng Cao",
-          "type": "Dự án"
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
         },
         {
           "sessionNumber": 13,
-          "title": "TẶNG FREE: Lễ tổng kết & Báo cáo tốt nghiệp cho Phụ huynh",
-          "type": "Tặng Free"
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
         }
       ],
       "outcomes": [
-        "Hoàn thành khóa nâng cao xuất sắc",
-        "Sẵn sàng lên lớp chuyên sâu",
-        "Trao chứng chỉ tốt nghiệp Lớp Nâng Cao"
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
+      ]
+    },
+    {
+      "id": "HP4",
+      "title": "Học phần 4",
+      "name": "Tự Động Hóa Đô Thị & Robot Cứu Hộ",
+      "number": "Học phần 4",
+      "duration": "13 buổi - 90 phút/buổi",
+      "sessionsCount": 13,
+      "hoursCount": 19.5,
+      "projectsCount": 9,
+      "description": "Chế tạo các robot chuyên dụng phục vụ cứu hộ và hệ thống cơ điện tử tự hành trong đô thị hiện đại.",
+      "achievement": "Làm chủ mô hình tự hành và hoàn thành đồ án tốt nghiệp xuất sắc khóa nâng cao.",
+      "lessons": [
+        {
+          "sessionNumber": 1,
+          "title": "Robot gắp thả thông minh",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 2,
+          "title": "Băng chuyền tự động",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 3,
+          "title": "Xe quét rác tự hành",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 4,
+          "title": "Cổng rào chắn xe tự động",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 5,
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
+        },
+        {
+          "sessionNumber": 6,
+          "title": "Cáp treo vượt núi",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 7,
+          "title": "Robot thợ lặn",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 8,
+          "title": "Cần trục cảng biển",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 9,
+          "title": "Xe cứu hỏa thang nâng",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 10,
+          "title": "Đấu trường robot Sumo",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 11,
+          "title": "Thuyết trình demo cho giáo viên",
+          "type": "Thuyết trình"
+        },
+        {
+          "sessionNumber": 12,
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
+        },
+        {
+          "sessionNumber": 13,
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
+        }
+      ],
+      "outcomes": [
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
       ]
     }
   ]
@@ -961,11 +927,11 @@ export const coursesData: Record<string, CourseDetail> = {
   "name": "Robotics Mầm Non — Lớp Chuyên Sâu",
   "academicName": "Chế Tạo Phức Hợp & Bản Lĩnh Tương Lai",
   "headline": "Chế tạo xe công trình, thám hiểm vũ trụ và thành phố tương lai chuẩn bị nền tảng vững chắc lên Tiểu Học",
-  "category": "Mầm non (4 — 6 tuổi)",
-  "grade": "Mầm non (4 — 6 tuổi)",
-  "age": "Mầm non (4 — 6 tuổi)",
-  "displayAge": "4 - 6 tuổi",
-  "duration": "39 buổi / 3 lộ trình (12 buổi chính + 1 buổi Free / lộ trình)",
+  "category": "Mầm non",
+  "grade": "Mầm non",
+  "age": "Mầm non",
+  "displayAge": "Mầm non",
+  "duration": "52 buổi",
   "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
   "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
   "rating": 4.99,
@@ -1047,100 +1013,66 @@ export const coursesData: Record<string, CourseDetail> = {
   ],
   "modules": [
     {
-      "id": "LT1",
-      "title": "Lộ trình 1",
+      "id": "HP1",
+      "title": "Học phần 1",
       "name": "Đầu Bếp Nhí & Xe Công Trình Hiện Đại",
-      "number": "Lộ trình 1",
-      "duration": "13 buổi (12 buổi chính + 1 buổi Free)",
+      "number": "Học phần 1",
+      "duration": "13 buổi - 90 phút/buổi",
       "sessionsCount": 13,
       "hoursCount": 19.5,
       "projectsCount": 9,
       "description": "Chế tạo các cỗ máy công nghiệp hiện đại: máy nghiền, cần cẩu, xe lu, xe ủi với cơ cấu trợ lực và truyền động phức hợp.",
       "achievement": "Làm chủ các cơ cấu cơ khí nặng, hệ thống ròng rọc kép và thang nâng chuyển động thẳng đứng.",
-      "topics": [
-        {
-          "title": "Bé là đầu bếp",
-          "lessons": [
-            "Máy đánh trứng",
-            "Máy xay đậu",
-            "Máy nghiền"
-          ]
-        },
-        {
-          "title": "Xe công trình",
-          "lessons": [
-            "Robot lăn",
-            "Cần cẩu mini",
-            "Xe lu",
-            "Xe ủi"
-          ]
-        },
-        {
-          "title": "Thế giới xung quanh em",
-          "lessons": [
-            "Đài phun nước",
-            "Thang máy"
-          ]
-        },
-        {
-          "title": "Tặng Free",
-          "lessons": [
-            "Ôn tập",
-            "Thuyết trình demo cho giáo viên",
-            "Thuyết trình cho phụ huynh về sản phẩm"
-          ]
-        }
-      ],
       "lessons": [
         {
           "sessionNumber": 1,
-          "title": "Máy đánh trứng (Chủ đề: Bé là đầu bếp)",
+          "title": "Máy đánh trứng",
           "type": "Dự án"
         },
         {
           "sessionNumber": 2,
-          "title": "Máy xay đậu (Chủ đề: Bé là đầu bếp)",
+          "title": "Máy xay đậu",
           "type": "Dự án"
         },
         {
           "sessionNumber": 3,
-          "title": "Máy nghiền (Chủ đề: Bé là đầu bếp)",
+          "title": "Máy nghiền",
           "type": "Dự án"
         },
         {
           "sessionNumber": 4,
-          "title": "Robot lăn (Chủ đề: Xe công trình)",
+          "title": "Robot lăn",
           "type": "Dự án"
         },
         {
           "sessionNumber": 5,
-          "title": "Cần cẩu mini (Chủ đề: Xe công trình)",
-          "type": "Dự án"
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
         },
         {
           "sessionNumber": 6,
-          "title": "Xe lu (Chủ đề: Xe công trình)",
+          "title": "Cần cẩu mini",
           "type": "Dự án"
         },
         {
           "sessionNumber": 7,
-          "title": "Xe ủi (Chủ đề: Xe công trình)",
+          "title": "Xe lu",
           "type": "Dự án"
         },
         {
           "sessionNumber": 8,
-          "title": "Đài phun nước (Chủ đề: Thế giới xung quanh em)",
+          "title": "Xe ủi",
           "type": "Dự án"
         },
         {
           "sessionNumber": 9,
-          "title": "Thang máy (Chủ đề: Thế giới xung quanh em)",
+          "title": "Đài phun nước",
           "type": "Dự án"
         },
         {
           "sessionNumber": 10,
-          "title": "Ôn tập cơ cấu xe công trình & máy nghiền",
-          "type": "Ôn tập"
+          "title": "Thang máy",
+          "type": "Dự án"
         },
         {
           "sessionNumber": 11,
@@ -1149,111 +1081,81 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 12,
-          "title": "Dự án công trình kỹ sư xây dựng",
-          "type": "Dự án"
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
         },
         {
           "sessionNumber": 13,
-          "title": "TẶNG FREE: Báo cáo & Thuyết trình sản phẩm cho Phụ huynh",
-          "type": "Tặng Free"
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
         }
       ],
       "outcomes": [
-        "Cơ cấu thang máy & cần cẩu",
-        "Tư duy kỹ thuật công trình",
-        "Kỹ năng thực hành độ chính xác cao"
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
       ]
     },
     {
-      "id": "LT2",
-      "title": "Lộ trình 2",
+      "id": "HP2",
+      "title": "Học phần 2",
       "name": "Vũ Trụ Kì Diệu & Phương Tiện Quân Sự",
-      "number": "Lộ trình 2",
-      "duration": "13 buổi (12 buổi chính + 1 buổi Free)",
+      "number": "Học phần 2",
+      "duration": "13 buổi - 90 phút/buổi",
       "sessionsCount": 13,
       "hoursCount": 19.5,
       "projectsCount": 9,
       "description": "Bước chân vào khám phá không gian và phương tiện kỹ thuật quân sự: trạm vũ trụ, xe tăng, pháo binh.",
       "achievement": "Lắp ráp mô hình không gian 3D phức hợp, bệ phóng cơ học và phương tiện bánh xích.",
-      "topics": [
-        {
-          "title": "Vũ trụ kì diệu",
-          "lessons": [
-            "Rào chắn công trình",
-            "Người ngoài hành tinh",
-            "Động vật không gian",
-            "Tàu vũ trụ",
-            "Căn cứ ngoài hành tinh"
-          ]
-        },
-        {
-          "title": "Phương tiện quân sự",
-          "lessons": [
-            "Xe thang",
-            "Máy bay vận tải",
-            "Xe tăng",
-            "Pháo binh"
-          ]
-        },
-        {
-          "title": "Tặng Free",
-          "lessons": [
-            "Ôn tập",
-            "Thuyết trình demo cho giáo viên",
-            "Thuyết trình cho phụ huynh về sản phẩm"
-          ]
-        }
-      ],
       "lessons": [
         {
           "sessionNumber": 1,
-          "title": "Rào chắn công trình (Chủ đề: Vũ trụ kì diệu)",
+          "title": "Rào chắn công trình",
           "type": "Dự án"
         },
         {
           "sessionNumber": 2,
-          "title": "Người ngoài hành tinh (Chủ đề: Vũ trụ kì diệu)",
+          "title": "Người ngoài hành tinh",
           "type": "Dự án"
         },
         {
           "sessionNumber": 3,
-          "title": "Động vật không gian (Chủ đề: Vũ trụ kì diệu)",
+          "title": "Động vật không gian",
           "type": "Dự án"
         },
         {
           "sessionNumber": 4,
-          "title": "Tàu vũ trụ (Chủ đề: Vũ trụ kì diệu)",
+          "title": "Tàu vũ trụ",
           "type": "Dự án"
         },
         {
           "sessionNumber": 5,
-          "title": "Căn cứ ngoài hành tinh (Chủ đề: Vũ trụ kì diệu)",
-          "type": "Dự án"
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
         },
         {
           "sessionNumber": 6,
-          "title": "Xe thang (Chủ đề: Phương tiện quân sự)",
+          "title": "Căn cứ ngoài hành tinh",
           "type": "Dự án"
         },
         {
           "sessionNumber": 7,
-          "title": "Máy bay vận tải (Chủ đề: Phương tiện quân sự)",
+          "title": "Xe thang",
           "type": "Dự án"
         },
         {
           "sessionNumber": 8,
-          "title": "Xe tăng (Chủ đề: Phương tiện quân sự)",
+          "title": "Máy bay vận tải",
           "type": "Dự án"
         },
         {
           "sessionNumber": 9,
-          "title": "Pháo binh (Chủ đề: Phương tiện quân sự)",
+          "title": "Xe tăng",
           "type": "Dự án"
         },
         {
           "sessionNumber": 10,
-          "title": "Ôn tập cơ cấu phóng & bánh xích",
-          "type": "Ôn tập"
+          "title": "Pháo binh",
+          "type": "Dự án"
         },
         {
           "sessionNumber": 11,
@@ -1262,137 +1164,184 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 12,
-          "title": "Mô phỏng sứ mệnh thám hiểm không gian",
-          "type": "Dự án"
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
         },
         {
           "sessionNumber": 13,
-          "title": "TẶNG FREE: Báo cáo & Thuyết trình sản phẩm cho Phụ huynh",
-          "type": "Tặng Free"
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
         }
       ],
       "outcomes": [
-        "Cơ cấu truyền động bánh xích",
-        "Tư duy sáng tạo không gian",
-        "Kỹ năng thuyết trình tự tin"
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
       ]
     },
     {
-      "id": "LT3",
-      "title": "Lộ trình 3",
+      "id": "HP3",
+      "title": "Học phần 3",
       "name": "Trang Trại Công Nghệ & Thành Phố Tương Lai",
-      "number": "Lộ trình 3",
-      "duration": "13 buổi (12 buổi chính + 1 buổi Free)",
+      "number": "Học phần 3",
+      "duration": "13 buổi - 90 phút/buổi",
       "sessionsCount": 13,
       "hoursCount": 19.5,
       "projectsCount": 9,
       "description": "Tích hợp toàn diện kiến thức chế tạo robot: máy bay không người lái, xe bay, ngôi nhà thông minh và robot vệ sinh đô thị.",
       "achievement": "Bé hoàn thành đồ án tốt nghiệp tổng thể cấp Mầm Non, sẵn sàng bước vào chương trình Robotics Tiểu Học Lớp 1-2.",
-      "topics": [
-        {
-          "title": "Trang trại thông minh",
-          "lessons": [
-            "Máy giặt",
-            "Máy bay không người lái",
-            "Robot quét dọn"
-          ]
-        },
-        {
-          "title": "Những câu chuyện kể",
-          "lessons": [
-            "Câu chuyện chú ngựa qua sông",
-            "Cáo mất đuôi"
-          ]
-        },
-        {
-          "title": "Thành phố tương lai",
-          "lessons": [
-            "Xe bay",
-            "Ngôi nhà thông minh",
-            "AFC",
-            "Robot vệ sinh"
-          ]
-        },
-        {
-          "title": "Tặng Free",
-          "lessons": [
-            "Ôn tập",
-            "Thuyết trình demo cho giáo viên",
-            "Thuyết trình cho phụ huynh về sản phẩm"
-          ]
-        }
-      ],
       "lessons": [
         {
           "sessionNumber": 1,
-          "title": "Máy giặt (Chủ đề: Trang trại thông minh)",
+          "title": "Máy giặt",
           "type": "Dự án"
         },
         {
           "sessionNumber": 2,
-          "title": "Máy bay không người lái (Chủ đề: Trang trại thông minh)",
+          "title": "Máy bay không người lái",
           "type": "Dự án"
         },
         {
           "sessionNumber": 3,
-          "title": "Robot quét dọn (Chủ đề: Trang trại thông minh)",
+          "title": "Robot quét dọn",
           "type": "Dự án"
         },
         {
           "sessionNumber": 4,
-          "title": "Câu chuyện chú ngựa qua sông (Chủ đề: Những câu chuyện kể)",
+          "title": "Câu chuyện chú ngựa qua sông",
           "type": "Dự án"
         },
         {
           "sessionNumber": 5,
-          "title": "Cáo mất đuôi (Chủ đề: Những câu chuyện kể)",
-          "type": "Dự án"
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
         },
         {
           "sessionNumber": 6,
-          "title": "Xe bay (Chủ đề: Thành phố tương lai)",
+          "title": "Cáo mất đuôi",
           "type": "Dự án"
         },
         {
           "sessionNumber": 7,
-          "title": "Ngôi nhà thông minh (Chủ đề: Thành phố tương lai)",
+          "title": "Xe bay",
           "type": "Dự án"
         },
         {
           "sessionNumber": 8,
-          "title": "AFC (Chủ đề: Thành phố tương lai)",
+          "title": "Ngôi nhà thông minh",
           "type": "Dự án"
         },
         {
           "sessionNumber": 9,
-          "title": "Robot vệ sinh (Chủ đề: Thành phố tương lai)",
+          "title": "AFC",
           "type": "Dự án"
         },
         {
           "sessionNumber": 10,
-          "title": "Ôn tập tổng kết toàn khóa chuyên sâu",
-          "type": "Ôn tập"
+          "title": "Robot vệ sinh",
+          "type": "Dự án"
         },
         {
           "sessionNumber": 11,
-          "title": "Thuyết trình thử trước ban cố vấn học thuật",
+          "title": "Thuyết trình demo cho giáo viên",
           "type": "Thuyết trình"
         },
         {
           "sessionNumber": 12,
-          "title": "Hoàn thiện Đồ Án Tốt Nghiệp Khối Mầm Non",
-          "type": "Dự án"
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
         },
         {
           "sessionNumber": 13,
-          "title": "TẶNG FREE: LỄ TỐT NGHIỆP & VINH DANH HỌC VIÊN CẤP MẦM NON",
-          "type": "Tặng Free"
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
         }
       ],
       "outcomes": [
-        "Tốt nghiệp toàn diện cấp Mầm Non",
-        "Sở hữu nền tảng vững chắc lên Tiểu Học",
-        "Trao huy hiệu Kỹ Sư Nhí Xuất Sắc"
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
+      ]
+    },
+    {
+      "id": "HP4",
+      "title": "Học phần 4",
+      "name": "Thành Phố Thông Minh VIAI-City & Tốt Nghiệp",
+      "number": "Học phần 4",
+      "duration": "13 buổi - 90 phút/buổi",
+      "sessionsCount": 13,
+      "hoursCount": 19.5,
+      "projectsCount": 9,
+      "description": "Đồ án vĩ mô tích hợp năng lượng xanh, xe tuần tra tự hành và điều khiển không lưu hiện đại.",
+      "achievement": "Tốt nghiệp toàn diện cấp Mầm Non, sở hữu nền tảng vững chắc lên Tiểu Học.",
+      "lessons": [
+        {
+          "sessionNumber": 1,
+          "title": "Xe tuần tra tự hành",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 2,
+          "title": "Trạm năng lượng mặt trời",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 3,
+          "title": "Robot bảo vệ thông minh",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 4,
+          "title": "Hệ thống tưới cây tự động",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 5,
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
+        },
+        {
+          "sessionNumber": 6,
+          "title": "Xe phóng vệ tinh",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 7,
+          "title": "Cầu nâng sửa chữa xe",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 8,
+          "title": "Tháp điều khiển không lưu",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 9,
+          "title": "Robot cứu hộ địa hình",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 10,
+          "title": "Đồ án thành phố thông minh VIAI-City",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 11,
+          "title": "Thuyết trình demo cho giáo viên",
+          "type": "Thuyết trình"
+        },
+        {
+          "sessionNumber": 12,
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
+        },
+        {
+          "sessionNumber": 13,
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
+        }
+      ],
+      "outcomes": [
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
       ]
     }
   ]
@@ -1402,12 +1351,12 @@ export const coursesData: Record<string, CourseDetail> = {
   "code": "Sata-Kids-Basic",
   "name": "Robotics Mầm Non — Lớp Cơ Bản",
   "academicName": "Khám Phá & Lắp Ghép Cơ Bản",
-  "headline": "Khám phá thế giới hình khối, máy công cụ và nhen nhóm tư duy logic đầu đời cho trẻ 4 — 6 tuổi",
-  "category": "Mầm non (4 — 6 tuổi)",
-  "grade": "Mầm non (4 — 6 tuổi)",
-  "age": "Mầm non (4 — 6 tuổi)",
-  "displayAge": "4 - 6 tuổi",
-  "duration": "39 buổi / 3 lộ trình (12 buổi chính + 1 buổi Free / lộ trình)",
+  "headline": "Khám phá thế giới hình khối, máy công cụ và nhen nhóm tư duy logic đầu đời cho trẻ",
+  "category": "Mầm non",
+  "grade": "Mầm non",
+  "age": "Mầm non",
+  "displayAge": "Mầm non",
+  "duration": "52 buổi",
   "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
   "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
   "rating": 4.96,
@@ -1415,7 +1364,7 @@ export const coursesData: Record<string, CourseDetail> = {
   "coverImage": "/images/courses/mam-non.png",
   "badge": "LỚP CƠ BẢN",
   "glowColor": "orange",
-  "overview": "Chương trình Lớp Cơ Bản được thiết kế đặc thù cho trẻ mầm non 4-6 tuổi theo phương pháp 'Vừa học vừa chơi' (Play-based Learning). Bé làm quen với các chi tiết khối ghép an toàn, bánh răng cơ khí, chế tạo các máy công cụ quen thuộc như cối xay gió, máy trộn và xe trượt vui nhộn.",
+  "overview": "Chương trình Lớp Cơ Bản được thiết kế đặc thù cho trẻ mầm non theo phương pháp 'Vừa học vừa chơi' (Play-based Learning). Bé làm quen với các chi tiết khối ghép an toàn, bánh răng cơ khí, chế tạo các máy công cụ quen thuộc như cối xay gió, máy trộn và xe trượt vui nhộn.",
   "hardwareKit": {
     "name": "Bộ Học Cụ Robot Mầm Non VIAI-Kids An Toàn Chuẩn Châu Âu",
     "description": "Mỗi học viên được trang bị 01 bộ khối ghép cơ khí bo tròn không sắc nhọn, động cơ giảm tốc an toàn cho trẻ nhỏ.",
@@ -1489,100 +1438,66 @@ export const coursesData: Record<string, CourseDetail> = {
   ],
   "modules": [
     {
-      "id": "LT1",
-      "title": "Lộ trình 1",
+      "id": "HP1",
+      "title": "Học phần 1",
       "name": "Khám Phá Thế Giới & Máy Công Cụ Đầu Tiên",
-      "number": "Lộ trình 1",
-      "duration": "13 buổi (12 buổi chính + 1 buổi Free)",
+      "number": "Học phần 1",
+      "duration": "13 buổi - 90 phút/buổi",
       "sessionsCount": 13,
       "hoursCount": 19.5,
       "projectsCount": 9,
       "description": "Bé làm quen các khối ghép cơ bản, khám phá các chuyển động xung quanh và chế tạo các máy công cụ đầu tiên.",
       "achievement": "Bé nhận biết màu sắc, hình khối, lắp ghép thuần thục và tự tin thuyết trình sản phẩm.",
-      "topics": [
-        {
-          "title": "Xin chào Weir",
-          "lessons": [
-            "Chào Weir",
-            "Tháp truyền hình Neon",
-            "Nhà là ca sĩ"
-          ]
-        },
-        {
-          "title": "Sở thú vui nhộn",
-          "lessons": [
-            "Người hâm mộ thể thao",
-            "Buzz, Buzz, Chú ong nhỏ",
-            "Con thuyền của sa mạc",
-            "Wow - Khủng long kia"
-          ]
-        },
-        {
-          "title": "Máy công cụ",
-          "lessons": [
-            "Cối xay gió tự động",
-            "Máy trộn cầm tay rực rỡ"
-          ]
-        },
-        {
-          "title": "Tặng Free",
-          "lessons": [
-            "Ôn tập",
-            "Thuyết trình demo cho giáo viên",
-            "Thuyết trình cho phụ huynh về sản phẩm"
-          ]
-        }
-      ],
       "lessons": [
         {
           "sessionNumber": 1,
-          "title": "Chào Weir (Chủ đề: Xin chào Weir)",
+          "title": "Chào Weir",
           "type": "Dự án"
         },
         {
           "sessionNumber": 2,
-          "title": "Tháp truyền hình Neon (Chủ đề: Xin chào Weir)",
+          "title": "Tháp truyền hình Neon",
           "type": "Dự án"
         },
         {
           "sessionNumber": 3,
-          "title": "Nhà là ca sĩ (Chủ đề: Xin chào Weir)",
+          "title": "Nhà là ca sĩ",
           "type": "Dự án"
         },
         {
           "sessionNumber": 4,
-          "title": "Người hâm mộ thể thao (Chủ đề: Sở thú vui nhộn)",
+          "title": "Người hâm mộ thể thao",
           "type": "Dự án"
         },
         {
           "sessionNumber": 5,
-          "title": "Buzz, Buzz, Chú ong nhỏ (Chủ đề: Sở thú vui nhộn)",
-          "type": "Dự án"
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
         },
         {
           "sessionNumber": 6,
-          "title": "Con thuyền của sa mạc (Chủ đề: Sở thú vui nhộn)",
+          "title": "Buzz, Buzz, Chú ong nhỏ",
           "type": "Dự án"
         },
         {
           "sessionNumber": 7,
-          "title": "Wow - Khủng long kia (Chủ đề: Sở thú vui nhộn)",
+          "title": "Con thuyền của sa mạc",
           "type": "Dự án"
         },
         {
           "sessionNumber": 8,
-          "title": "Cối xay gió tự động (Chủ đề: Máy công cụ)",
+          "title": "Wow - Khủng long kia",
           "type": "Dự án"
         },
         {
           "sessionNumber": 9,
-          "title": "Máy trộn cầm tay rực rỡ (Chủ đề: Máy công cụ)",
+          "title": "Cối xay gió tự động",
           "type": "Dự án"
         },
         {
           "sessionNumber": 10,
-          "title": "Ôn tập kiến thức lắp ghép & cơ chế",
-          "type": "Ôn tập"
+          "title": "Máy trộn cầm tay rực rỡ",
+          "type": "Dự án"
         },
         {
           "sessionNumber": 11,
@@ -1591,116 +1506,81 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 12,
-          "title": "Hoàn thiện mô hình tốt nghiệp lộ trình",
-          "type": "Dự án"
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
         },
         {
           "sessionNumber": 13,
-          "title": "TẶNG FREE: Báo cáo & Thuyết trình sản phẩm cho Phụ huynh",
-          "type": "Tặng Free"
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
         }
       ],
       "outcomes": [
-        "Thao tác lắp ghép khéo léo",
-        "Nhận biết các cơ cấu truyền động",
-        "Tự tin giới thiệu sản phẩm"
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
       ]
     },
     {
-      "id": "LT2",
-      "title": "Lộ trình 2",
+      "id": "HP2",
+      "title": "Học phần 2",
       "name": "Công Viên Trò Chơi & Mùa Xuân Rực Rỡ",
-      "number": "Lộ trình 2",
-      "duration": "13 buổi (12 buổi chính + 1 buổi Free)",
+      "number": "Học phần 2",
+      "duration": "13 buổi - 90 phút/buổi",
       "sessionsCount": 13,
       "hoursCount": 19.5,
       "projectsCount": 9,
       "description": "Khám phá các phương tiện di chuyển trong công viên và các mô hình cơ khí mô phỏng thiên nhiên bốn mùa.",
       "achievement": "Lắp ráp thành thạo mô hình bánh xe lăn, đệm khí và hiểu nguyên lý hoạt động của thiết bị gia đình.",
-      "topics": [
-        {
-          "title": "Công viên trò chơi",
-          "lessons": [
-            "Tàu đệm khí",
-            "Bánh xe lăn",
-            "Tàu lượn",
-            "Công viên trò chơi"
-          ]
-        },
-        {
-          "title": "Mùa xuân đến",
-          "lessons": [
-            "Hoa nở",
-            "Che ô trong mưa xuân",
-            "Đi chơi trong mùa xuân"
-          ]
-        },
-        {
-          "title": "Không gì làm khó bé",
-          "lessons": [
-            "Thiên thần nhỏ báo thức",
-            "Máy hút bụi của bé"
-          ]
-        },
-        {
-          "title": "Tặng Free",
-          "lessons": [
-            "Ôn tập",
-            "Thuyết trình demo cho giáo viên",
-            "Thuyết trình cho phụ huynh về sản phẩm"
-          ]
-        }
-      ],
       "lessons": [
         {
           "sessionNumber": 1,
-          "title": "Tàu đệm khí (Chủ đề: Công viên trò chơi)",
+          "title": "Tàu đệm khí",
           "type": "Dự án"
         },
         {
           "sessionNumber": 2,
-          "title": "Bánh xe lăn (Chủ đề: Công viên trò chơi)",
+          "title": "Bánh xe lăn",
           "type": "Dự án"
         },
         {
           "sessionNumber": 3,
-          "title": "Tàu lượn (Chủ đề: Công viên trò chơi)",
+          "title": "Tàu lượn",
           "type": "Dự án"
         },
         {
           "sessionNumber": 4,
-          "title": "Công viên trò chơi (Chủ đề: Công viên trò chơi)",
+          "title": "Công viên trò chơi",
           "type": "Dự án"
         },
         {
           "sessionNumber": 5,
-          "title": "Hoa nở (Chủ đề: Mùa xuân đến)",
-          "type": "Dự án"
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
         },
         {
           "sessionNumber": 6,
-          "title": "Che ô trong mưa xuân (Chủ đề: Mùa xuân đến)",
+          "title": "Hoa nở",
           "type": "Dự án"
         },
         {
           "sessionNumber": 7,
-          "title": "Đi chơi trong mùa xuân (Chủ đề: Mùa xuân đến)",
+          "title": "Che ô trong mưa xuân",
           "type": "Dự án"
         },
         {
           "sessionNumber": 8,
-          "title": "Thiên thần nhỏ báo thức (Chủ đề: Không gì làm khó bé)",
+          "title": "Đi chơi trong mùa xuân",
           "type": "Dự án"
         },
         {
           "sessionNumber": 9,
-          "title": "Máy hút bụi của bé (Chủ đề: Không gì làm khó bé)",
+          "title": "Thiên thần nhỏ báo thức",
           "type": "Dự án"
         },
         {
           "sessionNumber": 10,
-          "title": "Ôn tập cơ cấu ròng rọc & bánh răng",
-          "type": "Ôn tập"
+          "title": "Máy hút bụi của bé",
+          "type": "Dự án"
         },
         {
           "sessionNumber": 11,
@@ -1709,61 +1589,31 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 12,
-          "title": "Sáng tạo mô hình tự chọn",
-          "type": "Dự án"
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
         },
         {
           "sessionNumber": 13,
-          "title": "TẶNG FREE: Báo cáo & Thuyết trình sản phẩm cho Phụ huynh",
-          "type": "Tặng Free"
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
         }
       ],
       "outcomes": [
-        "Hiểu cơ cấu chuyển động phức hợp",
-        "Tư duy sáng tạo hình không gian",
-        "Kỹ năng làm việc nhóm"
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
       ]
     },
     {
-      "id": "LT3",
-      "title": "Lộ trình 3",
+      "id": "HP3",
+      "title": "Học phần 3",
       "name": "Thế Giới Động Vật & Thị Trấn Hạnh Phúc",
-      "number": "Lộ trình 3",
-      "duration": "13 buổi (12 buổi chính + 1 buổi Free)",
+      "number": "Học phần 3",
+      "duration": "13 buổi - 90 phút/buổi",
       "sessionsCount": 13,
       "hoursCount": 19.5,
       "projectsCount": 9,
       "description": "Khám phá các chuyển động uốn lượn, mô phỏng hành vi động vật và xây dựng mô hình thị trấn đáng yêu.",
       "achievement": "Lắp ráp mô hình chuyển động phức tạp, phối hợp màu sắc và nhịp điệu âm thanh.",
-      "topics": [
-        {
-          "title": "Sở thú sôi động",
-          "lessons": [
-            "Nóng, nóng, quạt máy của bé",
-            "Rắn, rắn rình rập",
-            "Voi vòi voi voi",
-            "Chú chim biết hát",
-            "Sở thú diệu kì"
-          ]
-        },
-        {
-          "title": "Thị trấn hạnh phúc",
-          "lessons": [
-            "Bốn mùa của cây",
-            "Ngôi nhà của bé",
-            "Nhịp cầu âm nhạc",
-            "Thị trấn vui vẻ"
-          ]
-        },
-        {
-          "title": "Tặng Free",
-          "lessons": [
-            "Ôn tập",
-            "Thuyết trình demo cho giáo viên",
-            "Thuyết trình cho phụ huynh về sản phẩm"
-          ]
-        }
-      ],
       "lessons": [
         {
           "sessionNumber": 1,
@@ -1787,33 +1637,33 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 5,
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
+        },
+        {
+          "sessionNumber": 6,
           "title": "Sở thú diệu kì",
           "type": "Dự án"
         },
         {
-          "sessionNumber": 6,
+          "sessionNumber": 7,
           "title": "Bốn mùa của cây",
           "type": "Dự án"
         },
         {
-          "sessionNumber": 7,
+          "sessionNumber": 8,
           "title": "Ngôi nhà của bé",
           "type": "Dự án"
         },
         {
-          "sessionNumber": 8,
+          "sessionNumber": 9,
           "title": "Nhịp cầu âm nhạc",
           "type": "Dự án"
         },
         {
-          "sessionNumber": 9,
+          "sessionNumber": 10,
           "title": "Thị trấn vui vẻ",
           "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Ôn tập tổng kết lộ trình cơ bản",
-          "type": "Ôn tập"
         },
         {
           "sessionNumber": 11,
@@ -1822,19 +1672,101 @@ export const coursesData: Record<string, CourseDetail> = {
         },
         {
           "sessionNumber": 12,
-          "title": "Dự án tốt nghiệp Lớp Cơ Bản",
-          "type": "Dự án"
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
         },
         {
           "sessionNumber": 13,
-          "title": "TẶNG FREE: Lễ tổng kết & Báo cáo tốt nghiệp cho Phụ huynh",
-          "type": "Tặng Free"
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
         }
       ],
       "outcomes": [
-        "Hoàn thành khóa cơ bản xuất sắc",
-        "Sẵn sàng lên lớp nâng cao",
-        "Trao chứng chỉ tốt nghiệp Lớp Cơ Bản"
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
+      ]
+    },
+    {
+      "id": "HP4",
+      "title": "Học phần 4",
+      "name": "Kỹ Sư Nhí Sáng Tạo & Đồ Án Tốt Nghiệp",
+      "number": "Học phần 4",
+      "duration": "13 buổi - 90 phút/buổi",
+      "sessionsCount": 13,
+      "hoursCount": 19.5,
+      "projectsCount": 9,
+      "description": "Tự do thiết kế và lắp ráp các cỗ máy công viên giải trí, chuẩn bị cho đồ án tốt nghiệp xuất sắc.",
+      "achievement": "Hoàn thành đồ án tốt nghiệp khóa cơ bản, tự tin thuyết trình trước phụ huynh và thầy cô.",
+      "lessons": [
+        {
+          "sessionNumber": 1,
+          "title": "Vòng quay ngựa gỗ",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 2,
+          "title": "Chiếc cầu bập bênh",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 3,
+          "title": "Cối xay gió Hà Lan",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 4,
+          "title": "Siêu xe bứt phá nhí",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 5,
+          "title": "Ôn tập kiến thức",
+          "type": "Ôn tập"
+        },
+        {
+          "sessionNumber": 6,
+          "title": "Xe kéo chở hàng",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 7,
+          "title": "Chú ếch bật nhảy",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 8,
+          "title": "Bông hoa cơ khí",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 9,
+          "title": "Ngọn hải đăng rực sáng",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 10,
+          "title": "Robot thám hiểm nhí",
+          "type": "Dự án"
+        },
+        {
+          "sessionNumber": 11,
+          "title": "Thuyết trình demo cho giáo viên",
+          "type": "Thuyết trình"
+        },
+        {
+          "sessionNumber": 12,
+          "title": "Thuyết trình về sản phẩm",
+          "type": "Báo cáo cuối học phần"
+        },
+        {
+          "sessionNumber": 13,
+          "title": "Phát triển lập trình & Sáng tạo",
+          "type": "Phát triển lập trình"
+        }
+      ],
+      "outcomes": [
+        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
+        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
       ]
     }
   ]

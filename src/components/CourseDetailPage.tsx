@@ -142,7 +142,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   <span className="text-xs font-bold text-zinc-500 block mb-0.5 uppercase tracking-wide">ĐỘ TUỔI</span>
                   <span className="text-sm font-bold text-[#0c0a08] flex items-center gap-1">
                     <Users className="h-3.5 w-3.5 text-[#c2410c] shrink-0" />
-                    <span className="truncate">{course.grade}</span>
+                    <span className="truncate">{course.slug.includes('mam-non') ? 'Mầm non' : course.grade}</span>
                   </span>
                 </div>
 
@@ -150,7 +150,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   <span className="text-xs font-bold text-zinc-500 block mb-0.5 uppercase tracking-wide">THỜI LƯỢNG</span>
                   <span className="text-sm font-bold text-[#0c0a08] flex items-center gap-1">
                     <Clock className="h-3.5 w-3.5 text-[#c2410c] shrink-0" />
-                    <span className="truncate">4 HK · 52 buổi</span>
+                    <span className="truncate">52 buổi</span>
                   </span>
                 </div>
 
@@ -158,7 +158,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   <span className="text-xs font-bold text-zinc-500 block mb-0.5 uppercase tracking-wide">SĨ SỐ</span>
                   <span className="text-sm font-bold text-[#0c0a08] flex items-center gap-1">
                     <Award className="h-3.5 w-3.5 text-[#c2410c] shrink-0" />
-                    <span>Lớp &lt; 8 HV</span>
+                    <span>Lớp &lt; 10 HV</span>
                   </span>
                 </div>
 
