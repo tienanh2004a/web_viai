@@ -73,7 +73,7 @@ export const ContactSection: React.FC = () => {
       name: 'Cơ sở 1 - Hải Phòng',
       address: 'Số 42 Lạch Tray, Quận Ngô Quyền, TP. Hải Phòng',
       area: 'Lạch Tray • Ngô Quyền',
-      phone: '0344533898',
+      phone: '0963909192',
       feature: 'Phòng Lab lớn, đầy đủ bộ kit VEX & sa bàn thi đấu tiêu chuẩn',
       mapUrl: 'https://maps.google.com/?q=Số+42+Lạch+Tray,+Quận+Ngô+Quyền,+Hải+Phòng',
     },
@@ -82,7 +82,7 @@ export const ContactSection: React.FC = () => {
       name: 'Cơ sở 2 - Hưng Yên',
       address: 'Số 158 Đường Chu Văn An, Phường An Tảo, TP. Hưng Yên',
       area: 'Chu Văn An • An Tảo',
-      phone: '0344533898',
+      phone: '0963909192',
       feature: 'Trung tâm nghiên cứu STEM & AI, phòng luyện thi Robocon miền Bắc',
       mapUrl: 'https://maps.google.com/?q=Số+158+Chu+Văn+An,+Phường+An+Tảo,+Hưng+Yên',
     },
@@ -91,7 +91,7 @@ export const ContactSection: React.FC = () => {
       name: 'Cơ sở 3 - Ninh Bình',
       address: 'Số 86 Đinh Tiên Hoàng, Phường Đông Thành, TP. Ninh Bình',
       area: 'Đinh Tiên Hoàng • Đông Thành',
-      phone: '0344533898',
+      phone: '0963909192',
       feature: 'Không gian sáng tạo Kỹ sư nhí, sân đấu sa bàn đối kháng thực chiến',
       mapUrl: 'https://maps.google.com/?q=Số+86+Đinh+Tiên+Hoàng,+Phường+Đông+Thành,+Ninh+Bình',
     },
@@ -118,7 +118,7 @@ export const ContactSection: React.FC = () => {
             
             {/* Thẻ 1: Hotline */}
             <a
-              href="tel:0344533898"
+              href="tel:0963909192"
               className="group bg-[#f5f5f7] p-5 sm:p-6 rounded-2xl border border-black/6 hover:border-[#c2410c]/40 hover:bg-white hover:shadow-sm transition-all h-full block cursor-pointer"
             >
               <div className="flex items-center gap-3 mb-2">
@@ -128,7 +128,7 @@ export const ContactSection: React.FC = () => {
                 </span>
               </div>
               <p className="font-extrabold text-[#111827] text-lg group-hover:text-[#c2410c] transition-colors pl-8">
-                0344533898
+                0963909192
               </p>
             </a>
 
@@ -542,7 +542,7 @@ export const ContactSection: React.FC = () => {
 
             {/* Zalo */}
             <a
-              href="https://zalo.me/0344533898"
+              href="https://zalo.me/0963909192"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Zalo VIAI Academy"

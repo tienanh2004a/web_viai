@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
               <p>Mã số doanh nghiệp: <strong className="text-[#111827]">0402301783</strong> do Sở Kế hoạch &amp; Đầu tư TP Đà Nẵng cấp</p>
               <p className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-[#c2410c]" />
-                <a href="tel:0837312860" className="hover:text-[#111827] font-semibold">0837.312.860</a>
+                <a href="tel:0963909192" className="hover:text-[#111827] font-semibold">0963.909.192</a>
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-[#c2410c]" />
@@ -185,7 +185,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
               </a>
 
               <a
-                href="https://zalo.me/0344533898"
+                href="https://zalo.me/0963909192"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0068FF]/10 hover:opacity-85 transition-opacity overflow-hidden"
@@ -196,7 +196,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
             </div>
 
             <div className="text-xs sm:text-sm text-[#4b5563] space-y-1">
-              <p>Hotline chính: <strong>0344533898</strong></p>
+              <p>Hotline chính: <strong>0963909192</strong></p>
               <p>Hỗ trợ Zalo 24/7</p>
             </div>
           </div>

@@ -142,11 +142,11 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Right: Hotline Button & Orange Free Trial Button (Chỉ hiện trên máy tính sm+) */}
         <div className="hidden sm:flex items-center gap-3">
           <a
-            href="tel:0344533898"
+            href="tel:0963909192"
             className="inline-flex items-center gap-2 bg-white text-[#111827] border border-black/10 hover:border-black/25 hover:bg-[#fafaf9] px-4 py-2.5 rounded-xl font-bold text-sm active:scale-95 transition-all shadow-2xs"
           >
             <Phone className="h-4 w-4 text-[#c2410c]" />
-            <span>0344533898</span>
+            <span>0963909192</span>
           </a>
 
           <button

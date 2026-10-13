@@ -85,7 +85,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
       name: 'Cơ sở 1 - Hải Phòng',
       address: 'Số 42 Lạch Tray, Quận Ngô Quyền, TP. Hải Phòng',
       area: 'Lạch Tray • Ngô Quyền',
-      phone: '0344533898',
+      phone: '0963909192',
       feature: 'Phòng Lab lớn, đầy đủ bộ kit VEX & sa bàn thi đấu tiêu chuẩn',
       mapUrl: 'https://maps.google.com/?q=Số+42+Lạch+Tray,+Quận+Ngô+Quyền,+Hải+Phòng',
     },
@@ -94,7 +94,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
       name: 'Cơ sở 2 - Hưng Yên',
       address: 'Số 158 Đường Chu Văn An, Phường An Tảo, TP. Hưng Yên',
       area: 'Chu Văn An • An Tảo',
-      phone: '0344533898',
+      phone: '0963909192',
       feature: 'Trung tâm nghiên cứu STEM & AI, phòng luyện thi RoboSim miền Bắc',
       mapUrl: 'https://maps.google.com/?q=Số+158+Chu+Văn+An,+Phường+An+Tảo,+Hưng+Yên',
     },
@@ -103,7 +103,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
       name: 'Cơ sở 3 - Ninh Bình',
       address: 'Số 86 Đinh Tiên Hoàng, Phường Đông Thành, TP. Ninh Bình',
       area: 'Đinh Tiên Hoàng • Đông Thành',
-      phone: '0344533898',
+      phone: '0963909192',
       feature: 'Không gian sáng tạo Kỹ sư nhí, sân đấu sa bàn đối kháng thực chiến',
       mapUrl: 'https://maps.google.com/?q=Số+86+Đinh+Tiên+Hoàng,+Phường+Đông+Thành,+Ninh+Bình',
     },
@@ -129,11 +129,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
           <div className="flex items-center gap-3">
             <a
-              href="tel:0344533898"
+              href="tel:0963909192"
               className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-700 hover:text-orange-600 transition-colors"
             >
               <Phone className="h-3.5 w-3.5 text-orange-600" />
-              <span>0344533898</span>
+              <span>0963909192</span>
             </a>
             <button
               onClick={() => onOpenTrialModal()}
@@ -165,7 +165,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               
               {/* Thẻ 1: Hotline */}
               <a
-                href="tel:0344533898"
+                href="tel:0963909192"
                 className="group bg-white p-6 rounded-2xl border border-neutral-200 hover:border-orange-300 hover:shadow-md transition-all h-full block"
               >
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-orange-50 text-orange-500 mb-4 group-hover:scale-105 transition-transform">
@@ -175,7 +175,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   Hotline
                 </p>
                 <p className="font-semibold text-neutral-900 text-base group-hover:text-orange-600 transition-colors">
-                  0344533898
+                  0963909192
                 </p>
               </a>
 
@@ -588,7 +588,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
               {/* Zalo */}
               <a
-                href="https://zalo.me/0344533898"
+                href="https://zalo.me/0963909192"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col items-center gap-2 p-4 sm:p-5 rounded-2xl border border-neutral-200 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[100px] sm:min-w-[110px] hover:shadow-md"

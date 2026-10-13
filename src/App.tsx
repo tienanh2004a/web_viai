@@ -174,11 +174,11 @@ export const App: React.FC = () => {
 
           {/* Footer */}
           <Footer onSelectCourse={handleSelectCourse} onGoContact={handleGoContact} />
-
-          {/* Floating Action Buttons */}
-          <FloatingActions onOpenTrialModal={() => handleOpenTrialModal()} hide={isTrialModalOpen} />
         </>
       )}
+
+      {/* Floating Action Buttons (Hiển thị trên tất cả các trang: Trang chủ, Cấp học, Chi tiết khóa) */}
+      <FloatingActions onOpenTrialModal={() => handleOpenTrialModal()} hide={isTrialModalOpen} />
 
       {/* Free Trial Registration Modal (Accessible from all views) */}
       <FreeTrialModal

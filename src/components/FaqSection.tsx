@@ -168,13 +168,13 @@ export const FaqSection: React.FC = () => {
             Ba mẹ vẫn còn câu hỏi khác cần được tư vấn chi tiết cho con?
           </p>
           <a
-            href="https://zalo.me/0837312860"
+            href="https://zalo.me/0963909192"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl bg-[#111827] hover:bg-[#1f2937] px-7 py-3.5 text-sm font-bold text-white transition-all shadow-xs"
           >
             <MessageCircle className="h-4 w-4" />
-            <span>Nhắn Zalo Thầy Cô (0837.312.860)</span>
+            <span>Nhắn Zalo Thầy Cô (0963.909.192)</span>
           </a>
         </div>
       </div>

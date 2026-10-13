@@ -63,10 +63,10 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
 
           <div className="flex items-center gap-2.5 shrink-0">
             <a
-              href="tel:0344533898"
+              href="tel:0963909192"
               className="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-gray-600 hover:text-[#c2410c] transition-colors"
             >
-              <span>Hotline: 0344.533.898</span>
+              <span>Hotline: 0963.909.192</span>
             </a>
             <button
               onClick={() => onOpenTrialModal(currentLevel.name)}
@@ -446,10 +446,10 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
             </button>
 
             <a
-              href="tel:0344533898"
+              href="tel:0963909192"
               className="inline-flex items-center gap-2 rounded-xl bg-black/30 hover:bg-black/40 border border-white/20 px-6 py-3.5 text-sm font-bold text-white transition-all cursor-pointer"
             >
-              <span>Gọi Hotline: 0344.533.898</span>
+              <span>Gọi Hotline: 0963.909.192</span>
             </a>
           </div>
         </div>

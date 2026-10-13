@@ -87,10 +87,10 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
           <div className="flex items-center gap-3">
             <a
-              href="tel:0837312860"
+              href="tel:0963909192"
               className="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold text-[#555555] hover:text-black transition-colors"
             >
-              <span>Hotline: 0837.312.860</span>
+              <span>Hotline: 0963.909.192</span>
             </a>
             <button
               onClick={() => onOpenTrialModal(course.name)}
@@ -697,30 +697,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           </div>
         </div>
       </section>
-
-      {/* Floating CTA in Detail Page */}
-      <div className="sticky bottom-0 z-40 bg-[#ffffff] border-t border-black/5 p-4 flex items-center justify-between px-4 sm:px-8 shadow-lg">
-        <div className="hidden sm:flex flex-col">
-          <span className="text-xs text-[#666666] font-medium">Tặng 01 buổi trải nghiệm 1-1 miễn phí</span>
-          <span className="text-sm font-bold text-[#000000]">{course.name}</span>
-        </div>
-
-        <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
-          <a
-            href="tel:0837312860"
-            className="hidden md:inline-flex px-4 py-2.5 rounded-xl border border-gray-200 text-xs font-bold text-[#111827] hover:bg-gray-50 transition-colors"
-          >
-            Hotline: 0837.312.860
-          </a>
-          <button
-            onClick={() => onOpenTrialModal(course.name)}
-            className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#c2410c] hover:bg-[#9a3412] text-xs sm:text-sm font-bold text-white shadow-md active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <Sparkles className="h-4 w-4 text-amber-200" />
-            <span>Đăng ký học thử miễn phí ngay</span>
-          </button>
-        </div>
-      </div>
     </div>
   );
 };
+
