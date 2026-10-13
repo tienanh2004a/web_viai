@@ -519,20 +519,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 </div>
               </div>
 
-              <div className="rounded-3xl border border-orange-200 bg-gradient-to-br from-orange-50/70 via-white to-amber-50/40 p-6 sm:p-8 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-6">
-                <div>
-                  <h4 className="text-lg font-bold text-[#111827] mb-1">Thực Hành 80% — Trải Nghiệm 1-1 Miễn Phí</h4>
-                  <p className="text-xs sm:text-sm text-zinc-600">
-                    Bé được trực tiếp thao tác trên bộ học cụ thật tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình).
-                  </p>
-                </div>
-                <button
-                  onClick={() => onOpenTrialModal(course.name)}
-                  className="rounded-xl bg-[#c2410c] hover:bg-[#9a3412] px-6 py-3 text-xs font-bold text-white shrink-0 shadow-sm transition-all cursor-pointer"
-                >
-                  Đăng ký trải nghiệm 0đ
-                </button>
-              </div>
+
             </div>
           )}
 
