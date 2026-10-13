@@ -64,83 +64,47 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
 
-        {/* 1. Thanh điều hướng ngang trên Mobile (< lg): Thay thế nút 3 gạch bằng menu ngang Trang chủ | Khoá học | Liên hệ */}
-        <nav className="flex lg:hidden items-center gap-0.5 sm:gap-1.5 bg-white rounded-full px-2 sm:px-3 py-1 sm:py-1.5 shadow-xs border border-black/8">
+        {/* Navigation Bar - Chuẩn thiết kế viên con nhộng (Pill Capsule) đồng bộ hài hoà trên cả điện thoại và máy tính (như Ảnh 2) */}
+        <nav className="flex items-center gap-3.5 sm:gap-6 lg:gap-8 bg-white rounded-full px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 lg:py-3 shadow-xs border border-black/8 overflow-x-auto lg:overflow-visible no-scrollbar scroll-smooth shrink min-w-0">
           {/* Trang chủ */}
           <button
             onClick={() => { onGoHome?.(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            className="px-2.5 py-1 text-xs sm:text-sm font-bold text-[#111827] hover:text-[#c2410c] rounded-full transition-colors cursor-pointer whitespace-nowrap"
-          >
-            Trang chủ
-          </button>
-
-          {/* Khoá học */}
-          <button
-            onClick={() => handleScrollToSection('khoa-hoc')}
-            className="px-2.5 py-1 text-xs sm:text-sm font-bold text-[#444444] hover:text-[#c2410c] rounded-full transition-colors cursor-pointer whitespace-nowrap"
-          >
-            Khoá học
-          </button>
-
-          {/* Liên hệ */}
-          <button
-            onClick={() => {
-              if (onGoContact) {
-                onGoContact();
-              } else {
-                handleScrollToSection('lien-he');
-              }
-            }}
-            className="px-2.5 py-1 text-xs sm:text-sm font-bold text-[#444444] hover:text-[#c2410c] rounded-full transition-colors cursor-pointer whitespace-nowrap"
-          >
-            Liên hệ
-          </button>
-        </nav>
-
-        {/* 2. Thanh điều hướng đầy đủ trên Desktop (lg+) */}
-        <nav className="hidden lg:flex items-center gap-8 bg-white rounded-full px-8 py-3 shadow-xs border border-black/8">
-          {/* Trang chủ */}
-          <button
-            onClick={() => { onGoHome?.(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            className="text-sm font-bold text-[#111827] hover:text-[#c2410c] transition-colors cursor-pointer"
+            className="text-xs sm:text-sm font-bold text-[#111827] hover:text-[#c2410c] transition-colors cursor-pointer whitespace-nowrap shrink-0"
           >
             Trang chủ
           </button>
 
           {/* Về chúng tôi */}
-          <a
-            href="#ve-chung-toi"
-            onClick={() => onGoHome?.()}
-            className="text-sm font-medium text-[#444444] hover:text-[#000000] transition-colors"
+          <button
+            onClick={() => handleScrollToSection('ve-chung-toi')}
+            className="text-xs sm:text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap shrink-0"
           >
             Về chúng tôi
-          </a>
+          </button>
 
           {/* Khoá học */}
           <button
             onClick={() => handleScrollToSection('khoa-hoc')}
-            className="text-sm font-medium text-[#444444] hover:text-[#000000] transition-colors cursor-pointer"
+            className="text-xs sm:text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap shrink-0"
           >
             Khoá học
           </button>
 
           {/* Đánh giá */}
-          <a
-            href="#danh-gia"
-            onClick={() => onGoHome?.()}
-            className="text-sm font-medium text-[#444444] hover:text-[#000000] transition-colors"
+          <button
+            onClick={() => handleScrollToSection('danh-gia')}
+            className="text-xs sm:text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap shrink-0"
           >
             Đánh giá
-          </a>
+          </button>
 
           {/* Hỏi đáp */}
-          <a
-            href="#faq"
-            onClick={() => onGoHome?.()}
-            className="text-sm font-medium text-[#444444] hover:text-[#000000] transition-colors"
+          <button
+            onClick={() => handleScrollToSection('faq')}
+            className="text-xs sm:text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap shrink-0"
           >
             Hỏi đáp
-          </a>
+          </button>
 
           {/* Liên hệ */}
           <button
@@ -151,7 +115,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 handleScrollToSection('lien-he');
               }
             }}
-            className="text-sm font-medium text-[#444444] hover:text-[#000000] transition-colors cursor-pointer"
+            className="text-xs sm:text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap shrink-0"
           >
             Liên hệ
           </button>
