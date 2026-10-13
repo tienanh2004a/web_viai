@@ -102,7 +102,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
                   onClick={() => onSelectCourse?.('robotics-mam-non')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics Mầm Non (4 — 6 tuổi)
+                  Robotics Khối Mầm Non
                 </button>
               </li>
               <li>
@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
                   onClick={() => onSelectCourse?.('robotics-lop-1-2')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics Lớp 1 — 2 (Ươm Mầm)
+                  Robotics Lớp 1 — 2
                 </button>
               </li>
               <li>
@@ -118,7 +118,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
                   onClick={() => onSelectCourse?.('robotics-lop-3-4')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics Lớp 3 — 4 (RoboSim &amp; Beta)
+                  Robotics Lớp 3 — 4
                 </button>
               </li>
               <li>
@@ -126,7 +126,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
                   onClick={() => onSelectCourse?.('robotics-lop-5')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics Lớp 5 (Khơi Nguồn Sáng Tạo)
+                  Robotics Lớp 5
                 </button>
               </li>
               <li>
@@ -134,7 +134,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
                   onClick={() => onSelectCourse?.('robotics-lop-6-7')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics Lớp 6 — 7 (Đấu Trường Robocon)
+                  Robotics Lớp 6 — 7
                 </button>
               </li>
               <li>
@@ -142,7 +142,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
                   onClick={() => onSelectCourse?.('robotics-ai-lop-8-9')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics &amp; AI Lớp 8 — 9 (Vision &amp; AGV)
+                  Robotics &amp; AI Lớp 8 — 9
                 </button>
               </li>
             </ul>

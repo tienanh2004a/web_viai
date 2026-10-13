@@ -68,7 +68,7 @@ export const coursesData: Record<string, CourseDetail> = {
   'robotics-mam-non': {
   "slug": "robotics-mam-non",
   "code": "Sata-Kids",
-  "name": "Robotics Khối Mầm Non (4 — 6 tuổi)",
+  "name": "Robotics Khối Mầm Non",
   "academicName": "Ươm Mầm Sáng Tạo",
   "headline": "Khơi nguồn đam mê công nghệ & kích thích tư duy sáng tạo cho trẻ mầm non từ 4 đến 6 tuổi",
   "category": "Mầm non (4 — 6 tuổi)",
@@ -501,7 +501,7 @@ export const coursesData: Record<string, CourseDetail> = {
   'robotics-lop-1-2': {
   "slug": "robotics-lop-1-2",
   "code": "Sata3",
-  "name": "Robotics Lớp 1 — 2 (Ươm Mầm Tài Năng)",
+  "name": "Robotics Lớp 1 — 2",
   "academicName": "Ươm Mầm Tài Năng",
   "headline": "Khám phá cơ cấu cơ khí, bản vẽ lắp ráp và lập trình thẻ Screen-Free cho học sinh Lớp 1 — 2",
   "category": "Khối Tiểu học (Lớp 1 — 2)",
@@ -934,7 +934,7 @@ export const coursesData: Record<string, CourseDetail> = {
   'robotics-lop-3-4': {
   "slug": "robotics-lop-3-4",
   "code": "Sata4",
-  "name": "Robotics Lớp 3 — 4 (Bứt Phá Giới Hạn)",
+  "name": "Robotics Lớp 3 — 4",
   "academicName": "Bứt Phá Giới Hạn",
   "headline": "Làm chủ phần mềm RoboSim, lập trình tự hành và chuyển đổi sang Robot Beta thực chiến cho Lớp 3 — 4",
   "category": "Khối Tiểu học (Lớp 3 — 4)",
@@ -1367,7 +1367,7 @@ export const coursesData: Record<string, CourseDetail> = {
   'robotics-lop-5': {
   "slug": "robotics-lop-5",
   "code": "Sata5",
-  "name": "Robotics Lớp 5 (Khơi Nguồn Sáng Tạo)",
+  "name": "Robotics Lớp 5",
   "academicName": "Khơi Nguồn Sáng Tạo",
   "headline": "Cơ khí động lực học, truyền động phức hợp & giải pháp Smart Home cho học sinh Lớp 5",
   "category": "Khối Tiểu học (Lớp 5)",
@@ -1800,7 +1800,7 @@ export const coursesData: Record<string, CourseDetail> = {
   'robotics-lop-6-7': {
   "slug": "robotics-lop-6-7",
   "code": "Sata6",
-  "name": "Robotics Lớp 6 — 7 (Chinh Phục Đấu Trường)",
+  "name": "Robotics Lớp 6 — 7",
   "academicName": "Chinh Phục Đấu Trường",
   "headline": "Thuật toán PID, tối ưu hành trình, cơ khí đối kháng & chiến thuật Robocon cho Lớp 6 — 7",
   "category": "Khối Trung học (Lớp 6 — 7)",
@@ -2233,7 +2233,7 @@ export const coursesData: Record<string, CourseDetail> = {
   'robotics-ai-lop-8-9': {
   "slug": "robotics-ai-lop-8-9",
   "code": "Sata7",
-  "name": "Robotics & AI Lớp 8 — 9 (Kiến Tạo Tương Lai)",
+  "name": "Robotics & AI Lớp 8 — 9",
   "academicName": "Kiến Tạo Tương Lai",
   "headline": "Lập trình Python/C++, Thị giác máy tính AI OpenCV, Xe tự hành AGV & Đồ án KHKT cho Lớp 8 — 9",
   "category": "Khối Trung học (Lớp 8 — 9)",

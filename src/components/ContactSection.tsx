@@ -10,7 +10,7 @@ export const ContactSection: React.FC = () => {
   const [parentName, setParentName] = useState('');
   const [phone, setPhone] = useState('');
   const [phoneError, setPhoneError] = useState('');
-  const [course, setCourse] = useState('Robotics Khối Tiểu Học (6 — 11 tuổi)');
+  const [course, setCourse] = useState('Robotics Lớp 3 — 4');
   const [branch, setBranch] = useState('Hải Phòng');
   const [extraInfo, setExtraInfo] = useState('');
   const [agreed, setAgreed] = useState(true);
@@ -324,9 +324,11 @@ export const ContactSection: React.FC = () => {
                     onChange={(e) => setCourse(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all cursor-pointer"
                   >
-                    <option value="Robotics Khối Mầm Non (4 — 6 tuổi)">Robotics Khối Mầm Non (4 — 6 tuổi)</option>
-                    <option value="Robotics Khối Tiểu Học (6 — 11 tuổi)">Robotics Khối Tiểu Học (6 — 11 tuổi)</option>
-                    <option value="Robotics & AI Khối Trung Học (11 — 15 tuổi)">Robotics & AI Khối Trung Học (11 — 15 tuổi)</option>
+                    <option value="Robotics Lớp 1 — 2">Robotics Lớp 1 — 2</option>
+                    <option value="Robotics Lớp 3 — 4">Robotics Lớp 3 — 4</option>
+                    <option value="Robotics Lớp 5">Robotics Lớp 5</option>
+                    <option value="Robotics Lớp 6 — 7">Robotics Lớp 6 — 7</option>
+                    <option value="Robotics & AI Lớp 8 — 9">Robotics & AI Lớp 8 — 9</option>
                   </select>
                 </div>
 

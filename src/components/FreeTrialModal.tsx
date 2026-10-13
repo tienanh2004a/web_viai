@@ -60,10 +60,10 @@ const validateDateVN = (str: string): string => {
 
 // Ánh xạ khoá học sang Cột Độ tuổi học viên trên Google Sheet (giữ nguyên độ tuổi chuẩn như ảnh 2)
 export const mapCourseToAgeGroup = (courseName: string): string => {
-  if (courseName.includes('Mầm') || courseName.includes('mam-non') || courseName.includes('4')) {
+  if (courseName.includes('Mầm') || courseName.includes('mam-non') || courseName.includes('4 — 6') || courseName.includes('4 – 6')) {
     return 'Khối Mầm non (4 – 6 tuổi)';
   }
-  if (courseName.includes('6') || courseName.includes('7') || courseName.includes('8') || courseName.includes('9') || courseName.includes('Trung') || courseName.includes('trung-hoc')) {
+  if (courseName.includes('6 — 7') || courseName.includes('8 — 9') || courseName.includes('Trung') || courseName.includes('trung-hoc') || courseName.includes('11 — 15')) {
     return 'Khối Trung học (Lớp 6 – 9)';
   }
   return 'Khối Tiểu học (Lớp 1 – 5)';
@@ -103,7 +103,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   const [parentName, setParentName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [phoneError, setPhoneError] = useState('');
-  const [selectedCourse, setSelectedCourse] = useState('Robotics Lớp 3 — 4 (Bứt Phá Giới Hạn)');
+  const [selectedCourse, setSelectedCourse] = useState('Robotics Lớp 3 — 4');
   const [branch, setBranch] = useState('Cơ sở Hải Phòng');
   const [preferredDate, setPreferredDate] = useState(''); // Định dạng dd/mm/yyyy
   const [dateError, setDateError] = useState('');
@@ -120,22 +120,20 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
       setDateError('');
     }
     if (defaultCourse) {
-      if (defaultCourse.includes('Mầm') || defaultCourse.includes('mam-non')) {
-        setSelectedCourse('Robotics Khối Mầm Non (4 — 6 tuổi)');
-      } else if (defaultCourse.includes('1 — 2') || defaultCourse.includes('1 - 2')) {
-        setSelectedCourse('Robotics Lớp 1 — 2 (Ươm Mầm Tài Năng)');
+      if (defaultCourse.includes('1 — 2') || defaultCourse.includes('1 - 2')) {
+        setSelectedCourse('Robotics Lớp 1 — 2');
       } else if (defaultCourse.includes('3 — 4') || defaultCourse.includes('3 - 4')) {
-        setSelectedCourse('Robotics Lớp 3 — 4 (Bứt Phá Giới Hạn)');
+        setSelectedCourse('Robotics Lớp 3 — 4');
       } else if (defaultCourse.includes('Lớp 5') || defaultCourse.includes('lop-5')) {
-        setSelectedCourse('Robotics Lớp 5 (Khơi Nguồn Sáng Tạo)');
+        setSelectedCourse('Robotics Lớp 5');
       } else if (defaultCourse.includes('6 — 7') || defaultCourse.includes('6 - 7')) {
-        setSelectedCourse('Robotics Lớp 6 — 7 (Chinh Phục Đấu Trường)');
+        setSelectedCourse('Robotics Lớp 6 — 7');
       } else if (defaultCourse.includes('8 — 9') || defaultCourse.includes('8 - 9')) {
-        setSelectedCourse('Robotics & AI Lớp 8 — 9 (Kiến Tạo Tương Lai)');
+        setSelectedCourse('Robotics & AI Lớp 8 — 9');
       } else if (defaultCourse.includes('Trung') || defaultCourse.includes('trung-hoc')) {
-        setSelectedCourse('Robotics Lớp 6 — 7 (Chinh Phục Đấu Trường)');
+        setSelectedCourse('Robotics Lớp 6 — 7');
       } else {
-        setSelectedCourse('Robotics Lớp 3 — 4 (Bứt Phá Giới Hạn)');
+        setSelectedCourse('Robotics Lớp 3 — 4');
       }
     }
   }, [defaultCourse, isOpen]);
@@ -478,18 +476,11 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                   onChange={(e) => setSelectedCourse(e.target.value)}
                   className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
                 >
-                  <optgroup label="Khối Mầm Non (4 — 6 tuổi)">
-                    <option value="Robotics Khối Mầm Non (4 — 6 tuổi)">Robotics Khối Mầm Non (4 — 6 tuổi)</option>
-                  </optgroup>
-                  <optgroup label="Khối Tiểu Học (Lớp 1 — 5)">
-                    <option value="Robotics Lớp 1 — 2 (Ươm Mầm Tài Năng)">Robotics Lớp 1 — 2 (Ươm Mầm Tài Năng)</option>
-                    <option value="Robotics Lớp 3 — 4 (Bứt Phá Giới Hạn)">Robotics Lớp 3 — 4 (Bứt Phá Giới Hạn)</option>
-                    <option value="Robotics Lớp 5 (Khơi Nguồn Sáng Tạo)">Robotics Lớp 5 (Khơi Nguồn Sáng Tạo)</option>
-                  </optgroup>
-                  <optgroup label="Khối Trung Học (Lớp 6 — 9)">
-                    <option value="Robotics Lớp 6 — 7 (Chinh Phục Đấu Trường)">Robotics Lớp 6 — 7 (Chinh Phục Đấu Trường)</option>
-                    <option value="Robotics & AI Lớp 8 — 9 (Kiến Tạo Tương Lai)">Robotics & AI Lớp 8 — 9 (Kiến Tạo Tương Lai)</option>
-                  </optgroup>
+                  <option value="Robotics Lớp 1 — 2">Robotics Lớp 1 — 2</option>
+                  <option value="Robotics Lớp 3 — 4">Robotics Lớp 3 — 4</option>
+                  <option value="Robotics Lớp 5">Robotics Lớp 5</option>
+                  <option value="Robotics Lớp 6 — 7">Robotics Lớp 6 — 7</option>
+                  <option value="Robotics & AI Lớp 8 — 9">Robotics & AI Lớp 8 — 9</option>
                 </select>
               </div>
 
