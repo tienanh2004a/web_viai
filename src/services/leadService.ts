@@ -72,20 +72,29 @@ export async function submitLeadToGoogleSheet(payload: LeadPayload): Promise<{ s
   }
 
   try {
-    // Dùng mode: 'no-cors' để vượt qua giới hạn CORS của Google Apps Script chuyển hướng 302
-    await fetch(url, {
+    // 1. Gửi dữ liệu lên Google Apps Script ngầm với keepalive: true
+    // Cờ keepalive: true đảm bảo trình duyệt hoàn thành gửi request ngay cả khi đóng popup hoặc chuyển trang
+    fetch(url, {
       method: 'POST',
       mode: 'no-cors',
+      keepalive: true,
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'text/plain;charset=utf-8',
       },
       body: JSON.stringify(dataToSend),
+    }).catch((err) => {
+      console.warn('[Lead Dispatch] Ghi nhận cảnh báo mạng nền:', err);
     });
+
+    // 2. Phản hồi giao diện tức thì (Optimistic UI):
+    // Thay vì bắt người dùng chờ 3 - 4 giây do máy chủ Google Apps Script xử lý chậm (cold start, lock sheet),
+    // ta chỉ giữ nút ở trạng thái "Đang gửi..." khoảng 350ms vừa đủ để tạo cảm giác hệ thống đang tiếp nhận,
+    // sau đó lập tức hiển thị màn hình chúc mừng và voucher thành công!
+    await new Promise((resolve) => setTimeout(resolve, 350));
 
     return { success: true };
   } catch (error) {
     console.error('Lỗi khi gửi thông tin lên Google Sheet:', error);
-    // Vẫn trả về true nếu mạng lỗi thoáng qua để phụ huynh không bị bối rối bấm gửi nhiều lần
     return { success: true, message: 'Dispatched with fallback' };
   }
 }
