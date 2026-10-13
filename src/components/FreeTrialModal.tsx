@@ -1,7 +1,95 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Sparkles, MapPin, Calendar, Phone, User, Bot, BookOpen, Coins, ArrowRight } from 'lucide-react';
+import { X, Sparkles, MapPin, Calendar, Phone, User, BookOpen, Coins, ArrowRight, GraduationCap, ChevronDown, Check } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { submitLeadToGoogleSheet } from '../services/leadService';
+
+// Cute Robot Icon SVG chuẩn EdTech/Robotics
+const CuteRobotIcon = ({ color = '#EA580C', className = 'w-5 h-5' }: { color?: string; className?: string }) => (
+  <svg 
+    className={`${className} shrink-0`} 
+    viewBox="0 0 24 24" 
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="12" cy="3" r="1.5" fill={color} />
+    <line x1="12" y1="4.5" x2="12" y2="7" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+    <rect x="2" y="11" width="2" height="4" rx="1" fill={color} />
+    <rect x="20" y="11" width="2" height="4" rx="1" fill={color} />
+    <rect x="4" y="7" width="16" height="13" rx="4" fill={color} fillOpacity="0.14" stroke={color} strokeWidth="1.8" />
+    <circle cx="9" cy="12.5" r="1.5" fill={color} />
+    <circle cx="15" cy="12.5" r="1.5" fill={color} />
+    <path d="M9.5 15.8C10.3 16.6 11.1 17 12 17C12.9 17 13.7 16.6 14.5 15.8" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
+  </svg>
+);
+
+// Icon Cơ sở Trường học EdTech
+const BranchBuildingIcon = ({ color = '#059669', className = 'w-5 h-5' }: { color?: string; className?: string }) => (
+  <svg 
+    className={`${className} shrink-0`} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M3 21H21" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M5 21V8L12 3.5L19 8V21" stroke={color} strokeWidth="1.8" strokeLinejoin="round" fill={color} fillOpacity="0.12" />
+    <path d="M9 10.5H10.5" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M13.5 10.5H15" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M9 14.5H10.5" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M13.5 14.5H15" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+    <rect x="10.5" y="17.5" width="3" height="3.5" rx="0.5" fill={color} />
+  </svg>
+);
+
+// Icon Học Online Toàn Quốc
+const BranchOnlineIcon = ({ color = '#0284C7', className = 'w-5 h-5' }: { color?: string; className?: string }) => (
+  <svg 
+    className={`${className} shrink-0`} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="12" cy="12" r="9" stroke={color} strokeWidth="1.8" fill={color} fillOpacity="0.12" />
+    <ellipse cx="12" cy="12" rx="4" ry="9" stroke={color} strokeWidth="1.6" />
+    <line x1="3.5" y1="9" x2="20.5" y2="9" stroke={color} strokeWidth="1.6" />
+    <line x1="3.5" y1="15" x2="20.5" y2="15" stroke={color} strokeWidth="1.6" />
+  </svg>
+);
+
+const COURSE_OPTIONS = [
+  { value: 'Robotics Mầm Non', label: 'Robotics Mầm Non', robotColor: '#F59E0B' },
+  { value: 'Robotics Lớp 1 — 2', label: 'Robotics Lớp 1 — 2', robotColor: '#0284C7' },
+  { value: 'Robotics Lớp 3 — 4', label: 'Robotics Lớp 3 — 4', robotColor: '#EA580C' },
+  { value: 'Robotics Lớp 5', label: 'Robotics Lớp 5', robotColor: '#10B981' },
+  { value: 'Robotics Lớp 6 — 7', label: 'Robotics Lớp 6 — 7', robotColor: '#8B5CF6' },
+  { value: 'Robotics Lớp 8 — 9', label: 'Robotics Lớp 8 — 9', robotColor: '#EC4899' },
+];
+
+const BRANCH_OPTIONS = [
+  {
+    value: 'Cơ sở Hải Phòng',
+    label: 'Cơ sở Hải Phòng',
+    sublabel: '42 Lạch Tray, Q. Ngô Quyền',
+    iconType: 'building' as const,
+  },
+  {
+    value: 'Cơ sở Hưng Yên',
+    label: 'Cơ sở Hưng Yên',
+    sublabel: '158 Chu Văn An, TP. Hưng Yên',
+    iconType: 'building' as const,
+  },
+  {
+    value: 'Cơ sở Ninh Bình',
+    label: 'Cơ sở Ninh Bình',
+    sublabel: '86 Đinh Tiên Hoàng, TP. Ninh Bình',
+    iconType: 'building' as const,
+  },
+  {
+    value: 'Học Online trực tuyến toàn quốc',
+    label: 'Học Online trực tuyến toàn quốc',
+    sublabel: 'Phòng Lab 3D RoboSim tương tác',
+    iconType: 'globe' as const,
+  },
+];
 
 interface FreeTrialModalProps {
   isOpen: boolean;
@@ -113,14 +201,50 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   const [formOpenedTime, setFormOpenedTime] = useState<number>(Date.now());
   const datePickerRef = useRef<HTMLInputElement>(null);
 
+  // Trạng thái mở/đóng và ref cho 2 custom dropdown cao cấp
+  const [isCourseOpen, setIsCourseOpen] = useState(false);
+  const [isBranchOpen, setIsBranchOpen] = useState(false);
+  const courseDropdownRef = useRef<HTMLDivElement>(null);
+  const branchDropdownRef = useRef<HTMLDivElement>(null);
+
+  // Đóng dropdown khi click ra ngoài hoặc bấm phím Escape
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (courseDropdownRef.current && !courseDropdownRef.current.contains(e.target as Node)) {
+        setIsCourseOpen(false);
+      }
+      if (branchDropdownRef.current && !branchDropdownRef.current.contains(e.target as Node)) {
+        setIsBranchOpen(false);
+      }
+    };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsCourseOpen(false);
+        setIsBranchOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   useEffect(() => {
     if (isOpen) {
       setFormOpenedTime(Date.now());
       setBotHoneypot('');
       setDateError('');
+      setIsCourseOpen(false);
+      setIsBranchOpen(false);
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
+      setIsCourseOpen(false);
+      setIsBranchOpen(false);
     }
     return () => {
       document.body.style.overflow = '';
@@ -265,6 +389,8 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
     if (document.activeElement instanceof HTMLElement) {
       document.activeElement.blur();
     }
+    setIsCourseOpen(false);
+    setIsBranchOpen(false);
     setSubmitted(false);
     setParentName('');
     setPhoneNumber('');
@@ -478,46 +604,198 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                 )}
               </div>
 
-              {/* Course Selection */}
-              <div>
-                <label htmlFor="modal-course-select" className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
-                  <Bot className="h-3.5 w-3.5 text-orange-600" />
-                  <span>Khoá học quan tâm cho bé *</span>
-                </label>
-                <select
-                  id="modal-course-select"
-                  name="selectedCourse"
-                  value={selectedCourse}
-                  onChange={(e) => setSelectedCourse(e.target.value)}
-                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-base sm:text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
+              {/* Course Selection - Custom Modern Dropdown */}
+              <div className="relative z-30" ref={courseDropdownRef}>
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center shrink-0 shadow-xs">
+                    <GraduationCap className="w-3.5 h-3.5 text-white" />
+                  </div>
+                  <label id="label-course-select" className="text-xs sm:text-sm font-bold text-[#142A4F]">
+                    Khóa học quan tâm cho bé <span className="text-orange-600">*</span>
+                  </label>
+                </div>
+                <p className="text-[11px] sm:text-xs text-[#6B7D96] mb-1.5 font-normal">
+                  Chọn khóa học phù hợp với độ tuổi và định hướng phát triển của bé.
+                </p>
+
+                {/* Hidden input for standard forms */}
+                <input type="hidden" name="selectedCourse" value={selectedCourse} />
+
+                {/* Trigger Button */}
+                <button
+                  type="button"
+                  id="modal-course-trigger"
+                  onClick={() => {
+                    setIsCourseOpen((prev) => !prev);
+                    setIsBranchOpen(false);
+                  }}
+                  aria-haspopup="listbox"
+                  aria-expanded={isCourseOpen}
+                  className={`w-full min-h-[48px] rounded-2xl border ${
+                    isCourseOpen 
+                      ? 'border-orange-500 ring-2 ring-orange-500/15 bg-white shadow-xs' 
+                      : 'border-neutral-200/90 bg-[#faf9f6] hover:border-orange-400 hover:bg-white'
+                  } px-3.5 py-2.5 flex items-center justify-between gap-3 text-left transition-all duration-200 cursor-pointer`}
                 >
-                  <option value="Robotics Mầm Non">Robotics Mầm Non</option>
-                  <option value="Robotics Lớp 1 — 2">Robotics Lớp 1 — 2</option>
-                  <option value="Robotics Lớp 3 — 4">Robotics Lớp 3 — 4</option>
-                  <option value="Robotics Lớp 5">Robotics Lớp 5</option>
-                  <option value="Robotics Lớp 6 — 7">Robotics Lớp 6 — 7</option>
-                  <option value="Robotics Lớp 8 — 9">Robotics Lớp 8 — 9</option>
-                </select>
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <CuteRobotIcon 
+                      color={COURSE_OPTIONS.find((c) => c.value === selectedCourse)?.robotColor || '#EA580C'} 
+                      className="w-5 h-5 shrink-0" 
+                    />
+                    <span className="font-semibold text-sm sm:text-base text-[#142A4F] truncate">
+                      {selectedCourse}
+                    </span>
+                  </div>
+                  <ChevronDown 
+                    className={`w-4 h-4 text-neutral-400 transition-transform duration-200 shrink-0 ${
+                      isCourseOpen ? 'rotate-180 text-orange-600' : ''
+                    }`} 
+                  />
+                </button>
+
+                {/* Dropdown Menu */}
+                {isCourseOpen && (
+                  <div
+                    role="listbox"
+                    aria-labelledby="label-course-select"
+                    className="absolute top-[calc(100%+6px)] left-0 right-0 z-40 bg-white rounded-2xl border border-orange-200/90 shadow-xl shadow-orange-950/10 p-1.5 space-y-1 max-h-64 overflow-y-auto animate-fadeIn [scrollbar-width:thin]"
+                  >
+                    {COURSE_OPTIONS.map((course) => {
+                      const isSelected = selectedCourse === course.value;
+                      return (
+                        <button
+                          key={course.value}
+                          type="button"
+                          role="option"
+                          aria-selected={isSelected}
+                          onClick={() => {
+                            setSelectedCourse(course.value);
+                            setIsCourseOpen(false);
+                          }}
+                          className={`w-full min-h-[48px] py-2.5 px-3 rounded-xl flex items-center justify-between gap-3 text-left transition-all duration-150 cursor-pointer ${
+                            isSelected
+                              ? 'bg-[#FFF7ED] text-[#142A4F] font-bold shadow-xs'
+                              : 'hover:bg-neutral-50 active:bg-neutral-100 text-[#142A4F] font-medium'
+                          }`}
+                        >
+                          <div className="flex items-center gap-2.5 min-w-0">
+                            <CuteRobotIcon color={course.robotColor} className="w-5 h-5 shrink-0" />
+                            <span className="text-sm sm:text-base truncate">
+                              {course.label}
+                            </span>
+                          </div>
+                          {isSelected && (
+                            <div className="w-5 h-5 rounded-full bg-orange-500 text-white flex items-center justify-center shrink-0 shadow-xs">
+                              <Check className="w-3.5 h-3.5 stroke-[3]" />
+                            </div>
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
 
-              {/* Branch Selection */}
-              <div>
-                <label htmlFor="modal-branch-select" className="block text-xs font-semibold text-zinc-700 mb-1.5 flex items-center gap-1.5">
-                  <MapPin className="h-3.5 w-3.5 text-orange-600" />
-                  <span>Chọn Cơ sở thuận tiện cho gia đình *</span>
-                </label>
-                <select
-                  id="modal-branch-select"
-                  name="branch"
-                  value={branch}
-                  onChange={(e) => setBranch(e.target.value)}
-                  className="w-full rounded-xl border border-gray-200 bg-[#faf9f6] px-3.5 py-2.5 text-base sm:text-sm text-zinc-900 focus:border-orange-500 focus:bg-white focus:outline-none transition-colors cursor-pointer"
+              {/* Branch Selection - Custom Modern Dropdown */}
+              <div className="relative z-20" ref={branchDropdownRef}>
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center shrink-0 shadow-xs">
+                    <MapPin className="w-3.5 h-3.5 text-white" />
+                  </div>
+                  <label id="label-branch-select" className="text-xs sm:text-sm font-bold text-[#142A4F]">
+                    Chọn cơ sở thuận tiện cho gia đình <span className="text-orange-600">*</span>
+                  </label>
+                </div>
+                <p className="text-[11px] sm:text-xs text-[#6B7D96] mb-1.5 font-normal">
+                  Chọn cơ sở gần bạn nhất để tiện di chuyển và học thuận tiện hơn.
+                </p>
+
+                {/* Hidden input for form integrity */}
+                <input type="hidden" name="branch" value={branch} />
+
+                {/* Trigger Button */}
+                <button
+                  type="button"
+                  id="modal-branch-trigger"
+                  onClick={() => {
+                    setIsBranchOpen((prev) => !prev);
+                    setIsCourseOpen(false);
+                  }}
+                  aria-haspopup="listbox"
+                  aria-expanded={isBranchOpen}
+                  className={`w-full min-h-[48px] rounded-2xl border ${
+                    isBranchOpen 
+                      ? 'border-emerald-500 ring-2 ring-emerald-500/15 bg-white shadow-xs' 
+                      : 'border-neutral-200/90 bg-[#faf9f6] hover:border-emerald-400 hover:bg-white'
+                  } px-3.5 py-2.5 flex items-center justify-between gap-3 text-left transition-all duration-200 cursor-pointer`}
                 >
-                  <option value="Cơ sở Hải Phòng">Cơ sở Hải Phòng</option>
-                  <option value="Cơ sở Hưng Yên">Cơ sở Hưng Yên</option>
-                  <option value="Cơ sở Ninh Bình">Cơ sở Ninh Bình</option>
-                  <option value="Học Online trực tuyến toàn quốc">Học Online trực tuyến toàn quốc</option>
-                </select>
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    {branch.includes('Online') ? (
+                      <BranchOnlineIcon color="#0284C7" className="w-5 h-5 shrink-0" />
+                    ) : (
+                      <BranchBuildingIcon color="#059669" className="w-5 h-5 shrink-0" />
+                    )}
+                    <span className="font-semibold text-sm sm:text-base text-[#142A4F] truncate">
+                      {branch}
+                    </span>
+                  </div>
+                  <ChevronDown 
+                    className={`w-4 h-4 text-neutral-400 transition-transform duration-200 shrink-0 ${
+                      isBranchOpen ? 'rotate-180 text-emerald-600' : ''
+                    }`} 
+                  />
+                </button>
+
+                {/* Dropdown Menu */}
+                {isBranchOpen && (
+                  <div
+                    role="listbox"
+                    aria-labelledby="label-branch-select"
+                    className="absolute top-[calc(100%+6px)] left-0 right-0 z-30 bg-white rounded-2xl border border-emerald-200/90 shadow-xl shadow-slate-900/10 p-1.5 space-y-1 max-h-64 overflow-y-auto animate-fadeIn [scrollbar-width:thin]"
+                  >
+                    {BRANCH_OPTIONS.map((item) => {
+                      const isSelected = branch === item.value;
+                      return (
+                        <button
+                          key={item.value}
+                          type="button"
+                          role="option"
+                          aria-selected={isSelected}
+                          onClick={() => {
+                            setBranch(item.value);
+                            setIsBranchOpen(false);
+                          }}
+                          className={`w-full min-h-[50px] py-2.5 px-3 rounded-xl flex items-center justify-between gap-3 text-left transition-all duration-150 cursor-pointer ${
+                            isSelected
+                              ? 'bg-emerald-50/80 text-[#142A4F] font-bold shadow-xs'
+                              : 'hover:bg-neutral-50 active:bg-neutral-100 text-[#142A4F]'
+                          }`}
+                        >
+                          <div className="flex items-center gap-2.5 min-w-0">
+                            {item.iconType === 'globe' ? (
+                              <BranchOnlineIcon color="#0284C7" className="w-5 h-5 shrink-0 mt-0.5" />
+                            ) : (
+                              <BranchBuildingIcon color="#059669" className="w-5 h-5 shrink-0 mt-0.5" />
+                            )}
+                            <div className="min-w-0">
+                              <div className="text-sm sm:text-base font-semibold truncate leading-tight text-[#142A4F]">
+                                {item.label}
+                              </div>
+                              <div className="text-[11px] sm:text-xs text-[#6B7D96] font-normal truncate mt-0.5">
+                                {item.sublabel}
+                              </div>
+                            </div>
+                          </div>
+                          {isSelected && (
+                            <div className="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                              <Check className="w-3.5 h-3.5 stroke-[3]" />
+                            </div>
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
 
               {/* Preferred Date - Chuẩn định dạng ngày/tháng/năm dd/mm/yyyy */}
