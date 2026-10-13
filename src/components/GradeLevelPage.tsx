@@ -149,7 +149,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                     <span>Lộ trình</span>
                   </div>
                   <div className="text-base sm:text-lg font-extrabold text-[#111827]">
-                    4 Học phần
+                    {currentLevel.id === 'mam-non' ? '3 Học phần' : '4 Học phần'}
                   </div>
                   <div className="text-[11px] text-gray-500">
                     52 buổi / năm học
@@ -270,7 +270,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                     {/* Bottom Stats Banner */}
                     <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-semibold text-white">
                       <span className="bg-orange-600/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-white font-bold">
-                        4 Học phần · 52 buổi
+                        {childCourse.modules.length} Học phần · {childCourse.duration}
                       </span>
                       <span className="bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded text-[11px] text-amber-200">
                         ⭐ {childCourse.rating} ({childCourse.totalStudents}+ học viên)
@@ -299,15 +299,15 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                       {/* 3 Lộ trình nổi bật */}
                       <div className="space-y-2 mb-6">
                         <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block">
-                          4 Học Phần Đào Tạo Chuẩn:
+                          {childCourse.modules.length} Học Phần Đào Tạo Chuẩn:
                         </span>
-                        {childCourse.modules.slice(0, 3).map((mod, idx) => (
+                        {childCourse.modules.map((mod, idx) => (
                           <div
                             key={mod.id}
                             className="flex items-center justify-between text-xs p-2 rounded-xl bg-orange-50/60 border border-orange-100 text-gray-700 font-medium"
                           >
                             <span className="truncate pr-2 font-semibold text-gray-900">
-                              HP {idx + 1}: {mod.name}
+                              Học phần {idx + 1}: {mod.name}
                             </span>
                             <span className="text-[11px] text-orange-700 bg-orange-100/80 px-2 py-0.5 rounded-md shrink-0 font-bold">
                               13 buổi
