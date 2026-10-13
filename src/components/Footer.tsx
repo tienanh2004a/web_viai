@@ -107,24 +107,43 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('robotics-tieu-hoc')}
+                  onClick={() => onSelectCourse?.('robotics-lop-1-2')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics Khối Tiểu Học (6 — 11 tuổi)
+                  Robotics Lớp 1 — 2 (Ươm Mầm)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('robotics-trung-hoc')}
+                  onClick={() => onSelectCourse?.('robotics-lop-3-4')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics &amp; AI Khối Trung Học (11 — 15 tuổi)
+                  Robotics Lớp 3 — 4 (RoboSim &amp; Beta)
                 </button>
               </li>
               <li>
-                <a href="#khoa-hoc" className="hover:text-[#111827] transition-colors font-medium">
-                  Lộ trình Kỹ sư nhí toàn diện
-                </a>
+                <button
+                  onClick={() => onSelectCourse?.('robotics-lop-5')}
+                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                >
+                  Robotics Lớp 5 (Khơi Nguồn Sáng Tạo)
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onSelectCourse?.('robotics-lop-6-7')}
+                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                >
+                  Robotics Lớp 6 — 7 (Đấu Trường Robocon)
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onSelectCourse?.('robotics-ai-lop-8-9')}
+                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                >
+                  Robotics &amp; AI Lớp 8 — 9 (Vision &amp; AGV)
+                </button>
               </li>
             </ul>
           </div>
