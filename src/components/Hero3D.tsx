@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, BookOpen, Star, Sparkles, ShieldCheck } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 import { RobotCanvas3D } from './RobotCanvas3D';
 
 interface Hero3DProps {
@@ -31,7 +31,7 @@ export const Hero3D: React.FC<Hero3DProps> = ({ onOpenTrialModal }) => {
             </p>
 
             {/* CTA Button Group - Impeccable 10px-12px radius buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
                 onClick={onOpenTrialModal}
                 className="flex items-center justify-center gap-3 rounded-xl bg-[#c2410c] hover:bg-[#9a3412] px-8 py-4 text-base font-bold text-white active:scale-98 transition-all shadow-sm cursor-pointer"
@@ -48,26 +48,6 @@ export const Hero3D: React.FC<Hero3DProps> = ({ onOpenTrialModal }) => {
                 <BookOpen className="h-5 w-5 text-[#c2410c]" />
                 <span>Xem lộ trình khoá học</span>
               </a>
-            </div>
-
-            {/* Trust Badges Bar */}
-            <div className="pt-6 border-t border-black/8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-[#4b5563]">
-              <div className="flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#111827]" />
-                <span className="font-bold text-[#111827]">1,000+ Học viên</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#c2410c]" />
-                <span className="font-bold text-[#111827]">Lớp &lt; 10 HV (Kèm 1-1)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-emerald-700" />
-                <span className="font-bold text-[#111827]">Cam kết hoàn 100%</span>
-              </div>
-              <div className="flex items-center gap-1.5 bg-white px-3 py-1 rounded-full border border-black/8 shadow-2xs">
-                <Star className="h-4 w-4 fill-amber-500 text-amber-500" />
-                <span className="font-bold text-[#111827]">4.9 / 5</span>
-              </div>
             </div>
           </div>
 

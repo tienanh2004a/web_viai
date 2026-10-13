@@ -44,24 +44,16 @@ export const Navbar: React.FC<NavbarProps> = ({
       }`}
     >
       <div className="container mx-auto px-3 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between gap-2">
-        {/* Brand Logo - Trên điện thoại chỉ hiện icon logo, không lặp lại chữ VIAI; Trên máy tính (sm+) hiện đầy đủ tên */}
+        {/* Brand Logo - Chỉ hiện icon logo to rõ ràng, không lặp lại chữ */}
         <div 
           onClick={() => { onGoHome?.(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-          className="flex items-center gap-2.5 cursor-pointer group select-none shrink-0"
+          className="flex items-center cursor-pointer group select-none shrink-0 py-0.5"
         >
           <img
             src="/logo-viai.png"
             alt="VIAI Logo"
-            className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+            className="h-14 sm:h-[68px] w-auto object-contain transition-transform group-hover:scale-105"
           />
-          <div className="hidden sm:flex flex-col">
-            <span className="font-heading font-black text-2xl sm:text-3xl tracking-tight text-[#c2410c] leading-none">
-              VIAI
-            </span>
-            <span className="text-xs uppercase tracking-wider text-[#4b5563] font-bold mt-1">
-              Vietnam AI Academy
-            </span>
-          </div>
         </div>
 
         {/* 1. Thanh điều hướng trên Điện thoại (< lg): Chỉ gồm Trang chủ | Khoá học | Liên hệ, thiết kế dạng viên nhộng hài hoà chuẩn như máy tính */}
