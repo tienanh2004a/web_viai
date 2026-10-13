@@ -174,7 +174,7 @@ export const FaqSection: React.FC = () => {
             className="inline-flex items-center gap-2 rounded-xl bg-[#111827] hover:bg-[#1f2937] px-7 py-3.5 text-sm font-bold text-white transition-all shadow-xs"
           >
             <MessageCircle className="h-4 w-4" />
-            <span>Nhắn Zalo Thầy Cô (0837.312.860) — Phản hồi trong 3 phút</span>
+            <span>Nhắn Zalo Thầy Cô (0837.312.860)</span>
           </a>
         </div>
       </div>

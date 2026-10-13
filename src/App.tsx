@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero3D } from './components/Hero3D';
-import { TrustMetrics } from './components/TrustMetrics';
 import { Courses3D } from './components/Courses3D';
-import { TestimonialsMarquee } from './components/TestimonialsMarquee';
 import { FaqSection } from './components/FaqSection';
 import { AboutUsSection } from './components/AboutUsSection';
 import { ContactSection } from './components/ContactSection';
@@ -132,22 +130,16 @@ export const App: React.FC = () => {
             {/* 1. Hero with Interactive Three.js 3D Robot */}
             <Hero3D onOpenTrialModal={() => handleOpenTrialModal()} />
 
-            {/* 2. Key Trust Metrics Ribbon */}
-            <TrustMetrics />
-
-            {/* 3. About Us & Competition Journey (Hưng Yên & Miền Bắc) */}
+            {/* 2. About Us & Competition Journey (Hưng Yên & Miền Bắc) */}
             <AboutUsSection onOpenTrialModal={() => handleOpenTrialModal()} />
 
-            {/* 4. Courses with 3D Tilt Cards */}
+            {/* 3. Courses with 3D Tilt Cards */}
             <Courses3D 
               onOpenTrialModal={handleOpenTrialModal} 
               onViewCourseDetail={handleSelectCourse}
             />
 
-            {/* 5. Dual Infinite Parent Testimonials Marquee */}
-            <TestimonialsMarquee />
-
-            {/* 6. Frequently Asked Questions (FAQ) */}
+            {/* 4. Frequently Asked Questions (FAQ) */}
             <FaqSection />
 
             {/* 7. Contact & 3 Campuses (Hải Phòng, Hưng Yên, Ninh Bình) */}

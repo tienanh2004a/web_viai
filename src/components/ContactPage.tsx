@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  ArrowLeft, Phone, Mail, MapPin, Clock, 
+  ArrowLeft, Phone, Mail, MapPin, 
   ShieldCheck, ArrowRight, ChevronRight, BookOpen, Coins, User
 } from 'lucide-react';
 import { Footer } from './Footer';
@@ -160,8 +160,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               </h1>
             </div>
 
-            {/* 4 Thẻ nhỏ gọn, thanh thoát giống hoàn toàn Ảnh 3 */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* 3 Thẻ nhỏ gọn, thanh thoát */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
               {/* Thẻ 1: Hotline */}
               <a
@@ -208,19 +208,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 </p>
               </div>
 
-              {/* Thẻ 4: Tốc độ phản hồi */}
-              <div className="bg-white p-6 rounded-2xl border border-neutral-200 hover:border-orange-300 hover:shadow-md transition-all h-full">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-orange-50 text-orange-500 mb-4">
-                  <Clock className="w-6 h-6" />
-                </div>
-                <p className="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-1">
-                  Tốc độ phản hồi
-                </p>
-                <p className="font-semibold text-neutral-900 text-sm leading-snug">
-                  Trong vòng 30 phút
-                </p>
-              </div>
-
             </div>
 
           </div>
@@ -235,7 +222,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 Để lại thông tin, <span className="text-orange-600">chúng tôi sẽ liên hệ lại</span>
               </h2>
               <p className="text-sm text-neutral-600 max-w-lg mx-auto leading-relaxed">
-                Phản hồi trong vòng 30 phút (hỗ trợ tư vấn chu đáo mọi ngày trong tuần)
+                Hỗ trợ tư vấn chu đáo mọi ngày trong tuần
               </p>
             </div>
 
@@ -253,7 +240,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     Đăng ký <span className="text-[#F36C21]">thành công!</span>
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A5D78] max-w-md mx-auto mb-6 leading-relaxed">
-                    Cảm ơn <strong>{parentName}</strong>. Thầy cô VIAI Academy sẽ gọi điện tư vấn buổi học thử 1-1 tại cơ sở <strong>{branch}</strong> theo số <strong>{phone}</strong> trong ít phút tới.
+                    Cảm ơn <strong>{parentName}</strong>. Thầy cô VIAI Academy sẽ gọi điện tư vấn buổi học thử 1-1 tại cơ sở <strong>{branch}</strong> theo số <strong>{phone}</strong> sớm nhất để đồng hành cùng gia đình.
                   </p>
 
                   {/* Card thông tin đăng ký */}

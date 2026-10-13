@@ -123,13 +123,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             Khoá học
           </button>
 
-          {/* Đánh giá */}
-          <button
-            onClick={() => handleScrollToSection('danh-gia')}
-            className="text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap"
-          >
-            Đánh giá
-          </button>
 
           {/* Hỏi đáp */}
           <button

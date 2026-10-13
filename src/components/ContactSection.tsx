@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Phone, Mail, MapPin, Clock, 
+  Phone, Mail, MapPin, 
   ShieldCheck, ArrowRight, BookOpen, Coins, User
 } from 'lucide-react';
 import { submitLeadToGoogleSheet } from '../services/leadService';
@@ -113,8 +113,8 @@ export const ContactSection: React.FC = () => {
             </p>
           </div>
 
-          {/* 4 Thẻ thông tin nhanh */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* 3 Thẻ thông tin nhanh */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             
             {/* Thẻ 1: Hotline */}
             <a
@@ -161,19 +161,6 @@ export const ContactSection: React.FC = () => {
               </p>
             </div>
 
-            {/* Thẻ 4: Tốc độ phản hồi */}
-            <div className="bg-[#f5f5f7] p-5 sm:p-6 rounded-2xl border border-black/6 h-full">
-              <div className="flex items-center gap-3 mb-2">
-                <Clock className="w-5 h-5 text-[#c2410c] shrink-0" />
-                <span className="text-xs uppercase tracking-wider text-[#4b5563] font-bold">
-                  Tốc độ phản hồi
-                </span>
-              </div>
-              <p className="font-bold text-[#111827] text-sm pl-8">
-                Trong vòng 30 phút
-              </p>
-            </div>
-
           </div>
 
         </div>
@@ -188,7 +175,7 @@ export const ContactSection: React.FC = () => {
               Để lại thông tin, <span className="text-[#c2410c]">chúng tôi sẽ liên hệ lại</span>
             </h2>
             <p className="text-base text-[#4b5563] max-w-lg mx-auto leading-relaxed">
-              Thầy cô phản hồi trong vòng 30 phút và tư vấn buổi học thử 1-1 miễn phí cho bé
+              Thầy cô sẽ liên hệ tư vấn buổi học thử 1-1 miễn phí cho bé
             </p>
           </div>
 
@@ -206,7 +193,7 @@ export const ContactSection: React.FC = () => {
                   Đăng ký <span className="text-[#F36C21]">thành công!</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-[#4A5D78] max-w-md mx-auto mb-6 leading-relaxed">
-                  Cảm ơn <strong>{parentName}</strong>. Thầy cô VIAI Academy sẽ gọi điện tư vấn buổi học thử 1-1 tại cơ sở <strong>{branch}</strong> theo số <strong>{phone}</strong> trong ít phút tới.
+                  Cảm ơn <strong>{parentName}</strong>. Thầy cô VIAI Academy sẽ gọi điện tư vấn buổi học thử 1-1 tại cơ sở <strong>{branch}</strong> theo số <strong>{phone}</strong> sớm nhất để đồng hành cùng gia đình.
                 </p>
 
                 {/* Card thông tin đăng ký */}
