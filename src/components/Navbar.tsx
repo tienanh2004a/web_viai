@@ -64,12 +64,45 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
 
-        {/* Navigation Bar - Chuẩn thiết kế viên con nhộng (Pill Capsule) đồng bộ hài hoà trên cả điện thoại và máy tính (như Ảnh 2) */}
-        <nav className="flex items-center gap-3.5 sm:gap-6 lg:gap-8 bg-white rounded-full px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 lg:py-3 shadow-xs border border-black/8 overflow-x-auto lg:overflow-visible no-scrollbar scroll-smooth shrink min-w-0">
+        {/* 1. Thanh điều hướng trên Điện thoại (< lg): Chỉ gồm Trang chủ | Khoá học | Liên hệ, thiết kế dạng viên nhộng hài hoà chuẩn như máy tính */}
+        <nav className="flex lg:hidden items-center gap-5 sm:gap-7 bg-white rounded-full px-5 sm:px-7 py-2.5 sm:py-3 shadow-xs border border-black/8">
           {/* Trang chủ */}
           <button
             onClick={() => { onGoHome?.(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            className="text-xs sm:text-sm font-bold text-[#111827] hover:text-[#c2410c] transition-colors cursor-pointer whitespace-nowrap shrink-0"
+            className="text-xs sm:text-sm font-bold text-[#111827] hover:text-[#c2410c] transition-colors cursor-pointer whitespace-nowrap"
+          >
+            Trang chủ
+          </button>
+
+          {/* Khoá học */}
+          <button
+            onClick={() => handleScrollToSection('khoa-hoc')}
+            className="text-xs sm:text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap"
+          >
+            Khoá học
+          </button>
+
+          {/* Liên hệ */}
+          <button
+            onClick={() => {
+              if (onGoContact) {
+                onGoContact();
+              } else {
+                handleScrollToSection('lien-he');
+              }
+            }}
+            className="text-xs sm:text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap"
+          >
+            Liên hệ
+          </button>
+        </nav>
+
+        {/* 2. Thanh điều hướng đầy đủ trên Máy tính (lg+): Trọn vẹn 6 mục chuẩn Ảnh 2 */}
+        <nav className="hidden lg:flex items-center gap-8 bg-white rounded-full px-8 py-3 shadow-xs border border-black/8">
+          {/* Trang chủ */}
+          <button
+            onClick={() => { onGoHome?.(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            className="text-sm font-bold text-[#111827] hover:text-[#c2410c] transition-colors cursor-pointer whitespace-nowrap"
           >
             Trang chủ
           </button>
@@ -77,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Về chúng tôi */}
           <button
             onClick={() => handleScrollToSection('ve-chung-toi')}
-            className="text-xs sm:text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap shrink-0"
+            className="text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap"
           >
             Về chúng tôi
           </button>
@@ -85,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Khoá học */}
           <button
             onClick={() => handleScrollToSection('khoa-hoc')}
-            className="text-xs sm:text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap shrink-0"
+            className="text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap"
           >
             Khoá học
           </button>
@@ -93,7 +126,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Đánh giá */}
           <button
             onClick={() => handleScrollToSection('danh-gia')}
-            className="text-xs sm:text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap shrink-0"
+            className="text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap"
           >
             Đánh giá
           </button>
@@ -101,7 +134,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Hỏi đáp */}
           <button
             onClick={() => handleScrollToSection('faq')}
-            className="text-xs sm:text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap shrink-0"
+            className="text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap"
           >
             Hỏi đáp
           </button>
@@ -115,7 +148,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 handleScrollToSection('lien-he');
               }
             }}
-            className="text-xs sm:text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap shrink-0"
+            className="text-sm font-medium text-[#444444] hover:text-[#111827] transition-colors cursor-pointer whitespace-nowrap"
           >
             Liên hệ
           </button>

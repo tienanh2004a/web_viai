@@ -25,9 +25,9 @@ export const Hero3D: React.FC<Hero3DProps> = ({ onOpenTrialModal }) => {
               <span className="text-[#c2410c] block mt-2 sm:mt-2.5">CÙNG CON TỪ SỚM</span>
             </h1>
 
-            {/* Subtitle - 3 campuses: Hải Phòng, Hưng Yên, Ninh Bình & < 10 students */}
+            {/* Subtitle */}
             <p className="text-base sm:text-lg text-[#4b5563] leading-relaxed max-w-2xl mb-8">
-              3 cơ sở tại Hải Phòng, Hưng Yên, Ninh Bình và trực tuyến toàn quốc, mỗi lớp dưới 10 học viên. <strong className="text-[#111827] font-bold">VIAI Academy</strong> đồng hành cùng con từ trực quan sáng tạo đến tư duy giải thuật công nghệ chuẩn quốc tế.
+              Nhiều cơ sở trên khắp các tỉnh thành miền bắc ví dụ như Hưng Yên, Hải Phòng, Ninh Bình. <strong className="text-[#111827] font-bold">VIAI Academy</strong> đồng hành cùng con từ trực quan sáng tạo đến tư duy giải thuật công nghệ chuẩn quốc tế.
             </p>
 
             {/* CTA Button Group - Impeccable 10px-12px radius buttons */}
