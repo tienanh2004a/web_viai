@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, MapPin, ArrowRight, CheckCircle2, Cpu, Layers } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2, Cpu, Layers } from 'lucide-react';
 import { TiltCard } from './TiltCard';
 import { GRADE_LEVELS, PRIMARY_GRADE_LEVEL_IDS, type GradeLevel } from '../data/coursesData';
 
@@ -62,28 +62,21 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewGr
                     {level.badge}
                   </span>
 
-                  {/* Age & Child Courses count tag */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-semibold text-white">
-                    <span className="bg-black/80 backdrop-blur-xs px-2.5 py-1 rounded-md text-white font-bold">
-                      {level.displayAge}
-                    </span>
+                  {/* Child Courses count tag */}
+                  <div className="absolute bottom-3 right-3 flex items-center text-xs font-semibold text-white">
                     <span className="bg-orange-600/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-white font-bold inline-flex items-center gap-1">
                       <Layers className="h-3 w-3" />
-                      {childCount} khoá học con
+                      {childCount} khoá học
                     </span>
                   </div>
                 </div>
 
                 {/* Card Body */}
                 <div className="p-6 sm:p-7 flex-1 flex flex-col">
-                  {/* Category Pill & Campuses */}
-                  <div className="flex items-center justify-between text-xs text-gray-500 font-semibold mb-2">
-                    <span className="text-orange-700 bg-orange-50 border border-orange-200/60 px-2.5 py-0.5 rounded-md">
+                  {/* Category Pill */}
+                  <div className="flex items-center text-xs text-gray-500 font-semibold mb-2">
+                    <span className="text-orange-700 bg-orange-50 border border-orange-200/60 px-2.5 py-0.5 rounded-md font-bold">
                       {level.academicName}
-                    </span>
-                    <span className="flex items-center gap-1 text-gray-400">
-                      <MapPin className="h-3 w-3 text-orange-500" />
-                      <span>3 cơ sở</span>
                     </span>
                   </div>
 
@@ -101,20 +94,7 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewGr
                     {level.headline}
                   </p>
 
-                  {/* Sub-Courses breakdown indicator */}
-                  <div 
-                    onClick={() => onViewGradeLevel(level.id)}
-                    className="rounded-xl border border-orange-100 bg-orange-50/60 hover:bg-orange-100/60 p-2.5 mb-4 transition-colors cursor-pointer"
-                  >
-                    <span className="block text-[11px] font-bold text-orange-800 uppercase tracking-wide mb-0.5">
-                      {childCount > 1 ? `Gồm ${childCount} khóa học con theo độ tuổi:` : 'Gồm 1 khóa học nền tảng:'}
-                    </span>
-                    <span className="block text-xs font-semibold text-gray-700">
-                      {levelId === 'mam-non' && '• Lớp Cơ Bản • Lớp Nâng Cao • Lớp Chuyên Sâu'}
-                      {levelId === 'tieu-hoc' && '• Lớp 1 — 2 • Lớp 3 — 4 • Lớp 5 (Tiền Trung Học)'}
-                      {levelId === 'trung-hoc' && '• Lớp 6 — 7 (Đấu trường) • Lớp 8 — 9 (AI & AGV)'}
-                    </span>
-                  </div>
+
 
                   {/* Hardware Kit Summary Box */}
                   <div className="rounded-xl border border-gray-100 bg-[#faf9f6] p-3 mb-5 flex items-start gap-2.5">
@@ -141,7 +121,7 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewGr
                       onClick={() => onViewGradeLevel(level.id)}
                       className="w-full flex items-center justify-center gap-1.5 text-xs font-bold text-[#c2410c] hover:text-[#9a3412] hover:underline cursor-pointer py-1 transition-colors"
                     >
-                      <span>Khám phá chi tiết {childCount} khóa học con cấp này</span>
+                      <span>Khám phá chi tiết {childCount} khóa học cấp này</span>
                       <ArrowRight className="h-3.5 w-3.5" />
                     </button>
 
