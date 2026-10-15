@@ -82,30 +82,21 @@ export const ContactPage: React.FC<ContactPageProps> = ({
   const campuses = [
     {
       id: 1,
-      name: 'Cơ sở 1 - Hải Phòng',
-      address: 'Số 42 Lạch Tray, Quận Ngô Quyền, TP. Hải Phòng',
-      area: 'Lạch Tray • Ngô Quyền',
+      name: 'Cơ sở Hải Phòng',
+      address: 'Cung Văn hoá Thiếu nhi Hải Phòng',
+      area: 'Cung Văn hoá Thiếu nhi • TP. Hải Phòng',
       phone: '0963909192',
       feature: 'Phòng Lab lớn, đầy đủ bộ kit VEX & sa bàn thi đấu tiêu chuẩn',
-      mapUrl: 'https://maps.google.com/?q=Số+42+Lạch+Tray,+Quận+Ngô+Quyền,+Hải+Phòng',
+      mapUrl: 'https://www.google.com/maps/place/Cung+V%C4%83n+ho%C3%A1+Thi%E1%BA%BFu+nhi+H%E1%BA%A3i+Ph%C3%B2ng/@20.8456054,106.689682,1055m/data=!3m2!1e3!4b1!4m6!3m5!1s0x314a7a9ec22092c5:0xb3e682efb0663343!8m2!3d20.8456054!4d106.6922623!16s%2Fg%2F1tjhv41h?entry=ttu&g_ep=EgoyMDI2MTAxMi4wIKXMDSoASAFQAw%3D%3D',
     },
     {
       id: 2,
-      name: 'Cơ sở 2 - Hưng Yên',
-      address: 'Số 158 Đường Chu Văn An, Phường An Tảo, TP. Hưng Yên',
-      area: 'Chu Văn An • An Tảo',
+      name: 'Cơ sở Hưng Yên',
+      address: '25 Đ. Đinh Tiên Hoàng, Trần Lãm, Hưng Yên, Việt Nam',
+      area: '25 Đinh Tiên Hoàng • Trần Lãm • Hưng Yên',
       phone: '0963909192',
-      feature: 'Trung tâm nghiên cứu STEM & AI, phòng luyện thi RoboSim miền Bắc',
-      mapUrl: 'https://maps.google.com/?q=Số+158+Chu+Văn+An,+Phường+An+Tảo,+Hưng+Yên',
-    },
-    {
-      id: 3,
-      name: 'Cơ sở 3 - Ninh Bình',
-      address: 'Số 86 Đinh Tiên Hoàng, Phường Đông Thành, TP. Ninh Bình',
-      area: 'Đinh Tiên Hoàng • Đông Thành',
-      phone: '0963909192',
-      feature: 'Không gian sáng tạo Kỹ sư nhí, sân đấu sa bàn đối kháng thực chiến',
-      mapUrl: 'https://maps.google.com/?q=Số+86+Đinh+Tiên+Hoàng,+Phường+Đông+Thành,+Ninh+Bình',
+      feature: 'Trung tâm nghiên cứu STEM & AI, phòng luyện thi Robocon miền Bắc',
+      mapUrl: 'https://www.google.com/maps/place/25+%C4%90.+%C4%90inh+Ti%C3%AAn+Ho%C3%A0ng,+Tr%E1%BA%A7n+L%C3%A3m,+H%C6%B0ng+Y%C3%AAn,+Vi%E1%BB%87t+Nam/@20.4412222,106.3435179,114m/data=!3m1!1e3!4m5!3m4!1s0x3135e4d25feb5fa1:0x6e8fca36bd34eeff!8m2!3d20.4411674!4d106.3436374?entry=ttu&g_ep=EgoyMDI2MTAxMi4wIKXMDSoASAFQAw%3D%3D',
     },
   ];
 
@@ -161,7 +152,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
             </div>
 
             {/* 3 Thẻ nhỏ gọn, thanh thoát */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-6">
               
               {/* Thẻ 1: Hotline */}
               <a
@@ -204,7 +195,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   Địa chỉ
                 </p>
                 <p className="font-semibold text-neutral-900 text-sm leading-snug">
-                  Hải Phòng • Hưng Yên • Ninh Bình
+                  Hải Phòng • Hưng Yên
                 </p>
               </div>
 
@@ -399,7 +390,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     >
                       <option value="Hải Phòng">Cơ sở 1: Hải Phòng (42 Lạch Tray, Quận Ngô Quyền)</option>
                       <option value="Hưng Yên">Cơ sở 2: TP. Hưng Yên (158 Chu Văn An, Phường An Tảo)</option>
-                      <option value="Ninh Bình">Cơ sở 3: TP. Ninh Bình (86 Đinh Tiên Hoàng, Phường Đông Thành)</option>
+                      
                       <option value="Online">Học Online 1-1 toàn quốc qua RoboSim</option>
                     </select>
                   </div>
@@ -469,14 +460,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 HỆ THỐNG CƠ SỞ
               </p>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-3">
-                3 cơ sở đang hoạt động
+                2 cơ sở đang hoạt động
               </h2>
               <p className="text-sm md:text-base text-neutral-600 max-w-xl mx-auto leading-relaxed">
                 Tìm cơ sở gần nhà để trực tiếp trải nghiệm phòng Lab Robotics và sa bàn thi đấu chuẩn quốc tế
               </p>
             </div>
 
-            {/* 3 Thẻ cơ sở: Thiết kế gọn gàng, thoáng mắt, đường nét thanh lịch */}
+            {/* 2 Thẻ cơ sở: Thiết kế gọn gàng, thoáng mắt, đường nét thanh lịch */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               {campuses.map((campus) => (
                 <div

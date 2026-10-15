@@ -156,7 +156,7 @@ export const App: React.FC = () => {
           />
 
           {/* Main Content Area */}
-          <main className="flex-1">
+          <main className="flex-1 relative z-10">
             {/* 1. Hero with Interactive Three.js 3D Robot */}
             <Hero3D onOpenTrialModal={() => handleOpenTrialModal()} />
 
@@ -172,7 +172,7 @@ export const App: React.FC = () => {
             {/* 4. Frequently Asked Questions (FAQ) */}
             <FaqSection />
 
-            {/* 5. Contact & 3 Campuses (Hải Phòng, Hưng Yên, Ninh Bình) */}
+            {/* 5. Contact & 2 Campuses (Hải Phòng, Hưng Yên) */}
             <ContactSection />
           </main>
 

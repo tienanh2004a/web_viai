@@ -162,7 +162,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   <span className="text-xs font-bold text-zinc-500 block mb-0.5 uppercase tracking-wide">HÌNH THỨC</span>
                   <span className="text-sm font-bold text-[#0c0a08] flex items-center gap-1">
                     <MapPin className="h-3.5 w-3.5 text-[#c2410c] shrink-0" />
-                    <span className="truncate">3 Cơ sở Offline</span>
+                    <span className="truncate">2 Cơ sở Offline</span>
                   </span>
                 </div>
               </div>

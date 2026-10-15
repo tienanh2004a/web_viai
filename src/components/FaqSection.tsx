@@ -71,19 +71,15 @@ export const FaqSection: React.FC = () => {
       q: 'VIAI Academy có bao nhiêu cơ sở đào tạo?',
       a: (
         <div className="space-y-3 text-sm text-[#444444] leading-relaxed">
-          <p>VIAI Academy hiện đang vận hành <strong>3 cơ sở hiện đại</strong> tại:</p>
+          <p>VIAI Academy hiện đang vận hành <strong>2 cơ sở hiện đại</strong> tại:</p>
           <ul className="space-y-2 pl-2">
             <li className="flex items-start gap-2">
               <CheckCircle className="h-4 w-4 text-orange-600 shrink-0 mt-0.5" />
-              <span><strong>Cơ sở Hải Phòng:</strong> Khu đô thị trung tâm TP. Hải Phòng.</span>
+              <span><strong>Cơ sở Hải Phòng:</strong> Cung Văn hoá Thiếu nhi Hải Phòng.</span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="h-4 w-4 text-orange-600 shrink-0 mt-0.5" />
-              <span><strong>Cơ sở Hưng Yên:</strong> Trung tâm giáo dục Tỉnh Hưng Yên.</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle className="h-4 w-4 text-orange-600 shrink-0 mt-0.5" />
-              <span><strong>Cơ sở Ninh Bình:</strong> Trục đường trung tâm Tỉnh Ninh Bình.</span>
+              <span><strong>Cơ sở Hưng Yên:</strong> 25 Đ. Đinh Tiên Hoàng, Trần Lãm, Hưng Yên.</span>
             </li>
           </ul>
           <p>Ngoài ra, học viện còn đào tạo trực tuyến qua nền tảng tương tác VIAI-World cho học sinh trên toàn quốc.</p>
@@ -112,7 +108,7 @@ export const FaqSection: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-transparent via-[#fffaf5]/70 to-transparent border-b border-orange-100/70">
+    <section id="faq" className="relative z-10 py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-transparent via-[#fffaf5]/70 to-transparent border-b border-orange-100/70">
       <div className="relative mx-auto max-w-4xl">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">

@@ -73,19 +73,13 @@ export const BRANCH_OPTIONS = [
   {
     value: 'Cơ sở Hải Phòng',
     label: 'Cơ sở Hải Phòng',
-    sublabel: '42 Lạch Tray, Q. Ngô Quyền',
+    sublabel: 'Cung Văn hoá Thiếu nhi HP',
     iconType: 'building' as const,
   },
   {
     value: 'Cơ sở Hưng Yên',
     label: 'Cơ sở Hưng Yên',
-    sublabel: '158 Chu Văn An, TP. Hưng Yên',
-    iconType: 'building' as const,
-  },
-  {
-    value: 'Cơ sở Ninh Bình',
-    label: 'Cơ sở Ninh Bình',
-    sublabel: '86 Đinh Tiên Hoàng, TP. Ninh Bình',
+    sublabel: '25 Đinh Tiên Hoàng, Trần Lãm',
     iconType: 'building' as const,
   },
   {

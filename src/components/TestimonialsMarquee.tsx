@@ -53,9 +53,9 @@ export const TestimonialsMarquee: React.FC = () => {
       name: 'Anh Đỗ Văn Hùng',
       role: 'Phụ huynh bé Khánh (11 tuổi)',
       text: 'Đã thử cho con học 2 trung tâm khác trước đây nhưng con hay nản. Sang VIAI được cầm bo mạch ESP32 và code Python thật, đây là nơi duy nhất con chủ động xin đi học sớm.',
-      location: 'Ninh Bình',
+      location: 'Hải Phòng',
       cityKey: 'ninhbinh',
-      detailLoc: 'TP. Ninh Bình',
+      detailLoc: 'TP. Hải Phòng',
       course: 'Robotics & AI Trung Học',
       initials: 'H',
       avatarBg: 'bg-stone-800 text-white',
@@ -63,10 +63,10 @@ export const TestimonialsMarquee: React.FC = () => {
     {
       name: 'Chị Phạm Mai Linh',
       role: 'Phụ huynh bé Mít (6 tuổi)',
-      text: 'Bé học lớp mầm non tại cơ sở Đinh Tiên Hoàng, đồ chơi học cụ bo tròn an toàn chuẩn Châu Âu. Thầy cô gửi video và ảnh tiến bộ của con sau mỗi buổi rất chu đáo.',
-      location: 'Ninh Bình',
+      text: 'Bé học lớp mầm non tại cơ sở Hải Phòng, đồ chơi học cụ bo tròn an toàn chuẩn Châu Âu. Thầy cô gửi video và ảnh tiến bộ của con sau mỗi buổi rất chu đáo.',
+      location: 'Hải Phòng',
       cityKey: 'ninhbinh',
-      detailLoc: 'TP. Ninh Bình',
+      detailLoc: 'TP. Hải Phòng',
       course: 'Robotics Khối Mầm Non',
       initials: 'L',
       avatarBg: 'bg-orange-700 text-white',
@@ -87,7 +87,7 @@ export const TestimonialsMarquee: React.FC = () => {
             Chia sẻ chân thật từ hơn <span className="text-[#c2410c]">1,000 phụ huynh</span>
           </h2>
           <p className="text-base sm:text-lg text-[#4b5563] leading-relaxed">
-            Phụ huynh tại Hải Phòng, Hưng Yên và Ninh Bình nói gì về sự tiến bộ và niềm đam mê công nghệ của con tại VIAI Academy.
+            Phụ huynh tại Hải Phòng và Hưng Yên nói gì về sự tiến bộ và niềm đam mê công nghệ của con tại VIAI Academy.
           </p>
         </div>
 
@@ -131,7 +131,7 @@ export const TestimonialsMarquee: React.FC = () => {
                 : 'bg-white text-[#4b5563] border border-black/8 hover:text-[#111827]'
             }`}
           >
-            Cơ sở Ninh Bình
+            Cơ sở Hải Phòng
           </button>
         </div>
 
@@ -192,7 +192,7 @@ export const TestimonialsMarquee: React.FC = () => {
         {/* Real Proof Footer Note */}
         <div className="mt-12 text-center text-xs sm:text-sm text-[#4b5563]">
           <p>
-            100% đánh giá được ghi nhận trực tiếp từ phụ huynh học viên đang theo học tại 3 cơ sở chính thức.
+            100% đánh giá được ghi nhận trực tiếp từ phụ huynh học viên đang theo học tại 2 cơ sở chính thức.
           </p>
         </div>
 

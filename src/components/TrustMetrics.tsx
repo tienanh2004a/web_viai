@@ -6,12 +6,12 @@ export const TrustMetrics: React.FC = () => {
     {
       value: '1,000+',
       label: 'Học viên đã đào tạo',
-      desc: 'Từ khối mầm non đến lớp 9 tại 3 tỉnh miền Bắc',
+      desc: 'Từ khối mầm non đến lớp 9 tại các tỉnh miền Bắc',
       icon: Users,
     },
     {
-      value: '3 cơ sở',
-      label: 'Hải Phòng, Hưng Yên, Ninh Bình',
+      value: '2 cơ sở',
+      label: 'Hải Phòng & Hưng Yên',
       desc: 'Phòng Lab chuẩn quốc tế, đầy đủ phần cứng & sa bàn',
       icon: MapPin,
     },

@@ -27,7 +27,7 @@ export const Hero3D: React.FC<Hero3DProps> = ({ onOpenTrialModal }) => {
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-[#4b5563] leading-relaxed max-w-2xl mb-8">
-              Nhiều cơ sở trên khắp các tỉnh thành miền Bắc ví dụ như Hưng Yên, Hải Phòng, Ninh Bình. <strong className="text-[#111827] font-bold">VIAI Academy</strong> đồng hành cùng con từ trực quan sáng tạo đến tư duy giải thuật công nghệ chuẩn quốc tế.
+              Hệ thống cơ sở hiện đại tại Hải Phòng và Hưng Yên. <strong className="text-[#111827] font-bold">VIAI Academy</strong> đồng hành cùng con từ trực quan sáng tạo đến tư duy giải thuật công nghệ chuẩn quốc tế.
             </p>
 
             {/* CTA Button Group - Impeccable 10px-12px radius buttons */}

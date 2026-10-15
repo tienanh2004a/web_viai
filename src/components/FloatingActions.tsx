@@ -9,18 +9,13 @@ interface FloatingActionsProps {
 const CAMPUSES = [
   {
     name: 'Cơ sở Hải Phòng',
-    address: '42 Lạch Tray, Quận Ngô Quyền, Hải Phòng',
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=42+L%E1%BA%A1ch+Tray,+Ng%C3%B4+Quy%E1%BB%81n,+H%E1%BA%A3i+Ph%C3%B2ng',
+    address: 'Cung Văn hoá Thiếu nhi Hải Phòng',
+    mapUrl: 'https://www.google.com/maps/place/Cung+V%C4%83n+ho%C3%A1+Thi%E1%BA%BFu+nhi+H%E1%BA%A3i+Ph%C3%B2ng/@20.8456054,106.689682,1055m/data=!3m2!1e3!4b1!4m6!3m5!1s0x314a7a9ec22092c5:0xb3e682efb0663343!8m2!3d20.8456054!4d106.6922623!16s%2Fg%2F1tjhv41h?entry=ttu&g_ep=EgoyMDI2MTAxMi4wIKXMDSoASAFQAw%3D%3D',
   },
   {
     name: 'Cơ sở Hưng Yên',
-    address: '158 Chu Văn An, TP. Hưng Yên',
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=158+Chu+V%C4%83n+An,+TP+H%C6%B0ng+Y%C3%AAn',
-  },
-  {
-    name: 'Cơ sở Ninh Bình',
-    address: '86 Đinh Tiên Hoàng, TP. Ninh Bình',
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=86+%C4%90inh+Ti%C3%AAn+Ho%C3%A0ng,+TP+Ninh+B%C3%ACnh',
+    address: '25 Đ. Đinh Tiên Hoàng, Trần Lãm, Hưng Yên, Việt Nam',
+    mapUrl: 'https://www.google.com/maps/place/25+%C4%90.+%C4%90inh+Ti%C3%AAn+Ho%C3%A0ng,+Tr%E1%BA%A7n+L%C3%A3m,+H%C6%B0ng+Y%C3%AAn,+Vi%E1%BB%87t+Nam/@20.4412222,106.3435179,114m/data=!3m1!1e3!4m5!3m4!1s0x3135e4d25feb5fa1:0x6e8fca36bd34eeff!8m2!3d20.4411674!4d106.3436374?entry=ttu&g_ep=EgoyMDI2MTAxMi4wIKXMDSoASAFQAw%3D%3D',
   },
 ];
 
@@ -50,7 +45,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ onOpenTrialMod
     <aside aria-label="Tiện ích liên hệ nổi" className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 select-none">
       <div className="relative flex flex-col items-end gap-2 sm:gap-2.5 transition-all duration-300 animate-in fade-in slide-in-from-bottom-2">
         
-        {/* Popup danh sách 3 cơ sở Google Maps */}
+        {/* Popup danh sách 2 cơ sở Google Maps */}
         {showCampuses && (
           <div
             ref={campusMenuRef}
@@ -59,7 +54,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ onOpenTrialMod
             <div className="flex items-center justify-between pb-2 mb-2 border-b border-gray-100">
               <span className="text-xs font-bold text-gray-800 flex items-center gap-1.5">
                 <Navigation className="h-3.5 w-3.5 text-emerald-600" />
-                <span>3 Cơ sở trên Google Maps</span>
+                <span>2 Cơ sở trên Google Maps</span>
               </span>
               <button
                 onClick={() => setShowCampuses(false)}
@@ -103,8 +98,8 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({ onOpenTrialMod
         <div className="relative inline-flex items-center">
           <button
             onClick={() => setShowCampuses(!showCampuses)}
-            aria-label="Xem 3 cơ sở"
-            title={isCollapsed ? 'Cơ sở VIAI (Google Maps)' : 'Xem 3 cơ sở'}
+            aria-label="Xem 2 cơ sở"
+            title={isCollapsed ? 'Cơ sở VIAI (Google Maps)' : 'Xem 2 cơ sở'}
             className={`group inline-flex h-10 sm:h-11 items-center rounded-full text-white shadow-md hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer ${
               showCampuses
                 ? 'bg-emerald-700 ring-2 ring-emerald-300'

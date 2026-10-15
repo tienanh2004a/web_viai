@@ -70,30 +70,21 @@ export const ContactSection: React.FC = () => {
   const campuses = [
     {
       id: 1,
-      name: 'Cơ sở 1 - Hải Phòng',
-      address: 'Số 42 Lạch Tray, Quận Ngô Quyền, TP. Hải Phòng',
-      area: 'Lạch Tray • Ngô Quyền',
+      name: 'Cơ sở Hải Phòng',
+      address: 'Cung Văn hoá Thiếu nhi Hải Phòng',
+      area: 'Cung Văn hoá Thiếu nhi • TP. Hải Phòng',
       phone: '0963909192',
       feature: 'Phòng Lab lớn, đầy đủ bộ kit VEX & sa bàn thi đấu tiêu chuẩn',
-      mapUrl: 'https://maps.google.com/?q=Số+42+Lạch+Tray,+Quận+Ngô+Quyền,+Hải+Phòng',
+      mapUrl: 'https://www.google.com/maps/place/Cung+V%C4%83n+ho%C3%A1+Thi%E1%BA%BFu+nhi+H%E1%BA%A3i+Ph%C3%B2ng/@20.8456054,106.689682,1055m/data=!3m2!1e3!4b1!4m6!3m5!1s0x314a7a9ec22092c5:0xb3e682efb0663343!8m2!3d20.8456054!4d106.6922623!16s%2Fg%2F1tjhv41h?entry=ttu&g_ep=EgoyMDI2MTAxMi4wIKXMDSoASAFQAw%3D%3D',
     },
     {
       id: 2,
-      name: 'Cơ sở 2 - Hưng Yên',
-      address: 'Số 158 Đường Chu Văn An, Phường An Tảo, TP. Hưng Yên',
-      area: 'Chu Văn An • An Tảo',
+      name: 'Cơ sở Hưng Yên',
+      address: '25 Đ. Đinh Tiên Hoàng, Trần Lãm, Hưng Yên, Việt Nam',
+      area: '25 Đinh Tiên Hoàng • Trần Lãm • Hưng Yên',
       phone: '0963909192',
       feature: 'Trung tâm nghiên cứu STEM & AI, phòng luyện thi Robocon miền Bắc',
-      mapUrl: 'https://maps.google.com/?q=Số+158+Chu+Văn+An,+Phường+An+Tảo,+Hưng+Yên',
-    },
-    {
-      id: 3,
-      name: 'Cơ sở 3 - Ninh Bình',
-      address: 'Số 86 Đinh Tiên Hoàng, Phường Đông Thành, TP. Ninh Bình',
-      area: 'Đinh Tiên Hoàng • Đông Thành',
-      phone: '0963909192',
-      feature: 'Không gian sáng tạo Kỹ sư nhí, sân đấu sa bàn đối kháng thực chiến',
-      mapUrl: 'https://maps.google.com/?q=Số+86+Đinh+Tiên+Hoàng,+Phường+Đông+Thành,+Ninh+Bình',
+      mapUrl: 'https://www.google.com/maps/place/25+%C4%90.+%C4%90inh+Ti%C3%AAn+Ho%C3%A0ng,+Tr%E1%BA%A7n+L%C3%A3m,+H%C6%B0ng+Y%C3%AAn,+Vi%E1%BB%87t+Nam/@20.4412222,106.3435179,114m/data=!3m1!1e3!4m5!3m4!1s0x3135e4d25feb5fa1:0x6e8fca36bd34eeff!8m2!3d20.4411674!4d106.3436374?entry=ttu&g_ep=EgoyMDI2MTAxMi4wIKXMDSoASAFQAw%3D%3D',
     },
   ];
 
@@ -106,18 +97,18 @@ export const ContactSection: React.FC = () => {
       <div className="pointer-events-none absolute -bottom-10 left-1/3 w-96 h-96 bg-gradient-to-tr from-amber-300/20 via-orange-200/15 to-transparent rounded-full blur-[120px] -z-10" />
 
       {/* Bong bóng cam thủy tinh trôi nổi góc trên */}
-      <div className="pointer-events-none absolute top-10 right-4 sm:right-12 w-24 sm:w-32 h-24 sm:h-32 rounded-full border border-orange-300/45 bg-gradient-to-tr from-orange-400/22 via-amber-200/15 to-white/50 backdrop-blur-xs shadow-[0_8px_32px_rgba(251,146,60,0.16),inset_0_0_20px_rgba(255,255,255,0.7)] animate-bubble-float z-0">
+      <div className="pointer-events-none absolute top-10 right-4 sm:right-12 w-24 sm:w-32 h-24 sm:h-32 rounded-full border border-orange-300/45 bg-gradient-to-tr from-orange-400/22 via-amber-200/15 to-white/50 backdrop-blur-xs shadow-[0_8px_32px_rgba(251,146,60,0.16),inset_0_0_20px_rgba(255,255,255,0.7)] animate-bubble-float -z-10">
         <div className="absolute top-3 left-4 w-6 h-3 rounded-full bg-white/70 rotate-[-35deg]" />
       </div>
 
       {/* Bong bóng cam thủy tinh trôi nổi góc dưới */}
-      <div className="pointer-events-none absolute bottom-24 left-4 sm:left-10 w-20 sm:w-28 h-20 sm:h-28 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_6px_24px_rgba(251,146,60,0.14),inset_0_0_15px_rgba(255,255,255,0.7)] animate-bubble-float-delayed z-0">
+      <div className="pointer-events-none absolute bottom-24 left-4 sm:left-10 w-20 sm:w-28 h-20 sm:h-28 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_6px_24px_rgba(251,146,60,0.14),inset_0_0_15px_rgba(255,255,255,0.7)] animate-bubble-float-delayed -z-10">
         <div className="absolute top-2.5 left-3 w-5 h-2.5 rounded-full bg-white/70 rotate-[-35deg]" />
       </div>
 
       
       {/* 1. THÔNG TIN LIÊN HỆ TRỰC TIẾP — Side-by-side layout */}
-      <div className="py-14 sm:py-16 border-b border-orange-100/80">
+      <div className="py-14 sm:py-16 border-b border-orange-100/80 relative z-10">
         <div className="container max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           
           <div className="text-center mb-10 sm:mb-12">
@@ -173,7 +164,7 @@ export const ContactSection: React.FC = () => {
                 </span>
               </div>
               <p className="font-bold text-[#111827] text-sm pl-8">
-                Hải Phòng • Hưng Yên • Ninh Bình
+                Hải Phòng • Hưng Yên
               </p>
             </div>
 
@@ -366,9 +357,8 @@ export const ContactSection: React.FC = () => {
                     onChange={(e) => setBranch(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-base sm:text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
                   >
-                    <option value="Hải Phòng">Cơ sở Hải Phòng (42 Lạch Tray, Q. Ngô Quyền)</option>
-                    <option value="Hưng Yên">Cơ sở Hưng Yên (158 Chu Văn An, TP. Hưng Yên)</option>
-                    <option value="Ninh Bình">Cơ sở Ninh Bình (86 Đinh Tiên Hoàng, TP. Ninh Bình)</option>
+                    <option value="Hải Phòng">Cơ sở Hải Phòng (Cung Văn hoá Thiếu nhi HP)</option>
+                    <option value="Hưng Yên">Cơ sở Hưng Yên (25 Đinh Tiên Hoàng, Trần Lãm)</option>
                     <option value="Online Toàn Quốc">Học Trực Tuyến Toàn Quốc (Phòng Lab 3D)</option>
                   </select>
                 </div>
@@ -425,20 +415,20 @@ export const ContactSection: React.FC = () => {
         </div>
       </div>
 
-      {/* 3. 3 CƠ SỞ ĐANG HOẠT ĐỘNG — Không dùng kicker label thừa */}
-      <div className="relative overflow-hidden bg-white py-16 sm:py-20 border-b border-orange-100/80">
+      {/* 3. 2 CƠ SỞ ĐANG HOẠT ĐỘNG — Không dùng kicker label thừa */}
+      <div className="relative z-10 overflow-hidden bg-white py-16 sm:py-20 border-b border-orange-100/80">
         <div className="container max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           
           <div className="text-center mb-12 sm:mb-14">
             <h3 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#111827] mb-3">
-              3 cơ sở đang hoạt động
+              2 cơ sở đang hoạt động
             </h3>
             <p className="text-base text-[#4b5563] max-w-xl mx-auto leading-relaxed">
               Trực tiếp trải nghiệm phòng Lab Robotics và sa bàn thi đấu tiêu chuẩn cùng thầy cô
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-6 lg:gap-8">
             {campuses.map((campus) => (
               <div
                 key={campus.id}
@@ -494,7 +484,7 @@ export const ContactSection: React.FC = () => {
       </div>
 
       {/* 4. KẾT NỐI — Không dùng kicker label thừa */}
-      <div className="py-16 sm:py-20 bg-gradient-to-b from-transparent via-orange-50/50 to-orange-100/40">
+      <div className="py-16 sm:py-20 bg-gradient-to-b from-transparent via-orange-50/50 to-orange-100/40 relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
           <div>
             <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#111827]">

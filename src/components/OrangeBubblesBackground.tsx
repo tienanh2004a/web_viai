@@ -22,7 +22,7 @@ export const OrangeBubblesBackground: React.FC = () => {
         <div className="absolute top-3.5 left-4 w-7 h-4 rounded-full bg-white/70 rotate-[-35deg] blur-[0.5px]" />
       </div>
       <div 
-        className="absolute top-64 right-[4%] w-14 h-14 rounded-full border border-orange-300/35 bg-gradient-to-tr from-orange-400/15 via-amber-200/10 to-white/35 backdrop-blur-xs shadow-[0_4px_16px_rgba(251,146,60,0.1),inset_0_0_10px_rgba(255,255,255,0.6)] animate-bubble-float-delayed"
+        className="absolute top-64 right-1 sm:right-4 w-14 h-14 rounded-full border border-orange-300/35 bg-gradient-to-tr from-orange-400/15 via-amber-200/10 to-white/35 backdrop-blur-xs shadow-[0_4px_16px_rgba(251,146,60,0.1),inset_0_0_10px_rgba(255,255,255,0.6)] animate-bubble-float-delayed"
       >
         <div className="absolute top-2 left-2 w-3 h-2 rounded-full bg-white/70 rotate-[-35deg]" />
       </div>
@@ -35,12 +35,12 @@ export const OrangeBubblesBackground: React.FC = () => {
 
       {/* Bong bóng cam khu vực About Us */}
       <div 
-        className="absolute top-[1150px] left-[3%] w-28 h-28 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_30px_rgba(251,146,60,0.15),inset_0_0_18px_rgba(255,255,255,0.7)] animate-bubble-float-delayed"
+        className="absolute top-[1150px] -left-6 sm:left-2 w-28 h-28 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_30px_rgba(251,146,60,0.15),inset_0_0_18px_rgba(255,255,255,0.7)] animate-bubble-float-delayed"
       >
         <div className="absolute top-3 left-4 w-5 h-3 rounded-full bg-white/70 rotate-[-35deg]" />
       </div>
       <div 
-        className="absolute top-[1280px] left-[9%] w-12 h-12 rounded-full border border-orange-300/30 bg-gradient-to-tr from-orange-400/15 to-white/35 backdrop-blur-xs shadow-[0_4px_12px_rgba(251,146,60,0.1),inset_0_0_8px_rgba(255,255,255,0.6)] animate-bubble-float"
+        className="absolute top-[1280px] left-2 sm:left-6 w-12 h-12 rounded-full border border-orange-300/30 bg-gradient-to-tr from-orange-400/15 to-white/35 backdrop-blur-xs shadow-[0_4px_12px_rgba(251,146,60,0.1),inset_0_0_8px_rgba(255,255,255,0.6)] animate-bubble-float"
         style={{ animationDuration: '9s' }}
       >
         <div className="absolute top-1.5 left-2 w-2 h-1 rounded-full bg-white/70 rotate-[-35deg]" />
@@ -54,13 +54,13 @@ export const OrangeBubblesBackground: React.FC = () => {
 
       {/* Bong bóng cam khu vực Courses */}
       <div 
-        className="absolute top-[2150px] right-[5%] w-32 h-32 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_30px_rgba(251,146,60,0.15),inset_0_0_18px_rgba(255,255,255,0.7)] animate-bubble-float"
+        className="absolute top-[2150px] -right-6 sm:right-2 w-32 h-32 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_30px_rgba(251,146,60,0.15),inset_0_0_18px_rgba(255,255,255,0.7)] animate-bubble-float"
         style={{ animationDuration: '11s' }}
       >
         <div className="absolute top-3.5 left-4 w-6 h-3 rounded-full bg-white/70 rotate-[-35deg]" />
       </div>
       <div 
-        className="absolute top-[2280px] right-[11%] w-16 h-16 rounded-full border border-orange-300/30 bg-gradient-to-tr from-orange-400/15 to-white/35 backdrop-blur-xs shadow-[0_4px_14px_rgba(251,146,60,0.1),inset_0_0_10px_rgba(255,255,255,0.6)] animate-bubble-float-delayed"
+        className="absolute top-[2280px] right-2 sm:right-6 w-16 h-16 rounded-full border border-orange-300/30 bg-gradient-to-tr from-orange-400/15 to-white/35 backdrop-blur-xs shadow-[0_4px_14px_rgba(251,146,60,0.1),inset_0_0_10px_rgba(255,255,255,0.6)] animate-bubble-float-delayed"
       >
         <div className="absolute top-2 left-2.5 w-3 h-2 rounded-full bg-white/70 rotate-[-35deg]" />
       </div>
@@ -73,7 +73,7 @@ export const OrangeBubblesBackground: React.FC = () => {
 
       {/* Bong bóng cam khu vực FAQ */}
       <div 
-        className="absolute top-[3180px] left-[4%] w-24 h-24 rounded-full border border-orange-300/35 bg-gradient-to-tr from-orange-400/18 via-amber-200/12 to-white/40 backdrop-blur-xs shadow-[0_6px_24px_rgba(251,146,60,0.12),inset_0_0_15px_rgba(255,255,255,0.65)] animate-bubble-float"
+        className="absolute top-[3180px] -left-4 sm:left-2 w-24 h-24 rounded-full border border-orange-300/35 bg-gradient-to-tr from-orange-400/18 via-amber-200/12 to-white/40 backdrop-blur-xs shadow-[0_6px_24px_rgba(251,146,60,0.12),inset_0_0_15px_rgba(255,255,255,0.65)] animate-bubble-float"
         style={{ animationDuration: '10s' }}
       >
         <div className="absolute top-2.5 left-3 w-4 h-2 rounded-full bg-white/70 rotate-[-35deg]" />
@@ -88,25 +88,25 @@ export const OrangeBubblesBackground: React.FC = () => {
 
       {/* Bong bóng cam khu vực Form Đăng Ký & Thông tin Liên hệ */}
       <div 
-        className="absolute top-[3950px] right-[6%] w-32 h-32 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/22 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_32px_rgba(251,146,60,0.16),inset_0_0_20px_rgba(255,255,255,0.7)] animate-bubble-float"
+        className="absolute top-[3950px] -right-6 sm:right-2 w-32 h-32 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/22 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_32px_rgba(251,146,60,0.16),inset_0_0_20px_rgba(255,255,255,0.7)] animate-bubble-float"
         style={{ animationDuration: '12s' }}
       >
         <div className="absolute top-3.5 left-4 w-7 h-4 rounded-full bg-white/70 rotate-[-35deg]" />
       </div>
       <div 
-        className="absolute top-[4080px] right-[12%] w-14 h-14 rounded-full border border-orange-300/35 bg-gradient-to-tr from-orange-400/18 to-white/35 backdrop-blur-xs shadow-[0_4px_16px_rgba(251,146,60,0.12),inset_0_0_10px_rgba(255,255,255,0.6)] animate-bubble-float-delayed"
+        className="absolute top-[4080px] right-2 sm:right-6 w-14 h-14 rounded-full border border-orange-300/35 bg-gradient-to-tr from-orange-400/18 to-white/35 backdrop-blur-xs shadow-[0_4px_16px_rgba(251,146,60,0.12),inset_0_0_10px_rgba(255,255,255,0.6)] animate-bubble-float-delayed"
       >
         <div className="absolute top-2 left-2 w-3 h-2 rounded-full bg-white/70 rotate-[-35deg]" />
       </div>
 
-      {/* Bong bóng cam khu vực 3 Cơ sở & Mạng xã hội */}
+      {/* Bong bóng cam khu vực 2 Cơ sở & Mạng xã hội */}
       <div 
-        className="absolute top-[4420px] left-[5%] w-28 h-28 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_30px_rgba(251,146,60,0.15),inset_0_0_18px_rgba(255,255,255,0.7)] animate-bubble-float-delayed"
+        className="absolute top-[4420px] -left-6 sm:left-2 w-28 h-28 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_30px_rgba(251,146,60,0.15),inset_0_0_18px_rgba(255,255,255,0.7)] animate-bubble-float-delayed"
       >
         <div className="absolute top-3 left-4 w-5 h-3 rounded-full bg-white/70 rotate-[-35deg]" />
       </div>
       <div 
-        className="absolute top-[4520px] left-[11%] w-12 h-12 rounded-full border border-orange-300/30 bg-gradient-to-tr from-orange-400/15 to-white/35 backdrop-blur-xs shadow-[0_4px_12px_rgba(251,146,60,0.1),inset_0_0_8px_rgba(255,255,255,0.6)] animate-bubble-float"
+        className="absolute top-[4520px] left-2 sm:left-6 w-12 h-12 rounded-full border border-orange-300/30 bg-gradient-to-tr from-orange-400/15 to-white/35 backdrop-blur-xs shadow-[0_4px_12px_rgba(251,146,60,0.1),inset_0_0_8px_rgba(255,255,255,0.6)] animate-bubble-float"
         style={{ animationDuration: '8s' }}
       >
         <div className="absolute top-1.5 left-2 w-2 h-1 rounded-full bg-white/70 rotate-[-35deg]" />
@@ -114,7 +114,7 @@ export const OrangeBubblesBackground: React.FC = () => {
 
       {/* Bong bóng cam tận cùng Footer */}
       <div 
-        className="absolute top-[4820px] right-[8%] w-24 h-24 rounded-full border border-orange-300/35 bg-gradient-to-tr from-orange-400/18 via-amber-200/12 to-white/40 backdrop-blur-xs shadow-[0_6px_24px_rgba(251,146,60,0.12),inset_0_0_15px_rgba(255,255,255,0.65)] animate-bubble-float"
+        className="absolute top-[4820px] -right-4 sm:right-3 w-24 h-24 rounded-full border border-orange-300/35 bg-gradient-to-tr from-orange-400/18 via-amber-200/12 to-white/40 backdrop-blur-xs shadow-[0_6px_24px_rgba(251,146,60,0.12),inset_0_0_15px_rgba(255,255,255,0.65)] animate-bubble-float"
         style={{ animationDuration: '11s' }}
       >
         <div className="absolute top-2.5 left-3 w-4 h-2 rounded-full bg-white/70 rotate-[-35deg]" />

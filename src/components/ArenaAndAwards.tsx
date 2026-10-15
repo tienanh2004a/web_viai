@@ -33,7 +33,7 @@ export const ArenaAndAwards: React.FC = () => {
 
             <div className="flex items-center gap-2 text-zinc-600 text-sm mb-1">
               <MapPin className="h-4 w-4 text-orange-600" />
-              <span>Địa điểm: Hải Phòng, Hưng Yên &amp; Ninh Bình</span>
+              <span>Địa điểm: Hải Phòng &amp; Hưng Yên</span>
             </div>
 
             <div className="text-4xl font-black text-orange-600 my-2">

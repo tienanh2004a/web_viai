@@ -61,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
                   <MapPin className="h-4 w-4 text-[#c2410c]" />
                   <span>Cơ sở Hải Phòng</span>
                 </p>
-                <p className="text-[#4b5563] text-xs sm:text-sm">42 Lạch Tray, Quận Ngô Quyền</p>
+                <p className="text-[#4b5563] text-xs sm:text-sm">Cung Văn hoá Thiếu nhi Hải Phòng</p>
               </li>
 
               <li className="space-y-1">
@@ -69,15 +69,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
                   <MapPin className="h-4 w-4 text-[#c2410c]" />
                   <span>Cơ sở Hưng Yên</span>
                 </p>
-                <p className="text-[#4b5563] text-xs sm:text-sm">158 Chu Văn An, TP. Hưng Yên</p>
-              </li>
-
-              <li className="space-y-1">
-                <p className="font-bold text-[#111827] flex items-center gap-1.5">
-                  <MapPin className="h-4 w-4 text-[#c2410c]" />
-                  <span>Cơ sở Ninh Bình</span>
-                </p>
-                <p className="text-[#4b5563] text-xs sm:text-sm">86 Đinh Tiên Hoàng, TP. Ninh Bình</p>
+                <p className="text-[#4b5563] text-xs sm:text-sm">25 Đ. Đinh Tiên Hoàng, Trần Lãm, Hưng Yên</p>
               </li>
 
               <li className="space-y-1 pt-1">
@@ -85,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
                   onClick={() => onGoContact ? onGoContact() : (window.location.hash = '#lien-he')}
                   className="font-bold text-[#c2410c] hover:underline transition-colors flex items-center gap-1 text-left cursor-pointer"
                 >
-                  <span>Xem chi tiết 3 cơ sở &amp; Liên hệ →</span>
+                  <span>Xem chi tiết 2 cơ sở &amp; Liên hệ →</span>
                 </button>
               </li>
             </ul>

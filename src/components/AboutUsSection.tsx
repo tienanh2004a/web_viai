@@ -35,7 +35,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenTrialModal
             </p>
 
             <p className="text-sm sm:text-base text-[#666666] leading-relaxed mb-7">
-              Với phương châm <em>"Khởi nguồn trí tuệ — Dẫn lối tương lai"</em>, chúng tôi không dạy lý thuyết sáo rỗng. Mọi bài học đều gắn liền với việc lắp ráp thực tế, tối ưu thuật toán thi đấu và đưa con tự tin bước ra các đấu trường lớn tại tỉnh Hưng Yên, Hải Phòng, Ninh Bình và toàn miền Bắc.
+              Với phương châm <em>"Khởi nguồn trí tuệ — Dẫn lối tương lai"</em>, chúng tôi không dạy lý thuyết sáo rỗng. Mọi bài học đều gắn liền với việc lắp ráp thực tế, tối ưu thuật toán thi đấu và đưa con tự tin bước ra các đấu trường lớn tại tỉnh Hải Phòng, Hưng Yên và toàn miền Bắc.
             </p>
 
             {/* 3 Điểm nổi bật thực chiến (Đã loại bỏ RoboSim) */}

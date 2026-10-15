@@ -107,7 +107,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "Mầm non",
     "duration": "36 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.96,
     "totalStudents": 420,
     "coverImage": "/images/courses/mam-non.png",
@@ -152,25 +152,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -434,7 +434,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "Mầm non",
     "duration": "36 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.98,
     "totalStudents": 350,
     "coverImage": "/images/courses/mam-non.png",
@@ -479,25 +479,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -761,7 +761,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "Mầm non",
     "duration": "36 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.99,
     "totalStudents": 280,
     "coverImage": "/images/courses/mam-non.png",
@@ -806,25 +806,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -1088,7 +1088,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "Mầm non",
     "duration": "36 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.96,
     "totalStudents": 420,
     "coverImage": "/images/courses/mam-non.png",
@@ -1133,25 +1133,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -1415,7 +1415,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "6 — 11 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.96,
     "totalStudents": 380,
     "coverImage": "/images/courses/tieu-hoc-ai-1.jpg",
@@ -1460,25 +1460,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -1664,7 +1664,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "6 — 11 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.97,
     "totalStudents": 320,
     "coverImage": "/images/courses/tieu-hoc-ai-2.jpg",
@@ -1709,25 +1709,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -1913,7 +1913,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "6 — 11 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.98,
     "totalStudents": 310,
     "coverImage": "/images/courses/tieu-hoc-ai-2.jpg",
@@ -1958,25 +1958,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -2162,7 +2162,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "6 — 11 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.99,
     "totalStudents": 290,
     "coverImage": "/images/courses/tieu-hoc-ai-1.jpg",
@@ -2207,25 +2207,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -2411,7 +2411,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "6 — 11 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.96,
     "totalStudents": 380,
     "coverImage": "/images/courses/tieu-hoc-ai-1.jpg",
@@ -2456,25 +2456,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -2660,7 +2660,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "6 — 11 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.98,
     "totalStudents": 310,
     "coverImage": "/images/courses/tieu-hoc-ai-2.jpg",
@@ -2705,25 +2705,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -2909,7 +2909,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "6 — 11 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.99,
     "totalStudents": 290,
     "coverImage": "/images/courses/tieu-hoc-ai-1.jpg",
@@ -2954,25 +2954,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -3158,7 +3158,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "6 — 11 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.96,
     "totalStudents": 380,
     "coverImage": "/images/courses/tieu-hoc-ai-1.jpg",
@@ -3203,25 +3203,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:00",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -3407,7 +3407,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "11 — 15 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.97,
     "totalStudents": 260,
     "coverImage": "/images/courses/trung-hoc-ai-1.jpg",
@@ -3452,25 +3452,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -3656,7 +3656,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "11 — 15 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.98,
     "totalStudents": 240,
     "coverImage": "/images/courses/trung-hoc-ai-2.jpg",
@@ -3701,25 +3701,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -3905,7 +3905,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "11 — 15 tuổi",
     "duration": "14 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.99,
     "totalStudents": 220,
     "coverImage": "/images/courses/trung-hoc-ai-1.jpg",
@@ -3950,25 +3950,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -4086,7 +4086,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "11 — 15 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 5.0,
     "totalStudents": 200,
     "coverImage": "/images/courses/trung-hoc-ai-2.jpg",
@@ -4131,25 +4131,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -4335,7 +4335,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "11 — 15 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.97,
     "totalStudents": 260,
     "coverImage": "/images/courses/trung-hoc-ai-1.jpg",
@@ -4380,25 +4380,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -4584,7 +4584,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "11 — 15 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 5.0,
     "totalStudents": 200,
     "coverImage": "/images/courses/trung-hoc-ai-2.jpg",
@@ -4629,25 +4629,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
@@ -4833,7 +4833,7 @@ export const coursesData: Record<string, CourseDetail> = {
     "displayAge": "11 — 15 tuổi",
     "duration": "24 buổi",
     "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "format": "Offline tại 2 cơ sở (Hải Phòng, Hưng Yên)",
     "rating": 4.97,
     "totalStudents": 260,
     "coverImage": "/images/courses/trung-hoc-ai-1.jpg",
@@ -4878,25 +4878,25 @@ export const coursesData: Record<string, CourseDetail> = {
         "shift": "Ca Sáng Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Thứ 7",
         "days": "Thứ 7 hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Sáng Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "08:30 - 10:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       },
       {
         "shift": "Ca Chiều Chủ Nhật",
         "days": "Chủ Nhật hàng tuần",
         "time": "14:30 - 16:30",
-        "branch": "Tất cả 3 cơ sở"
+        "branch": "Cả 2 cơ sở (Hải Phòng, Hưng Yên)"
       }
     ],
     "tuition": {
