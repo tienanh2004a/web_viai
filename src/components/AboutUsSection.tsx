@@ -7,7 +7,20 @@ interface AboutUsSectionProps {
 
 export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenTrialModal }) => {
   return (
-    <section id="ve-chung-toi" className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-white/80 backdrop-blur-xs border-b border-orange-100/70 overflow-hidden">
+    <section id="ve-chung-toi" className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent via-[#fffaf5]/60 to-transparent border-b border-orange-100/70 overflow-hidden">
+
+      {/* Bong bóng cam phát sáng điểm xuyết phần Về Chúng Tôi */}
+      <div className="pointer-events-none absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-br from-orange-300/20 via-amber-200/15 to-transparent rounded-full blur-[130px] -z-10" />
+      <div className="pointer-events-none absolute bottom-10 -right-20 w-[450px] h-[450px] bg-gradient-to-tl from-orange-400/18 via-amber-200/12 to-transparent rounded-full blur-[140px] -z-10" />
+
+      {/* Bong bóng cam thủy tinh trôi nổi */}
+      <div className="pointer-events-none absolute top-16 left-4 sm:left-10 w-20 sm:w-28 h-20 sm:h-28 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_30px_rgba(251,146,60,0.14),inset_0_0_18px_rgba(255,255,255,0.7)] animate-bubble-float z-0">
+        <div className="absolute top-2.5 left-3 w-5 h-2.5 rounded-full bg-white/70 rotate-[-35deg]" />
+      </div>
+      <div className="pointer-events-none absolute bottom-16 right-6 sm:right-16 w-24 sm:w-32 h-24 sm:h-32 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_32px_rgba(251,146,60,0.15),inset_0_0_20px_rgba(255,255,255,0.7)] animate-bubble-float-delayed z-0">
+        <div className="absolute top-3 left-4 w-6 h-3 rounded-full bg-white/70 rotate-[-35deg]" />
+      </div>
+
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
@@ -27,7 +40,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenTrialModal
 
             {/* 3 Điểm nổi bật thực chiến (Đã loại bỏ RoboSim) */}
             <div className="space-y-3.5 mb-8">
-              <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-black/8 shadow-2xs hover:border-[#c2410c]/30 transition-colors">
+              <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-orange-100/80 shadow-2xs hover:border-[#c2410c]/30 transition-colors">
                 <div className="h-10 w-10 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0 mt-0.5">
                   <Trophy className="h-5 w-5 text-[#c2410c]" />
                 </div>
@@ -37,7 +50,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenTrialModal
                 </div>
               </div>
 
-              <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-black/8 shadow-2xs hover:border-[#c2410c]/30 transition-colors">
+              <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-orange-100/80 shadow-2xs hover:border-[#c2410c]/30 transition-colors">
                 <div className="h-10 w-10 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0 mt-0.5">
                   <Wrench className="h-5 w-5 text-[#c2410c]" />
                 </div>
@@ -47,7 +60,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenTrialModal
                 </div>
               </div>
 
-              <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-black/8 shadow-2xs hover:border-[#c2410c]/30 transition-colors">
+              <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-orange-100/80 shadow-2xs hover:border-[#c2410c]/30 transition-colors">
                 <div className="h-10 w-10 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0 mt-0.5">
                   <ShieldCheck className="h-5 w-5 text-[#c2410c]" />
                 </div>
@@ -74,7 +87,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenTrialModal
           <div className="lg:col-span-7 flex flex-col gap-4 sm:gap-5">
             
             {/* 1. Ảnh Hero lớn trên cùng: Toàn cảnh Đấu trường Miền Bắc do Trung ương Đoàn tổ chức */}
-            <div className="group relative overflow-hidden rounded-2xl border border-black/8 bg-white p-2.5 sm:p-3 shadow-xs hover:border-[#c2410c]/40 hover:shadow-md transition-all duration-300">
+            <div className="group relative overflow-hidden rounded-2xl border border-orange-100/80 bg-white p-2.5 sm:p-3 shadow-xs hover:border-[#c2410c]/40 hover:shadow-md transition-all duration-300">
               <div className="aspect-[16/9] sm:aspect-[2/1] w-full overflow-hidden rounded-xl bg-neutral-100 relative">
                 <img
                   src="/images/about/dautruong-mienbac.jpg"
@@ -102,7 +115,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenTrialModal
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               
               {/* 2. Ảnh Huấn luyện viên & Sa bàn thi đấu */}
-              <div className="group relative overflow-hidden rounded-2xl border border-black/8 bg-white p-2.5 sm:p-3 shadow-xs hover:border-[#c2410c]/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+              <div className="group relative overflow-hidden rounded-2xl border border-orange-100/80 bg-white p-2.5 sm:p-3 shadow-xs hover:border-[#c2410c]/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
                 <div>
                   <div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-100 relative">
                     <img

@@ -112,7 +112,7 @@ export const FaqSection: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#f5f5f7] border-b border-black/8">
+    <section id="faq" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-transparent via-[#fffaf5]/70 to-transparent border-b border-orange-100/70">
       <div className="relative mx-auto max-w-4xl">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -132,7 +132,7 @@ export const FaqSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="overflow-hidden rounded-2xl border border-black/8 bg-white shadow-2xs transition-all duration-200"
+                className="overflow-hidden rounded-2xl border border-orange-100/80 bg-white shadow-2xs transition-all duration-200"
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
@@ -163,7 +163,7 @@ export const FaqSection: React.FC = () => {
         </div>
 
         {/* Fast Zalo Contact Box */}
-        <div className="rounded-2xl border border-black/8 bg-white p-8 sm:p-10 text-center shadow-2xs">
+        <div className="rounded-2xl border border-orange-100/80 bg-white p-8 sm:p-10 text-center shadow-2xs">
           <p className="text-base text-[#111827] font-bold mb-5">
             Ba mẹ vẫn còn câu hỏi khác cần được tư vấn chi tiết cho con?
           </p>

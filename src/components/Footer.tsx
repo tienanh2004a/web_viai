@@ -8,7 +8,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) => {
   return (
-    <footer className="border-t border-black/8 bg-white text-[#4b5563]">
+    <footer className="border-t border-orange-100/80 bg-gradient-to-b from-white/90 via-[#fffaf5] to-[#fff7ed]/60 text-[#4b5563]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Col 1: Brand Info & Legal */}
@@ -219,7 +219,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
         </div>
 
         {/* Bottom Legal / Copyright */}
-        <div className="mt-12 pt-8 border-t border-black/8 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-[#4b5563]">
+        <div className="mt-12 pt-8 border-t border-orange-100/80 flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-[#4b5563]">
           <p>© {new Date().getFullYear()} VIAI Academy. Bản quyền thuộc về Công ty CP Công nghệ và Giáo dục VIAI.</p>
           <p className="mt-2 sm:mt-0 font-medium">Khởi nguồn trí tuệ — Dẫn lối tương lai</p>
         </div>

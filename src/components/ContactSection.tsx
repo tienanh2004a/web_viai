@@ -98,10 +98,26 @@ export const ContactSection: React.FC = () => {
   ];
 
   return (
-    <section id="lien-he" className="relative bg-white border-t border-black/8">
+    <section id="lien-he" className="relative bg-gradient-to-b from-transparent via-[#fffaf5]/80 to-[#fff7ed]/50 border-t border-orange-100/80">
+
+      {/* Bong bóng cam phát sáng điểm xuyết phần Liên Hệ */}
+      <div className="pointer-events-none absolute -top-16 -left-16 w-96 h-96 bg-gradient-to-br from-orange-300/25 via-amber-200/20 to-transparent rounded-full blur-[130px] -z-10" />
+      <div className="pointer-events-none absolute top-1/2 -right-20 w-[500px] h-[500px] bg-gradient-to-bl from-orange-400/20 via-rose-200/15 to-transparent rounded-full blur-[140px] -z-10" />
+      <div className="pointer-events-none absolute -bottom-10 left-1/3 w-96 h-96 bg-gradient-to-tr from-amber-300/20 via-orange-200/15 to-transparent rounded-full blur-[120px] -z-10" />
+
+      {/* Bong bóng cam thủy tinh trôi nổi góc trên */}
+      <div className="pointer-events-none absolute top-10 right-4 sm:right-12 w-24 sm:w-32 h-24 sm:h-32 rounded-full border border-orange-300/45 bg-gradient-to-tr from-orange-400/22 via-amber-200/15 to-white/50 backdrop-blur-xs shadow-[0_8px_32px_rgba(251,146,60,0.16),inset_0_0_20px_rgba(255,255,255,0.7)] animate-bubble-float z-0">
+        <div className="absolute top-3 left-4 w-6 h-3 rounded-full bg-white/70 rotate-[-35deg]" />
+      </div>
+
+      {/* Bong bóng cam thủy tinh trôi nổi góc dưới */}
+      <div className="pointer-events-none absolute bottom-24 left-4 sm:left-10 w-20 sm:w-28 h-20 sm:h-28 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_6px_24px_rgba(251,146,60,0.14),inset_0_0_15px_rgba(255,255,255,0.7)] animate-bubble-float-delayed z-0">
+        <div className="absolute top-2.5 left-3 w-5 h-2.5 rounded-full bg-white/70 rotate-[-35deg]" />
+      </div>
+
       
       {/* 1. THÔNG TIN LIÊN HỆ TRỰC TIẾP — Side-by-side layout */}
-      <div className="py-14 sm:py-16 border-b border-black/8">
+      <div className="py-14 sm:py-16 border-b border-orange-100/80">
         <div className="container max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           
           <div className="text-center mb-10 sm:mb-12">
@@ -119,7 +135,7 @@ export const ContactSection: React.FC = () => {
             {/* Thẻ 1: Hotline */}
             <a
               href="tel:0963909192"
-              className="group bg-[#f5f5f7] p-5 sm:p-6 rounded-2xl border border-black/6 hover:border-[#c2410c]/40 hover:bg-white hover:shadow-sm transition-all h-full block cursor-pointer"
+              className="group bg-white/95 border-orange-100 shadow-2xs hover:bg-orange-50/40 p-5 sm:p-6 rounded-2xl border border-orange-100 hover:border-[#c2410c]/40 hover:bg-white hover:shadow-sm transition-all h-full block cursor-pointer"
             >
               <div className="flex items-center gap-3 mb-2">
                 <Phone className="w-5 h-5 text-[#c2410c] shrink-0" />
@@ -135,7 +151,7 @@ export const ContactSection: React.FC = () => {
             {/* Thẻ 2: Email */}
             <a
               href="mailto:contact@viai.edu.vn"
-              className="group bg-[#f5f5f7] p-5 sm:p-6 rounded-2xl border border-black/6 hover:border-[#c2410c]/40 hover:bg-white hover:shadow-sm transition-all h-full block cursor-pointer"
+              className="group bg-white/95 border-orange-100 shadow-2xs hover:bg-orange-50/40 p-5 sm:p-6 rounded-2xl border border-orange-100 hover:border-[#c2410c]/40 hover:bg-white hover:shadow-sm transition-all h-full block cursor-pointer"
             >
               <div className="flex items-center gap-3 mb-2">
                 <Mail className="w-5 h-5 text-[#c2410c] shrink-0" />
@@ -149,7 +165,7 @@ export const ContactSection: React.FC = () => {
             </a>
 
             {/* Thẻ 3: Địa chỉ các cơ sở */}
-            <div className="bg-[#f5f5f7] p-5 sm:p-6 rounded-2xl border border-black/6 h-full">
+            <div className="bg-white/95 border-orange-100 shadow-2xs hover:bg-orange-50/40 p-5 sm:p-6 rounded-2xl border border-orange-100 h-full">
               <div className="flex items-center gap-3 mb-2">
                 <MapPin className="w-5 h-5 text-[#c2410c] shrink-0" />
                 <span className="text-xs uppercase tracking-wider text-[#4b5563] font-bold">
@@ -167,7 +183,7 @@ export const ContactSection: React.FC = () => {
       </div>
 
       {/* 2. FORM ĐẶT BUỔI HỌC THỬ 1-1 MIỄN PHÍ */}
-      <div id="dang-ky" className="relative overflow-hidden bg-[#fafaf9] py-16 sm:py-20 border-b border-black/8">
+      <div id="dang-ky" className="relative overflow-hidden bg-gradient-to-b from-orange-50/50 via-white/85 to-orange-50/40 py-16 sm:py-20 border-b border-orange-100/70">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
           
           <div className="text-center mb-10">
@@ -179,7 +195,7 @@ export const ContactSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="max-w-2xl mx-auto rounded-3xl bg-white p-6 sm:p-9 shadow-md border border-black/8">
+          <div className="max-w-2xl mx-auto rounded-3xl bg-white p-6 sm:p-9 shadow-md border border-orange-100/80">
             {submitted ? (
               <div className="py-6 px-4 text-center">
                 <div className="flex justify-center -mt-2 mb-3">
@@ -405,7 +421,7 @@ export const ContactSection: React.FC = () => {
       </div>
 
       {/* 3. 3 CƠ SỞ ĐANG HOẠT ĐỘNG — Không dùng kicker label thừa */}
-      <div className="relative overflow-hidden bg-white py-16 sm:py-20 border-b border-black/8">
+      <div className="relative overflow-hidden bg-white py-16 sm:py-20 border-b border-orange-100/80">
         <div className="container max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           
           <div className="text-center mb-12 sm:mb-14">
@@ -421,7 +437,7 @@ export const ContactSection: React.FC = () => {
             {campuses.map((campus) => (
               <div
                 key={campus.id}
-                className="bg-white rounded-2xl border border-black/8 p-6 sm:p-7 shadow-2xs hover:border-[#c2410c]/30 hover:shadow-md transition-all flex flex-col justify-between"
+                className="bg-white rounded-2xl border border-orange-100/80 p-6 sm:p-7 shadow-2xs hover:border-[#c2410c]/30 hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-start gap-3.5 mb-4">
@@ -447,7 +463,7 @@ export const ContactSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-black/5 flex items-center justify-between">
+                <div className="pt-4 border-t border-orange-100/60 flex items-center justify-between">
                   <a
                     href={`tel:${campus.phone}`}
                     className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#111827] hover:text-[#c2410c] transition-colors"
@@ -473,7 +489,7 @@ export const ContactSection: React.FC = () => {
       </div>
 
       {/* 4. KẾT NỐI — Không dùng kicker label thừa */}
-      <div className="py-14 sm:py-16 bg-[#fafaf9]">
+      <div className="py-16 sm:py-20 bg-gradient-to-b from-transparent via-orange-50/50 to-orange-100/40">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
           <div>
             <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#111827]">
@@ -492,7 +508,7 @@ export const ContactSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook VIAI Academy"
-              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-black/8 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
+              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-orange-100/80 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
             >
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-105 shadow-2xs bg-[#1877F2]/10">
                 <img 
@@ -510,7 +526,7 @@ export const ContactSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok VIAI Academy"
-              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-black/8 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
+              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-orange-100/80 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
             >
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-105 shadow-2xs bg-neutral-100">
                 <img 
@@ -528,7 +544,7 @@ export const ContactSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube VIAI Academy"
-              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-black/8 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
+              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-orange-100/80 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
             >
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-105 shadow-2xs bg-[#FF0000]/10">
                 <img 
@@ -546,7 +562,7 @@ export const ContactSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Zalo VIAI Academy"
-              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-black/8 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
+              className="group flex flex-col items-center gap-3 p-5 sm:p-6 rounded-2xl border border-orange-100/80 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[110px] sm:min-w-[125px] hover:shadow-md cursor-pointer"
             >
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-105 shadow-2xs bg-[#0068FF]/10">
                 <img 

@@ -10,11 +10,11 @@ interface Courses3DProps {
 
 export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewGradeLevel }) => {
   return (
-    <section id="khoa-hoc" className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-white/80 via-[#fffaf5]/90 to-white/80 border-b border-orange-100/70">
+    <section id="khoa-hoc" className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-transparent via-[#fffaf5]/70 to-transparent border-b border-orange-100/70">
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white border border-black/8 px-4 py-1.5 text-xs font-bold text-[#c2410c] shadow-2xs mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white border border-orange-100/80 px-4 py-1.5 text-xs font-bold text-[#c2410c] shadow-2xs mb-4">
             <Sparkles className="h-3.5 w-3.5" />
             <span>LỘ TRÌNH ĐÀO TẠO STEAM &amp; AI TOÀN DIỆN</span>
           </div>
@@ -41,7 +41,7 @@ export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewGr
               <TiltCard 
                 key={level.id} 
                 glowColor={glowColor as any} 
-                className="flex flex-col h-full rounded-3xl border border-black/8 bg-white group overflow-hidden shadow-2xs hover:shadow-lg transition-all"
+                className="flex flex-col h-full rounded-3xl border border-orange-100/80 bg-white group overflow-hidden shadow-2xs hover:shadow-lg transition-all"
               >
                 {/* Course Level Thumbnail Image (Clickable to enter grade level page) */}
                 <div
