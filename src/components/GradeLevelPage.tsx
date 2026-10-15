@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { 
   ArrowLeft, Sparkles, CheckCircle2, Cpu, ArrowRight, 
-  Layers, BookOpen, ShieldCheck, Trophy, Compass, Users, Clock,
+  Layers, BookOpen, ShieldCheck, Compass, Users, Clock,
   } from 'lucide-react';
 import { 
   GRADE_LEVELS, 
-  PRIMARY_GRADE_LEVEL_IDS, 
   coursesData, 
   type GradeLevel, 
   type CourseDetail 
@@ -26,7 +25,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
   onBackToCourses,
   onSelectCourse,
   onOpenTrialModal,
-  onSwitchLevel,
+  onSwitchLevel: _onSwitchLevel,
 }) => {
   const currentLevel: GradeLevel = GRADE_LEVELS[levelId] || GRADE_LEVELS['tieu-hoc'];
   
@@ -78,37 +77,6 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
           </div>
         </div>
       </nav>
-
-      {/* 2. Cụm chuyển đổi nhanh giữa 3 Cấp Học */}
-      <div className="bg-gradient-to-r from-orange-50 via-amber-50 to-orange-50 border-b border-orange-200/60 py-2.5 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
-          <span className="text-xs font-bold text-gray-500 uppercase tracking-wider hidden md:inline">
-            Chọn cấp học:
-          </span>
-          {PRIMARY_GRADE_LEVEL_IDS.map((id) => {
-            const level = GRADE_LEVELS[id];
-            const isActive = level.id === currentLevel.id;
-            return (
-              <button
-                key={level.id}
-                onClick={() => onSwitchLevel(level.id)}
-                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
-                  isActive
-                    ? 'bg-[#c2410c] text-white shadow-xs'
-                    : 'bg-white text-gray-700 border border-orange-200/80 hover:bg-orange-100/60 hover:text-[#c2410c]'
-                }`}
-              >
-                <span>{level.shortName}</span>
-                <span className={`text-[11px] px-1.5 py-0.2 rounded-md ${
-                  isActive ? 'bg-white/20 text-white' : 'bg-orange-100 text-orange-800'
-                }`}>
-                  {level.displayAge}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
 
       {/* 3. HERO BANNER CẤP BẬC HỌC */}
       <section className="relative overflow-hidden bg-gradient-to-b from-orange-50/50 via-[#faf8f5] to-[#faf8f5] py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-b border-orange-200/60">
@@ -242,7 +210,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
           </div>
 
           {/* Child Courses Grid */}
-          <div className={`grid grid-cols-1 ${currentLevel.childCourseSlugs.length === 1 ? 'max-w-2xl mx-auto' : currentLevel.childCourseSlugs.length === 2 ? 'md:grid-cols-2 max-w-5xl mx-auto' : currentLevel.childCourseSlugs.length === 4 ? 'md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-3'} gap-6 sm:gap-8`}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-6xl mx-auto">
             {currentLevel.childCourseSlugs.map((slug) => {
               const childCourse: CourseDetail = coursesData[slug];
               if (!childCourse) return null;
@@ -250,40 +218,25 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
               return (
                 <div
                   key={childCourse.slug}
-                  className="flex flex-col h-full bg-white rounded-3xl border-2 border-orange-100 hover:border-orange-300 transition-all duration-300 shadow-xs hover:shadow-xl group overflow-hidden"
+                  className="flex flex-col h-full bg-white rounded-3xl border border-orange-100 hover:border-orange-300 transition-all duration-300 shadow-sm hover:shadow-2xl group overflow-hidden"
                 >
+                  {/* Thumbnail Image (Clickable) */}
                   {/* Thumbnail Image (Clickable) */}
                   <div
                     onClick={() => onSelectCourse(childCourse.slug)}
-                    className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100 cursor-pointer"
+                    className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden bg-gray-100 cursor-pointer"
                   >
                     <img
                       src={childCourse.coverImage}
                       alt={childCourse.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
-                    {/* Age Badge */}
-                    <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur-xs px-3 py-1 text-xs font-bold text-[#c2410c] shadow-xs border border-orange-200">
-                      <Sparkles className="h-3 w-3" />
-                      {childCourse.displayAge}
-                    </span>
-
-                    {/* Badge right */}
-                    <span className="absolute top-3 right-3 inline-flex items-center rounded-md bg-black/75 px-2.5 py-1 text-[11px] font-bold text-white backdrop-blur-xs">
+                    {/* Badge tên khóa học */}
+                    <span className="absolute top-4 right-4 inline-flex items-center rounded-xl bg-black/75 backdrop-blur-md px-3.5 py-1.5 text-xs font-black text-white uppercase tracking-wider shadow-md border border-white/10">
                       {childCourse.badge}
                     </span>
-
-                    {/* Bottom Stats Banner */}
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-semibold text-white">
-                      <span className="bg-orange-600/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-white font-bold">
-                        {childCourse.modules.length} Học phần · {childCourse.duration}
-                      </span>
-                      <span className="bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded text-[11px] text-amber-200">
-                        ⭐ {childCourse.rating} ({childCourse.totalStudents}+ học viên)
-                      </span>
-                    </div>
                   </div>
 
                   {/* Body Info */}
@@ -295,12 +248,12 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
 
                       <h3
                         onClick={() => onSelectCourse(childCourse.slug)}
-                        className="text-xl font-bold text-[#111827] group-hover:text-[#c2410c] transition-colors cursor-pointer mb-2 leading-snug"
+                        className="text-2xl sm:text-3xl font-black text-[#111827] group-hover:text-[#c2410c] transition-colors cursor-pointer mb-2.5 leading-snug"
                       >
                         {childCourse.name}
                       </h3>
 
-                      <p className="text-xs sm:text-sm text-gray-600 mb-4 leading-relaxed line-clamp-2">
+                      <p className="text-sm sm:text-base text-gray-600 mb-5 leading-relaxed line-clamp-2">
                         {childCourse.headline}
                       </p>
 
@@ -330,7 +283,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                       {/* Nút 1: Xem chi tiết */}
                       <button
                         onClick={() => onSelectCourse(childCourse.slug)}
-                        className="w-full flex items-center justify-center gap-2 rounded-xl bg-orange-50 hover:bg-orange-100 border border-orange-200/80 p-3 text-xs sm:text-sm font-bold text-[#c2410c] transition-all cursor-pointer shadow-2xs"
+                        className="w-full flex items-center justify-center gap-2 rounded-2xl bg-orange-50 hover:bg-orange-100/80 border border-orange-200/80 p-3.5 text-xs sm:text-sm font-bold text-[#c2410c] transition-all cursor-pointer shadow-2xs group/btn"
                       >
                         <BookOpen className="h-4 w-4 text-[#c2410c]" />
                         <span>Xem chi tiết giáo trình &amp; các bài học</span>
@@ -340,7 +293,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                       {/* Nút 2: Đặt buổi học thử 1-1 */}
                       <button
                         onClick={() => onOpenTrialModal(childCourse.name)}
-                        className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#c2410c] hover:bg-[#9a3412] p-3 text-xs sm:text-sm font-bold text-white active:scale-98 transition-all cursor-pointer shadow-xs"
+                        className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#c2410c] hover:bg-[#9a3412] p-3.5 text-xs sm:text-sm font-bold text-white active:scale-98 transition-all cursor-pointer shadow-md hover:shadow-lg"
                       >
                         <Sparkles className="h-4 w-4 text-amber-200" />
                         <span>Đặt buổi học thử 1-1 miễn phí</span>
@@ -354,13 +307,13 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
         </div>
       </section>
 
-      {/* 5. PHƯƠNG PHÁP & CAM KẾT CHẤT LƯỢNG (ĐÃ BỎ HOÀN TOÀN KHỐI ẢNH 1 VÀ CHỈNH SỬA UI HIỆN ĐẠI) */}
+      {/* 5. PHƯƠNG PHÁP & CHUẨN ĐẦU RA ĐÀO TẠO (ĐÃ XÓA HOÀN TOÀN 4 CAM KẾT ẢNH 1) */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#faf8f5]">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
-            {/* Cột trái: Phương pháp và đầu ra */}
-            <div className="lg:col-span-6 space-y-6">
+            {/* Cột trái: Phương pháp đào tạo */}
+            <div className="lg:col-span-5 space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 border border-orange-200 px-3.5 py-1 text-xs font-bold text-[#c2410c]">
                 <ShieldCheck className="h-3.5 w-3.5" />
                 <span>PHƯƠNG PHÁP ĐÀO TẠO TIÊN TIẾN</span>
@@ -375,57 +328,28 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                 Phương pháp <strong>{currentLevel.methodology}</strong> được nghiên cứu và chuẩn hóa bởi đội ngũ chuyên gia giàu kinh nghiệm. Mỗi học sinh được cá nhân hóa lộ trình học, tiến bộ qua từng buổi học thực chiến.
               </p>
 
-              <div className="space-y-3 pt-2">
-                {currentLevel.learningOutcomes.map((outcome, idx) => (
-                  <div key={idx} className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-orange-100 shadow-2xs">
-                    <CheckCircle2 className="h-5 w-5 text-[#c2410c] shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm font-semibold text-gray-800 leading-relaxed">{outcome}</span>
-                  </div>
-                ))}
+              <div>
+                <button
+                  onClick={() => onOpenTrialModal(currentLevel.name)}
+                  className="inline-flex items-center gap-2 rounded-2xl bg-[#c2410c] hover:bg-[#9a3412] px-6 py-3.5 text-sm font-bold text-white transition-all shadow-md hover:shadow-lg cursor-pointer"
+                >
+                  <Sparkles className="h-4 w-4 text-amber-200" />
+                  <span>Đăng ký nhận tư vấn lộ trình</span>
+                </button>
               </div>
             </div>
 
-            {/* Cột phải: 4 Trụ cột cam kết thiết kế lại hiện đại, chuẩn UI (Không còn khối ảnh 1) */}
-            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white rounded-3xl p-6 border border-orange-100 shadow-xs hover:shadow-md transition-all">
-                <div className="h-10 w-10 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-sm mb-3">
-                  <Cpu className="h-5 w-5" />
+            {/* Cột phải: Chuẩn đầu ra và năng lực đạt được */}
+            <div className="lg:col-span-7 space-y-3.5">
+              <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">
+                Năng lực học viên đạt được sau khóa học:
+              </span>
+              {currentLevel.learningOutcomes.map((outcome, idx) => (
+                <div key={idx} className="flex items-start gap-3.5 bg-white p-4 sm:p-5 rounded-2xl border border-orange-100 shadow-2xs hover:border-orange-200 transition-colors">
+                  <CheckCircle2 className="h-5 w-5 text-[#c2410c] shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm font-semibold text-gray-800 leading-relaxed">{outcome}</span>
                 </div>
-                <h4 className="text-sm font-bold text-[#111827] mb-1">100% Học cụ chuẩn Châu Âu</h4>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Mỗi học sinh được cấp 01 bộ kit thực hành độc lập, không dùng chung, tăng tối đa thời gian thao tác.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-3xl p-6 border border-orange-100 shadow-xs hover:shadow-md transition-all">
-                <div className="h-10 w-10 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-sm mb-3">
-                  <Users className="h-5 w-5" />
-                </div>
-                <h4 className="text-sm font-bold text-[#111827] mb-1">Lớp học tối đa &lt; 10 học viên</h4>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Đảm bảo giảng viên kèm cặp sát 1-1, giải đáp kịp thời mọi câu hỏi và hướng dẫn bé từng chi tiết.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-3xl p-6 border border-orange-100 shadow-xs hover:shadow-md transition-all">
-                <div className="h-10 w-10 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-sm mb-3">
-                  <BookOpen className="h-5 w-5" />
-                </div>
-                <h4 className="text-sm font-bold text-[#111827] mb-1">Báo cáo học tập sau mỗi học phần</h4>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Phụ huynh nhận video sản phẩm của con cùng bảng đánh giá kỹ năng chi tiết từ giáo viên chủ nhiệm.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-3xl p-6 border border-orange-100 shadow-xs hover:shadow-md transition-all">
-                <div className="h-10 w-10 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-sm mb-3">
-                  <Trophy className="h-5 w-5" />
-                </div>
-                <h4 className="text-sm font-bold text-[#111827] mb-1">Học bù &amp; Bảo lưu linh hoạt</h4>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  Cam kết bảo lưu kết quả và sắp xếp học bù miễn phí khi gia đình có việc bận đột xuất.
-                </p>
-              </div>
+              ))}
             </div>
 
           </div>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  ArrowLeft, CheckCircle2, Clock, Users, MapPin, Star, Award, 
+  ArrowLeft, CheckCircle2, Clock, Users, MapPin, Award, 
   Sparkles, Calendar, Cpu, ArrowRight, ShieldCheck, 
-  BookOpen, Layers, Gift, ChevronRight, ListOrdered, Bot
+  BookOpen, Layers, Gift, ListOrdered, Bot
 } from 'lucide-react';
-import { coursesData, PRIMARY_COURSE_SLUGS, getGradeLevelByCourseSlug, type CourseDetail } from '../data/coursesData';
+import { coursesData, getGradeLevelByCourseSlug, type CourseDetail } from '../data/coursesData';
 
 interface CourseDetailPageProps {
   courseSlug: string;
@@ -21,7 +21,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
   onBackToCourses,
   onBackToLevel,
   onOpenTrialModal,
-  onSelectCourse,
+  onSelectCourse: _onSelectCourse,
 }) => {
   const course: CourseDetail = coursesData[courseSlug] || coursesData['robotics-mam-non'];
   const parentLevel = getGradeLevelByCourseSlug(courseSlug);
@@ -121,10 +121,6 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 </span>
                 <span className="text-xs font-semibold text-zinc-600 bg-white border border-gray-200 px-3 py-1 rounded-full shadow-xs">
                   {course.category}
-                </span>
-                <span className="inline-flex items-center gap-1 text-xs font-bold text-amber-600 bg-amber-50 border border-amber-200/60 px-2.5 py-0.5 rounded-full">
-                  <Star className="h-3 w-3 fill-amber-500 text-amber-500" />
-                  <span>{course.rating} ({course.totalStudents}+ học viên)</span>
                 </span>
               </div>
 
@@ -639,49 +635,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
         </div>
       </section>
 
-      {/* Other Courses Switcher Banner - Cung cấp đầy đủ 6 khóa học */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 border-t border-gray-200/80 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10">
-            <h3 className="text-xl sm:text-2xl font-black text-[#111827] mb-2 tracking-tight">
-              Xem Các Khoá Học Khác Tại VIAI Academy
-            </h3>
-            <p className="text-xs sm:text-sm text-zinc-600">
-              Khám phá các lộ trình học khác phù hợp với lứa tuổi và mục tiêu phát triển của con
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {PRIMARY_COURSE_SLUGS.map((slug: string) => {
-              const other = coursesData[slug];
-              if (!other) return null;
-              const isCurrent = slug === courseSlug;
-              return (
-                <div
-                  key={slug}
-                  onClick={() => onSelectCourse(slug)}
-                  className={`p-5 rounded-2xl border cursor-pointer transition-all ${
-                    isCurrent
-                      ? 'border-orange-500 bg-orange-50/60 shadow-xs'
-                      : 'border-gray-200/80 bg-[#faf8f5] hover:border-orange-300 hover:bg-white shadow-xs'
-                  }`}
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold text-zinc-500">{other.grade}</span>
-                    {isCurrent ? (
-                      <span className="text-xs bg-[#c2410c] text-white font-bold px-2.5 py-0.5 rounded-full">Đang xem</span>
-                    ) : (
-                      <ChevronRight className="h-4 w-4 text-zinc-400" />
-                    )}
-                  </div>
-                  <h4 className="font-bold text-[#111827] text-base mb-1">{other.name}</h4>
-                  <p className="text-xs text-zinc-600 line-clamp-2">{other.headline}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };
