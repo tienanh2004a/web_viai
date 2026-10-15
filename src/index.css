@@ -7,9 +7,9 @@
     --font-mono: 'JetBrains Mono', monospace;
 
     /* Dayos Brutalist Editorial Showroom on Warm Gray Palette */
-    --color-canvas: #e5e5e5;
+    --color-canvas: #fffdfa;
     --color-paper: #ffffff;
-    --color-mist: #f3f3f3;
+    --color-mist: #fffaf5;
     --color-carbon: #000000;
     --color-slate: #444444;
     --color-ash: #c6c6c6;
@@ -141,4 +141,52 @@
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+/* Orange Bubble Animations */
+@keyframes bubble-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  33% {
+    transform: translateY(-24px) translateX(12px) scale(1.03);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-8px) scale(0.97);
+  }
+}
+
+@keyframes bubble-float-delayed {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  33% {
+    transform: translateY(22px) translateX(-14px) scale(0.98);
+  }
+  66% {
+    transform: translateY(-16px) translateX(10px) scale(1.04);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.08);
+  }
+}
+
+.animate-bubble-float {
+  animation: bubble-float 10s ease-in-out infinite;
+}
+
+.animate-bubble-float-delayed {
+  animation: bubble-float-delayed 12s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
 }

@@ -10,6 +10,7 @@ import { FloatingActions } from './components/FloatingActions';
 import { Footer } from './components/Footer';
 import { CourseDetailPage } from './components/CourseDetailPage';
 import { GradeLevelPage } from './components/GradeLevelPage';
+import { OrangeBubblesBackground } from './components/OrangeBubblesBackground';
 
 export const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<'home' | 'grade-level' | 'course-detail'>('home');
@@ -119,7 +120,10 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f5f5f7] text-[#111827] flex flex-col font-sans selection:bg-[#c2410c] selection:text-white">
+    <div className="min-h-screen bg-[#fffdfa] text-[#111827] flex flex-col font-sans selection:bg-[#c2410c] selection:text-white relative overflow-x-hidden">
+      {/* Hệ thống Bong bóng cam & Ánh sáng phát quang nền toàn trang */}
+      <OrangeBubblesBackground />
+
       {/* View 1: Course Detail Page (Nội dung chi tiết 52 bài học của khóa con) */}
       {currentView === 'course-detail' ? (
         <CourseDetailPage

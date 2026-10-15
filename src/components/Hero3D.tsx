@@ -8,7 +8,7 @@ interface Hero3DProps {
 
 export const Hero3D: React.FC<Hero3DProps> = ({ onOpenTrialModal }) => {
   return (
-    <section className="relative min-h-[85vh] pt-24 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center bg-[#f5f5f7]">
+    <section className="relative min-h-[85vh] pt-24 sm:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center bg-gradient-to-b from-[#fff7ed]/60 via-[#fffdfa] to-[#fffaf5]/80">
       {/* Subtle ambient lighting */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-white/60 rounded-full blur-[140px]" />

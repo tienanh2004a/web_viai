@@ -7,7 +7,7 @@ interface AboutUsSectionProps {
 
 export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenTrialModal }) => {
   return (
-    <section id="ve-chung-toi" className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-[#f5f5f5] border-b border-black/5 overflow-hidden">
+    <section id="ve-chung-toi" className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-white/80 backdrop-blur-xs border-b border-orange-100/70 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           

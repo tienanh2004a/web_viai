@@ -10,7 +10,7 @@ interface Courses3DProps {
 
 export const Courses3D: React.FC<Courses3DProps> = ({ onOpenTrialModal, onViewGradeLevel }) => {
   return (
-    <section id="khoa-hoc" className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#f5f5f7]">
+    <section id="khoa-hoc" className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-white/80 via-[#fffaf5]/90 to-white/80 border-b border-orange-100/70">
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
