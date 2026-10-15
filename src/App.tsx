@@ -14,7 +14,7 @@ import { GradeLevelPage } from './components/GradeLevelPage';
 export const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<'home' | 'grade-level' | 'course-detail'>('home');
   const [selectedLevelId, setSelectedLevelId] = useState<'mam-non' | 'tieu-hoc' | 'trung-hoc'>('tieu-hoc');
-  const [selectedCourseSlug, setSelectedCourseSlug] = useState<string>('robotics-lop-3-4');
+  const [selectedCourseSlug, setSelectedCourseSlug] = useState<string>('tieu-hoc-bat-dau');
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   const [modalCourseName, setModalCourseName] = useState('Robotics Tiểu Học');
 

@@ -10,14 +10,14 @@ export interface CourseModuleTopic {
 }
 
 export interface CourseModule {
-  id: string; // 'HP1', 'HP2', 'HP3', 'HP4'
+  id: string; // 'HP1', 'HP2', 'HP3'
   title: string; // 'Học phần 1'
   name: string; // Tên học phần
   number: string; // Backwards compatible
-  duration: string; // '13 buổi - 90 phút/buổi'
-  sessionsCount: number; // 13
-  hoursCount: number; // 19.5
-  projectsCount: number; // 10
+  duration: string; // '12 buổi - 90 phút/buổi'
+  sessionsCount: number; // 12 hoặc 14
+  hoursCount: number; // 18 hoặc 21
+  projectsCount: number; // 9 hoặc 11
   description: string;
   achievement: string;
   topics?: CourseModuleTopic[];
@@ -70,3569 +70,6 @@ export interface CourseDetail {
   commitments: string[];
 }
 
-export const coursesData: Record<string, CourseDetail> = {
-  'mam-non-co-ban': {
-  "slug": "mam-non-co-ban",
-  "code": "Sata-Kids-Basic",
-  "name": "Robotics Mầm Non — Lớp Cơ Bản",
-  "academicName": "Khám Phá & Lắp Ghép Cơ Bản",
-  "headline": "Khám phá thế giới hình khối, máy công cụ và nhen nhóm tư duy logic đầu đời cho trẻ",
-  "category": "Mầm non",
-  "grade": "Mầm non",
-  "age": "Mầm non",
-  "displayAge": "Mầm non",
-  "duration": "52 buổi",
-  "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-  "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
-  "rating": 4.96,
-  "totalStudents": 420,
-  "coverImage": "/images/courses/mam-non.png",
-  "badge": "LỚP CƠ BẢN",
-  "glowColor": "orange",
-  "overview": "Chương trình Lớp Cơ Bản được thiết kế đặc thù cho trẻ mầm non theo phương pháp 'Vừa học vừa chơi' (Play-based Learning). Bé làm quen với các chi tiết khối ghép an toàn, bánh răng cơ khí, chế tạo các máy công cụ quen thuộc như cối xay gió, máy trộn và xe trượt vui nhộn.",
-  "hardwareKit": {
-    "name": "Bộ Học Cụ Robot Mầm Non VIAI-Kids An Toàn Chuẩn Châu Âu",
-    "description": "Mỗi học viên được trang bị 01 bộ khối ghép cơ khí bo tròn không sắc nhọn, động cơ giảm tốc an toàn cho trẻ nhỏ.",
-    "items": [
-      "Bộ 120+ chi tiết khối ghép nhựa nguyên sinh ABS an toàn tuyệt đối",
-      "Động cơ chuyển động chậm thông minh kèm nút điều khiển trực quan",
-      "Bộ truyền động bánh răng lớn, ròng rọc và trục quay sắc màu",
-      "Cảm biến chạm và đèn LED phát sáng vui nhộn",
-      "Thẻ lệnh mã màu giúp bé làm quen tư duy lập trình không cần máy tính"
-    ]
-  },
-  "skillsGained": [
-    {
-      "title": "Kỹ năng vận động tinh & Khéo léo",
-      "desc": "Thao tác lắp ghép ngón tay, phối hợp tay - mắt nhịp nhàng",
-      "percent": 98
-    },
-    {
-      "title": "Tư duy logic & Trình tự hành động",
-      "desc": "Hiểu khái niệm nhân - quả và các bước hoàn thành sản phẩm",
-      "percent": 92
-    },
-    {
-      "title": "Trí tưởng tượng & Sáng tạo tự do",
-      "desc": "Tự do sáng tạo các mô hình động vật, xe cộ theo suy nghĩ của bé",
-      "percent": 96
-    },
-    {
-      "title": "Tự tin giao tiếp & Hợp tác",
-      "desc": "Biết chia sẻ khối ghép, cùng bạn chơi và khoe sản phẩm với bố mẹ",
-      "percent": 90
-    }
-  ],
-  "schedule": [
-    {
-      "shift": "Ca Sáng Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "08:30 - 10:00",
-      "branch": "Tất cả 3 cơ sở"
-    },
-    {
-      "shift": "Ca Chiều Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "14:30 - 16:00",
-      "branch": "Tất cả 3 cơ sở"
-    },
-    {
-      "shift": "Ca Sáng Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "08:30 - 10:00",
-      "branch": "Tất cả 3 cơ sở"
-    },
-    {
-      "shift": "Ca Chiều Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "14:30 - 16:00",
-      "branch": "Tất cả 3 cơ sở"
-    }
-  ],
-  "tuition": {
-    "originalPrice": "4.200.000đ",
-    "discountedPrice": "3.200.000đ / lộ trình",
-    "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
-    "giftValue": "Trị giá 500.000đ"
-  },
-  "commitments": [
-    "100% Học cụ chuẩn Châu Âu độc lập, không phải dùng chung",
-    "Tối đa < 10 học viên / lớp, kèm cặp sát sao từng học viên",
-    "Báo cáo video sản phẩm và đánh giá tiến bộ của bé sau từng buổi",
-    "Bảo lưu và hỗ trợ học bù linh hoạt không phát sinh chi phí"
-  ],
-  "modules": [
-    {
-      "id": "HP1",
-      "title": "Học phần 1",
-      "name": "Khám Phá Thế Giới & Máy Công Cụ Đầu Tiên",
-      "number": "Học phần 1",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 9,
-      "description": "Bé làm quen các khối ghép cơ bản, khám phá các chuyển động xung quanh và chế tạo các máy công cụ đầu tiên.",
-      "achievement": "Bé nhận biết màu sắc, hình khối, lắp ghép thuần thục và tự tin thuyết trình sản phẩm.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Chào Weir",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Tháp truyền hình Neon",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Nhà là ca sĩ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Người hâm mộ thể thao",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Buzz, Buzz, Chú ong nhỏ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Con thuyền của sa mạc",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Wow - Khủng long kia",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Cối xay gió tự động",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Máy trộn cầm tay rực rỡ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Thuyết trình demo cho giáo viên",
-          "type": "Thuyết trình"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thuyết trình về sản phẩm",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình & Sáng tạo",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
-      ]
-    },
-    {
-      "id": "HP2",
-      "title": "Học phần 2",
-      "name": "Công Viên Trò Chơi & Mùa Xuân Rực Rỡ",
-      "number": "Học phần 2",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 9,
-      "description": "Khám phá các phương tiện di chuyển trong công viên và các mô hình cơ khí mô phỏng thiên nhiên bốn mùa.",
-      "achievement": "Lắp ráp thành thạo mô hình bánh xe lăn, đệm khí và hiểu nguyên lý hoạt động của thiết bị gia đình.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Tàu đệm khí",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Bánh xe lăn",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Tàu lượn",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Công viên trò chơi",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Hoa nở",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Che ô trong mưa xuân",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Đi chơi trong mùa xuân",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Thiên thần nhỏ báo thức",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Máy hút bụi của bé",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Thuyết trình demo cho giáo viên",
-          "type": "Thuyết trình"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thuyết trình về sản phẩm",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình & Sáng tạo",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
-      ]
-    },
-    {
-      "id": "HP3",
-      "title": "Học phần 3",
-      "name": "Thế Giới Động Vật & Thị Trấn Hạnh Phúc",
-      "number": "Học phần 3",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 9,
-      "description": "Khám phá các chuyển động uốn lượn, mô phỏng hành vi động vật và xây dựng mô hình thị trấn đáng yêu.",
-      "achievement": "Lắp ráp mô hình chuyển động phức tạp, phối hợp màu sắc và nhịp điệu âm thanh.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Nóng, nóng, quạt máy của bé",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Rắn, rắn rình rập",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Voi vòi voi voi",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Chú chim biết hát",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Sở thú diệu kì",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Bốn mùa của cây",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Ngôi nhà của bé",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Nhịp cầu âm nhạc",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Thị trấn vui vẻ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Thuyết trình demo cho giáo viên",
-          "type": "Thuyết trình"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thuyết trình về sản phẩm",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình & Sáng tạo",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
-      ]
-    }
-  ]
-},
-  'mam-non-nang-cao': {
-  "slug": "mam-non-nang-cao",
-  "code": "Sata-Kids-Adv",
-  "name": "Robotics Mầm Non — Lớp Nâng Cao",
-  "academicName": "Cơ Cấu Thông Minh & Sáng Tạo",
-  "headline": "Nâng cấp cơ cấu cơ học, cánh tay robot, phương tiện giao thông và thiết bị thông minh cho bé",
-  "category": "Mầm non",
-  "grade": "Mầm non",
-  "age": "Mầm non",
-  "displayAge": "Mầm non",
-  "duration": "52 buổi",
-  "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-  "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
-  "rating": 4.98,
-  "totalStudents": 350,
-  "coverImage": "/images/courses/mam-non.png",
-  "badge": "LỚP NÂNG CAO",
-  "glowColor": "orange",
-  "overview": "Chương trình Lớp Nâng Cao mở rộng tư duy chế tạo cho trẻ mầm non. Bé được tự tay lắp ráp các mô hình phức tạp hơn: cánh tay robot, robot phục vụ, xe đẩy nâng hàng, trực thăng và hệ thống truyền động đa trục, rèn luyện tư duy không gian và tính kiên trì.",
-  "hardwareKit": {
-    "name": "Bộ Học Cụ Robot Mầm Non VIAI-Kids An Toàn Chuẩn Châu Âu",
-    "description": "Mỗi học viên được trang bị 01 bộ khối ghép cơ khí bo tròn không sắc nhọn, động cơ giảm tốc an toàn cho trẻ nhỏ.",
-    "items": [
-      "Bộ 120+ chi tiết khối ghép nhựa nguyên sinh ABS an toàn tuyệt đối",
-      "Động cơ chuyển động chậm thông minh kèm nút điều khiển trực quan",
-      "Bộ truyền động bánh răng lớn, ròng rọc và trục quay sắc màu",
-      "Cảm biến chạm và đèn LED phát sáng vui nhộn",
-      "Thẻ lệnh mã màu giúp bé làm quen tư duy lập trình không cần máy tính"
-    ]
-  },
-  "skillsGained": [
-    {
-      "title": "Kỹ năng vận động tinh & Khéo léo",
-      "desc": "Thao tác lắp ghép ngón tay, phối hợp tay - mắt nhịp nhàng",
-      "percent": 98
-    },
-    {
-      "title": "Tư duy logic & Trình tự hành động",
-      "desc": "Hiểu khái niệm nhân - quả và các bước hoàn thành sản phẩm",
-      "percent": 92
-    },
-    {
-      "title": "Trí tưởng tượng & Sáng tạo tự do",
-      "desc": "Tự do sáng tạo các mô hình động vật, xe cộ theo suy nghĩ của bé",
-      "percent": 96
-    },
-    {
-      "title": "Tự tin giao tiếp & Hợp tác",
-      "desc": "Biết chia sẻ khối ghép, cùng bạn chơi và khoe sản phẩm với bố mẹ",
-      "percent": 90
-    }
-  ],
-  "schedule": [
-    {
-      "shift": "Ca Sáng Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "08:30 - 10:00",
-      "branch": "Tất cả 3 cơ sở"
-    },
-    {
-      "shift": "Ca Chiều Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "14:30 - 16:00",
-      "branch": "Tất cả 3 cơ sở"
-    },
-    {
-      "shift": "Ca Sáng Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "08:30 - 10:00",
-      "branch": "Tất cả 3 cơ sở"
-    },
-    {
-      "shift": "Ca Chiều Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "14:30 - 16:00",
-      "branch": "Tất cả 3 cơ sở"
-    }
-  ],
-  "tuition": {
-    "originalPrice": "4.200.000đ",
-    "discountedPrice": "3.200.000đ / lộ trình",
-    "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
-    "giftValue": "Trị giá 500.000đ"
-  },
-  "commitments": [
-    "100% Học cụ chuẩn Châu Âu độc lập, không phải dùng chung",
-    "Tối đa < 10 học viên / lớp, kèm cặp sát sao từng học viên",
-    "Báo cáo video sản phẩm và đánh giá tiến bộ của bé sau từng buổi",
-    "Bảo lưu và hỗ trợ học bù linh hoạt không phát sinh chi phí"
-  ],
-  "modules": [
-    {
-      "id": "HP1",
-      "title": "Học phần 1",
-      "name": "Thể Thao & Siêu Thị Thông Minh",
-      "number": "Học phần 1",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 9,
-      "description": "Nâng cấp cơ cấu cơ học với bánh răng tỷ số truyền, động cơ điều khiển hai chiều và cảm biến thông minh.",
-      "achievement": "Bé hiểu nguyên lý đòn bẩy tỷ số truyền, lực ma sát và thiết bị cảm biến tự động.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Đánh bóng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Đua xe",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Chèo thuyền",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Cánh cửa thông minh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Xe đẩy hàng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Xe nâng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Chú cá robot",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Xe tay ga",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Máy chụp ảnh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Thuyết trình demo cho giáo viên",
-          "type": "Thuyết trình"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thuyết trình về sản phẩm",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình & Sáng tạo",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
-      ]
-    },
-    {
-      "id": "HP2",
-      "title": "Học phần 2",
-      "name": "Kỹ Sư Robot & Nhà Hàng Thông Minh",
-      "number": "Học phần 2",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 9,
-      "description": "Lắp ráp các mô hình cánh tay robot, robot phục vụ và tự động hóa phục vụ nhà hàng, dịch vụ.",
-      "achievement": "Làm quen tư duy robot công nghiệp, cánh tay gắp thả và cơ cấu xoay đa chiều.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Xe trẻ em",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Robot cánh tay",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Robot phục vụ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Robot kỹ thuật",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Robot đối kháng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Máy ép trái cây",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Ghế xoay",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Ghế thông minh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Xe buýt tham quan",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Thuyết trình demo cho giáo viên",
-          "type": "Thuyết trình"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thuyết trình về sản phẩm",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình & Sáng tạo",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
-      ]
-    },
-    {
-      "id": "HP3",
-      "title": "Học phần 3",
-      "name": "Âm Nhạc Vui Nhộn & Phương Tiện Giao Thông",
-      "number": "Học phần 3",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 9,
-      "description": "Kết hợp nhịp điệu chuyển động cơ khí, âm nhạc và mô hình phương tiện hàng không, đường thủy.",
-      "achievement": "Lắp ráp mô hình chuyển động cánh quạt trực thăng, tàu biển và hệ thống cơ khí nhịp điệu.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Tàu cướp biển",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Đu quay khổng lồ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Tay trống cừ khôi",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Cối xoay gió mini",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Âm nhạc vui nhộn",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Con thuyền",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Xe ba bánh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Máy bay cánh bằng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Máy bay trực thăng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Thuyết trình demo cho giáo viên",
-          "type": "Thuyết trình"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thuyết trình về sản phẩm",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình & Sáng tạo",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
-      ]
-    }
-  ]
-},
-  'mam-non-chuyen-sau': {
-  "slug": "mam-non-chuyen-sau",
-  "code": "Sata-Kids-Pro",
-  "name": "Robotics Mầm Non — Lớp Chuyên Sâu",
-  "academicName": "Chế Tạo Phức Hợp & Bản Lĩnh Tương Lai",
-  "headline": "Chế tạo xe công trình, thám hiểm vũ trụ và thành phố tương lai chuẩn bị nền tảng vững chắc lên Tiểu Học",
-  "category": "Mầm non",
-  "grade": "Mầm non",
-  "age": "Mầm non",
-  "displayAge": "Mầm non",
-  "duration": "52 buổi",
-  "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-  "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
-  "rating": 4.99,
-  "totalStudents": 280,
-  "coverImage": "/images/courses/mam-non.png",
-  "badge": "LỚP CHUYÊN SÂU",
-  "glowColor": "orange",
-  "overview": "Lớp Chuyên Sâu là chặng về đích hoàn hảo của cấp Mầm Non. Trẻ được thử thách với các đồ án kỹ sư nhí quy mô: xe lu, xe ủi, trạm vũ trụ không gian, thành phố tương lai. Trẻ được rèn luyện kỹ năng thuyết trình tự tin trước đám đông và sẵn sàng tự lập khi bước vào Lớp 1.",
-  "hardwareKit": {
-    "name": "Bộ Học Cụ Robot Mầm Non VIAI-Kids An Toàn Chuẩn Châu Âu",
-    "description": "Mỗi học viên được trang bị 01 bộ khối ghép cơ khí bo tròn không sắc nhọn, động cơ giảm tốc an toàn cho trẻ nhỏ.",
-    "items": [
-      "Bộ 120+ chi tiết khối ghép nhựa nguyên sinh ABS an toàn tuyệt đối",
-      "Động cơ chuyển động chậm thông minh kèm nút điều khiển trực quan",
-      "Bộ truyền động bánh răng lớn, ròng rọc và trục quay sắc màu",
-      "Cảm biến chạm và đèn LED phát sáng vui nhộn",
-      "Thẻ lệnh mã màu giúp bé làm quen tư duy lập trình không cần máy tính"
-    ]
-  },
-  "skillsGained": [
-    {
-      "title": "Kỹ năng vận động tinh & Khéo léo",
-      "desc": "Thao tác lắp ghép ngón tay, phối hợp tay - mắt nhịp nhàng",
-      "percent": 98
-    },
-    {
-      "title": "Tư duy logic & Trình tự hành động",
-      "desc": "Hiểu khái niệm nhân - quả và các bước hoàn thành sản phẩm",
-      "percent": 92
-    },
-    {
-      "title": "Trí tưởng tượng & Sáng tạo tự do",
-      "desc": "Tự do sáng tạo các mô hình động vật, xe cộ theo suy nghĩ của bé",
-      "percent": 96
-    },
-    {
-      "title": "Tự tin giao tiếp & Hợp tác",
-      "desc": "Biết chia sẻ khối ghép, cùng bạn chơi và khoe sản phẩm với bố mẹ",
-      "percent": 90
-    }
-  ],
-  "schedule": [
-    {
-      "shift": "Ca Sáng Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "08:30 - 10:00",
-      "branch": "Tất cả 3 cơ sở"
-    },
-    {
-      "shift": "Ca Chiều Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "14:30 - 16:00",
-      "branch": "Tất cả 3 cơ sở"
-    },
-    {
-      "shift": "Ca Sáng Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "08:30 - 10:00",
-      "branch": "Tất cả 3 cơ sở"
-    },
-    {
-      "shift": "Ca Chiều Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "14:30 - 16:00",
-      "branch": "Tất cả 3 cơ sở"
-    }
-  ],
-  "tuition": {
-    "originalPrice": "4.200.000đ",
-    "discountedPrice": "3.200.000đ / lộ trình",
-    "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
-    "giftValue": "Trị giá 500.000đ"
-  },
-  "commitments": [
-    "100% Học cụ chuẩn Châu Âu độc lập, không phải dùng chung",
-    "Tối đa < 10 học viên / lớp, kèm cặp sát sao từng học viên",
-    "Báo cáo video sản phẩm và đánh giá tiến bộ của bé sau từng buổi",
-    "Bảo lưu và hỗ trợ học bù linh hoạt không phát sinh chi phí"
-  ],
-  "modules": [
-    {
-      "id": "HP1",
-      "title": "Học phần 1",
-      "name": "Đầu Bếp Nhí & Xe Công Trình Hiện Đại",
-      "number": "Học phần 1",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 9,
-      "description": "Chế tạo các cỗ máy công nghiệp hiện đại: máy nghiền, cần cẩu, xe lu, xe ủi với cơ cấu trợ lực và truyền động phức hợp.",
-      "achievement": "Làm chủ các cơ cấu cơ khí nặng, hệ thống ròng rọc kép và thang nâng chuyển động thẳng đứng.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Máy đánh trứng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Máy xay đậu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Máy nghiền",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Robot lăn",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Cần cẩu mini",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Xe lu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Xe ủi",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Đài phun nước",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Thang máy",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Thuyết trình demo cho giáo viên",
-          "type": "Thuyết trình"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thuyết trình về sản phẩm",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình & Sáng tạo",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
-      ]
-    },
-    {
-      "id": "HP2",
-      "title": "Học phần 2",
-      "name": "Vũ Trụ Kì Diệu & Phương Tiện Quân Sự",
-      "number": "Học phần 2",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 9,
-      "description": "Bước chân vào khám phá không gian và phương tiện kỹ thuật quân sự: trạm vũ trụ, xe tăng, pháo binh.",
-      "achievement": "Lắp ráp mô hình không gian 3D phức hợp, bệ phóng cơ học và phương tiện bánh xích.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Rào chắn công trình",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Người ngoài hành tinh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Động vật không gian",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Tàu vũ trụ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Căn cứ ngoài hành tinh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Xe thang",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Máy bay vận tải",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Xe tăng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Pháo binh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Thuyết trình demo cho giáo viên",
-          "type": "Thuyết trình"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thuyết trình về sản phẩm",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình & Sáng tạo",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
-      ]
-    },
-    {
-      "id": "HP3",
-      "title": "Học phần 3",
-      "name": "Trang Trại Công Nghệ & Thành Phố Tương Lai",
-      "number": "Học phần 3",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 9,
-      "description": "Tích hợp toàn diện kiến thức chế tạo robot: máy bay không người lái, xe bay, ngôi nhà thông minh và robot vệ sinh đô thị.",
-      "achievement": "Bé hoàn thành đồ án tốt nghiệp tổng thể cấp Mầm Non, sẵn sàng bước vào chương trình Robotics Tiểu Học Lớp 1-2.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Máy giặt",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Máy bay không người lái",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Robot quét dọn",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Câu chuyện chú ngựa qua sông",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Cáo mất đuôi",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Xe bay",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Ngôi nhà thông minh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "AFC",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Robot vệ sinh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Thuyết trình demo cho giáo viên",
-          "type": "Thuyết trình"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thuyết trình về sản phẩm",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình & Sáng tạo",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
-      ]
-    }
-  ]
-},
-  'robotics-mam-non': {
-  "slug": "mam-non-co-ban",
-  "code": "Sata-Kids-Basic",
-  "name": "Robotics Mầm Non — Lớp Cơ Bản",
-  "academicName": "Khám Phá & Lắp Ghép Cơ Bản",
-  "headline": "Khám phá thế giới hình khối, máy công cụ và nhen nhóm tư duy logic đầu đời cho trẻ",
-  "category": "Mầm non",
-  "grade": "Mầm non",
-  "age": "Mầm non",
-  "displayAge": "Mầm non",
-  "duration": "52 buổi",
-  "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
-  "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
-  "rating": 4.96,
-  "totalStudents": 420,
-  "coverImage": "/images/courses/mam-non.png",
-  "badge": "LỚP CƠ BẢN",
-  "glowColor": "orange",
-  "overview": "Chương trình Lớp Cơ Bản được thiết kế đặc thù cho trẻ mầm non theo phương pháp 'Vừa học vừa chơi' (Play-based Learning). Bé làm quen với các chi tiết khối ghép an toàn, bánh răng cơ khí, chế tạo các máy công cụ quen thuộc như cối xay gió, máy trộn và xe trượt vui nhộn.",
-  "hardwareKit": {
-    "name": "Bộ Học Cụ Robot Mầm Non VIAI-Kids An Toàn Chuẩn Châu Âu",
-    "description": "Mỗi học viên được trang bị 01 bộ khối ghép cơ khí bo tròn không sắc nhọn, động cơ giảm tốc an toàn cho trẻ nhỏ.",
-    "items": [
-      "Bộ 120+ chi tiết khối ghép nhựa nguyên sinh ABS an toàn tuyệt đối",
-      "Động cơ chuyển động chậm thông minh kèm nút điều khiển trực quan",
-      "Bộ truyền động bánh răng lớn, ròng rọc và trục quay sắc màu",
-      "Cảm biến chạm và đèn LED phát sáng vui nhộn",
-      "Thẻ lệnh mã màu giúp bé làm quen tư duy lập trình không cần máy tính"
-    ]
-  },
-  "skillsGained": [
-    {
-      "title": "Kỹ năng vận động tinh & Khéo léo",
-      "desc": "Thao tác lắp ghép ngón tay, phối hợp tay - mắt nhịp nhàng",
-      "percent": 98
-    },
-    {
-      "title": "Tư duy logic & Trình tự hành động",
-      "desc": "Hiểu khái niệm nhân - quả và các bước hoàn thành sản phẩm",
-      "percent": 92
-    },
-    {
-      "title": "Trí tưởng tượng & Sáng tạo tự do",
-      "desc": "Tự do sáng tạo các mô hình động vật, xe cộ theo suy nghĩ của bé",
-      "percent": 96
-    },
-    {
-      "title": "Tự tin giao tiếp & Hợp tác",
-      "desc": "Biết chia sẻ khối ghép, cùng bạn chơi và khoe sản phẩm với bố mẹ",
-      "percent": 90
-    }
-  ],
-  "schedule": [
-    {
-      "shift": "Ca Sáng Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "08:30 - 10:00",
-      "branch": "Tất cả 3 cơ sở"
-    },
-    {
-      "shift": "Ca Chiều Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "14:30 - 16:00",
-      "branch": "Tất cả 3 cơ sở"
-    },
-    {
-      "shift": "Ca Sáng Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "08:30 - 10:00",
-      "branch": "Tất cả 3 cơ sở"
-    },
-    {
-      "shift": "Ca Chiều Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "14:30 - 16:00",
-      "branch": "Tất cả 3 cơ sở"
-    }
-  ],
-  "tuition": {
-    "originalPrice": "4.200.000đ",
-    "discountedPrice": "3.200.000đ / lộ trình",
-    "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
-    "giftValue": "Trị giá 500.000đ"
-  },
-  "commitments": [
-    "100% Học cụ chuẩn Châu Âu độc lập, không phải dùng chung",
-    "Tối đa < 10 học viên / lớp, kèm cặp sát sao từng học viên",
-    "Báo cáo video sản phẩm và đánh giá tiến bộ của bé sau từng buổi",
-    "Bảo lưu và hỗ trợ học bù linh hoạt không phát sinh chi phí"
-  ],
-  "modules": [
-    {
-      "id": "HP1",
-      "title": "Học phần 1",
-      "name": "Khám Phá Thế Giới & Máy Công Cụ Đầu Tiên",
-      "number": "Học phần 1",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 9,
-      "description": "Bé làm quen các khối ghép cơ bản, khám phá các chuyển động xung quanh và chế tạo các máy công cụ đầu tiên.",
-      "achievement": "Bé nhận biết màu sắc, hình khối, lắp ghép thuần thục và tự tin thuyết trình sản phẩm.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Chào Weir",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Tháp truyền hình Neon",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Nhà là ca sĩ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Người hâm mộ thể thao",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Buzz, Buzz, Chú ong nhỏ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Con thuyền của sa mạc",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Wow - Khủng long kia",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Cối xay gió tự động",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Máy trộn cầm tay rực rỡ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Thuyết trình demo cho giáo viên",
-          "type": "Thuyết trình"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thuyết trình về sản phẩm",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình & Sáng tạo",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
-      ]
-    },
-    {
-      "id": "HP2",
-      "title": "Học phần 2",
-      "name": "Công Viên Trò Chơi & Mùa Xuân Rực Rỡ",
-      "number": "Học phần 2",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 9,
-      "description": "Khám phá các phương tiện di chuyển trong công viên và các mô hình cơ khí mô phỏng thiên nhiên bốn mùa.",
-      "achievement": "Lắp ráp thành thạo mô hình bánh xe lăn, đệm khí và hiểu nguyên lý hoạt động của thiết bị gia đình.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Tàu đệm khí",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Bánh xe lăn",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Tàu lượn",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Công viên trò chơi",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Hoa nở",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Che ô trong mưa xuân",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Đi chơi trong mùa xuân",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Thiên thần nhỏ báo thức",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Máy hút bụi của bé",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Thuyết trình demo cho giáo viên",
-          "type": "Thuyết trình"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thuyết trình về sản phẩm",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình & Sáng tạo",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
-      ]
-    },
-    {
-      "id": "HP3",
-      "title": "Học phần 3",
-      "name": "Thế Giới Động Vật & Thị Trấn Hạnh Phúc",
-      "number": "Học phần 3",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 9,
-      "description": "Khám phá các chuyển động uốn lượn, mô phỏng hành vi động vật và xây dựng mô hình thị trấn đáng yêu.",
-      "achievement": "Lắp ráp mô hình chuyển động phức tạp, phối hợp màu sắc và nhịp điệu âm thanh.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Nóng, nóng, quạt máy của bé",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Rắn, rắn rình rập",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Voi vòi voi voi",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Chú chim biết hát",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Sở thú diệu kì",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Bốn mùa của cây",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Ngôi nhà của bé",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Nhịp cầu âm nhạc",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Thị trấn vui vẻ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Thuyết trình demo cho giáo viên",
-          "type": "Thuyết trình"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thuyết trình về sản phẩm",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình & Sáng tạo",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động."
-      ]
-    }
-  ]
-},
-  'robotics-lop-1-2': {
-  "slug": "robotics-lop-1-2",
-  "code": "Sata3",
-  "name": "Robotics Lớp 1 — 2",
-  "academicName": "Ươm Mầm Tài Năng",
-  "headline": "Khám phá cơ cấu cơ khí, bản vẽ lắp ráp và lập trình thẻ Screen-Free cho học sinh Lớp 1 — 2",
-  "category": "Khối Tiểu học (Lớp 1 — 2)",
-  "grade": "Lớp 1 — 2",
-  "age": "Lớp 1 — 2",
-  "displayAge": "Lớp 1 - 2",
-  "duration": "52 buổi (12 tháng) / 4 học phần",
-  "classSize": "Tối đa < 8 học viên (kèm sát 1-1)",
-  "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
-  "rating": 4.96,
-  "totalStudents": 415,
-  "coverImage": "/images/courses/tieu-hoc-1.png",
-  "badge": "TIỂU HỌC NỀN TẢNG",
-  "glowColor": "orange",
-  "overview": "Chương trình giúp học sinh lớp 1–2 làm quen với cơ khí, bản vẽ kỹ thuật, lập trình thẻ screen-free và tư duy hệ thống thông qua các dự án robot trực quan. Con phát triển vận động tinh, sự tò mò khoa học, tính kiên định và khả năng phân tích sự cố vật lý (debugging cơ khí) trong môi trường thực hành 80%.",
-  "hardwareKit": {
-    "name": "Hệ sinh thái Alpha A + C & Cảm biến siêu âm",
-    "description": "Bộ học cụ chuyên dụng cho học sinh lớp 1-2, kết hợp khối ghép cơ khí chuẩn xác, động cơ giảm tốc và thẻ lệnh lập trình thông minh.",
-    "items": [
-      "Bộ vi điều khiển Alpha tích hợp khe đọc thẻ lập trình thông minh",
-      "Hơn 200+ chi tiết cơ khí: bánh răng truyền động, đòn bẩy, ròng rọc, trục quay",
-      "Động cơ DC đa tốc độ & Servo điều khiển góc chính xác",
-      "Cảm biến siêu âm đo khoảng cách & còi phát tín hiệu âm thanh",
-      "Bộ thẻ lập trình Screen-Free giúp bảo vệ mắt bé tối đa"
-    ]
-  },
-  "skillsGained": [
-    {
-      "title": "Tư duy hệ thống sơ đồ & Bản vẽ",
-      "desc": "Đọc hiểu bản vẽ lắp ráp 3D, phân tích kết cấu cơ khí chính xác",
-      "percent": 96
-    },
-    {
-      "title": "Cơ sở cơ giới hóa & Lực truyền động",
-      "desc": "Làm chủ bánh răng, ròng rọc, đòn bẩy và truyền động đa tầng",
-      "percent": 94
-    },
-    {
-      "title": "Logic lập trình thẻ Screen-Free",
-      "desc": "Xây dựng thuật toán tuần tự, rẽ nhánh không cần nhìn màn hình máy tính",
-      "percent": 92
-    },
-    {
-      "title": "Debug cơ khí & Xử lý sự cố",
-      "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và kiên trì hoàn thiện",
-      "percent": 95
-    }
-  ],
-  "modules": [
-    {
-      "id": "HP1",
-      "title": "Học phần 1",
-      "name": "Cơ Cấu Truyền Động & Mô Hình Alpha Đầu Tiên",
-      "number": "Học phần 1",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-      "achievement": "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Bàn Tay Ma Thuật",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Đấu Trường Con Quay",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Siêu Xe Bứt Phá",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Chiến Xa Tốc Độ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Vũ Công Robot",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Trở Về Tuổi Thơ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Kỹ Sư Làm Mát",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Thủy Thủ Tài Ba",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm quen cơ cấu truyền động, lắp ráp theo sơ đồ và điều khiển mô hình Alpha đầu tiên.",
-        "Con hoàn thành dự án robot cơ bản và trình bày được nguyên lý chuyển động.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP2",
-      "title": "Học phần 2",
-      "name": "Cơ Cấu Phức Hợp & Mô Phỏng Sinh Học",
-      "number": "Học phần 2",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con mở rộng sang cơ cấu nhiều chân, nâng hạ, vẽ tự động và mô phỏng sinh vật.",
-      "achievement": "Con biết phân tích lỗi vật lý và cải tiến mô hình sau thử nghiệm.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Chiến Binh Cua Biển",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Cỗ Máy Xúc Cát",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Họa Sĩ Robot",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Chinh Phục Đại Dương",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Chiếc Hộp Giai Điệu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Vận động viên đạp xe",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Công Viên Kỷ Jura",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Sinh Vật Đột Biến",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con mở rộng sang cơ cấu nhiều chân, nâng hạ, vẽ tự động và mô phỏng sinh vật.",
-        "Con biết phân tích lỗi vật lý và cải tiến mô hình sau thử nghiệm.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP3",
-      "title": "Học phần 3",
-      "name": "Cơ Cấu Nhiều Khớp & Đối Kháng Thể Thao",
-      "number": "Học phần 3",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con phát triển tư duy kỹ thuật thông qua dự án có lực, nhịp chuyển động và cơ cấu đối kháng.",
-      "achievement": "Con tạo được mô hình có câu chuyện, có cơ chế rõ ràng và biết giải thích giải pháp.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Lực Sĩ Robot",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Hoạt Náo Viên Sôi Động",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Kình Ngư Vượt Sóng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Đầu Bếp Tài Ba",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Thần Long Trỗi Dậy",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Đấu Sĩ Dũng Mãnh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Bước Nhảy Kỉ Lục",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Đường Đua Rực Lửa",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con phát triển tư duy kỹ thuật thông qua dự án có lực, nhịp chuyển động và cơ cấu đối kháng.",
-        "Con tạo được mô hình có câu chuyện, có cơ chế rõ ràng và biết giải thích giải pháp.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP4",
-      "title": "Học phần 4",
-      "name": "Tích Hợp Cảm Biến & Đồ Án Kỹ Sư Nhí",
-      "number": "Học phần 4",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con tích hợp cơ khí, cảm biến siêu âm và lập trình thẻ để hoàn thiện dự án cuối năm.",
-      "achievement": "Con tốt nghiệp Năm 1 với một dự án Robotics vật lý hoàn chỉnh.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Siêu Xe Chuyên Dụng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Trực Thăng Lốc Xoáy",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Kỹ Sư Cáp Treo",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Máy Bắn Đá",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Chinh Phục Bầu Trời",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Xưởng Cơ Khí",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Cỗ Máy Thời Gian",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Chiến binh bọc thép",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối khóa",
-          "type": "Dự án cuối khóa"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối khóa",
-          "type": "Demo cuối khóa"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối khoá",
-          "type": "Báo cáo cuối khóa"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con tích hợp cơ khí, cảm biến siêu âm và lập trình thẻ để hoàn thiện dự án cuối năm.",
-        "Con tốt nghiệp Năm 1 với một dự án Robotics vật lý hoàn chỉnh.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    }
-  ],
-  "schedule": [
-    {
-      "shift": "Ca Sáng Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "08:00 — 09:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Chiều Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "14:30 — 16:00",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Sáng Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "09:00 — 10:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Chiều Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "16:00 — 17:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    }
-  ],
-  "tuition": {
-    "originalPrice": "3.600.000đ / học phần",
-    "discountedPrice": "2.700.000đ / học phần (Giảm 25%)",
-    "offerNote": "Hỗ trợ trả góp học phí 0%. Tặng bộ đồng phục VIAI Kids trị giá 350.000đ",
-    "giftValue": "1.200.000đ (Balo kỹ sư nhí + Bộ áo đồng phục + Buổi học thử 1-1)"
-  },
-  "commitments": [
-    "Lớp giới hạn tối đa dưới 8 học viên, giáo viên theo sát từng bé",
-    "Hoàn tiền 100% nếu sau buổi học đầu tiên con không hào hứng",
-    "Mỗi buổi con đều có 01 sản phẩm robot tự tay chế tạo hoàn chỉnh"
-  ]
-},
-
-  'robotics-lop-3-4': {
-  "slug": "robotics-lop-3-4",
-  "code": "Sata4",
-  "name": "Robotics Lớp 3 — 4",
-  "academicName": "Bứt Phá Giới Hạn",
-  "headline": "Làm chủ phần mềm RoboSim, lập trình tự hành và chuyển đổi sang Robot Beta thực chiến cho Lớp 3 — 4",
-  "category": "Khối Tiểu học (Lớp 3 — 4)",
-  "grade": "Lớp 3 — 4",
-  "age": "Lớp 3 — 4",
-  "displayAge": "Lớp 3 - 4",
-  "duration": "52 buổi (12 tháng) / 4 học phần",
-  "classSize": "Tối đa < 8 học viên (kèm sát 1-1)",
-  "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
-  "rating": 4.96,
-  "totalStudents": 317,
-  "coverImage": "/images/courses/tieu-hoc-2.png",
-  "badge": "TRỌNG ĐIỂM SA BÀN",
-  "glowColor": "purple",
-  "overview": "Chương trình giúp học sinh lớp 3–4 làm chủ RoboSim, chuyển đổi từ mô phỏng sang robot Beta thực tế và bắt đầu tư duy thi đấu. Con học lập trình tự hành, rẽ nhánh, xử lý cảm biến, đồng bộ virtual-to-physical và rèn bản lĩnh qua mini-games tính điểm trên sa bàn.",
-  "hardwareKit": {
-    "name": "RoboSim + Beta Set + Saban Thi Đấu",
-    "description": "Trang bị phần mềm mô phỏng RoboSim chuẩn giải đấu quốc gia cùng bộ phần cứng robot Beta đa cảm biến dò vạch, tránh vật cản.",
-    "items": [
-      "Phần mềm mô phỏng vật lý RoboSim bản quyền",
-      "Khung xe robot thi đấu hợp kim nhôm siêu nhẹ",
-      "Bo mạch chủ Beta Controller tốc độ xử lý cao",
-      "Module 4 mắt cảm biến dò vạch Line Tracking độ nhạy cao",
-      "Cảm biến khoảng cách siêu âm & cụm bánh xe Mecanum đa hướng"
-    ]
-  },
-  "skillsGained": [
-    {
-      "title": "Tư duy thuật toán Scratch / Blockly",
-      "desc": "Thành thạo cấu trúc rẽ nhánh nếu - thì, vòng lặp và xử lý biến số",
-      "percent": 97
-    },
-    {
-      "title": "Làm chủ mô phỏng RoboSim",
-      "desc": "Đọc sa bàn, tính toán tọa độ và tối ưu đường đi trên không gian số",
-      "percent": 96
-    },
-    {
-      "title": "Kỹ năng Virtual-to-Physical",
-      "desc": "Chuyển đổi code từ mô phỏng sang robot thật không sai lệch",
-      "percent": 94
-    },
-    {
-      "title": "Bản lĩnh đấu trường & Thi đấu",
-      "desc": "Phản xạ nhanh trước tình huống sa bàn và làm việc nhóm hiệu quả",
-      "percent": 95
-    }
-  ],
-  "modules": [
-    {
-      "id": "HP1",
-      "title": "Học phần 1",
-      "name": "Mô Phỏng RoboSim & Tự Hành Cơ Bản",
-      "number": "Học phần 1",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con bước vào thế giới mô phỏng RoboSim, làm quen cảm biến và xe robot di chuyển cơ bản.",
-      "achievement": "Con chạy được robot tự hành cơ bản trong môi trường mô phỏng.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Bước vào thế giới ảo",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Đèn tín hiệu giao thông",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Đèn thông minh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Lựa chọn ngẫu nhiên",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Xe robot di chuyển",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Truyền động bánh răng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Cảm biến dò line",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Xe robot tự hành",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con bước vào thế giới mô phỏng RoboSim, làm quen cảm biến và xe robot di chuyển cơ bản.",
-        "Con chạy được robot tự hành cơ bản trong môi trường mô phỏng.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP2",
-      "title": "Học phần 2",
-      "name": "Huấn Luyện Sa Bàn & Nhiệm Vụ Thi Đấu",
-      "number": "Học phần 2",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con học cách phân tích thể lệ cuộc thi, thiết kế giải pháp và hoàn thành chuỗi nhiệm vụ.",
-      "achievement": "Con hoàn thành bài thi sa bàn mô phỏng đầu tiên theo luật thi đấu.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Giới thiệu cuộc thi Robo",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Phân tích thể lệ thi đấu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Thiết kế lắp ráp robot",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Lập trình nhiệm vụ 1",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Lập trình nhiệm vụ 2",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Lập trình nhiệm vụ 3",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Chạy tổng hợp nhiệm vụ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Tối ưu chương trình",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con học cách phân tích thể lệ cuộc thi, thiết kế giải pháp và hoàn thành chuỗi nhiệm vụ.",
-        "Con hoàn thành bài thi sa bàn mô phỏng đầu tiên theo luật thi đấu.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP3",
-      "title": "Học phần 3",
-      "name": "Dò Line Chuyên Sâu & Cảm Biến Nâng Cao",
-      "number": "Học phần 3",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con đi sâu vào điều khiển, âm thanh, cảnh báo và kỹ thuật dò line mượt mà trên sa bàn.",
-      "achievement": "Con làm chủ kỹ thuật dò line nhiều cảm biến và xử lý tình huống giao cắt.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Robot xin chào",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Động cơ xích đu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Còi báo động nguy hiểm",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Đèn thông minh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Máy phát nhạc",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Dò line cơ bản",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Dò line nâng cao",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Dò line chuyên sâu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con đi sâu vào điều khiển, âm thanh, cảnh báo và kỹ thuật dò line mượt mà trên sa bàn.",
-        "Con làm chủ kỹ thuật dò line nhiều cảm biến và xử lý tình huống giao cắt.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP4",
-      "title": "Học phần 4",
-      "name": "Thực Chiến Đấu Trường & Chuyển Đổi Robot Thật",
-      "number": "Học phần 4",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con cọ xát với đề thi nâng cao, tối ưu thời gian thực thi và chuyển giao sang robot Beta thật.",
-      "achievement": "Con tự tin thi đấu sa bàn và bảo vệ kết quả trước phụ huynh.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Giới thiệu cuộc thi Robo",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Phân tích thể lệ thi đấu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Thiết kế lắp ráp robot",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Lập trình nhiệm vụ 1",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Lập trình nhiệm vụ 2",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Lập trình nhiệm vụ 3",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Chạy tổng hợp nhiệm vụ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Tối ưu chương trình",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Kiểm tra lắp ráp robot",
-          "type": "Dự án cuối khóa"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo thi đấu",
-          "type": "Demo cuối khóa"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thi đấu nội bộ",
-          "type": "Báo cáo cuối khóa"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con cọ xát với đề thi nâng cao, tối ưu thời gian thực thi và chuyển giao sang robot Beta thật.",
-        "Con tự tin thi đấu sa bàn và bảo vệ kết quả trước phụ huynh.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    }
-  ],
-  "schedule": [
-    {
-      "shift": "Ca Sáng Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "08:00 — 09:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Chiều Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "14:30 — 16:00",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Sáng Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "09:00 — 10:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Chiều Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "16:00 — 17:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    }
-  ],
-  "tuition": {
-    "originalPrice": "3.600.000đ / học phần",
-    "discountedPrice": "2.700.000đ / học phần (Giảm 25%)",
-    "offerNote": "Đóng trọn năm: Tặng ngay 01 bộ Robot Beta mang về nhà",
-    "giftValue": "1.500.000đ (Bao gồm tài khoản đề thi RoboSim + Đồng phục + Thi thử)"
-  },
-  "commitments": [
-    "Hoàn tiền 100% nếu sau buổi học đầu tiên con không hào hứng",
-    "Đảm bảo con tự tay lập trình được robot chạy sa bàn hoàn chỉnh",
-    "Bảo trợ tham gia các cuộc thi Sáng tạo Robotics cấp Thành phố & Miền Bắc"
-  ]
-},
-
-  'robotics-lop-5': {
-  "slug": "robotics-lop-5",
-  "code": "Sata5",
-  "name": "Robotics Lớp 5",
-  "academicName": "Khơi Nguồn Sáng Tạo",
-  "headline": "Cơ khí động lực học, truyền động phức hợp & giải pháp Smart Home cho học sinh Lớp 5",
-  "category": "Khối Tiểu học (Lớp 5)",
-  "grade": "Lớp 5",
-  "age": "Lớp 5",
-  "displayAge": "Lớp 5",
-  "duration": "52 buổi (12 tháng) / 4 học phần",
-  "classSize": "Tối đa < 8 học viên (kèm sát 1-1)",
-  "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
-  "rating": 4.96,
-  "totalStudents": 285,
-  "coverImage": "/images/courses/tieu-hoc-3.png",
-  "badge": "TIỀN TRUNG HỌC ĐỘT PHÁ",
-  "glowColor": "orange",
-  "overview": "Chương trình đưa học sinh lớp 5 vào cơ khí động lực học, truyền động đa tầng, smart-home và mô hình hóa giải pháp thực tiễn. Con học theo quy trình thiết kế kỹ thuật chuẩn quốc tế (EDP): nghiên cứu đề bài, thiết kế cơ khí, lập trình logic, kiểm thử, cải tiến và hoàn thiện sản phẩm.",
-  "hardwareKit": {
-    "name": "Hệ sinh thái Storm & Cảm biến thông minh",
-    "description": "Bộ học cụ Storm thế hệ mới với các chi tiết động lực học, bánh răng truyền động đa trục, động cơ servo và hệ thống cảm biến môi trường thông minh.",
-    "items": [
-      "Bộ vi xử lý Storm đa cổng kết nối Bluetooth & USB",
-      "Hơn 400+ chi tiết cơ khí kỹ thuật nhôm đúc & nhựa kỹ thuật",
-      "Động cơ bước góc quay chính xác cao & Motor giảm tốc công suất lớn",
-      "Cảm biến ánh sáng quang trở, cảm biến siêu âm, cảm biến âm thanh",
-      "Hệ thống mô-đun rơ-le điều khiển thiết bị thông minh Smart Home"
-    ]
-  },
-  "skillsGained": [
-    {
-      "title": "Cơ khí động lực học & Truyền động",
-      "desc": "Hiểu bản chất mô-men xoắn, tỷ số truyền, giảm xóc và cơ cấu kẹp vật",
-      "percent": 96
-    },
-    {
-      "title": "Tự động hóa nhà thông minh",
-      "desc": "Ứng dụng cảm biến ánh sáng, âm thanh, radar vào giải quyết đời sống",
-      "percent": 95
-    },
-    {
-      "title": "Quy trình thiết kế kỹ thuật (EDP)",
-      "desc": "Nắm vững 5 bước: Khám phá - Lên ý tưởng - Chế tạo - Thử nghiệm - Cải tiến",
-      "percent": 94
-    },
-    {
-      "title": "Thuyết trình & Bảo vệ giải pháp",
-      "desc": "Tự tin trình bày báo cáo kỹ thuật và video demo trước hội đồng",
-      "percent": 92
-    }
-  ],
-  "modules": [
-    {
-      "id": "HP1",
-      "title": "Học phần 1",
-      "name": "Cơ Khí Động Lực Học & Chuyển Động Ổn Định",
-      "number": "Học phần 1",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con khám phá cơ khí động lực học qua các mô hình chuyển động thể thao, quán tính và tay kẹp.",
-      "achievement": "Con thiết kế được mô hình cơ khí có chuyển động ổn định và lực đẩy tối ưu.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Máy đập bóng cơ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Xích đu dao động",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Máy chạy bộ cơ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Cỗ máy chống đẩy",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Xe đạp quán tính",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Chiếc xe ba bánh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Cánh tay kẹp vật",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Cỗ máy vung rìu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con khám phá cơ khí động lực học qua các mô hình chuyển động thể thao, quán tính và tay kẹp.",
-        "Con thiết kế được mô hình cơ khí có chuyển động ổn định và lực đẩy tối ưu.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP2",
-      "title": "Học phần 2",
-      "name": "Năng Lượng, Đo Lường & Giảm Xóc",
-      "number": "Học phần 2",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con làm việc với đo lường khoảng cách, trạm lưu trữ điện, giảm xóc và hệ thống truyền tín hiệu.",
-      "achievement": "Con biết kiểm thử và cải tiến mô hình theo dữ liệu đo lường thực tế.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Máy ném bóng xa",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Xe đo khoảng cách",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Trạm lưu trữ điện",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Siêu xe đua F1",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Hệ thống giảm xóc",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Cỗ máy bốn chân",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Cổng quét an ninh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Máy truyền điện báo",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm việc với đo lường khoảng cách, trạm lưu trữ điện, giảm xóc và hệ thống truyền tín hiệu.",
-        "Con biết kiểm thử và cải tiến mô hình theo dữ liệu đo lường thực tế.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP3",
-      "title": "Học phần 3",
-      "name": "Tự Động Hóa Smart Home & Phản Xạ Âm Thanh",
-      "number": "Học phần 3",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con tích hợp cảm biến, tín hiệu âm thanh và mô hình tự động hóa ngôi nhà thông minh.",
-      "achievement": "Con hoàn thiện một mô hình tự động hóa thông minh có điều khiển đa cảm biến.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Bọ cạp phản xạ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Siêu xe điện đụng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Xe nhận lệnh âm",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Ốc sên nghe lệnh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Cửa nhà thông minh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Máy phát nhạc số",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Rèm cửa tự động",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Xe bám mục tiêu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con tích hợp cảm biến, tín hiệu âm thanh và mô hình tự động hóa ngôi nhà thông minh.",
-        "Con hoàn thiện một mô hình tự động hóa thông minh có điều khiển đa cảm biến.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP4",
-      "title": "Học phần 4",
-      "name": "Hệ Thống Tự Hành, Radar & Phân Loại",
-      "number": "Học phần 4",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con xây dựng giải pháp tự hành tránh chướng ngại, radar tìm sáng và hệ thống phân loại thông minh.",
-      "achievement": "Con bảo vệ dự án cuối khóa theo tư duy thiết kế kỹ thuật trước ban giám khảo.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Xe tránh chướng ngại",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Trạm radar",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Đấu sĩ bò tót",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Máy đọc thẻ từ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Bọ tìm ánh sáng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Xe bám quỹ đạo",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Hướng dương tìm sáng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Hệ thống phân loại",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối khóa",
-          "type": "Dự án cuối khóa"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối khóa",
-          "type": "Demo cuối khóa"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối khoá",
-          "type": "Báo cáo cuối khóa"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con xây dựng giải pháp tự hành tránh chướng ngại, radar tìm sáng và hệ thống phân loại thông minh.",
-        "Con bảo vệ dự án cuối khóa theo tư duy thiết kế kỹ thuật trước ban giám khảo.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    }
-  ],
-  "schedule": [
-    {
-      "shift": "Ca Sáng Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "08:00 — 09:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Chiều Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "14:30 — 16:00",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Sáng Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "09:00 — 10:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Chiều Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "16:00 — 17:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    }
-  ],
-  "tuition": {
-    "originalPrice": "4.000.000đ / học phần",
-    "discountedPrice": "3.000.000đ / học phần (Giảm 25%)",
-    "offerNote": "Hỗ trợ trả góp 0%. Tặng bộ học cụ bổ trợ trị giá 1.000.000đ",
-    "giftValue": "1.600.000đ (Balo cao cấp + Áo đồng phục + Bộ linh kiện thực hành)"
-  },
-  "commitments": [
-    "Lớp giới hạn dưới 8 học viên, cam kết đào tạo thực chất",
-    "Hoàn tiền 100% nếu sau buổi học đầu tiên con không hứng thú",
-    "Trang bị nền tảng vững vàng để con bứt phá khi lên cấp 2"
-  ]
-},
-
-  'robotics-lop-6-7': {
-  "slug": "robotics-lop-6-7",
-  "code": "Sata6",
-  "name": "Robotics Lớp 6 — 7",
-  "academicName": "Chinh Phục Đấu Trường",
-  "headline": "Thuật toán PID, tối ưu hành trình, cơ khí đối kháng & chiến thuật Robocon cho Lớp 6 — 7",
-  "category": "Khối Trung học (Lớp 6 — 7)",
-  "grade": "Lớp 6 — 7",
-  "age": "Lớp 6 — 7",
-  "displayAge": "Lớp 6 - 7",
-  "duration": "52 buổi (12 tháng) / 4 học phần",
-  "classSize": "Tối đa < 8 học viên (kèm sát 1-1)",
-  "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
-  "rating": 4.96,
-  "totalStudents": 284,
-  "coverImage": "/images/courses/trung-hoc-1.png",
-  "badge": "CHIẾN THUẬT ĐẤU TRƯỜNG",
-  "glowColor": "purple",
-  "overview": "Chương trình huấn luyện học sinh lớp 6–7 về thuật toán điều khiển PID, tối ưu hóa hành trình, cơ khí đối kháng và xử lý áp lực thi đấu. Con học theo mô hình trại huấn luyện đấu trường: thiết kế giải pháp nhanh, thử nghiệm sớm, sửa lỗi tức thì (live-debugging) và phân tích dữ liệu hiệu suất để giành điểm tuyệt đối.",
-  "hardwareKit": {
-    "name": "RoboSim + Beta Set Pro + Sa bàn Competition Standard",
-    "description": "Phần cứng chuẩn thi đấu chuyên nghiệp với cảm biến quang học kép, động cơ Encoder đọc xung chính xác và sa bàn chuẩn các giải đấu quốc tế.",
-    "items": [
-      "Phần mềm RoboSim Pro hỗ trợ lập trình khối lệnh & văn bản",
-      "Khung gầm nhôm cắt CNC chống rung lắc khi di chuyển tốc độ cao",
-      "Động cơ Encoder có phản hồi vòng quay chính xác từng mili-giây",
-      "Mảng cảm biến dò vạch phản quang 6 mắt độ phân giải cao",
-      "Hệ thống cơ cấu kẹp, nâng, ném bóng điều khiển bằng Servo lực kéo lớn"
-    ]
-  },
-  "skillsGained": [
-    {
-      "title": "Thuật toán điều khiển PID chuyên sâu",
-      "desc": "Hiểu bản chất tỷ lệ, tích phân, vi phân để robot di chuyển mượt mà",
-      "percent": 98
-    },
-    {
-      "title": "Thiết kế cơ cấu kẹp gắp & Đối kháng",
-      "desc": "Tối ưu trọng tâm, lực kéo và tốc độ nạp - nhả bóng vật phẩm",
-      "percent": 95
-    },
-    {
-      "title": "Phân tích dữ liệu & Chiến thuật",
-      "desc": "Đo lường thời gian từng chặng, lập chiến lược thi đấu theo đối thủ",
-      "percent": 96
-    },
-    {
-      "title": "Bản lĩnh tâm lý & Tinh thần đồng đội",
-      "desc": "Rèn luyện khả năng bình tĩnh xử lý sự cố trong thời gian giới hạn",
-      "percent": 94
-    }
-  ],
-  "modules": [
-    {
-      "id": "HP1",
-      "title": "Học phần 1",
-      "name": "RoboSim Nâng Cao, Truyền Động & Tự Hành",
-      "number": "Học phần 1",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con củng cố nền tảng RoboSim, cảm biến đa tầng, truyền động tốc độ cao và tự hành.",
-      "achievement": "Con hoàn thành robot tự hành có khả năng phản ứng chính xác theo cảm biến.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Bước vào thế giới ảo",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Đèn tín hiệu giao thông",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Đèn thông minh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Lựa chọn ngẫu nhiên",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Xe robot di chuyển",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Truyền động bánh răng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Cảm biến dò line",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Xe robot tự hành",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con củng cố nền tảng RoboSim, cảm biến đa tầng, truyền động tốc độ cao và tự hành.",
-        "Con hoàn thành robot tự hành có khả năng phản ứng chính xác theo cảm biến.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP2",
-      "title": "Học phần 2",
-      "name": "Chiến Thuật Thi Đấu Chuẩn & Tối Ưu Lệnh",
-      "number": "Học phần 2",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con luyện chu kỳ thi đấu chuẩn với nhiệm vụ tích hợp, phân bổ thời gian và tối ưu chương trình.",
-      "achievement": "Con chạy được bài thi tổng hợp đạt điểm tối đa trong điều kiện thi thử.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Giới thiệu cuộc thi Robo",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Phân tích thể lệ thi đấu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Thiết kế lắp ráp robot",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Lập trình nhiệm vụ 1",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Lập trình nhiệm vụ 2",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Lập trình nhiệm vụ 3",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Chạy tổng hợp nhiệm vụ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Tối ưu chương trình",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Kiểm tra lắp ráp robot",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Kiểm tra lập trình",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thi đấu nội bộ",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con luyện chu kỳ thi đấu chuẩn với nhiệm vụ tích hợp, phân bổ thời gian và tối ưu chương trình.",
-        "Con chạy được bài thi tổng hợp đạt điểm tối đa trong điều kiện thi thử.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP3",
-      "title": "Học phần 3",
-      "name": "Thuật Toán Dò Line Chuyên Sâu (PID)",
-      "number": "Học phần 3",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con học giải thuật điều khiển sai số, cảnh báo, nhạc và dò line chuyên sâu bằng công thức PID.",
-      "achievement": "Con hiểu cách giảm sai số và ổn định hành trình robot ở tốc độ tối đa.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Robot xin chào",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Động cơ xích đu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Còi báo động nguy hiểm",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Đèn thông minh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Máy phát nhạc",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Dò line cơ bản",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Dò line nâng cao",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Dò line chuyên sâu (PID)",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con học giải thuật điều khiển sai số, cảnh báo, nhạc và dò line chuyên sâu bằng công thức PID.",
-        "Con hiểu cách giảm sai số và ổn định hành trình robot ở tốc độ tối đa.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP4",
-      "title": "Học phần 4",
-      "name": "Tổng Duyệt Thi Đấu & Chiến Thuật Đối Kháng",
-      "number": "Học phần 4",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con tổng duyệt thi đấu với áp lực thời gian thực tế, giải quyết lỗi thực chiến và chiến thuật dự phòng.",
-      "achievement": "Con sẵn sàng tham gia các vòng thi Robotics cấp khu vực với bản lĩnh vững vàng.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Giới thiệu cuộc thi Robo",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Phân tích thể lệ thi đấu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Thiết kế lắp ráp robot",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Lập trình nhiệm vụ 1",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Lập trình nhiệm vụ 2",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Lập trình nhiệm vụ 3",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Chạy tổng hợp nhiệm vụ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Tối ưu chương trình",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Kiểm tra lắp ráp robot",
-          "type": "Dự án cuối khóa"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo thi đấu",
-          "type": "Demo cuối khóa"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Thi đấu nội bộ",
-          "type": "Báo cáo cuối khóa"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con tổng duyệt thi đấu với áp lực thời gian thực tế, giải quyết lỗi thực chiến và chiến thuật dự phòng.",
-        "Con sẵn sàng tham gia các vòng thi Robotics cấp khu vực với bản lĩnh vững vàng.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    }
-  ],
-  "schedule": [
-    {
-      "shift": "Ca Sáng Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "08:00 — 09:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Chiều Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "14:30 — 16:00",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Sáng Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "09:00 — 10:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Chiều Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "16:00 — 17:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    }
-  ],
-  "tuition": {
-    "originalPrice": "4.400.000đ / học phần",
-    "discountedPrice": "3.300.000đ / học phần (Giảm 25%)",
-    "offerNote": "Hỗ trợ trả góp 0%. Miễn phí lệ phí thi đấu các giải vòng loại",
-    "giftValue": "1.800.000đ (Kit nâng cấp sa bàn + Tài khoản đề thi nâng cao + Đồng phục)"
-  },
-  "commitments": [
-    "Giáo viên là các huấn luyện viên từng dẫn đội đạt giải Quốc gia",
-    "Cam kết học sinh thành thạo giải thuật điều khiển và tự sửa lỗi robot",
-    "Đồng hành cùng đội thi đến hết các vòng chung kết khu vực & quốc gia"
-  ]
-},
-
-  'robotics-ai-lop-8-9': {
-  "slug": "robotics-ai-lop-8-9",
-  "code": "Sata7",
-  "name": "Robotics Lớp 8 — 9",
-  "academicName": "Kiến Tạo Tương Lai",
-  "headline": "Lập trình Python/C++, Thị giác máy tính AI OpenCV, Xe tự hành AGV & Đồ án KHKT cho Lớp 8 — 9",
-  "category": "Khối Trung học (Lớp 8 — 9)",
-  "grade": "Lớp 8 — 9",
-  "age": "Lớp 8 — 9",
-  "displayAge": "Lớp 8 - 9",
-  "duration": "52 buổi (12 tháng) / 4 học phần",
-  "classSize": "Tối đa < 8 học viên (kèm sát 1-1)",
-  "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
-  "rating": 4.96,
-  "totalStudents": 341,
-  "coverImage": "/images/courses/trung-hoc-2.png",
-  "badge": "CHUYÊN SÂU AI & AGV",
-  "glowColor": "cyan",
-  "overview": "Chương trình đỉnh cao đón đầu kỷ nguyên Trí tuệ nhân tạo (AI): Học sinh làm việc với tự động hóa đô thị, logistics, xe tự hành AGV, thị giác máy tính và bảo vệ đồ án Capstone tốt nghiệp. Con đi qua quy trình kỹ sư AI trọn vẹn: thu thập dữ liệu ảnh, training mô hình, triển khai lên thiết bị nhúng và bảo vệ giải pháp công nghệ trước hội đồng.",
-  "hardwareKit": {
-    "name": "Storm + Mô-đun AI Vision Camera + ESP32 / Python",
-    "description": "Hệ thống phần cứng mở cao cấp: Vi điều khiển kép ESP32, Camera AI xử lý ảnh thời gian thực, module mạng không dây IoT và khung gầm công nghiệp.",
-    "items": [
-      "Bo mạch vi điều khiển ESP32 kép Core Wi-Fi/Bluetooth",
-      "Mô-đun Camera AI nhận diện vật thể, khuôn mặt, cử chỉ tay và biển báo",
-      "Cảm biến góc nghiêng con quay hồi chuyển 6 trục IMU MPU6050",
-      "Động cơ bước độ chính xác cao kết hợp mạch cầu công suất",
-      "Thư viện mã nguồn mở Python / C++ và framework xử lý ảnh OpenCV"
-    ]
-  },
-  "skillsGained": [
-    {
-      "title": "Lập trình văn bản Python & C++",
-      "desc": "Viết mã nguồn chuyên nghiệp, xử lý logic phức tạp và ngắt timer",
-      "percent": 98
-    },
-    {
-      "title": "Thị giác máy tính AI (Computer Vision)",
-      "desc": "Xử lý video camera, nhận diện màu sắc, mã QR, biển báo và khuôn mặt",
-      "percent": 96
-    },
-    {
-      "title": "Xe tự hành AGV & Logistics thông minh",
-      "desc": "Mô phỏng chuỗi vận chuyển tự động hóa trong nhà kho hiện đại",
-      "percent": 95
-    },
-    {
-      "title": "Đồ án nghiên cứu KHKT Capstone",
-      "desc": "Xây dựng bài báo cáo khoa học và kỹ năng thuyết trình trước hội đồng",
-      "percent": 94
-    }
-  ],
-  "modules": [
-    {
-      "id": "HP1",
-      "title": "Học phần 1",
-      "name": "Tự Động Hóa Đô Thị & Xe Tự Hành Cơ Bản",
-      "number": "Học phần 1",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con làm việc với tự động hóa đô thị, đỗ xe, nhận diện và tự hành cơ bản.",
-      "achievement": "Con hoàn thành mô hình đô thị thông minh có robot tự hành.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Đèn giao thông số",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Máy cưa tự động",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Robot hút bụi",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Cối xay gió xoay",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Hệ thống đỗ xe",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Nhận diện giảm tốc",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Tự hành góc vuông",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Xe cảnh sát tuần",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con làm việc với tự động hóa đô thị, đỗ xe, nhận diện và tự hành cơ bản.",
-        "Con hoàn thành mô hình đô thị thông minh có robot tự hành.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP2",
-      "title": "Học phần 2",
-      "name": "Mô Phỏng Logistics & Xe Tự Hành AGV",
-      "number": "Học phần 2",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con mô phỏng logistics, AGV, phân loại sản phẩm và vận hành hệ thống bán hàng.",
-      "achievement": "Con tạo được chuỗi vận hành logistics tự động ở quy mô mô hình.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Máy bay chiến đấu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Hệ thống đóng gói",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Phân loại sản phẩm",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Xe nâng hàng hóa",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Tự hành chở hàng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Tàu chở hàng hóa",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Máy bán hàng số",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Siêu thị thông minh",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con mô phỏng logistics, AGV, phân loại sản phẩm và vận hành hệ thống bán hàng.",
-        "Con tạo được chuỗi vận hành logistics tự động ở quy mô mô hình.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP3",
-      "title": "Học phần 3",
-      "name": "Thuật Toán Định Vị & Kiểm Soát Gia Tốc",
-      "number": "Học phần 3",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con tối ưu thuật toán tự hành qua hiệu chuẩn dữ liệu, định vị và kiểm soát gia tốc.",
-      "achievement": "Con biết tinh chỉnh robot để chạy ổn định trong điều kiện sai số thực tế.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "Bám line kép chuẩn",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "Hiệu chuẩn dữ liệu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "Căn chỉnh góc xoay",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "Định vị khoảng cách",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "Kiểm soát gia tốc",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "Chống trôi quỹ đạo",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "Tự hành đường thẳng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "Chống kẹt động cơ",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối học phần",
-          "type": "Dự án cuối học phần"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối học phần",
-          "type": "Demo cuối học phần"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối học phần",
-          "type": "Báo cáo cuối học phần"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con tối ưu thuật toán tự hành qua hiệu chuẩn dữ liệu, định vị và kiểm soát gia tốc.",
-        "Con biết tinh chỉnh robot để chạy ổn định trong điều kiện sai số thực tế.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    },
-    {
-      "id": "HP4",
-      "title": "Học phần 4",
-      "name": "AI Thị Giác Máy Tính & Bảo Vệ Capstone",
-      "number": "Học phần 4",
-      "duration": "13 buổi - 90 phút/buổi",
-      "sessionsCount": 13,
-      "hoursCount": 19.5,
-      "projectsCount": 10,
-      "description": "Con triển khai AI thị giác máy tính vào robot và bảo vệ capstone cuối khóa.",
-      "achievement": "Con bảo vệ dự án AI Robotics trước hội đồng chuyên môn.",
-      "lessons": [
-        {
-          "sessionNumber": 1,
-          "title": "AI ra lệnh robot",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 2,
-          "title": "AI nhận diện màu",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 3,
-          "title": "AI robot tự hành",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 4,
-          "title": "AI cử chỉ tay",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 5,
-          "title": "Ôn tập kiến thức",
-          "type": "Ôn tập"
-        },
-        {
-          "sessionNumber": 6,
-          "title": "AI đọc biển báo",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 7,
-          "title": "AI quét mã QR",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 8,
-          "title": "AI nhận diện mặt",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 9,
-          "title": "AI nhận diện bóng",
-          "type": "Dự án"
-        },
-        {
-          "sessionNumber": 10,
-          "title": "Dự án cuối khoá",
-          "type": "Dự án cuối khóa"
-        },
-        {
-          "sessionNumber": 11,
-          "title": "Demo cuối khoá",
-          "type": "Demo cuối khóa"
-        },
-        {
-          "sessionNumber": 12,
-          "title": "Báo cáo cuối khoá",
-          "type": "Báo cáo cuối khóa"
-        },
-        {
-          "sessionNumber": 13,
-          "title": "Phát triển lập trình",
-          "type": "Phát triển lập trình"
-        }
-      ],
-      "outcomes": [
-        "Con triển khai AI thị giác máy tính vào robot và bảo vệ capstone cuối khóa.",
-        "Con bảo vệ dự án AI Robotics trước hội đồng chuyên môn.",
-        "Hoàn thành 10 dự án robot thực tế và báo cáo kỹ thuật",
-        "Buổi 13: Phát triển lập trình nâng cao và mở rộng tư duy thuật toán"
-      ]
-    }
-  ],
-  "schedule": [
-    {
-      "shift": "Ca Sáng Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "08:00 — 09:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Chiều Thứ 7",
-      "days": "Thứ 7 hàng tuần",
-      "time": "14:30 — 16:00",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Sáng Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "09:00 — 10:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    },
-    {
-      "shift": "Ca Chiều Chủ Nhật",
-      "days": "Chủ Nhật hàng tuần",
-      "time": "16:00 — 17:30",
-      "branch": "Cơ sở Hải Phòng / Hưng Yên / Ninh Bình"
-    }
-  ],
-  "tuition": {
-    "originalPrice": "4.800.000đ / học phần",
-    "discountedPrice": "3.600.000đ / học phần (Giảm 25%)",
-    "offerNote": "Hỗ trợ trả góp 0%. Tặng bộ kit AI Vision Camera trị giá 1.800.000đ",
-    "giftValue": "2.200.000đ (Kit AI Camera + Khóa học lập trình Python nền tảng + Đồng phục)"
-  },
-  "commitments": [
-    "Lớp giới hạn tối đa dưới 8 học viên chất lượng cao",
-    "Cam kết học sinh tự tay viết code Python/C++ và hiểu rõ giải thuật AI",
-    "Bảo trợ hướng dẫn làm hồ sơ tham dự Cuộc thi Sáng tạo KHKT cấp Thành phố"
-  ]
-},
-
-};
-
-// Danh sách các slug khóa học chính thức theo thứ tự chuẩn
-export const PRIMARY_COURSE_SLUGS = [
-  'mam-non-co-ban',
-  'mam-non-nang-cao',
-  'mam-non-chuyen-sau',
-  'robotics-lop-1-2',
-  'robotics-lop-3-4',
-  'robotics-lop-5',
-  'robotics-lop-6-7',
-  'robotics-ai-lop-8-9'
-] as const;
-
-// Phân loại khóa học theo cấp bậc học
-export const COURSE_CATEGORIES = [
-  { id: 'all', label: 'Tất cả các khối' },
-  { id: 'mam-non', label: 'Khối Mầm Non (4 — 6 tuổi)' },
-  { id: 'tieu-hoc', label: 'Khối Tiểu Học (Lớp 1 — 5)' },
-  { id: 'trung-hoc', label: 'Khối Trung Học (Lớp 6 — 9)' }
-] as const;
-
-// Backwards compatibility aliases
-coursesData['lap-trinh-robot'] = coursesData['robotics-mam-non'];
-coursesData['robotics-tieu-hoc'] = coursesData['robotics-lop-3-4'];
-coursesData['luyen-thi-robosim'] = coursesData['robotics-lop-3-4'];
-coursesData['robotics-trung-hoc'] = coursesData['robotics-lop-6-7'];
-coursesData['ai-iot-robotics'] = coursesData['robotics-ai-lop-8-9'];
-
 export interface GradeLevel {
   id: 'mam-non' | 'tieu-hoc' | 'trung-hoc';
   slug: string;
@@ -3657,135 +94,5141 @@ export interface GradeLevel {
   methodology: string;
 }
 
-export const GRADE_LEVELS: Record<string, GradeLevel> = {
-  'mam-non': {
-    id: 'mam-non',
-    slug: 'mam-non',
-    name: 'Robotics Mầm Non',
-    shortName: 'Khối Mầm Non',
-    academicName: 'Ươm Mầm Sáng Tạo',
-    badge: 'MẦM NON (4 — 6 TUỔI)',
-    tagline: 'Khơi nguồn đam mê công nghệ & tư duy trực quan',
-    headline: 'Khơi nguồn đam mê công nghệ & kích thích tư duy sáng tạo cho trẻ mầm non từ 4 đến 6 tuổi thông qua phương pháp vừa học vừa chơi',
-    ageRange: '4 — 6 tuổi',
-    displayAge: '4 — 6 tuổi',
-    coverImage: '/images/courses/mam-non.png',
-    hardwareKitSummary: 'Bộ khối ghép cơ khí an toàn ABS bo tròn, động cơ thông minh & thẻ lệnh Screen-Free VIAI-Kids',
-    description: 'Chương trình được thiết kế đặc thù cho lứa tuổi mầm non theo phương pháp "Vừa học vừa chơi" (Play-based Learning). Bé được tự tay thao tác với các khối ghép an toàn, động cơ chuyển động trực quan và làm quen tư duy lập trình thẻ lệnh không nhìn màn hình máy tính.',
-    detailedOverview: 'Tại VIAI, giai đoạn 4 — 6 tuổi là thời kỳ vàng để nuôi dưỡng trí tò mò khoa học và phát triển sự khéo léo của đôi bàn tay. Bé không bị gò bó vào lý thuyết mà được tiếp cận công nghệ thông qua các hoạt động tương tác vật lý sinh động, chế tạo các mô hình động vật, xe cộ biết chuyển động và hiểu bản chất vận hành của thế giới xung quanh.',
-    highlights: [
+export const coursesData: Record<string, CourseDetail> = {
+  "mam-non-co-ban": {
+    "slug": "mam-non-co-ban",
+    "code": "Sata-Kids-Basic",
+    "name": "Robotics Mầm Non — Lớp Cơ Bản",
+    "academicName": "Khám Phá & Lắp Ghép Cơ Bản",
+    "headline": "Khám phá thế giới hình khối, máy công cụ và nhen nhóm tư duy logic đầu đời cho trẻ",
+    "category": "Mầm non",
+    "grade": "Mầm non",
+    "age": "Mầm non",
+    "displayAge": "Mầm non",
+    "duration": "36 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.96,
+    "totalStudents": 420,
+    "coverImage": "/images/courses/mam-non.png",
+    "badge": "LỚP CƠ BẢN",
+    "glowColor": "orange",
+    "overview": "Chương trình Lớp Cơ Bản được thiết kế đặc thù cho trẻ mầm non theo phương pháp 'Vừa học vừa chơi' (Play-based Learning). Bé làm quen với các chi tiết khối ghép an toàn, bánh răng cơ khí, chế tạo các máy công cụ quen thuộc như cối xay gió, máy trộn và xe trượt vui nhộn.",
+    "hardwareKit": {
+      "name": "Bộ Học Cụ Robot Mầm Non VIAI-Kids An Toàn Chuẩn Châu Âu",
+      "description": "Mỗi học viên được trang bị 01 bộ khối ghép cơ khí bo tròn không sắc nhọn, động cơ giảm tốc an toàn cho trẻ nhỏ.",
+      "items": [
+        "Bộ 120+ chi tiết khối ghép nhựa nguyên sinh ABS an toàn tuyệt đối",
+        "Động cơ chuyển động chậm thông minh kèm nút điều khiển trực quan",
+        "Bộ truyền động bánh răng lớn, ròng rọc và trục quay sắc màu",
+        "Cảm biến chạm và đèn LED phát sáng vui nhộn",
+        "Thẻ lệnh mã màu giúp bé làm quen tư duy lập trình không cần máy tính"
+      ]
+    },
+    "skillsGained": [
       {
-        title: 'Kỹ năng vận động tinh & Khéo léo',
-        desc: 'Thao tác lắp ghép ngón tay, phối hợp tay - mắt nhịp nhàng với bộ khối ghép ABS chuẩn châu Âu.'
+        "title": "Kỹ năng vận động tinh & Khéo léo",
+        "desc": "Thao tác lắp ghép ngón tay, phối hợp tay - mắt nhịp nhàng",
+        "percent": 98
       },
       {
-        title: 'Tư duy logic & Trình tự hành động',
-        desc: 'Hiểu khái niệm nguyên nhân - kết quả và thực hiện các bước tuần tự để hoàn thành sản phẩm hoàn chỉnh.'
+        "title": "Tư duy logic & Trình tự hành động",
+        "desc": "Hiểu khái niệm nhân - quả và các bước hoàn thành sản phẩm",
+        "percent": 92
       },
       {
-        title: 'Lập trình thẻ Screen-Free an toàn',
-        desc: 'Xây dựng thuật toán tuần tự, rẽ nhánh thông qua thẻ lệnh mã màu thông minh, bảo vệ thị lực tối đa cho trẻ nhỏ.'
+        "title": "Trí tưởng tượng & Sáng tạo tự do",
+        "desc": "Tự do sáng tạo các mô hình động vật, xe cộ theo suy nghĩ của bé",
+        "percent": 96
+      },
+      {
+        "title": "Tự tin giao tiếp & Hợp tác",
+        "desc": "Biết chia sẻ khối ghép, cùng bạn chơi và khoe sản phẩm với bố mẹ",
+        "percent": 90
       }
     ],
-    childCourseSlugs: ['mam-non-co-ban', 'mam-non-nang-cao', 'mam-non-chuyen-sau'],
-    learningOutcomes: [
-      'Nhận biết và phân biệt các cơ cấu chuyển động cơ bản: bánh răng, ròng rọc, đòn bẩy',
-      'Tự tay lắp ráp hơn 40 mô hình robot thông minh theo từng chủ đề thực tế',
-      'Phát triển khả năng quan sát, tư duy hình học không gian 3D trực quan',
-      'Tự tin thuyết trình giới thiệu sản phẩm của mình trước lớp và bố mẹ'
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      }
     ],
-    methodology: 'Play-based Learning (Học qua trải nghiệm & trò chơi sáng tạo) kết hợp tiêu chuẩn STEM quốc tế.'
+    "tuition": {
+      "originalPrice": "4.200.000đ",
+      "discountedPrice": "3.200.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
+      "giftValue": "Trị giá 500.000đ"
+    },
+    "commitments": [
+      "100% trẻ biết tự tay lắp ráp và vận hành mô hình robot sau mỗi buổi học.",
+      "Môi trường an toàn tuyệt đối, trang thiết bị bo góc chuẩn châu Âu.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, giáo viên kèm sát 1-1 tận tình.",
+      "Báo cáo hình ảnh & video sản phẩm của con gửi phụ huynh sau từng buổi học."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Khám Phá Thế Giới & Máy Công Cụ Đầu Tiên",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Bé làm quen các khối ghép cơ bản, khám phá các chuyển động xung quanh và chế tạo các máy công cụ đầu tiên.",
+        "achievement": "Bé nhận biết màu sắc, hình khối, lắp ghép thuần thục và tự tin thuyết trình sản phẩm.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Chào Weir",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Tháp truyền hình Neon",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Nhà là ca sĩ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Người hâm mộ thể thao",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập kiến thức",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Buzz, Buzz, Chú ong nhỏ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Con thuyền của sa mạc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Wow - Khủng long kia",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Cối xay gió tự động",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Máy trộn cầm tay rực rỡ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Thuyết trình demo cho giáo viên",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình về sản phẩm",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Công Viên Trò Chơi & Mùa Xuân Rực Rỡ",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Khám phá các phương tiện di chuyển trong công viên và các mô hình cơ khí mô phỏng thiên nhiên bốn mùa.",
+        "achievement": "Lắp ráp thành thạo mô hình bánh xe lăn, đệm khí và hiểu nguyên lý hoạt động của thiết bị gia đình.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Tàu đệm khí",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Bánh xe lăn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Tàu lượn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Công viên trò chơi",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập kiến thức",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Hoa nở",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Che ô trong mưa xuân",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Đi chơi trong mùa xuân",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Thiên thần nhỏ báo thức",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Máy hút bụi của bé",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Thuyết trình demo cho giáo viên",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình về sản phẩm",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP3",
+        "title": "Học phần 3",
+        "name": "Thế Giới Động Vật & Thị Trấn Hạnh Phúc",
+        "number": "Học phần 3",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Khám phá các chuyển động uốn lượn, mô phỏng hành vi động vật và xây dựng mô hình thị trấn đáng yêu.",
+        "achievement": "Lắp ráp mô hình chuyển động phức tạp, phối hợp màu sắc và nhịp điệu âm thanh.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Nóng, nóng, quạt máy của bé",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Rắn, rắn rình rập",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Voi vòi voi voi",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Chú chim biết hát",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập kiến thức",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Sở thú diệu kì",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Bốn mùa của cây",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Ngôi nhà của bé",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Nhịp cầu âm nhạc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Thị trấn vui vẻ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Thuyết trình demo cho giáo viên",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình về sản phẩm",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 3.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
   },
-  'tieu-hoc': {
-    id: 'tieu-hoc',
-    slug: 'tieu-hoc',
-    name: 'Robotics Tiểu Học',
-    shortName: 'Khối Tiểu Học',
-    academicName: 'Tư Duy Toàn Diện & RoboSim',
-    badge: 'TIỂU HỌC (LỚP 1 — 5)',
-    tagline: 'Nền tảng thuật toán, mô phỏng 3D & cơ cấu chuyển động',
-    headline: 'Xây dựng nền tảng tư duy thuật toán, làm chủ mô phỏng 3D RoboSim và chế tạo robot cơ cấu đa tầng cho học sinh Tiểu học',
-    ageRange: 'Lớp 1 — 5',
-    displayAge: '6 — 11 tuổi',
-    coverImage: '/images/courses/tieu-hoc-2.png',
-    hardwareKitSummary: 'Hệ sinh thái Alpha + Beta, cảm biến đa tầng & phần mềm mô phỏng 3D RoboSim chuẩn quốc tế',
-    description: 'Chương trình chuẩn hóa toàn diện từ cơ cấu cơ khí, bản vẽ kỹ thuật đến lập trình thuật toán và mô phỏng 3D. Được chia thành 3 khóa học con tương ứng với từng giai đoạn nhận thức (Lớp 1-2, Lớp 3-4, Lớp 5), giúp học sinh tự tin biến ý tưởng thành robot thực tế.',
-    detailedOverview: 'Bậc Tiểu học là giai đoạn hình thành tư duy trừu tượng và tư duy thuật toán. Lộ trình Robotics Tiểu Học tại VIAI kết hợp phương pháp Virtual-to-Physical độc quyền: học sinh học bản chất cơ cấu cơ học, thực hành trên nền tảng số RoboSim 3D để kiểm thử giải thuật, sau đó trực tiếp lắp ráp và lập trình cho Robot vật lý chạy trên sa bàn thi đấu.',
-    highlights: [
+  "mam-non-nang-cao": {
+    "slug": "mam-non-nang-cao",
+    "code": "Sata-Kids-Adv",
+    "name": "Robotics Mầm Non — Lớp Nâng Cao",
+    "academicName": "Cơ Cấu Thông Minh & Sáng Tạo",
+    "headline": "Nâng cấp cơ cấu cơ học, cánh tay robot, phương tiện giao thông và thiết bị thông minh cho bé",
+    "category": "Mầm non",
+    "grade": "Mầm non",
+    "age": "Mầm non",
+    "displayAge": "Mầm non",
+    "duration": "36 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.98,
+    "totalStudents": 350,
+    "coverImage": "/images/courses/mam-non.png",
+    "badge": "LỚP NÂNG CAO",
+    "glowColor": "orange",
+    "overview": "Chương trình Lớp Nâng Cao mở rộng tư duy chế tạo cho trẻ mầm non. Bé được tự tay lắp ráp các mô hình phức tạp hơn: cánh tay robot, robot phục vụ, xe đẩy nâng hàng, trực thăng và hệ thống truyền động đa trục, rèn luyện tư duy không gian và tính kiên trì.",
+    "hardwareKit": {
+      "name": "Bộ Học Cụ Robot Mầm Non VIAI-Kids An Toàn Chuẩn Châu Âu",
+      "description": "Mỗi học viên được trang bị 01 bộ khối ghép cơ khí bo tròn không sắc nhọn, động cơ giảm tốc an toàn cho trẻ nhỏ.",
+      "items": [
+        "Bộ 120+ chi tiết khối ghép nhựa nguyên sinh ABS an toàn tuyệt đối",
+        "Động cơ chuyển động chậm thông minh kèm nút điều khiển trực quan",
+        "Bộ truyền động bánh răng lớn, ròng rọc và trục quay sắc màu",
+        "Cảm biến chạm và đèn LED phát sáng vui nhộn",
+        "Thẻ lệnh mã màu giúp bé làm quen tư duy lập trình không cần máy tính"
+      ]
+    },
+    "skillsGained": [
       {
-        title: '3 Khóa học con chuyên sâu theo lứa tuổi',
-        desc: 'Lớp 1 — 2 (Cơ cấu & Screen-Free), Lớp 3 — 4 (Mô phỏng RoboSim & Beta Set), Lớp 5 (Động lực học & Tiền Trung học).'
+        "title": "Kỹ năng vận động tinh & Khéo léo",
+        "desc": "Thao tác lắp ghép ngón tay, phối hợp tay - mắt nhịp nhàng",
+        "percent": 98
       },
       {
-        title: 'Làm chủ cơ cấu cơ giới & lực truyền động',
-        desc: 'Phân tích bản vẽ lắp ráp 3D, hiểu sâu nguyên lý bánh răng đa tầng, trục khuỷu, hệ bánh xe vi sai và cảm biến.'
+        "title": "Tư duy logic & Trình tự hành động",
+        "desc": "Hiểu khái niệm nhân - quả và các bước hoàn thành sản phẩm",
+        "percent": 92
       },
       {
-        title: 'Tư duy Virtual-to-Physical độc quyền',
-        desc: 'Lập trình mô phỏng 3D trên RoboSim trước khi chuyển giao mã nguồn sang robot thực tế, tối ưu thuật toán vượt sa bàn.'
+        "title": "Trí tưởng tượng & Sáng tạo tự do",
+        "desc": "Tự do sáng tạo các mô hình động vật, xe cộ theo suy nghĩ của bé",
+        "percent": 96
+      },
+      {
+        "title": "Tự tin giao tiếp & Hợp tác",
+        "desc": "Biết chia sẻ khối ghép, cùng bạn chơi và khoe sản phẩm với bố mẹ",
+        "percent": 90
       }
     ],
-    childCourseSlugs: ['robotics-lop-1-2', 'robotics-lop-3-4', 'robotics-lop-5'],
-    learningOutcomes: [
-      'Thành thạo tư duy thuật toán: tuần tự, rẽ nhánh nếu - thì, vòng lặp và biến số',
-      'Đọc hiểu bản vẽ kỹ thuật 3D và tự thiết kế các cơ cấu truyền động cơ khí phức hợp',
-      'Làm chủ phần mềm mô phỏng 3D RoboSim, tính toán tọa độ và tối ưu lộ trình di chuyển',
-      'Chế tạo robot thi đấu thực chiến và rèn luyện kỹ năng làm việc nhóm'
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      }
     ],
-    methodology: 'Virtual-to-Physical Learning kết hợp Project-based Learning (Học qua dự án thực tế 4 học phần 52 buổi).'
+    "tuition": {
+      "originalPrice": "4.200.000đ",
+      "discountedPrice": "3.200.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
+      "giftValue": "Trị giá 500.000đ"
+    },
+    "commitments": [
+      "100% trẻ biết tự tay lắp ráp và vận hành mô hình robot sau mỗi buổi học.",
+      "Môi trường an toàn tuyệt đối, trang thiết bị bo góc chuẩn châu Âu.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, giáo viên kèm sát 1-1 tận tình.",
+      "Báo cáo hình ảnh & video sản phẩm của con gửi phụ huynh sau từng buổi học."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Thể Thao & Siêu Thị Thông Minh",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Nâng cấp cơ cấu cơ học với bánh răng tỷ số truyền, động cơ điều khiển hai chiều và cảm biến thông minh.",
+        "achievement": "Bé hiểu nguyên lý đòn bẩy tỷ số truyền, lực ma sát và thiết bị cảm biến tự động.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Đánh bóng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Đua xe",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Chèo thuyền",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Cánh cửa thông minh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập kiến thức",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Xe đẩy hàng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Xe nâng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Chú cá robot",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Xe tay ga",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Máy chụp ảnh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Thuyết trình demo cho giáo viên",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình về sản phẩm",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Kỹ Sư Robot & Nhà Hàng Thông Minh",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Lắp ráp các mô hình cánh tay robot, robot phục vụ và tự động hóa phục vụ nhà hàng, dịch vụ.",
+        "achievement": "Làm quen tư duy robot công nghiệp, cánh tay gắp thả và cơ cấu xoay đa chiều.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Xe trẻ em",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Robot cánh tay",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Robot phục vụ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Robot kỹ thuật",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập kiến thức",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Robot đối kháng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Máy ép trái cây",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Ghế xoay",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Ghế thông minh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Xe buýt tham quan",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Thuyết trình demo cho giáo viên",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình về sản phẩm",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP3",
+        "title": "Học phần 3",
+        "name": "Âm Nhạc Vui Nhộn & Phương Tiện Giao Thông",
+        "number": "Học phần 3",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Kết hợp nhịp điệu chuyển động cơ khí, âm nhạc và mô hình phương tiện hàng không, đường thủy.",
+        "achievement": "Lắp ráp mô hình chuyển động cánh quạt trực thăng, tàu biển và hệ thống cơ khí nhịp điệu.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Tàu cướp biển",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Đu quay khổng lồ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Tay trống cừ khôi",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Cối xoay gió mini",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập kiến thức",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Âm nhạc vui nhộn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Con thuyền",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Xe ba bánh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Máy bay cánh bằng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Máy bay trực thăng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Thuyết trình demo cho giáo viên",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình về sản phẩm",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 3.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
   },
-  'trung-hoc': {
-    id: 'trung-hoc',
-    slug: 'trung-hoc',
-    name: 'Robotics Trung Học Cơ Sở',
-    shortName: 'Khối Trung Học Cơ Sở',
-    academicName: 'Chinh Phục Đấu Trường & AI',
-    badge: 'TRUNG HỌC CƠ SỞ (LỚP 6 — 9)',
-    tagline: 'Lập trình thực chiến Python/C++, giải thuật PID, Vision AI & AGV',
-    headline: 'Nâng tầm tư duy lập trình chuyên sâu với Python/C++, thuật toán PID đối kháng, thị giác AI và kiến tạo Robot AGV',
-    ageRange: 'Lớp 6 — 9',
-    displayAge: '11 — 15 tuổi',
-    coverImage: '/images/courses/trung-hoc-1.png',
-    hardwareKitSummary: 'Robot thi đấu AGV đối kháng, vi điều khiển nâng cao, Vision AI & hệ thống Arena thực tế',
-    description: 'Chương trình đào tạo đỉnh cao dành cho học sinh THCS. Học sinh chuyển đổi từ tư duy khối sang viết mã nguồn văn bản Python/C++, nghiên cứu thuật toán điều khiển PID, thị giác máy tính và chế tạo robot công nghiệp tự hành AGV thi đấu đối kháng.',
-    detailedOverview: 'Bậc Trung học cơ sở tại VIAI trang bị năng lực nghiên cứu khoa học thực thụ. Học sinh được học cùng các giảng viên chuyên gia, làm việc với linh kiện công nghiệp, viết giải thuật điều khiển tự hành và phát triển các dự án có tính ứng dụng cao, sẵn sàng tham gia các cuộc thi Sáng tạo Khoa học Kỹ thuật cấp Tỉnh/Thành phố và Quốc gia.',
-    highlights: [
+  "mam-non-chuyen-sau": {
+    "slug": "mam-non-chuyen-sau",
+    "code": "Sata-Kids-Pro",
+    "name": "Robotics Mầm Non — Lớp Chuyên Sâu",
+    "academicName": "Chế Tạo Phức Hợp & Bản Lĩnh Tương Lai",
+    "headline": "Chế tạo xe công trình, thám hiểm vũ trụ và thành phố tương lai chuẩn bị nền tảng vững chắc lên Tiểu Học",
+    "category": "Mầm non",
+    "grade": "Mầm non",
+    "age": "Mầm non",
+    "displayAge": "Mầm non",
+    "duration": "36 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.99,
+    "totalStudents": 280,
+    "coverImage": "/images/courses/mam-non.png",
+    "badge": "LỚP CHUYÊN SÂU",
+    "glowColor": "orange",
+    "overview": "Lớp Chuyên Sâu là chặng về đích hoàn hảo của cấp Mầm Non. Trẻ được thử thách với các đồ án kỹ sư nhí quy mô: xe lu, xe ủi, trạm vũ trụ không gian, thành phố tương lai. Trẻ được rèn luyện kỹ năng thuyết trình tự tin trước đám đông và sẵn sàng tự lập khi bước vào Lớp 1.",
+    "hardwareKit": {
+      "name": "Bộ Học Cụ Robot Mầm Non VIAI-Kids An Toàn Chuẩn Châu Âu",
+      "description": "Mỗi học viên được trang bị 01 bộ khối ghép cơ khí bo tròn không sắc nhọn, động cơ giảm tốc an toàn cho trẻ nhỏ.",
+      "items": [
+        "Bộ 120+ chi tiết khối ghép nhựa nguyên sinh ABS an toàn tuyệt đối",
+        "Động cơ chuyển động chậm thông minh kèm nút điều khiển trực quan",
+        "Bộ truyền động bánh răng lớn, ròng rọc và trục quay sắc màu",
+        "Cảm biến chạm và đèn LED phát sáng vui nhộn",
+        "Thẻ lệnh mã màu giúp bé làm quen tư duy lập trình không cần máy tính"
+      ]
+    },
+    "skillsGained": [
       {
-        title: '2 Khóa học con bứt phá chuyên sâu',
-        desc: 'Lớp 6 — 7 (Chiến thuật đấu trường & Thuật toán PID) và Lớp 8 — 9 (Chuyên sâu AI, Computer Vision & Robot AGV).'
+        "title": "Kỹ năng vận động tinh & Khéo léo",
+        "desc": "Thao tác lắp ghép ngón tay, phối hợp tay - mắt nhịp nhàng",
+        "percent": 98
       },
       {
-        title: 'Lập trình mã lệnh thực chiến C++ / Python',
-        desc: 'Học sinh trực tiếp code giải thuật bám line tốc độ cao, xử lý dữ liệu cảm biến đa luồng và điều khiển động cơ PID.'
+        "title": "Tư duy logic & Trình tự hành động",
+        "desc": "Hiểu khái niệm nhân - quả và các bước hoàn thành sản phẩm",
+        "percent": 92
       },
       {
-        title: 'Huấn luyện thi đấu & Bảo trợ Sáng tạo KHKT',
-        desc: 'Được bảo trợ chuyên môn hoàn thiện hồ sơ dự thi Sáng tạo KHKT các cấp và các giải đấu Robotics uy tín.'
+        "title": "Trí tưởng tượng & Sáng tạo tự do",
+        "desc": "Tự do sáng tạo các mô hình động vật, xe cộ theo suy nghĩ của bé",
+        "percent": 96
+      },
+      {
+        "title": "Tự tin giao tiếp & Hợp tác",
+        "desc": "Biết chia sẻ khối ghép, cùng bạn chơi và khoe sản phẩm với bố mẹ",
+        "percent": 90
       }
     ],
-    childCourseSlugs: ['robotics-lop-6-7', 'robotics-ai-lop-8-9'],
-    learningOutcomes: [
-      'Thành thạo lập trình code văn bản Python và C/C++ ứng dụng vào phần cứng vi điều khiển',
-      'Ứng dụng thuật toán điều khiển tự động PID và xử lý ảnh cơ bản với Computer Vision',
-      'Thiết kế và chế tạo Robot tự hành AGV phục vụ các bài toán vận chuyển thông minh',
-      'Tư duy phản biện, giải quyết vấn đề kỹ thuật phức tạp và tư duy nghiên cứu khoa học'
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      }
     ],
-    methodology: 'Research & Competition-Driven Learning (Đào tạo định hướng nghiên cứu & Chinh phục giải đấu).'
+    "tuition": {
+      "originalPrice": "4.200.000đ",
+      "discountedPrice": "3.200.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
+      "giftValue": "Trị giá 500.000đ"
+    },
+    "commitments": [
+      "100% trẻ biết tự tay lắp ráp và vận hành mô hình robot sau mỗi buổi học.",
+      "Môi trường an toàn tuyệt đối, trang thiết bị bo góc chuẩn châu Âu.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, giáo viên kèm sát 1-1 tận tình.",
+      "Báo cáo hình ảnh & video sản phẩm của con gửi phụ huynh sau từng buổi học."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Đầu Bếp Nhí & Xe Công Trình Hiện Đại",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Chế tạo các cỗ máy công nghiệp hiện đại: máy nghiền, cần cẩu, xe lu, xe ủi với cơ cấu trợ lực và truyền động phức hợp.",
+        "achievement": "Làm chủ các cơ cấu cơ khí nặng, hệ thống ròng rọc kép và thang nâng chuyển động thẳng đứng.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Máy đánh trứng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Máy xay đậu",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Máy nghiền",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Robot lăn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập kiến thức",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Cần cẩu mini",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Xe lu",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Xe ủi",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Đài phun nước",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Thang máy",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Thuyết trình demo cho giáo viên",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình về sản phẩm",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Vũ Trụ Kì Diệu & Phương Tiện Quân Sự",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Bước chân vào khám phá không gian và phương tiện kỹ thuật quân sự: trạm vũ trụ, xe tăng, pháo binh.",
+        "achievement": "Lắp ráp mô hình không gian 3D phức hợp, bệ phóng cơ học và phương tiện bánh xích.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Rào chắn công trình",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Người ngoài hành tinh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Động vật không gian",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Tàu vũ trụ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập kiến thức",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Căn cứ ngoài hành tinh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Xe thang",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Máy bay vận tải",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Xe tăng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Pháo binh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Thuyết trình demo cho giáo viên",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình về sản phẩm",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP3",
+        "title": "Học phần 3",
+        "name": "Trang Trại Công Nghệ & Thành Phố Tương Lai",
+        "number": "Học phần 3",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Tích hợp toàn diện kiến thức chế tạo robot: máy bay không người lái, xe bay, ngôi nhà thông minh và robot vệ sinh đô thị.",
+        "achievement": "Bé hoàn thành đồ án tốt nghiệp tổng thể cấp Mầm Non, sẵn sàng bước vào chương trình Robotics Tiểu Học.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Máy giặt",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Máy bay không người lái",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Robot quét dọn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Câu chuyện chú ngựa qua sông",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập kiến thức",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Cáo mất đuôi",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Xe bay",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Ngôi nhà thông minh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "AFC",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Robot vệ sinh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Thuyết trình demo cho giáo viên",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình về sản phẩm",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 3.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "robotics-mam-non": {
+    "slug": "mam-non-co-ban",
+    "code": "Sata-Kids-Basic",
+    "name": "Robotics Mầm Non — Lớp Cơ Bản",
+    "academicName": "Khám Phá & Lắp Ghép Cơ Bản",
+    "headline": "Khám phá thế giới hình khối, máy công cụ và nhen nhóm tư duy logic đầu đời cho trẻ",
+    "category": "Mầm non",
+    "grade": "Mầm non",
+    "age": "Mầm non",
+    "displayAge": "Mầm non",
+    "duration": "36 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.96,
+    "totalStudents": 420,
+    "coverImage": "/images/courses/mam-non.png",
+    "badge": "LỚP CƠ BẢN",
+    "glowColor": "orange",
+    "overview": "Chương trình Lớp Cơ Bản được thiết kế đặc thù cho trẻ mầm non theo phương pháp 'Vừa học vừa chơi' (Play-based Learning). Bé làm quen với các chi tiết khối ghép an toàn, bánh răng cơ khí, chế tạo các máy công cụ quen thuộc như cối xay gió, máy trộn và xe trượt vui nhộn.",
+    "hardwareKit": {
+      "name": "Bộ Học Cụ Robot Mầm Non VIAI-Kids An Toàn Chuẩn Châu Âu",
+      "description": "Mỗi học viên được trang bị 01 bộ khối ghép cơ khí bo tròn không sắc nhọn, động cơ giảm tốc an toàn cho trẻ nhỏ.",
+      "items": [
+        "Bộ 120+ chi tiết khối ghép nhựa nguyên sinh ABS an toàn tuyệt đối",
+        "Động cơ chuyển động chậm thông minh kèm nút điều khiển trực quan",
+        "Bộ truyền động bánh răng lớn, ròng rọc và trục quay sắc màu",
+        "Cảm biến chạm và đèn LED phát sáng vui nhộn",
+        "Thẻ lệnh mã màu giúp bé làm quen tư duy lập trình không cần máy tính"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Kỹ năng vận động tinh & Khéo léo",
+        "desc": "Thao tác lắp ghép ngón tay, phối hợp tay - mắt nhịp nhàng",
+        "percent": 98
+      },
+      {
+        "title": "Tư duy logic & Trình tự hành động",
+        "desc": "Hiểu khái niệm nhân - quả và các bước hoàn thành sản phẩm",
+        "percent": 92
+      },
+      {
+        "title": "Trí tưởng tượng & Sáng tạo tự do",
+        "desc": "Tự do sáng tạo các mô hình động vật, xe cộ theo suy nghĩ của bé",
+        "percent": 96
+      },
+      {
+        "title": "Tự tin giao tiếp & Hợp tác",
+        "desc": "Biết chia sẻ khối ghép, cùng bạn chơi và khoe sản phẩm với bố mẹ",
+        "percent": 90
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "4.200.000đ",
+      "discountedPrice": "3.200.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
+      "giftValue": "Trị giá 500.000đ"
+    },
+    "commitments": [
+      "100% trẻ biết tự tay lắp ráp và vận hành mô hình robot sau mỗi buổi học.",
+      "Môi trường an toàn tuyệt đối, trang thiết bị bo góc chuẩn châu Âu.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, giáo viên kèm sát 1-1 tận tình.",
+      "Báo cáo hình ảnh & video sản phẩm của con gửi phụ huynh sau từng buổi học."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Khám Phá Thế Giới & Máy Công Cụ Đầu Tiên",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Bé làm quen các khối ghép cơ bản, khám phá các chuyển động xung quanh và chế tạo các máy công cụ đầu tiên.",
+        "achievement": "Bé nhận biết màu sắc, hình khối, lắp ghép thuần thục và tự tin thuyết trình sản phẩm.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Chào Weir",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Tháp truyền hình Neon",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Nhà là ca sĩ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Người hâm mộ thể thao",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập kiến thức",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Buzz, Buzz, Chú ong nhỏ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Con thuyền của sa mạc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Wow - Khủng long kia",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Cối xay gió tự động",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Máy trộn cầm tay rực rỡ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Thuyết trình demo cho giáo viên",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình về sản phẩm",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Công Viên Trò Chơi & Mùa Xuân Rực Rỡ",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Khám phá các phương tiện di chuyển trong công viên và các mô hình cơ khí mô phỏng thiên nhiên bốn mùa.",
+        "achievement": "Lắp ráp thành thạo mô hình bánh xe lăn, đệm khí và hiểu nguyên lý hoạt động của thiết bị gia đình.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Tàu đệm khí",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Bánh xe lăn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Tàu lượn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Công viên trò chơi",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập kiến thức",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Hoa nở",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Che ô trong mưa xuân",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Đi chơi trong mùa xuân",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Thiên thần nhỏ báo thức",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Máy hút bụi của bé",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Thuyết trình demo cho giáo viên",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình về sản phẩm",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP3",
+        "title": "Học phần 3",
+        "name": "Thế Giới Động Vật & Thị Trấn Hạnh Phúc",
+        "number": "Học phần 3",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Khám phá các chuyển động uốn lượn, mô phỏng hành vi động vật và xây dựng mô hình thị trấn đáng yêu.",
+        "achievement": "Lắp ráp mô hình chuyển động phức tạp, phối hợp màu sắc và nhịp điệu âm thanh.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Nóng, nóng, quạt máy của bé",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Rắn, rắn rình rập",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Voi vòi voi voi",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Chú chim biết hát",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập kiến thức",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Sở thú diệu kì",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Bốn mùa của cây",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Ngôi nhà của bé",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Nhịp cầu âm nhạc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Thị trấn vui vẻ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Thuyết trình demo cho giáo viên",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình về sản phẩm",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 3.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "tieu-hoc-bat-dau": {
+    "slug": "tieu-hoc-bat-dau",
+    "code": "Sata-Primary-Basic",
+    "name": "Robotics Tiểu Học — Khóa Bắt Đầu",
+    "academicName": "Khởi Đầu Đam Mê & Cơ Cấu Cơ Bản",
+    "headline": "Làm quen với bộ học cụ quạt máy, con quay, đua thuyền và các mô hình thông minh đầu tiên",
+    "category": "Tiểu học",
+    "grade": "Tiểu học",
+    "age": "Lớp 1 — 5",
+    "displayAge": "6 — 11 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.96,
+    "totalStudents": 380,
+    "coverImage": "/images/courses/tieu-hoc-1.png",
+    "badge": "KHÓA BẮT ĐẦU",
+    "glowColor": "cyan",
+    "overview": "Chương trình Khóa Bắt Đầu dành cho học sinh Tiểu học bước đầu làm quen với thế giới chế tạo robotics. Học sinh được học qua các dự án vật lý thực tế: quạt máy, con quay, xe đua F1, ngôi nhà thông minh và trực thăng.",
+    "hardwareKit": {
+      "name": "Hệ Sinh Thái Alpha + Beta & Cảm Biến Đa Tầng Chuẩn Quốc Tế",
+      "description": "Bộ linh kiện cơ khí chính xác, động cơ giảm tốc, servo, vi điều khiển Alpha/Beta và hệ thống cảm biến thông minh.",
+      "items": [
+        "Hơn 300+ chi tiết lắp ráp kỹ thuật: bánh răng, ròng rọc, trục truyền động, thanh nối",
+        "Bộ vi điều khiển thông minh tích hợp khe nạp chương trình và kết nối không dây",
+        "Động cơ DC đa tốc độ kèm Servo điều khiển góc quay chính xác",
+        "Cảm biến siêu âm sóng âm, cảm biến màu sắc, cảm biến chạm và còi báo",
+        "Phần mềm mô phỏng 3D RoboSim chuẩn thi đấu sáng tạo thanh thiếu niên"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Tư duy thuật toán & Lập trình khối",
+        "desc": "Làm chủ thuật toán tuần tự, rẽ nhánh nếu - thì và vòng lặp",
+        "percent": 96
+      },
+      {
+        "title": "Cơ cấu cơ giới & Bản vẽ kỹ thuật",
+        "desc": "Đọc hiểu bản vẽ lắp ráp 3D, phân tích kết cấu cơ khí chính xác",
+        "percent": 94
+      },
+      {
+        "title": "Tư duy Virtual-to-Physical 3D",
+        "desc": "Mô phỏng 3D trên RoboSim trước khi chuyển giao mã nguồn sang robot thực tế",
+        "percent": 92
+      },
+      {
+        "title": "Debug cơ khí & Thuyết trình sản phẩm",
+        "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
+        "percent": 95
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "4.800.000đ",
+      "discountedPrice": "3.600.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
+      "giftValue": "Trị giá 600.000đ"
+    },
+    "commitments": [
+      "100% học sinh tự tay lắp ráp và lập trình hoàn thiện robot thật sau mỗi buổi.",
+      "Thực hành mô phỏng 3D trên RoboSim chuẩn đấu trường quốc tế.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, huấn luyện viên kèm sát 1-1.",
+      "Báo cáo tiến độ học tập chi tiết và video thuyết trình gửi phụ huynh sau từng học phần."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Khám Phá Học Cụ & Chế Tạo Cơ Bản",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Làm quen bộ học cụ, khám phá cơ cấu truyền động quạt máy, con quay, xe kéo và máy bắn đá.",
+        "achievement": "Tự tay lắp ráp các mô hình cơ bản và thuyết trình sản phẩm tự tin.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Làm quen bộ học cụ - Quạt máy",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Con quay thần tốc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Đua thuyền",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Robot đi bộ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Robot họa sĩ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Robot dancing",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Robot kéo xe",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Máy bắn đá",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Vận Tốc, Cảm Biến & Nhà Thông Minh",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Tìm hiểu các yếu tố ảnh hưởng vận tốc, lực cân bằng, cảm biến sóng âm, cánh tay robot và đèn giao thông.",
+        "achievement": "Làm chủ nguyên lý cảm biến và hoàn thành đồ án thuyết trình cuối khóa.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Các yếu tố ảnh hưởng vận tốc- Xe đua F1",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Lực cân bằng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Lực đàn hồi- Cây nỏ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Music Box",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Ngôi nhà thông minh- Cảm biến sóng âm",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Cánh tay robot",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Đèn giao thông",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Máy bay trực thăng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "tieu-hoc-intren": {
+    "slug": "tieu-hoc-intren",
+    "code": "Sata-Primary-Intern",
+    "name": "Robotics Tiểu Học — Khóa Intren",
+    "academicName": "Mô Phỏng Động Vật & Năng Lượng Tái Tạo",
+    "headline": "Chế tạo các robot mô phỏng sinh vật thông minh và phương tiện năng lượng xanh",
+    "category": "Tiểu học",
+    "grade": "Tiểu học",
+    "age": "Lớp 1 — 5",
+    "displayAge": "6 — 11 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.97,
+    "totalStudents": 320,
+    "coverImage": "/images/courses/tieu-hoc-2.png",
+    "badge": "KHÓA INTREN",
+    "glowColor": "cyan",
+    "overview": "Khóa Intren giúp học sinh mở rộng tư duy chế tạo mô phỏng thế giới tự nhiên và các giải pháp môi trường hiện đại: robot thỏ, voi, chim, khỉ, hệ thống phân loại rác, xe năng lượng và tàu tuần dương.",
+    "hardwareKit": {
+      "name": "Hệ Sinh Thái Alpha + Beta & Cảm Biến Đa Tầng Chuẩn Quốc Tế",
+      "description": "Bộ linh kiện cơ khí chính xác, động cơ giảm tốc, servo, vi điều khiển Alpha/Beta và hệ thống cảm biến thông minh.",
+      "items": [
+        "Hơn 300+ chi tiết lắp ráp kỹ thuật: bánh răng, ròng rọc, trục truyền động, thanh nối",
+        "Bộ vi điều khiển thông minh tích hợp khe nạp chương trình và kết nối không dây",
+        "Động cơ DC đa tốc độ kèm Servo điều khiển góc quay chính xác",
+        "Cảm biến siêu âm sóng âm, cảm biến màu sắc, cảm biến chạm và còi báo",
+        "Phần mềm mô phỏng 3D RoboSim chuẩn thi đấu sáng tạo thanh thiếu niên"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Tư duy thuật toán & Lập trình khối",
+        "desc": "Làm chủ thuật toán tuần tự, rẽ nhánh nếu - thì và vòng lặp",
+        "percent": 96
+      },
+      {
+        "title": "Cơ cấu cơ giới & Bản vẽ kỹ thuật",
+        "desc": "Đọc hiểu bản vẽ lắp ráp 3D, phân tích kết cấu cơ khí chính xác",
+        "percent": 94
+      },
+      {
+        "title": "Tư duy Virtual-to-Physical 3D",
+        "desc": "Mô phỏng 3D trên RoboSim trước khi chuyển giao mã nguồn sang robot thực tế",
+        "percent": 92
+      },
+      {
+        "title": "Debug cơ khí & Thuyết trình sản phẩm",
+        "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
+        "percent": 95
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "4.800.000đ",
+      "discountedPrice": "3.600.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
+      "giftValue": "Trị giá 600.000đ"
+    },
+    "commitments": [
+      "100% học sinh tự tay lắp ráp và lập trình hoàn thiện robot thật sau mỗi buổi.",
+      "Thực hành mô phỏng 3D trên RoboSim chuẩn đấu trường quốc tế.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, huấn luyện viên kèm sát 1-1.",
+      "Báo cáo tiến độ học tập chi tiết và video thuyết trình gửi phụ huynh sau từng học phần."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Sinh Vật Thông Minh & Robot Thể Thao",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Mô phỏng hành vi động vật và chuyển động thể thao: cầu thủ, thủ môn, vận động viên bơi lội, đu xà đơn.",
+        "achievement": "Lắp ráp cơ cấu chuyển động nhịp nhàng và làm chủ dự án sáng tạo.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Chú thỏ dễ thương",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Chú voi con ở Bản Đôn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Những chú chim vui vẻ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Khỉ Gorina",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Cầu thủ đỉnh cao",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Thủ môn xuất sắc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Vận động viên bơi lội",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Đu xà đơn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Năng Lượng Xanh & Phương Tiện Hiện Đại",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Chế tạo cối xoay gió, xe chạy năng lượng, hệ thống phân loại rác, máy bay chiến đấu và tàu tuần dương.",
+        "achievement": "Hiểu bản chất năng lượng và giải quyết các bài toán môi trường thực tế.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Cối xoay gió",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Xe chạy năng lượng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Phân loại rác thải",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Xe thu gom rác",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Máy bay chiến đấu",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Tên lửa phòng không",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Đại bác",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Tàu tuần dương",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "tieu-hoc-nang-cao": {
+    "slug": "tieu-hoc-nang-cao",
+    "code": "Sata-Primary-Adv",
+    "name": "Robotics Tiểu Học — Khóa Nâng Cao",
+    "academicName": "Công Trình Hạng Nặng & Cơ Khí Động Lực",
+    "headline": "Chế tạo xe ủi, xe nâng, cần cẩu, máy cưa và các cỗ máy công nghiệp phức tạp",
+    "category": "Tiểu học",
+    "grade": "Tiểu học",
+    "age": "Lớp 1 — 5",
+    "displayAge": "6 — 11 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.98,
+    "totalStudents": 310,
+    "coverImage": "/images/courses/tieu-hoc-2.png",
+    "badge": "KHÓA NÂNG CAO",
+    "glowColor": "cyan",
+    "overview": "Khóa Nâng Cao đưa học sinh đến với các cỗ máy công trình và hệ thống cơ khí động lực quy mô: xe thợ mỏ, xe ủi, xe nâng, cần cẩu, máy đập bột, máy bơm dầu.",
+    "hardwareKit": {
+      "name": "Hệ Sinh Thái Alpha + Beta & Cảm Biến Đa Tầng Chuẩn Quốc Tế",
+      "description": "Bộ linh kiện cơ khí chính xác, động cơ giảm tốc, servo, vi điều khiển Alpha/Beta và hệ thống cảm biến thông minh.",
+      "items": [
+        "Hơn 300+ chi tiết lắp ráp kỹ thuật: bánh răng, ròng rọc, trục truyền động, thanh nối",
+        "Bộ vi điều khiển thông minh tích hợp khe nạp chương trình và kết nối không dây",
+        "Động cơ DC đa tốc độ kèm Servo điều khiển góc quay chính xác",
+        "Cảm biến siêu âm sóng âm, cảm biến màu sắc, cảm biến chạm và còi báo",
+        "Phần mềm mô phỏng 3D RoboSim chuẩn thi đấu sáng tạo thanh thiếu niên"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Tư duy thuật toán & Lập trình khối",
+        "desc": "Làm chủ thuật toán tuần tự, rẽ nhánh nếu - thì và vòng lặp",
+        "percent": 96
+      },
+      {
+        "title": "Cơ cấu cơ giới & Bản vẽ kỹ thuật",
+        "desc": "Đọc hiểu bản vẽ lắp ráp 3D, phân tích kết cấu cơ khí chính xác",
+        "percent": 94
+      },
+      {
+        "title": "Tư duy Virtual-to-Physical 3D",
+        "desc": "Mô phỏng 3D trên RoboSim trước khi chuyển giao mã nguồn sang robot thực tế",
+        "percent": 92
+      },
+      {
+        "title": "Debug cơ khí & Thuyết trình sản phẩm",
+        "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
+        "percent": 95
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "4.800.000đ",
+      "discountedPrice": "3.600.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
+      "giftValue": "Trị giá 600.000đ"
+    },
+    "commitments": [
+      "100% học sinh tự tay lắp ráp và lập trình hoàn thiện robot thật sau mỗi buổi.",
+      "Thực hành mô phỏng 3D trên RoboSim chuẩn đấu trường quốc tế.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, huấn luyện viên kèm sát 1-1.",
+      "Báo cáo tiến độ học tập chi tiết và video thuyết trình gửi phụ huynh sau từng học phần."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Xe Công Trình & Công Viên Giải Trí",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Lắp ráp xe ủi đất, xe nâng hàng, cần cẩu, đu quay khổng lồ, ghế bay và thuyền hải tặc.",
+        "achievement": "Làm chủ tỷ số truyền bánh răng tải nặng và nguyên lý trợ lực cơ học.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Robot thợ mỏ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Xe ủi đất",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Xe nâng hàng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Cần cẩu",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Đu quay khổng lồ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Ghế bay",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Thuyền hải tặc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Đua thuyền rồng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Cơ Khí Chế Biến & Robot Sinh Học",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Chế tạo máy cưa, máy đập bột, máy bơm dầu, kết hợp mô hình động vật lưỡng cư con cá, con rùa, con cua, con ếch.",
+        "achievement": "Tối ưu hóa độ bền cơ học và tự tin thuyết trình đồ án nâng cao.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Máy cưa",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Bẫy chuột",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Máy đập bột làm bánh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Máy bơm dầu",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Con cá",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Con rùa",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Con cua",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Con ếch",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "tieu-hoc-chuyen-gia": {
+    "slug": "tieu-hoc-chuyen-gia",
+    "code": "Sata-Primary-Pro",
+    "name": "Robotics Tiểu Học — Khóa Chuyên Gia",
+    "academicName": "Thám Hiểm Không Gian & Tự Động Hóa Bến Cảng",
+    "headline": "Kiến tạo robot trợ lý, vận chuyển bến cảng tự động và trạm thám hiểm sao hỏa",
+    "category": "Tiểu học",
+    "grade": "Tiểu học",
+    "age": "Lớp 1 — 5",
+    "displayAge": "6 — 11 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.99,
+    "totalStudents": 290,
+    "coverImage": "/images/courses/tieu-hoc-1.png",
+    "badge": "KHÓA CHUYÊN GIA",
+    "glowColor": "cyan",
+    "overview": "Khóa Chuyên Gia là chặng về đích đỉnh cao của cấp Tiểu học. Học sinh được thử thách với các hệ thống tự động hóa thông minh: robot trợ lý phòng lab, vận chuyển tự động bến cảng, xe vượt địa hình, robot thám hiểm sao hỏa và phi thuyền không gian.",
+    "hardwareKit": {
+      "name": "Hệ Sinh Thái Alpha + Beta & Cảm Biến Đa Tầng Chuẩn Quốc Tế",
+      "description": "Bộ linh kiện cơ khí chính xác, động cơ giảm tốc, servo, vi điều khiển Alpha/Beta và hệ thống cảm biến thông minh.",
+      "items": [
+        "Hơn 300+ chi tiết lắp ráp kỹ thuật: bánh răng, ròng rọc, trục truyền động, thanh nối",
+        "Bộ vi điều khiển thông minh tích hợp khe nạp chương trình và kết nối không dây",
+        "Động cơ DC đa tốc độ kèm Servo điều khiển góc quay chính xác",
+        "Cảm biến siêu âm sóng âm, cảm biến màu sắc, cảm biến chạm và còi báo",
+        "Phần mềm mô phỏng 3D RoboSim chuẩn thi đấu sáng tạo thanh thiếu niên"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Tư duy thuật toán & Lập trình khối",
+        "desc": "Làm chủ thuật toán tuần tự, rẽ nhánh nếu - thì và vòng lặp",
+        "percent": 96
+      },
+      {
+        "title": "Cơ cấu cơ giới & Bản vẽ kỹ thuật",
+        "desc": "Đọc hiểu bản vẽ lắp ráp 3D, phân tích kết cấu cơ khí chính xác",
+        "percent": 94
+      },
+      {
+        "title": "Tư duy Virtual-to-Physical 3D",
+        "desc": "Mô phỏng 3D trên RoboSim trước khi chuyển giao mã nguồn sang robot thực tế",
+        "percent": 92
+      },
+      {
+        "title": "Debug cơ khí & Thuyết trình sản phẩm",
+        "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
+        "percent": 95
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "4.800.000đ",
+      "discountedPrice": "3.600.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
+      "giftValue": "Trị giá 600.000đ"
+    },
+    "commitments": [
+      "100% học sinh tự tay lắp ráp và lập trình hoàn thiện robot thật sau mỗi buổi.",
+      "Thực hành mô phỏng 3D trên RoboSim chuẩn đấu trường quốc tế.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, huấn luyện viên kèm sát 1-1.",
+      "Báo cáo tiến độ học tập chi tiết và video thuyết trình gửi phụ huynh sau từng học phần."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Tự Động Hóa Logistics & Robot Trợ Lý",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Chế tạo robot trợ lý, hệ thống vận chuyển bến cảng tự động, máy vận chuyển và xe vượt địa hình.",
+        "achievement": "Hiểu nguyên lý logistics tự động và quy trình điều khiển thông minh.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Robot trợ lý",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Phương tiện công cộng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Diễn viên xiếc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Vận chuyển tự động ở bến cảng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Súng lục bắn đá",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Máy vận chuyển",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Xe vượt địa hình",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Robot trợ lý phòng thí nghiệm",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Chinh Phục Không Gian & Robot Thể Thao",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Khám phá trạm sao hỏa, phi thuyền không gian, xe rocket, con lắc khổng lồ và robot thể thao.",
+        "achievement": "Tốt nghiệp toàn diện cấp Tiểu học, sẵn sàng chuyển tiếp vững vàng lên THCS.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Robot thám hiểm sao hỏa",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Robot đi bộ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Phi thuyền không gian",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Xe mô tô",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Con lắc khổng lồ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Xe rocket",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Quạt đứng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Robot thể thao",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "robotics-lop-1-2": {
+    "slug": "tieu-hoc-bat-dau",
+    "code": "Sata-Primary-Basic",
+    "name": "Robotics Tiểu Học — Khóa Bắt Đầu",
+    "academicName": "Khởi Đầu Đam Mê & Cơ Cấu Cơ Bản",
+    "headline": "Làm quen với bộ học cụ quạt máy, con quay, đua thuyền và các mô hình thông minh đầu tiên",
+    "category": "Tiểu học",
+    "grade": "Tiểu học",
+    "age": "Lớp 1 — 5",
+    "displayAge": "6 — 11 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.96,
+    "totalStudents": 380,
+    "coverImage": "/images/courses/tieu-hoc-1.png",
+    "badge": "KHÓA BẮT ĐẦU",
+    "glowColor": "cyan",
+    "overview": "Chương trình Khóa Bắt Đầu dành cho học sinh Tiểu học bước đầu làm quen với thế giới chế tạo robotics. Học sinh được học qua các dự án vật lý thực tế: quạt máy, con quay, xe đua F1, ngôi nhà thông minh và trực thăng.",
+    "hardwareKit": {
+      "name": "Hệ Sinh Thái Alpha + Beta & Cảm Biến Đa Tầng Chuẩn Quốc Tế",
+      "description": "Bộ linh kiện cơ khí chính xác, động cơ giảm tốc, servo, vi điều khiển Alpha/Beta và hệ thống cảm biến thông minh.",
+      "items": [
+        "Hơn 300+ chi tiết lắp ráp kỹ thuật: bánh răng, ròng rọc, trục truyền động, thanh nối",
+        "Bộ vi điều khiển thông minh tích hợp khe nạp chương trình và kết nối không dây",
+        "Động cơ DC đa tốc độ kèm Servo điều khiển góc quay chính xác",
+        "Cảm biến siêu âm sóng âm, cảm biến màu sắc, cảm biến chạm và còi báo",
+        "Phần mềm mô phỏng 3D RoboSim chuẩn thi đấu sáng tạo thanh thiếu niên"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Tư duy thuật toán & Lập trình khối",
+        "desc": "Làm chủ thuật toán tuần tự, rẽ nhánh nếu - thì và vòng lặp",
+        "percent": 96
+      },
+      {
+        "title": "Cơ cấu cơ giới & Bản vẽ kỹ thuật",
+        "desc": "Đọc hiểu bản vẽ lắp ráp 3D, phân tích kết cấu cơ khí chính xác",
+        "percent": 94
+      },
+      {
+        "title": "Tư duy Virtual-to-Physical 3D",
+        "desc": "Mô phỏng 3D trên RoboSim trước khi chuyển giao mã nguồn sang robot thực tế",
+        "percent": 92
+      },
+      {
+        "title": "Debug cơ khí & Thuyết trình sản phẩm",
+        "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
+        "percent": 95
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "4.800.000đ",
+      "discountedPrice": "3.600.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
+      "giftValue": "Trị giá 600.000đ"
+    },
+    "commitments": [
+      "100% học sinh tự tay lắp ráp và lập trình hoàn thiện robot thật sau mỗi buổi.",
+      "Thực hành mô phỏng 3D trên RoboSim chuẩn đấu trường quốc tế.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, huấn luyện viên kèm sát 1-1.",
+      "Báo cáo tiến độ học tập chi tiết và video thuyết trình gửi phụ huynh sau từng học phần."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Khám Phá Học Cụ & Chế Tạo Cơ Bản",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Làm quen bộ học cụ, khám phá cơ cấu truyền động quạt máy, con quay, xe kéo và máy bắn đá.",
+        "achievement": "Tự tay lắp ráp các mô hình cơ bản và thuyết trình sản phẩm tự tin.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Làm quen bộ học cụ - Quạt máy",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Con quay thần tốc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Đua thuyền",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Robot đi bộ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Robot họa sĩ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Robot dancing",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Robot kéo xe",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Máy bắn đá",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Vận Tốc, Cảm Biến & Nhà Thông Minh",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Tìm hiểu các yếu tố ảnh hưởng vận tốc, lực cân bằng, cảm biến sóng âm, cánh tay robot và đèn giao thông.",
+        "achievement": "Làm chủ nguyên lý cảm biến và hoàn thành đồ án thuyết trình cuối khóa.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Các yếu tố ảnh hưởng vận tốc- Xe đua F1",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Lực cân bằng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Lực đàn hồi- Cây nỏ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Music Box",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Ngôi nhà thông minh- Cảm biến sóng âm",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Cánh tay robot",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Đèn giao thông",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Máy bay trực thăng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "robotics-lop-3-4": {
+    "slug": "tieu-hoc-nang-cao",
+    "code": "Sata-Primary-Adv",
+    "name": "Robotics Tiểu Học — Khóa Nâng Cao",
+    "academicName": "Công Trình Hạng Nặng & Cơ Khí Động Lực",
+    "headline": "Chế tạo xe ủi, xe nâng, cần cẩu, máy cưa và các cỗ máy công nghiệp phức tạp",
+    "category": "Tiểu học",
+    "grade": "Tiểu học",
+    "age": "Lớp 1 — 5",
+    "displayAge": "6 — 11 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.98,
+    "totalStudents": 310,
+    "coverImage": "/images/courses/tieu-hoc-2.png",
+    "badge": "KHÓA NÂNG CAO",
+    "glowColor": "cyan",
+    "overview": "Khóa Nâng Cao đưa học sinh đến với các cỗ máy công trình và hệ thống cơ khí động lực quy mô: xe thợ mỏ, xe ủi, xe nâng, cần cẩu, máy đập bột, máy bơm dầu.",
+    "hardwareKit": {
+      "name": "Hệ Sinh Thái Alpha + Beta & Cảm Biến Đa Tầng Chuẩn Quốc Tế",
+      "description": "Bộ linh kiện cơ khí chính xác, động cơ giảm tốc, servo, vi điều khiển Alpha/Beta và hệ thống cảm biến thông minh.",
+      "items": [
+        "Hơn 300+ chi tiết lắp ráp kỹ thuật: bánh răng, ròng rọc, trục truyền động, thanh nối",
+        "Bộ vi điều khiển thông minh tích hợp khe nạp chương trình và kết nối không dây",
+        "Động cơ DC đa tốc độ kèm Servo điều khiển góc quay chính xác",
+        "Cảm biến siêu âm sóng âm, cảm biến màu sắc, cảm biến chạm và còi báo",
+        "Phần mềm mô phỏng 3D RoboSim chuẩn thi đấu sáng tạo thanh thiếu niên"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Tư duy thuật toán & Lập trình khối",
+        "desc": "Làm chủ thuật toán tuần tự, rẽ nhánh nếu - thì và vòng lặp",
+        "percent": 96
+      },
+      {
+        "title": "Cơ cấu cơ giới & Bản vẽ kỹ thuật",
+        "desc": "Đọc hiểu bản vẽ lắp ráp 3D, phân tích kết cấu cơ khí chính xác",
+        "percent": 94
+      },
+      {
+        "title": "Tư duy Virtual-to-Physical 3D",
+        "desc": "Mô phỏng 3D trên RoboSim trước khi chuyển giao mã nguồn sang robot thực tế",
+        "percent": 92
+      },
+      {
+        "title": "Debug cơ khí & Thuyết trình sản phẩm",
+        "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
+        "percent": 95
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "4.800.000đ",
+      "discountedPrice": "3.600.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
+      "giftValue": "Trị giá 600.000đ"
+    },
+    "commitments": [
+      "100% học sinh tự tay lắp ráp và lập trình hoàn thiện robot thật sau mỗi buổi.",
+      "Thực hành mô phỏng 3D trên RoboSim chuẩn đấu trường quốc tế.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, huấn luyện viên kèm sát 1-1.",
+      "Báo cáo tiến độ học tập chi tiết và video thuyết trình gửi phụ huynh sau từng học phần."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Xe Công Trình & Công Viên Giải Trí",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Lắp ráp xe ủi đất, xe nâng hàng, cần cẩu, đu quay khổng lồ, ghế bay và thuyền hải tặc.",
+        "achievement": "Làm chủ tỷ số truyền bánh răng tải nặng và nguyên lý trợ lực cơ học.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Robot thợ mỏ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Xe ủi đất",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Xe nâng hàng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Cần cẩu",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Đu quay khổng lồ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Ghế bay",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Thuyền hải tặc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Đua thuyền rồng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Cơ Khí Chế Biến & Robot Sinh Học",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Chế tạo máy cưa, máy đập bột, máy bơm dầu, kết hợp mô hình động vật lưỡng cư con cá, con rùa, con cua, con ếch.",
+        "achievement": "Tối ưu hóa độ bền cơ học và tự tin thuyết trình đồ án nâng cao.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Máy cưa",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Bẫy chuột",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Máy đập bột làm bánh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Máy bơm dầu",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Con cá",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Con rùa",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Con cua",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Con ếch",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "robotics-lop-5": {
+    "slug": "tieu-hoc-chuyen-gia",
+    "code": "Sata-Primary-Pro",
+    "name": "Robotics Tiểu Học — Khóa Chuyên Gia",
+    "academicName": "Thám Hiểm Không Gian & Tự Động Hóa Bến Cảng",
+    "headline": "Kiến tạo robot trợ lý, vận chuyển bến cảng tự động và trạm thám hiểm sao hỏa",
+    "category": "Tiểu học",
+    "grade": "Tiểu học",
+    "age": "Lớp 1 — 5",
+    "displayAge": "6 — 11 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.99,
+    "totalStudents": 290,
+    "coverImage": "/images/courses/tieu-hoc-1.png",
+    "badge": "KHÓA CHUYÊN GIA",
+    "glowColor": "cyan",
+    "overview": "Khóa Chuyên Gia là chặng về đích đỉnh cao của cấp Tiểu học. Học sinh được thử thách với các hệ thống tự động hóa thông minh: robot trợ lý phòng lab, vận chuyển tự động bến cảng, xe vượt địa hình, robot thám hiểm sao hỏa và phi thuyền không gian.",
+    "hardwareKit": {
+      "name": "Hệ Sinh Thái Alpha + Beta & Cảm Biến Đa Tầng Chuẩn Quốc Tế",
+      "description": "Bộ linh kiện cơ khí chính xác, động cơ giảm tốc, servo, vi điều khiển Alpha/Beta và hệ thống cảm biến thông minh.",
+      "items": [
+        "Hơn 300+ chi tiết lắp ráp kỹ thuật: bánh răng, ròng rọc, trục truyền động, thanh nối",
+        "Bộ vi điều khiển thông minh tích hợp khe nạp chương trình và kết nối không dây",
+        "Động cơ DC đa tốc độ kèm Servo điều khiển góc quay chính xác",
+        "Cảm biến siêu âm sóng âm, cảm biến màu sắc, cảm biến chạm và còi báo",
+        "Phần mềm mô phỏng 3D RoboSim chuẩn thi đấu sáng tạo thanh thiếu niên"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Tư duy thuật toán & Lập trình khối",
+        "desc": "Làm chủ thuật toán tuần tự, rẽ nhánh nếu - thì và vòng lặp",
+        "percent": 96
+      },
+      {
+        "title": "Cơ cấu cơ giới & Bản vẽ kỹ thuật",
+        "desc": "Đọc hiểu bản vẽ lắp ráp 3D, phân tích kết cấu cơ khí chính xác",
+        "percent": 94
+      },
+      {
+        "title": "Tư duy Virtual-to-Physical 3D",
+        "desc": "Mô phỏng 3D trên RoboSim trước khi chuyển giao mã nguồn sang robot thực tế",
+        "percent": 92
+      },
+      {
+        "title": "Debug cơ khí & Thuyết trình sản phẩm",
+        "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
+        "percent": 95
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "4.800.000đ",
+      "discountedPrice": "3.600.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
+      "giftValue": "Trị giá 600.000đ"
+    },
+    "commitments": [
+      "100% học sinh tự tay lắp ráp và lập trình hoàn thiện robot thật sau mỗi buổi.",
+      "Thực hành mô phỏng 3D trên RoboSim chuẩn đấu trường quốc tế.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, huấn luyện viên kèm sát 1-1.",
+      "Báo cáo tiến độ học tập chi tiết và video thuyết trình gửi phụ huynh sau từng học phần."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Tự Động Hóa Logistics & Robot Trợ Lý",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Chế tạo robot trợ lý, hệ thống vận chuyển bến cảng tự động, máy vận chuyển và xe vượt địa hình.",
+        "achievement": "Hiểu nguyên lý logistics tự động và quy trình điều khiển thông minh.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Robot trợ lý",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Phương tiện công cộng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Diễn viên xiếc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Vận chuyển tự động ở bến cảng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Súng lục bắn đá",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Máy vận chuyển",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Xe vượt địa hình",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Robot trợ lý phòng thí nghiệm",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Chinh Phục Không Gian & Robot Thể Thao",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Khám phá trạm sao hỏa, phi thuyền không gian, xe rocket, con lắc khổng lồ và robot thể thao.",
+        "achievement": "Tốt nghiệp toàn diện cấp Tiểu học, sẵn sàng chuyển tiếp vững vàng lên THCS.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Robot thám hiểm sao hỏa",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Robot đi bộ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Phi thuyền không gian",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Xe mô tô",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Con lắc khổng lồ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Xe rocket",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Quạt đứng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Robot thể thao",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "tieu-hoc": {
+    "slug": "tieu-hoc-bat-dau",
+    "code": "Sata-Primary-Basic",
+    "name": "Robotics Tiểu Học — Khóa Bắt Đầu",
+    "academicName": "Khởi Đầu Đam Mê & Cơ Cấu Cơ Bản",
+    "headline": "Làm quen với bộ học cụ quạt máy, con quay, đua thuyền và các mô hình thông minh đầu tiên",
+    "category": "Tiểu học",
+    "grade": "Tiểu học",
+    "age": "Lớp 1 — 5",
+    "displayAge": "6 — 11 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.96,
+    "totalStudents": 380,
+    "coverImage": "/images/courses/tieu-hoc-1.png",
+    "badge": "KHÓA BẮT ĐẦU",
+    "glowColor": "cyan",
+    "overview": "Chương trình Khóa Bắt Đầu dành cho học sinh Tiểu học bước đầu làm quen với thế giới chế tạo robotics. Học sinh được học qua các dự án vật lý thực tế: quạt máy, con quay, xe đua F1, ngôi nhà thông minh và trực thăng.",
+    "hardwareKit": {
+      "name": "Hệ Sinh Thái Alpha + Beta & Cảm Biến Đa Tầng Chuẩn Quốc Tế",
+      "description": "Bộ linh kiện cơ khí chính xác, động cơ giảm tốc, servo, vi điều khiển Alpha/Beta và hệ thống cảm biến thông minh.",
+      "items": [
+        "Hơn 300+ chi tiết lắp ráp kỹ thuật: bánh răng, ròng rọc, trục truyền động, thanh nối",
+        "Bộ vi điều khiển thông minh tích hợp khe nạp chương trình và kết nối không dây",
+        "Động cơ DC đa tốc độ kèm Servo điều khiển góc quay chính xác",
+        "Cảm biến siêu âm sóng âm, cảm biến màu sắc, cảm biến chạm và còi báo",
+        "Phần mềm mô phỏng 3D RoboSim chuẩn thi đấu sáng tạo thanh thiếu niên"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Tư duy thuật toán & Lập trình khối",
+        "desc": "Làm chủ thuật toán tuần tự, rẽ nhánh nếu - thì và vòng lặp",
+        "percent": 96
+      },
+      {
+        "title": "Cơ cấu cơ giới & Bản vẽ kỹ thuật",
+        "desc": "Đọc hiểu bản vẽ lắp ráp 3D, phân tích kết cấu cơ khí chính xác",
+        "percent": 94
+      },
+      {
+        "title": "Tư duy Virtual-to-Physical 3D",
+        "desc": "Mô phỏng 3D trên RoboSim trước khi chuyển giao mã nguồn sang robot thực tế",
+        "percent": 92
+      },
+      {
+        "title": "Debug cơ khí & Thuyết trình sản phẩm",
+        "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
+        "percent": 95
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:00",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:00",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "4.800.000đ",
+      "discountedPrice": "3.600.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & bộ học cụ thực hành độc lập",
+      "giftValue": "Trị giá 600.000đ"
+    },
+    "commitments": [
+      "100% học sinh tự tay lắp ráp và lập trình hoàn thiện robot thật sau mỗi buổi.",
+      "Thực hành mô phỏng 3D trên RoboSim chuẩn đấu trường quốc tế.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, huấn luyện viên kèm sát 1-1.",
+      "Báo cáo tiến độ học tập chi tiết và video thuyết trình gửi phụ huynh sau từng học phần."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Khám Phá Học Cụ & Chế Tạo Cơ Bản",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Làm quen bộ học cụ, khám phá cơ cấu truyền động quạt máy, con quay, xe kéo và máy bắn đá.",
+        "achievement": "Tự tay lắp ráp các mô hình cơ bản và thuyết trình sản phẩm tự tin.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Làm quen bộ học cụ - Quạt máy",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Con quay thần tốc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Đua thuyền",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Robot đi bộ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Robot họa sĩ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Robot dancing",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Robot kéo xe",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Máy bắn đá",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Vận Tốc, Cảm Biến & Nhà Thông Minh",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Tìm hiểu các yếu tố ảnh hưởng vận tốc, lực cân bằng, cảm biến sóng âm, cánh tay robot và đèn giao thông.",
+        "achievement": "Làm chủ nguyên lý cảm biến và hoàn thành đồ án thuyết trình cuối khóa.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Các yếu tố ảnh hưởng vận tốc- Xe đua F1",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Lực cân bằng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Lực đàn hồi- Cây nỏ",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Music Box",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Ngôi nhà thông minh- Cảm biến sóng âm",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Cánh tay robot",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Đèn giao thông",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Máy bay trực thăng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "trung-hoc-bat-dau": {
+    "slug": "trung-hoc-bat-dau",
+    "code": "Sata-Sec-Basic",
+    "name": "Robotics THCS — Khóa Bắt Đầu",
+    "academicName": "Điều Khiển Giọng Nói & Cảm Biến Thông Minh",
+    "headline": "Làm chủ bộ công cụ Intelligent storm, điều khiển giọng nói, cảm biến chạm, cảm biến màu và camera robot",
+    "category": "Trung học",
+    "grade": "Trung học cơ sở",
+    "age": "Lớp 6 — 9",
+    "displayAge": "11 — 15 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.97,
+    "totalStudents": 260,
+    "coverImage": "/images/courses/trung-hoc-1.png",
+    "badge": "KHÓA BẮT ĐẦU",
+    "glowColor": "purple",
+    "overview": "Khóa Bắt Đầu THCS trang bị cho học sinh nền tảng điều khiển thông minh: nhận diện giọng nói, xử lý tín hiệu camera, cảm biến chạm, cảm biến màu và giải thuật xe cảnh sát tuần tra.",
+    "hardwareKit": {
+      "name": "Hệ Thống Robot Thi Đấu Intelligent Storm, Cảm Biến AI & Vi Điều Khiển Nâng Cao",
+      "description": "Bộ vi điều khiển công nghiệp, động cơ encoder công suất cao, cảm biến thị giác AI, camera thông minh và sa bàn thử nghiệm.",
+      "items": [
+        "Bộ vi điều khiển Intelligent Storm hỗ trợ lập trình kéo thả & code văn bản Python/C++",
+        "Động cơ Encoder phản hồi vận tốc, góc quay và cơ cấu truyền động tải nặng",
+        "Module Camera AI nhận diện khuôn mặt, màu sắc, cử chỉ tay và mã QR",
+        "Cụm cảm biến rò đường kép, cảm biến chạm, radar phát hiện chướng ngại vật",
+        "Bộ khung hợp kim nhôm định hình và phụ kiện lắp ráp robot tự hành thi đấu"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Lập trình Python & Thuật toán PID",
+        "desc": "Viết mã nguồn điều khiển chuyên sâu, giải thuật PID bám line và ổn định quỹ đạo",
+        "percent": 98
+      },
+      {
+        "title": "Thị giác máy tính AI & Machine Learning",
+        "desc": "Huấn luyện mô hình nhận diện khuôn mặt, cử chỉ tay, mã QR và biển báo",
+        "percent": 95
+      },
+      {
+        "title": "Thiết kế cơ điện tử & Robot AGV",
+        "desc": "Chế tạo xe tự hành công nghiệp, cơ cấu gắp kẹp nâng hàng chịu tải",
+        "percent": 94
+      },
+      {
+        "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
+        "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
+        "percent": 96
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "5.500.000đ",
+      "discountedPrice": "4.200.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & hỗ trợ thi đấu Robocon",
+      "giftValue": "Trị giá 800.000đ"
+    },
+    "commitments": [
+      "100% học sinh làm chủ vi điều khiển thông minh và thuật toán tự hành.",
+      "Trực tiếp thi đấu trên sa bàn Robocon tiêu chuẩn cấp Tỉnh/Thành phố.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, giảng viên chuyên gia kèm sát 1-1.",
+      "Cấp chứng nhận hoàn thành khóa học và hỗ trợ hướng dẫn đề tài NCKH."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Điều Khiển Giọng Nói & Camera Robot",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Lắp ráp và lập trình điều khiển robot bằng giọng nói, camera robot, robot piano và robot đổi đèn.",
+        "achievement": "Làm chủ kỹ thuật điều khiển bằng âm thanh và thị giác cơ bản.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Vòng quay xe đạp",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Đồng hồ báo thức",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Cái quạt thông minh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Thử thách quay lại",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Điều khiển Robot bằng giọng nói",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Camera Robot",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Robot thay đổi đèn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Chú robot piano",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Intelligent Storm & Cảm Biến Màu, Chạm",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Làm quen bộ công cụ Intelligent storm, xe tự hành, cảm biến chạm, cảm biến màu, đỗ xe tự động và gờ giảm tốc.",
+        "achievement": "Tích hợp đa cảm biến và hoàn thành đồ án xe tự hành thông minh.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Làm quen với bộ công cụ Intelligent storm",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Xe tự hành",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Làm quen với cảm biến chạm",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Robot dọn vệ sinh tự động",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Làm quen với cảm biến màu",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Đỗ xe tự động",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Gờ giảm tốc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Xe cảnh sát",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "trung-hoc-intren": {
+    "slug": "trung-hoc-intren",
+    "code": "Sata-Sec-Intern",
+    "name": "Robotics THCS — Khóa Intren",
+    "academicName": "Tự Động Hóa Công Nghiệp & Đô Thị Thông Minh",
+    "headline": "Chế tạo cánh tay robot, máy bay không người lái, máy bán hàng tự động và hệ thống năng lượng tái tạo",
+    "category": "Trung học",
+    "grade": "Trung học cơ sở",
+    "age": "Lớp 6 — 9",
+    "displayAge": "11 — 15 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.98,
+    "totalStudents": 240,
+    "coverImage": "/images/courses/trung-hoc-2.png",
+    "badge": "KHÓA INTREN",
+    "glowColor": "purple",
+    "overview": "Khóa Intren THCS ứng dụng công nghệ vào sản xuất tự động và cơ sở hạ tầng đô thị: máy đóng gói, máy phân loại sản phẩm, xe nâng, cần cẩu, máy bán hàng, siêu thị thông minh và trạm dự báo thời tiết.",
+    "hardwareKit": {
+      "name": "Hệ Thống Robot Thi Đấu Intelligent Storm, Cảm Biến AI & Vi Điều Khiển Nâng Cao",
+      "description": "Bộ vi điều khiển công nghiệp, động cơ encoder công suất cao, cảm biến thị giác AI, camera thông minh và sa bàn thử nghiệm.",
+      "items": [
+        "Bộ vi điều khiển Intelligent Storm hỗ trợ lập trình kéo thả & code văn bản Python/C++",
+        "Động cơ Encoder phản hồi vận tốc, góc quay và cơ cấu truyền động tải nặng",
+        "Module Camera AI nhận diện khuôn mặt, màu sắc, cử chỉ tay và mã QR",
+        "Cụm cảm biến rò đường kép, cảm biến chạm, radar phát hiện chướng ngại vật",
+        "Bộ khung hợp kim nhôm định hình và phụ kiện lắp ráp robot tự hành thi đấu"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Lập trình Python & Thuật toán PID",
+        "desc": "Viết mã nguồn điều khiển chuyên sâu, giải thuật PID bám line và ổn định quỹ đạo",
+        "percent": 98
+      },
+      {
+        "title": "Thị giác máy tính AI & Machine Learning",
+        "desc": "Huấn luyện mô hình nhận diện khuôn mặt, cử chỉ tay, mã QR và biển báo",
+        "percent": 95
+      },
+      {
+        "title": "Thiết kế cơ điện tử & Robot AGV",
+        "desc": "Chế tạo xe tự hành công nghiệp, cơ cấu gắp kẹp nâng hàng chịu tải",
+        "percent": 94
+      },
+      {
+        "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
+        "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
+        "percent": 96
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "5.500.000đ",
+      "discountedPrice": "4.200.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & hỗ trợ thi đấu Robocon",
+      "giftValue": "Trị giá 800.000đ"
+    },
+    "commitments": [
+      "100% học sinh làm chủ vi điều khiển thông minh và thuật toán tự hành.",
+      "Trực tiếp thi đấu trên sa bàn Robocon tiêu chuẩn cấp Tỉnh/Thành phố.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, giảng viên chuyên gia kèm sát 1-1.",
+      "Cấp chứng nhận hoàn thành khóa học và hỗ trợ hướng dẫn đề tài NCKH."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Dây Chuyền Đóng Gói & Logistics Tự Động",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Chế tạo cánh tay robot, máy bay không người lái drone, máy đóng gói, máy phân loại sản phẩm và tàu vận chuyển.",
+        "achievement": "Hiểu sâu về dây chuyền tự động hóa công nghiệp hiện đại.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Cánh tay robot",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Máy bay không người lái",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Máy đóng gói",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Máy phân loại sản phẩm",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Xe nâng hàng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Xe chở hàng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Cần cẩu",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Tàu vận chuyển",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Đô Thị Thông Minh & Năng Lượng Tái Tạo",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Xây dựng máy bán hàng tự động, siêu thị thông minh, thủy điện, điện gió, điện mặt trời và máy đo địa chấn.",
+        "achievement": "Nghiên cứu các bài toán thực tiễn đô thị và thuyết trình đồ án tự tin.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Máy bán hàng tự động",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Siêu thị thông minh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Thủy điện",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Điện gió",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Điện mặt trời",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Máy dự báo thời tiết",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Máy đo địa chấn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Vòng tuần hoàn của nước",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "trung-hoc-nang-cao": {
+    "slug": "trung-hoc-nang-cao",
+    "code": "Sata-Sec-Adv",
+    "name": "Robotics THCS — Khóa Nâng Cao",
+    "academicName": "Thuật Toán Dò Đường, Cân Bằng & Vượt Mê Cung",
+    "headline": "Làm chủ thuật toán rò đường tỷ lệ hai cảm biến, cân bằng xe, đi thẳng theo centimet và vượt mê cung phức tạp",
+    "category": "Trung học",
+    "grade": "Trung học cơ sở",
+    "age": "Lớp 6 — 9",
+    "displayAge": "11 — 15 tuổi",
+    "duration": "14 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.99,
+    "totalStudents": 220,
+    "coverImage": "/images/courses/trung-hoc-1.png",
+    "badge": "KHÓA NÂNG CAO",
+    "glowColor": "purple",
+    "overview": "Khóa Nâng Cao THCS là chương trình chuyên sâu 1 lộ trình (14 buổi) tập trung vào các giải thuật điều khiển chuyển động chính xác: rò đường tỷ lệ hai cảm biến, đi theo centimet, tăng/giảm tốc, cân bằng xe và robot tự giải mê cung.",
+    "hardwareKit": {
+      "name": "Hệ Thống Robot Thi Đấu Intelligent Storm, Cảm Biến AI & Vi Điều Khiển Nâng Cao",
+      "description": "Bộ vi điều khiển công nghiệp, động cơ encoder công suất cao, cảm biến thị giác AI, camera thông minh và sa bàn thử nghiệm.",
+      "items": [
+        "Bộ vi điều khiển Intelligent Storm hỗ trợ lập trình kéo thả & code văn bản Python/C++",
+        "Động cơ Encoder phản hồi vận tốc, góc quay và cơ cấu truyền động tải nặng",
+        "Module Camera AI nhận diện khuôn mặt, màu sắc, cử chỉ tay và mã QR",
+        "Cụm cảm biến rò đường kép, cảm biến chạm, radar phát hiện chướng ngại vật",
+        "Bộ khung hợp kim nhôm định hình và phụ kiện lắp ráp robot tự hành thi đấu"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Lập trình Python & Thuật toán PID",
+        "desc": "Viết mã nguồn điều khiển chuyên sâu, giải thuật PID bám line và ổn định quỹ đạo",
+        "percent": 98
+      },
+      {
+        "title": "Thị giác máy tính AI & Machine Learning",
+        "desc": "Huấn luyện mô hình nhận diện khuôn mặt, cử chỉ tay, mã QR và biển báo",
+        "percent": 95
+      },
+      {
+        "title": "Thiết kế cơ điện tử & Robot AGV",
+        "desc": "Chế tạo xe tự hành công nghiệp, cơ cấu gắp kẹp nâng hàng chịu tải",
+        "percent": 94
+      },
+      {
+        "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
+        "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
+        "percent": 96
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "5.500.000đ",
+      "discountedPrice": "4.200.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & hỗ trợ thi đấu Robocon",
+      "giftValue": "Trị giá 800.000đ"
+    },
+    "commitments": [
+      "100% học sinh làm chủ vi điều khiển thông minh và thuật toán tự hành.",
+      "Trực tiếp thi đấu trên sa bàn Robocon tiêu chuẩn cấp Tỉnh/Thành phố.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, giảng viên chuyên gia kèm sát 1-1.",
+      "Cấp chứng nhận hoàn thành khóa học và hỗ trợ hướng dẫn đề tài NCKH."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Giải Thuật Điều Khiển & Vượt Mê Cung",
+        "number": "Học phần 1",
+        "duration": "14 buổi - 90 phút/buổi",
+        "sessionsCount": 14,
+        "hoursCount": 21.0,
+        "projectsCount": 11,
+        "description": "Làm chủ thuật toán rò đường hai cảm biến, cân chỉnh xoay, đi theo centimet, cân bằng xe, robot phát hiện rừng, robot phân loại và thiết kế robot vượt mê cung.",
+        "achievement": "Hoàn thiện kỹ năng thuật toán điều khiển chính xác và bảo vệ đồ án 14 buổi xuất sắc.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Rò đường",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Rò đường tỷ lệ hai cảm biến",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Xe tracter",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Căn chỉnh và xoay ghế cảm biến",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Đi theo centimet",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Tăng tốc và giảm tốc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Cân bằng xe",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Đi thẳng với cảm biến",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Xoay cân bằng của robot",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Robot phát hiện rừng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Robot phân loại",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thiết kế robot vượt mê cung",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 13,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 14,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "trung-hoc-chuyen-gia": {
+    "slug": "trung-hoc-chuyen-gia",
+    "code": "Sata-Sec-Pro",
+    "name": "Robotics THCS — Khóa Chuyên Gia",
+    "academicName": "AI Thị Giác, Cử Chỉ Tay, Mã QR & Xe Tự Hành",
+    "headline": "Đột phá công nghệ với nhận diện cử chỉ tay, thẻ QR, nhận diện khuôn mặt, theo dõi bóng và xe tự hành thông minh",
+    "category": "Trung học",
+    "grade": "Trung học cơ sở",
+    "age": "Lớp 6 — 9",
+    "displayAge": "11 — 15 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 5.0,
+    "totalStudents": 200,
+    "coverImage": "/images/courses/trung-hoc-2.png",
+    "badge": "KHÓA CHUYÊN GIA",
+    "glowColor": "purple",
+    "overview": "Khóa Chuyên Gia THCS tích hợp trí tuệ nhân tạo (AI) và thị giác máy tính vào Robotics: following robot, vượt chướng ngại vật, xe điều khiển bằng giọng nói, nhận diện cử chỉ tay, mã QR, nhận diện khuôn mặt và theo dõi bóng.",
+    "hardwareKit": {
+      "name": "Hệ Thống Robot Thi Đấu Intelligent Storm, Cảm Biến AI & Vi Điều Khiển Nâng Cao",
+      "description": "Bộ vi điều khiển công nghiệp, động cơ encoder công suất cao, cảm biến thị giác AI, camera thông minh và sa bàn thử nghiệm.",
+      "items": [
+        "Bộ vi điều khiển Intelligent Storm hỗ trợ lập trình kéo thả & code văn bản Python/C++",
+        "Động cơ Encoder phản hồi vận tốc, góc quay và cơ cấu truyền động tải nặng",
+        "Module Camera AI nhận diện khuôn mặt, màu sắc, cử chỉ tay và mã QR",
+        "Cụm cảm biến rò đường kép, cảm biến chạm, radar phát hiện chướng ngại vật",
+        "Bộ khung hợp kim nhôm định hình và phụ kiện lắp ráp robot tự hành thi đấu"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Lập trình Python & Thuật toán PID",
+        "desc": "Viết mã nguồn điều khiển chuyên sâu, giải thuật PID bám line và ổn định quỹ đạo",
+        "percent": 98
+      },
+      {
+        "title": "Thị giác máy tính AI & Machine Learning",
+        "desc": "Huấn luyện mô hình nhận diện khuôn mặt, cử chỉ tay, mã QR và biển báo",
+        "percent": 95
+      },
+      {
+        "title": "Thiết kế cơ điện tử & Robot AGV",
+        "desc": "Chế tạo xe tự hành công nghiệp, cơ cấu gắp kẹp nâng hàng chịu tải",
+        "percent": 94
+      },
+      {
+        "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
+        "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
+        "percent": 96
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "5.500.000đ",
+      "discountedPrice": "4.200.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & hỗ trợ thi đấu Robocon",
+      "giftValue": "Trị giá 800.000đ"
+    },
+    "commitments": [
+      "100% học sinh làm chủ vi điều khiển thông minh và thuật toán tự hành.",
+      "Trực tiếp thi đấu trên sa bàn Robocon tiêu chuẩn cấp Tỉnh/Thành phố.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, giảng viên chuyên gia kèm sát 1-1.",
+      "Cấp chứng nhận hoàn thành khóa học và hỗ trợ hướng dẫn đề tài NCKH."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Robot Thông Minh & Radar Chướng Ngại Vật",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Chế tạo robot nhện, Smart Audio, Following robot, vượt chướng ngại vật đa tầng, oto radar và xe điều khiển giọng nói.",
+        "achievement": "Làm chủ hệ thống radar và điều khiển tương tác giọng nói thời gian thực.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Robot nhện",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Smart Audio",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Following robot",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Vượt chướng ngại vật 1",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Vượt chướng ngại vật 2",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Oto và radar",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Xe điều khiển bằng giọng nói",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Đèn điều khiển bằng giọng nói",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Thị Giác AI, Cử Chỉ Tay & Nhận Diện Khuôn Mặt",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Huấn luyện mô hình nhận diện màu sắc, cử chỉ tay, biển báo giao thông, mã QR, nhận diện khuôn mặt và bám đuổi bóng.",
+        "achievement": "Đồ án tốt nghiệp chuyên gia THCS, làm chủ công nghệ AI ứng dụng thực tế.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Điều khiển robot bằng giọng nói",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Nhận diện màu sắc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Xe tự hành",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Nhận diện cử chỉ tay",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Nhận diện biển báo giao thông",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Nhận dạng thẻ QR",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Nhận diện khuôn mặt",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Theo dõi bóng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "robotics-lop-6-7": {
+    "slug": "trung-hoc-bat-dau",
+    "code": "Sata-Sec-Basic",
+    "name": "Robotics THCS — Khóa Bắt Đầu",
+    "academicName": "Điều Khiển Giọng Nói & Cảm Biến Thông Minh",
+    "headline": "Làm chủ bộ công cụ Intelligent storm, điều khiển giọng nói, cảm biến chạm, cảm biến màu và camera robot",
+    "category": "Trung học",
+    "grade": "Trung học cơ sở",
+    "age": "Lớp 6 — 9",
+    "displayAge": "11 — 15 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.97,
+    "totalStudents": 260,
+    "coverImage": "/images/courses/trung-hoc-1.png",
+    "badge": "KHÓA BẮT ĐẦU",
+    "glowColor": "purple",
+    "overview": "Khóa Bắt Đầu THCS trang bị cho học sinh nền tảng điều khiển thông minh: nhận diện giọng nói, xử lý tín hiệu camera, cảm biến chạm, cảm biến màu và giải thuật xe cảnh sát tuần tra.",
+    "hardwareKit": {
+      "name": "Hệ Thống Robot Thi Đấu Intelligent Storm, Cảm Biến AI & Vi Điều Khiển Nâng Cao",
+      "description": "Bộ vi điều khiển công nghiệp, động cơ encoder công suất cao, cảm biến thị giác AI, camera thông minh và sa bàn thử nghiệm.",
+      "items": [
+        "Bộ vi điều khiển Intelligent Storm hỗ trợ lập trình kéo thả & code văn bản Python/C++",
+        "Động cơ Encoder phản hồi vận tốc, góc quay và cơ cấu truyền động tải nặng",
+        "Module Camera AI nhận diện khuôn mặt, màu sắc, cử chỉ tay và mã QR",
+        "Cụm cảm biến rò đường kép, cảm biến chạm, radar phát hiện chướng ngại vật",
+        "Bộ khung hợp kim nhôm định hình và phụ kiện lắp ráp robot tự hành thi đấu"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Lập trình Python & Thuật toán PID",
+        "desc": "Viết mã nguồn điều khiển chuyên sâu, giải thuật PID bám line và ổn định quỹ đạo",
+        "percent": 98
+      },
+      {
+        "title": "Thị giác máy tính AI & Machine Learning",
+        "desc": "Huấn luyện mô hình nhận diện khuôn mặt, cử chỉ tay, mã QR và biển báo",
+        "percent": 95
+      },
+      {
+        "title": "Thiết kế cơ điện tử & Robot AGV",
+        "desc": "Chế tạo xe tự hành công nghiệp, cơ cấu gắp kẹp nâng hàng chịu tải",
+        "percent": 94
+      },
+      {
+        "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
+        "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
+        "percent": 96
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "5.500.000đ",
+      "discountedPrice": "4.200.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & hỗ trợ thi đấu Robocon",
+      "giftValue": "Trị giá 800.000đ"
+    },
+    "commitments": [
+      "100% học sinh làm chủ vi điều khiển thông minh và thuật toán tự hành.",
+      "Trực tiếp thi đấu trên sa bàn Robocon tiêu chuẩn cấp Tỉnh/Thành phố.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, giảng viên chuyên gia kèm sát 1-1.",
+      "Cấp chứng nhận hoàn thành khóa học và hỗ trợ hướng dẫn đề tài NCKH."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Điều Khiển Giọng Nói & Camera Robot",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Lắp ráp và lập trình điều khiển robot bằng giọng nói, camera robot, robot piano và robot đổi đèn.",
+        "achievement": "Làm chủ kỹ thuật điều khiển bằng âm thanh và thị giác cơ bản.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Vòng quay xe đạp",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Đồng hồ báo thức",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Cái quạt thông minh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Thử thách quay lại",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Điều khiển Robot bằng giọng nói",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Camera Robot",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Robot thay đổi đèn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Chú robot piano",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Intelligent Storm & Cảm Biến Màu, Chạm",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Làm quen bộ công cụ Intelligent storm, xe tự hành, cảm biến chạm, cảm biến màu, đỗ xe tự động và gờ giảm tốc.",
+        "achievement": "Tích hợp đa cảm biến và hoàn thành đồ án xe tự hành thông minh.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Làm quen với bộ công cụ Intelligent storm",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Xe tự hành",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Làm quen với cảm biến chạm",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Robot dọn vệ sinh tự động",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Làm quen với cảm biến màu",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Đỗ xe tự động",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Gờ giảm tốc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Xe cảnh sát",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "robotics-ai-lop-8-9": {
+    "slug": "trung-hoc-chuyen-gia",
+    "code": "Sata-Sec-Pro",
+    "name": "Robotics THCS — Khóa Chuyên Gia",
+    "academicName": "AI Thị Giác, Cử Chỉ Tay, Mã QR & Xe Tự Hành",
+    "headline": "Đột phá công nghệ với nhận diện cử chỉ tay, thẻ QR, nhận diện khuôn mặt, theo dõi bóng và xe tự hành thông minh",
+    "category": "Trung học",
+    "grade": "Trung học cơ sở",
+    "age": "Lớp 6 — 9",
+    "displayAge": "11 — 15 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 5.0,
+    "totalStudents": 200,
+    "coverImage": "/images/courses/trung-hoc-2.png",
+    "badge": "KHÓA CHUYÊN GIA",
+    "glowColor": "purple",
+    "overview": "Khóa Chuyên Gia THCS tích hợp trí tuệ nhân tạo (AI) và thị giác máy tính vào Robotics: following robot, vượt chướng ngại vật, xe điều khiển bằng giọng nói, nhận diện cử chỉ tay, mã QR, nhận diện khuôn mặt và theo dõi bóng.",
+    "hardwareKit": {
+      "name": "Hệ Thống Robot Thi Đấu Intelligent Storm, Cảm Biến AI & Vi Điều Khiển Nâng Cao",
+      "description": "Bộ vi điều khiển công nghiệp, động cơ encoder công suất cao, cảm biến thị giác AI, camera thông minh và sa bàn thử nghiệm.",
+      "items": [
+        "Bộ vi điều khiển Intelligent Storm hỗ trợ lập trình kéo thả & code văn bản Python/C++",
+        "Động cơ Encoder phản hồi vận tốc, góc quay và cơ cấu truyền động tải nặng",
+        "Module Camera AI nhận diện khuôn mặt, màu sắc, cử chỉ tay và mã QR",
+        "Cụm cảm biến rò đường kép, cảm biến chạm, radar phát hiện chướng ngại vật",
+        "Bộ khung hợp kim nhôm định hình và phụ kiện lắp ráp robot tự hành thi đấu"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Lập trình Python & Thuật toán PID",
+        "desc": "Viết mã nguồn điều khiển chuyên sâu, giải thuật PID bám line và ổn định quỹ đạo",
+        "percent": 98
+      },
+      {
+        "title": "Thị giác máy tính AI & Machine Learning",
+        "desc": "Huấn luyện mô hình nhận diện khuôn mặt, cử chỉ tay, mã QR và biển báo",
+        "percent": 95
+      },
+      {
+        "title": "Thiết kế cơ điện tử & Robot AGV",
+        "desc": "Chế tạo xe tự hành công nghiệp, cơ cấu gắp kẹp nâng hàng chịu tải",
+        "percent": 94
+      },
+      {
+        "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
+        "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
+        "percent": 96
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "5.500.000đ",
+      "discountedPrice": "4.200.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & hỗ trợ thi đấu Robocon",
+      "giftValue": "Trị giá 800.000đ"
+    },
+    "commitments": [
+      "100% học sinh làm chủ vi điều khiển thông minh và thuật toán tự hành.",
+      "Trực tiếp thi đấu trên sa bàn Robocon tiêu chuẩn cấp Tỉnh/Thành phố.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, giảng viên chuyên gia kèm sát 1-1.",
+      "Cấp chứng nhận hoàn thành khóa học và hỗ trợ hướng dẫn đề tài NCKH."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Robot Thông Minh & Radar Chướng Ngại Vật",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Chế tạo robot nhện, Smart Audio, Following robot, vượt chướng ngại vật đa tầng, oto radar và xe điều khiển giọng nói.",
+        "achievement": "Làm chủ hệ thống radar và điều khiển tương tác giọng nói thời gian thực.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Robot nhện",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Smart Audio",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Following robot",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Vượt chướng ngại vật 1",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Vượt chướng ngại vật 2",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Oto và radar",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Xe điều khiển bằng giọng nói",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Đèn điều khiển bằng giọng nói",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Thị Giác AI, Cử Chỉ Tay & Nhận Diện Khuôn Mặt",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Huấn luyện mô hình nhận diện màu sắc, cử chỉ tay, biển báo giao thông, mã QR, nhận diện khuôn mặt và bám đuổi bóng.",
+        "achievement": "Đồ án tốt nghiệp chuyên gia THCS, làm chủ công nghệ AI ứng dụng thực tế.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Điều khiển robot bằng giọng nói",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Nhận diện màu sắc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Xe tự hành",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Nhận diện cử chỉ tay",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Nhận diện biển báo giao thông",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Nhận dạng thẻ QR",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Nhận diện khuôn mặt",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Theo dõi bóng",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
+  },
+  "trung-hoc": {
+    "slug": "trung-hoc-bat-dau",
+    "code": "Sata-Sec-Basic",
+    "name": "Robotics THCS — Khóa Bắt Đầu",
+    "academicName": "Điều Khiển Giọng Nói & Cảm Biến Thông Minh",
+    "headline": "Làm chủ bộ công cụ Intelligent storm, điều khiển giọng nói, cảm biến chạm, cảm biến màu và camera robot",
+    "category": "Trung học",
+    "grade": "Trung học cơ sở",
+    "age": "Lớp 6 — 9",
+    "displayAge": "11 — 15 tuổi",
+    "duration": "24 buổi",
+    "classSize": "Tối đa < 10 học viên (kèm sát 1-1)",
+    "format": "Offline tại 3 cơ sở (Hải Phòng, Hưng Yên, Ninh Bình)",
+    "rating": 4.97,
+    "totalStudents": 260,
+    "coverImage": "/images/courses/trung-hoc-1.png",
+    "badge": "KHÓA BẮT ĐẦU",
+    "glowColor": "purple",
+    "overview": "Khóa Bắt Đầu THCS trang bị cho học sinh nền tảng điều khiển thông minh: nhận diện giọng nói, xử lý tín hiệu camera, cảm biến chạm, cảm biến màu và giải thuật xe cảnh sát tuần tra.",
+    "hardwareKit": {
+      "name": "Hệ Thống Robot Thi Đấu Intelligent Storm, Cảm Biến AI & Vi Điều Khiển Nâng Cao",
+      "description": "Bộ vi điều khiển công nghiệp, động cơ encoder công suất cao, cảm biến thị giác AI, camera thông minh và sa bàn thử nghiệm.",
+      "items": [
+        "Bộ vi điều khiển Intelligent Storm hỗ trợ lập trình kéo thả & code văn bản Python/C++",
+        "Động cơ Encoder phản hồi vận tốc, góc quay và cơ cấu truyền động tải nặng",
+        "Module Camera AI nhận diện khuôn mặt, màu sắc, cử chỉ tay và mã QR",
+        "Cụm cảm biến rò đường kép, cảm biến chạm, radar phát hiện chướng ngại vật",
+        "Bộ khung hợp kim nhôm định hình và phụ kiện lắp ráp robot tự hành thi đấu"
+      ]
+    },
+    "skillsGained": [
+      {
+        "title": "Lập trình Python & Thuật toán PID",
+        "desc": "Viết mã nguồn điều khiển chuyên sâu, giải thuật PID bám line và ổn định quỹ đạo",
+        "percent": 98
+      },
+      {
+        "title": "Thị giác máy tính AI & Machine Learning",
+        "desc": "Huấn luyện mô hình nhận diện khuôn mặt, cử chỉ tay, mã QR và biển báo",
+        "percent": 95
+      },
+      {
+        "title": "Thiết kế cơ điện tử & Robot AGV",
+        "desc": "Chế tạo xe tự hành công nghiệp, cơ cấu gắp kẹp nâng hàng chịu tải",
+        "percent": 94
+      },
+      {
+        "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
+        "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
+        "percent": 96
+      }
+    ],
+    "schedule": [
+      {
+        "shift": "Ca Sáng Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Thứ 7",
+        "days": "Thứ 7 hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Sáng Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "08:30 - 10:30",
+        "branch": "Tất cả 3 cơ sở"
+      },
+      {
+        "shift": "Ca Chiều Chủ Nhật",
+        "days": "Chủ Nhật hàng tuần",
+        "time": "14:30 - 16:30",
+        "branch": "Tất cả 3 cơ sở"
+      }
+    ],
+    "tuition": {
+      "originalPrice": "5.500.000đ",
+      "discountedPrice": "4.200.000đ / học phần",
+      "offerNote": "Tặng 01 buổi trải nghiệm 1-1 miễn phí & hỗ trợ thi đấu Robocon",
+      "giftValue": "Trị giá 800.000đ"
+    },
+    "commitments": [
+      "100% học sinh làm chủ vi điều khiển thông minh và thuật toán tự hành.",
+      "Trực tiếp thi đấu trên sa bàn Robocon tiêu chuẩn cấp Tỉnh/Thành phố.",
+      "Sĩ số lớp nhỏ dưới 10 học viên, giảng viên chuyên gia kèm sát 1-1.",
+      "Cấp chứng nhận hoàn thành khóa học và hỗ trợ hướng dẫn đề tài NCKH."
+    ],
+    "modules": [
+      {
+        "id": "HP1",
+        "title": "Học phần 1",
+        "name": "Điều Khiển Giọng Nói & Camera Robot",
+        "number": "Học phần 1",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Lắp ráp và lập trình điều khiển robot bằng giọng nói, camera robot, robot piano và robot đổi đèn.",
+        "achievement": "Làm chủ kỹ thuật điều khiển bằng âm thanh và thị giác cơ bản.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Vòng quay xe đạp",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Đồng hồ báo thức",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Cái quạt thông minh",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Thử thách quay lại",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Điều khiển Robot bằng giọng nói",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Camera Robot",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Robot thay đổi đèn",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Chú robot piano",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 1.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      },
+      {
+        "id": "HP2",
+        "title": "Học phần 2",
+        "name": "Intelligent Storm & Cảm Biến Màu, Chạm",
+        "number": "Học phần 2",
+        "duration": "12 buổi - 90 phút/buổi",
+        "sessionsCount": 12,
+        "hoursCount": 18.0,
+        "projectsCount": 9,
+        "description": "Làm quen bộ công cụ Intelligent storm, xe tự hành, cảm biến chạm, cảm biến màu, đỗ xe tự động và gờ giảm tốc.",
+        "achievement": "Tích hợp đa cảm biến và hoàn thành đồ án xe tự hành thông minh.",
+        "lessons": [
+          {
+            "sessionNumber": 1,
+            "title": "Làm quen với bộ công cụ Intelligent storm",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 2,
+            "title": "Xe tự hành",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 3,
+            "title": "Làm quen với cảm biến chạm",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 4,
+            "title": "Robot dọn vệ sinh tự động",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 5,
+            "title": "Ôn tập",
+            "type": "Ôn tập"
+          },
+          {
+            "sessionNumber": 6,
+            "title": "Làm quen với cảm biến màu",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 7,
+            "title": "Đỗ xe tự động",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 8,
+            "title": "Gờ giảm tốc",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 9,
+            "title": "Xe cảnh sát",
+            "type": "Dự án"
+          },
+          {
+            "sessionNumber": 10,
+            "title": "Tạo dự án của mình",
+            "type": "Dự án sáng tạo"
+          },
+          {
+            "sessionNumber": 11,
+            "title": "Demo dự án",
+            "type": "Demo dự án"
+          },
+          {
+            "sessionNumber": 12,
+            "title": "Thuyết trình sản phẩm của mình",
+            "type": "Báo cáo cuối học phần"
+          }
+        ],
+        "outcomes": [
+          "Hoàn thành các dự án chế tạo và lập trình trong Học phần 2.",
+          "Tự tin thực hiện demo và thuyết trình sản phẩm kỹ thuật trước lớp."
+        ]
+      }
+    ]
   }
 };
+
+export const GRADE_LEVELS: Record<string, GradeLevel> = {
+  "mam-non": {
+    "id": "mam-non",
+    "slug": "mam-non",
+    "name": "Robotics Mầm Non",
+    "shortName": "Khối Mầm Non",
+    "academicName": "Ươm Mầm Sáng Tạo",
+    "badge": "MẦM NON (4 — 6 TUỔI)",
+    "tagline": "Khơi nguồn đam mê công nghệ & tư duy trực quan",
+    "headline": "Khơi nguồn đam mê công nghệ & kích thích tư duy sáng tạo cho trẻ mầm non từ 4 đến 6 tuổi thông qua phương pháp vừa học vừa chơi",
+    "ageRange": "4 — 6 tuổi",
+    "displayAge": "4 — 6 tuổi",
+    "coverImage": "/images/courses/mam-non.png",
+    "hardwareKitSummary": "Bộ khối ghép cơ khí an toàn ABS bo tròn, động cơ thông minh & thẻ lệnh Screen-Free VIAI-Kids",
+    "description": "Chương trình được thiết kế đặc thù cho lứa tuổi mầm non theo phương pháp 'Vừa học vừa chơi' (Play-based Learning). Bé được tự tay thao tác với các khối ghép an toàn, động cơ chuyển động trực quan và làm quen tư duy lập trình thẻ lệnh không nhìn màn hình máy tính.",
+    "detailedOverview": "Tại VIAI, giai đoạn 4 — 6 tuổi là thời kỳ vàng để nuôi dưỡng trí tò mò khoa học và phát triển sự khéo léo của đôi bàn tay. Bé tiếp cận công nghệ thông qua các hoạt động tương tác vật lý sinh động, chế tạo các mô hình động vật, xe cộ biết chuyển động và hiểu bản chất vận hành của thế giới xung quanh.",
+    "highlights": [
+      {
+        "title": "Kỹ năng vận động tinh & Khéo léo",
+        "desc": "Thao tác lắp ghép ngón tay, phối hợp tay - mắt nhịp nhàng với bộ khối ghép ABS chuẩn châu Âu."
+      },
+      {
+        "title": "Tư duy logic & Trình tự hành động",
+        "desc": "Hiểu khái niệm nguyên nhân - kết quả và thực hiện các bước tuần tự để hoàn thành sản phẩm hoàn chỉnh."
+      },
+      {
+        "title": "Lập trình thẻ Screen-Free an toàn",
+        "desc": "Xây dựng thuật toán tuần tự, rẽ nhánh thông qua thẻ lệnh mã màu thông minh, bảo vệ thị lực tối đa cho trẻ nhỏ."
+      }
+    ],
+    "childCourseSlugs": [
+      "mam-non-co-ban",
+      "mam-non-nang-cao",
+      "mam-non-chuyen-sau"
+    ],
+    "learningOutcomes": [
+      "Nhận biết và phân biệt các cơ cấu chuyển động cơ bản: bánh răng, ròng rọc, đòn bẩy",
+      "Tự tay lắp ráp hơn 40 mô hình robot thông minh theo từng chủ đề thực tế",
+      "Phát triển khả năng quan sát, tư duy hình học không gian 3D trực quan",
+      "Tự tin thuyết trình giới thiệu sản phẩm của mình trước lớp và bố mẹ"
+    ],
+    "methodology": "Play-based Learning (Học qua trải nghiệm & trò chơi sáng tạo) kết hợp tiêu chuẩn STEM quốc tế."
+  },
+  "tieu-hoc": {
+    "id": "tieu-hoc",
+    "slug": "tieu-hoc",
+    "name": "Robotics Tiểu Học",
+    "shortName": "Khối Tiểu Học",
+    "academicName": "Kỹ Sư Robotics — Tư Duy Toàn Diện",
+    "badge": "TIỂU HỌC (LỚP 1 — 5)",
+    "tagline": "Nền tảng thuật toán, mô phỏng 3D & cơ cấu chuyển động",
+    "headline": "Xây dựng nền tảng tư duy thuật toán, làm chủ mô phỏng 3D RoboSim và chế tạo robot cơ cấu đa tầng cho học sinh Tiểu học",
+    "ageRange": "Lớp 1 — 5",
+    "displayAge": "6 — 11 tuổi",
+    "coverImage": "/images/courses/tieu-hoc-2.png",
+    "hardwareKitSummary": "Hệ sinh thái Alpha + Beta, cảm biến đa tầng & phần mềm mô phỏng 3D RoboSim chuẩn quốc tế",
+    "description": "Chương trình chuẩn hóa gồm 4 khóa học: Khóa Bắt Đầu, Khóa Intren, Khóa Nâng Cao và Khóa Chuyên Gia. Mỗi khóa học gồm 2 lộ trình học phần bài bản, giúp học sinh phát triển từ cơ cấu cơ khí, bản vẽ lắp ráp đến lập trình thông minh và thám hiểm không gian.",
+    "detailedOverview": "Bậc Tiểu học là giai đoạn hình thành tư duy trừu tượng và tư duy thuật toán. Lộ trình Robotics Tiểu Học tại VIAI kết hợp phương pháp Virtual-to-Physical độc quyền: học sinh học bản chất cơ cấu cơ học, thực hành trên nền tảng số RoboSim 3D để kiểm thử giải thuật, sau đó trực tiếp lắp ráp và lập trình cho Robot vật lý chạy trên sa bàn thi đấu.",
+    "highlights": [
+      {
+        "title": "4 Khóa học phân cấp khoa học",
+        "desc": "Khóa Bắt Đầu (Học cụ & Vận tốc), Khóa Intren (Sinh vật & Năng lượng), Khóa Nâng Cao (Xe công trình), Khóa Chuyên Gia (Logistics & Không gian)."
+      },
+      {
+        "title": "Làm chủ cơ cấu cơ giới & lực truyền động",
+        "desc": "Phân tích bản vẽ lắp ráp 3D, hiểu sâu nguyên lý bánh răng đa tầng, trục khuỷu, hệ bánh xe vi sai và cảm biến."
+      },
+      {
+        "title": "Tư duy Virtual-to-Physical độc quyền",
+        "desc": "Lập trình mô phỏng 3D trên RoboSim trước khi chuyển giao mã nguồn sang robot thực tế, tối ưu thuật toán vượt sa bàn."
+      }
+    ],
+    "childCourseSlugs": [
+      "tieu-hoc-bat-dau",
+      "tieu-hoc-intren",
+      "tieu-hoc-nang-cao",
+      "tieu-hoc-chuyen-gia"
+    ],
+    "learningOutcomes": [
+      "Thành thạo tư duy thuật toán: tuần tự, rẽ nhánh nếu - thì, vòng lặp và biến số",
+      "Đọc hiểu bản vẽ kỹ thuật 3D và tự thiết kế các cơ cấu truyền động cơ khí phức hợp",
+      "Làm chủ phần mềm mô phỏng 3D RoboSim, tính toán tọa độ và tối ưu lộ trình di chuyển",
+      "Chế tạo robot thi đấu thực chiến và rèn luyện kỹ năng làm việc nhóm"
+    ],
+    "methodology": "Virtual-to-Physical Learning kết hợp Project-based Learning (Học qua dự án thực tế)."
+  },
+  "trung-hoc": {
+    "id": "trung-hoc",
+    "slug": "trung-hoc",
+    "name": "Robotics Trung Học Cơ Sở",
+    "shortName": "Khối Trung Học Cơ Sở",
+    "academicName": "Nhà Sáng Tạo Công Nghệ — Chinh Phục Đấu Trường & AI",
+    "badge": "TRUNG HỌC CƠ SỞ (LỚP 6 — 9)",
+    "tagline": "Lập trình thực chiến Python/C++, giải thuật PID, Vision AI & AGV",
+    "headline": "Nâng tầm tư duy lập trình chuyên sâu với Python/C++, thuật toán PID đối kháng, thị giác AI và kiến tạo Robot AGV",
+    "ageRange": "Lớp 6 — 9",
+    "displayAge": "11 — 15 tuổi",
+    "coverImage": "/images/courses/trung-hoc-1.png",
+    "hardwareKitSummary": "Robot thi đấu Intelligent Storm, vi điều khiển nâng cao, Camera Vision AI & hệ thống Arena thực tế",
+    "description": "Chương trình đào tạo đỉnh cao gồm 4 khóa học: Khóa Bắt Đầu, Khóa Intren, Khóa Nâng Cao và Khóa Chuyên Gia. Học sinh làm chủ từ điều khiển giọng nói, cảm biến đa tầng, giải thuật rò đường vượt mê cung đến thị giác AI và xe tự hành.",
+    "detailedOverview": "Bậc Trung học cơ sở tại VIAI trang bị năng lực nghiên cứu khoa học thực thụ. Học sinh được học cùng các giảng viên chuyên gia, làm việc với linh kiện công nghiệp, viết giải thuật điều khiển tự hành và phát triển các dự án có tính ứng dụng cao, sẵn sàng tham gia các cuộc thi Sáng tạo Khoa học Kỹ thuật cấp Tỉnh/Thành phố và Quốc gia.",
+    "highlights": [
+      {
+        "title": "4 Khóa học chuyên sâu vượt bậc",
+        "desc": "Khóa Bắt Đầu (Giọng nói & Intelligent Storm), Khóa Intren (Logistics & Đô thị), Khóa Nâng Cao (Giải thuật rò đường & Mê cung), Khóa Chuyên Gia (AI Vision & Xe tự hành)."
+      },
+      {
+        "title": "Giải thuật PID & Điều khiển chuyển động chính xác",
+        "desc": "Áp dụng toán học giải thuật vào căn chỉnh tốc độ, ổn định góc lái và cân bằng trọng tâm robot trên sa bàn thi đấu."
+      },
+      {
+        "title": "Thị giác máy tính AI & Machine Learning thực chiến",
+        "desc": "Huấn luyện mô hình nhận diện khuôn mặt, biển báo giao thông, mã QR và điều khiển cử chỉ tay thời gian thực."
+      }
+    ],
+    "childCourseSlugs": [
+      "trung-hoc-bat-dau",
+      "trung-hoc-intren",
+      "trung-hoc-nang-cao",
+      "trung-hoc-chuyen-gia"
+    ],
+    "learningOutcomes": [
+      "Lập trình thành thạo hệ thống robot tự hành với tư duy giải thuật tối ưu",
+      "Làm chủ module Camera AI nhận diện hình ảnh và điều khiển robot tự động",
+      "Thiết kế cơ cấu cơ điện tử chịu lực cao và xử lý sự cố kỹ thuật độc lập",
+      "Tự tin tranh tài tại các giải đấu Robocon và bảo vệ đồ án KHKT"
+    ],
+    "methodology": "Competition-Driven Learning (Đào tạo định hướng nghiên cứu & Chinh phục giải đấu)."
+  }
+};
+
+
+export const PRIMARY_COURSE_SLUGS = [
+  'mam-non-co-ban',
+  'mam-non-nang-cao',
+  'mam-non-chuyen-sau',
+  'tieu-hoc-bat-dau',
+  'tieu-hoc-intren',
+  'tieu-hoc-nang-cao',
+  'tieu-hoc-chuyen-gia',
+  'trung-hoc-bat-dau',
+  'trung-hoc-intren',
+  'trung-hoc-nang-cao',
+  'trung-hoc-chuyen-gia'
+];
 
 export const PRIMARY_GRADE_LEVEL_IDS = ['mam-non', 'tieu-hoc', 'trung-hoc'] as const;
 
 export const getGradeLevelByCourseSlug = (courseSlug: string): GradeLevel | undefined => {
-  if (courseSlug === 'robotics-mam-non' || courseSlug === 'lap-trinh-robot') {
+  if (courseSlug.startsWith('mam-non') || courseSlug === 'robotics-mam-non' || courseSlug === 'lap-trinh-robot') {
     return GRADE_LEVELS['mam-non'];
   }
-  if (['robotics-lop-1-2', 'robotics-lop-3-4', 'robotics-lop-5', 'robotics-tieu-hoc', 'luyen-thi-robosim'].includes(courseSlug)) {
+  if (courseSlug.startsWith('tieu-hoc') || ['robotics-lop-1-2', 'robotics-lop-3-4', 'robotics-lop-5', 'robotics-tieu-hoc', 'luyen-thi-robosim'].includes(courseSlug)) {
     return GRADE_LEVELS['tieu-hoc'];
   }
-  if (['robotics-lop-6-7', 'robotics-ai-lop-8-9', 'robotics-trung-hoc', 'ai-iot-robotics'].includes(courseSlug)) {
+  if (courseSlug.startsWith('trung-hoc') || ['robotics-lop-6-7', 'robotics-ai-lop-8-9', 'robotics-trung-hoc', 'ai-iot-robotics'].includes(courseSlug)) {
     return GRADE_LEVELS['trung-hoc'];
   }
   return undefined;
 };
-

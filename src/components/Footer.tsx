@@ -99,50 +99,66 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
             <ul className="space-y-3 text-sm">
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('robotics-mam-non')}
+                  onClick={() => onSelectCourse?.('mam-non-co-ban')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics Khối Mầm Non
+                  Mầm Non — Lớp Cơ Bản
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('robotics-lop-1-2')}
+                  onClick={() => onSelectCourse?.('tieu-hoc-bat-dau')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics Lớp 1 — 2
+                  Tiểu Học — Khóa Bắt Đầu
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('robotics-lop-3-4')}
+                  onClick={() => onSelectCourse?.('tieu-hoc-intren')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics Lớp 3 — 4
+                  Tiểu Học — Khóa Intren
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('robotics-lop-5')}
+                  onClick={() => onSelectCourse?.('tieu-hoc-nang-cao')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics Lớp 5
+                  Tiểu Học — Khóa Nâng Cao
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('robotics-lop-6-7')}
+                  onClick={() => onSelectCourse?.('tieu-hoc-chuyen-gia')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics Lớp 6 — 7
+                  Tiểu Học — Khóa Chuyên Gia
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('robotics-ai-lop-8-9')}
+                  onClick={() => onSelectCourse?.('trung-hoc-bat-dau')}
                   className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Robotics Lớp 8 — 9
+                  THCS — Khóa Bắt Đầu
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onSelectCourse?.('trung-hoc-nang-cao')}
+                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                >
+                  THCS — Khóa Nâng Cao
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onSelectCourse?.('trung-hoc-chuyen-gia')}
+                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                >
+                  THCS — Khóa Chuyên Gia
                 </button>
               </li>
             </ul>

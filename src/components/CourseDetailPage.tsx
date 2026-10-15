@@ -150,7 +150,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   <span className="text-xs font-bold text-zinc-500 block mb-0.5 uppercase tracking-wide">THỜI LƯỢNG</span>
                   <span className="text-sm font-bold text-[#0c0a08] flex items-center gap-1">
                     <Clock className="h-3.5 w-3.5 text-[#c2410c] shrink-0" />
-                    <span className="truncate">52 buổi</span>
+                    <span className="truncate">{course.duration}</span>
                   </span>
                 </div>
 
@@ -187,7 +187,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   className="inline-flex items-center justify-center gap-2 rounded-2xl border border-gray-200 bg-white px-6 py-4 text-sm font-bold text-zinc-700 hover:text-orange-600 hover:border-orange-300 shadow-xs transition-all cursor-pointer"
                 >
                   <BookOpen className="h-4 w-4 text-orange-600" />
-                  <span>Xem đề cương chi tiết 52 buổi</span>
+                  <span>Xem đề cương chi tiết ({course.duration})</span>
                 </button>
               </div>
             </div>
@@ -296,7 +296,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   Lộ Trình Đào Tạo Chi Tiết Từng Buổi Học
                 </h2>
                 <p className="text-sm text-zinc-600">
-                  Mỗi học phần gồm 13 buổi (90 phút/buổi, 19.5 giờ học) với các dự án thực tế và buổi thứ 13 chuyên sâu <strong>"Phát triển lập trình"</strong>.
+                  Mỗi học phần gồm các buổi học (90 phút/buổi) với các dự án thực tế, buổi ôn tập định kỳ và đồ án thuyết trình, bảo vệ sản phẩm sáng tạo cuối học phần.
                 </p>
               </div>
 
@@ -413,15 +413,15 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                     {/* Danh sách 13 buổi học */}
                     <div className="space-y-2">
                       {currentModule.lessons.map((lesson) => {
-                        const isSession13 = lesson.sessionNumber === 13;
+                        const isLastLesson = lesson.sessionNumber === currentModule.lessons.length;
                         const isReview = lesson.type === 'Ôn tập';
-                        const isMilestone = lesson.type.includes('cuối');
+                        const isMilestone = lesson.type.includes('cuối') || lesson.type.includes('Thuyết trình') || lesson.type.includes('Báo cáo');
 
                         return (
                           <div
                             key={lesson.sessionNumber}
                             className={`flex items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl border transition-colors ${
-                              isSession13
+                              isLastLesson
                                 ? 'bg-orange-50/70 border-orange-300 ring-1 ring-orange-400/20 shadow-xs'
                                 : isMilestone
                                 ? 'bg-amber-50/30 border-amber-200/80'
@@ -430,14 +430,14 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                           >
                             <div className="flex items-center gap-3 min-w-0">
                               <span className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 text-xs sm:text-sm font-black ${
-                                isSession13
+                                isLastLesson
                                   ? 'bg-orange-600 text-white shadow-xs'
                                   : 'bg-orange-100/80 text-orange-700'
                               }`}>
                                 {lesson.sessionNumber}
                               </span>
                               <span className={`text-sm sm:text-base truncate ${
-                                isSession13
+                                isLastLesson
                                   ? 'font-bold text-orange-950'
                                   : 'font-semibold text-[#111827]'
                               }`}>
@@ -447,7 +447,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 
                             {/* Tag Loại bài học bên phải */}
                             <span className={`shrink-0 text-xs px-2.5 sm:px-3 py-1 rounded-full font-medium ${
-                              isSession13
+                              isLastLesson
                                 ? 'bg-orange-600 text-white font-bold flex items-center gap-1 shadow-xs'
                                 : isReview
                                 ? 'bg-purple-100 text-purple-700 border border-purple-200'
@@ -455,7 +455,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                                 ? 'bg-amber-100 text-amber-800 border border-amber-200 font-semibold'
                                 : 'bg-white text-gray-500 border border-gray-200'
                             }`}>
-                              {isSession13 && <Sparkles className="h-3 w-3" />}
+                              {isLastLesson && <Sparkles className="h-3 w-3" />}
                               {lesson.type}
                             </span>
                           </div>
@@ -652,7 +652,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {PRIMARY_COURSE_SLUGS.map((slug) => {
+            {PRIMARY_COURSE_SLUGS.map((slug: string) => {
               const other = coursesData[slug];
               if (!other) return null;
               const isCurrent = slug === courseSlug;

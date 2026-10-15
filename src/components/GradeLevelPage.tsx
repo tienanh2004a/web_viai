@@ -149,10 +149,18 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                     <span>Lộ trình</span>
                   </div>
                   <div className="text-base sm:text-lg font-extrabold text-[#111827]">
-                    {currentLevel.id === 'mam-non' ? '3 Học phần' : '4 Học phần'}
+                    {currentLevel.id === 'mam-non'
+                      ? '3 Học phần'
+                      : currentLevel.id === 'tieu-hoc'
+                      ? '2 Học phần / khóa'
+                      : '1 — 2 Học phần'}
                   </div>
                   <div className="text-[11px] text-gray-500">
-                    52 buổi / năm học
+                    {currentLevel.id === 'mam-non'
+                      ? '12 buổi / học phần (36 buổi)'
+                      : currentLevel.id === 'tieu-hoc'
+                      ? '12 buổi / học phần (24 buổi)'
+                      : '12 — 14 buổi / học phần'}
                   </div>
                 </div>
 
@@ -220,7 +228,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <div className="inline-flex items-center gap-2 rounded-full bg-white border border-orange-200 px-4 py-1.5 text-xs font-bold text-[#c2410c] shadow-2xs mb-3">
               <Compass className="h-3.5 w-3.5" />
-              <span>PHÂN CHIA 3 CẤP ĐỘ RÕ RÀNG</span>
+              <span>LỘ TRÌNH ĐÀO TẠO {currentLevel.childCourseSlugs.length} KHÓA HỌC CHUẨN HÓA</span>
             </div>
 
             <h2 className="text-2xl sm:text-4xl font-extrabold text-[#111827] tracking-tight mb-3">
@@ -229,12 +237,12 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
 
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
               Mỗi khóa học được thiết kế chuyên biệt và tối ưu theo từng giai đoạn phát triển nhận thức. 
-              <strong> Nhấp vào từng khóa học</strong> để xem toàn bộ 3 lộ trình, chi tiết từng bài học và đăng ký trải nghiệm.
+              <strong> Nhấp vào từng khóa học</strong> để xem toàn bộ lộ trình chi tiết từng bài học và đăng ký trải nghiệm.
             </p>
           </div>
 
           {/* Child Courses Grid */}
-          <div className={`grid grid-cols-1 ${currentLevel.childCourseSlugs.length === 1 ? 'max-w-2xl mx-auto' : currentLevel.childCourseSlugs.length === 2 ? 'md:grid-cols-2 max-w-5xl mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'} gap-8`}>
+          <div className={`grid grid-cols-1 ${currentLevel.childCourseSlugs.length === 1 ? 'max-w-2xl mx-auto' : currentLevel.childCourseSlugs.length === 2 ? 'md:grid-cols-2 max-w-5xl mx-auto' : currentLevel.childCourseSlugs.length === 4 ? 'md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-3'} gap-6 sm:gap-8`}>
             {currentLevel.childCourseSlugs.map((slug) => {
               const childCourse: CourseDetail = coursesData[slug];
               if (!childCourse) return null;
@@ -296,7 +304,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                         {childCourse.headline}
                       </p>
 
-                      {/* 3 Lộ trình nổi bật */}
+                      {/* Lộ trình nổi bật */}
                       <div className="space-y-2 mb-6">
                         <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block">
                           {childCourse.modules.length} Học Phần Đào Tạo Chuẩn:
@@ -310,7 +318,7 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
                               Học phần {idx + 1}: {mod.name}
                             </span>
                             <span className="text-[11px] text-orange-700 bg-orange-100/80 px-2 py-0.5 rounded-md shrink-0 font-bold">
-                              13 buổi
+                              {mod.sessionsCount || mod.lessons.length} buổi
                             </span>
                           </div>
                         ))}
