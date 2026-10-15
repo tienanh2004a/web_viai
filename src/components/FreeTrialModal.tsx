@@ -59,11 +59,14 @@ export const COURSE_OPTIONS = [
   { value: 'Robotics Mầm Non — Lớp Cơ Bản', label: 'Robotics Mầm Non — Lớp Cơ Bản', robotColor: '#F59E0B' },
   { value: 'Robotics Mầm Non — Lớp Nâng Cao', label: 'Robotics Mầm Non — Lớp Nâng Cao', robotColor: '#F59E0B' },
   { value: 'Robotics Mầm Non — Lớp Chuyên Sâu', label: 'Robotics Mầm Non — Lớp Chuyên Sâu', robotColor: '#F59E0B' },
-  { value: 'Robotics Lớp 1 — 2', label: 'Robotics Lớp 1 — 2', robotColor: '#0284C7' },
-  { value: 'Robotics Lớp 3 — 4', label: 'Robotics Lớp 3 — 4', robotColor: '#EA580C' },
-  { value: 'Robotics Lớp 5', label: 'Robotics Lớp 5', robotColor: '#10B981' },
-  { value: 'Robotics Lớp 6 — 7', label: 'Robotics Lớp 6 — 7', robotColor: '#8B5CF6' },
-  { value: 'Robotics Lớp 8 — 9', label: 'Robotics Lớp 8 — 9', robotColor: '#EC4899' },
+  { value: 'Robotics Tiểu Học — Khóa Bắt Đầu', label: 'Robotics Tiểu Học — Khóa Bắt Đầu', robotColor: '#EA580C' },
+  { value: 'Robotics Tiểu Học — Khóa Intren', label: 'Robotics Tiểu Học — Khóa Intren', robotColor: '#EA580C' },
+  { value: 'Robotics Tiểu Học — Khóa Nâng Cao', label: 'Robotics Tiểu Học — Khóa Nâng Cao', robotColor: '#EA580C' },
+  { value: 'Robotics Tiểu Học — Khóa Chuyên Gia', label: 'Robotics Tiểu Học — Khóa Chuyên Gia', robotColor: '#EA580C' },
+  { value: 'Robotics THCS — Khóa Bắt Đầu', label: 'Robotics THCS — Khóa Bắt Đầu', robotColor: '#8B5CF6' },
+  { value: 'Robotics THCS — Khóa Intren', label: 'Robotics THCS — Khóa Intren', robotColor: '#8B5CF6' },
+  { value: 'Robotics THCS — Khóa Nâng Cao', label: 'Robotics THCS — Khóa Nâng Cao', robotColor: '#8B5CF6' },
+  { value: 'Robotics THCS — Khóa Chuyên Gia', label: 'Robotics THCS — Khóa Chuyên Gia', robotColor: '#8B5CF6' },
 ];
 
 export const BRANCH_OPTIONS = [
@@ -193,7 +196,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   const [parentName, setParentName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [phoneError, setPhoneError] = useState('');
-  const [selectedCourse, setSelectedCourse] = useState('Robotics Lớp 3 — 4');
+  const [selectedCourse, setSelectedCourse] = useState('Robotics Tiểu Học — Khóa Bắt Đầu');
   const [branch, setBranch] = useState('Cơ sở Hải Phòng');
   const [preferredDate, setPreferredDate] = useState(''); // Định dạng dd/mm/yyyy
   const [dateError, setDateError] = useState('');
@@ -256,21 +259,19 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
   useEffect(() => {
     if (defaultCourse) {
       if (defaultCourse.includes('Mầm') || defaultCourse.includes('mam-non')) {
-        setSelectedCourse('Robotics Mầm Non');
-      } else if (defaultCourse.includes('1 — 2') || defaultCourse.includes('1 - 2')) {
-        setSelectedCourse('Robotics Lớp 1 — 2');
-      } else if (defaultCourse.includes('3 — 4') || defaultCourse.includes('3 - 4')) {
-        setSelectedCourse('Robotics Lớp 3 — 4');
-      } else if (defaultCourse.includes('Lớp 5') || defaultCourse.includes('lop-5')) {
-        setSelectedCourse('Robotics Lớp 5');
-      } else if (defaultCourse.includes('6 — 7') || defaultCourse.includes('6 - 7')) {
-        setSelectedCourse('Robotics Lớp 6 — 7');
-      } else if (defaultCourse.includes('8 — 9') || defaultCourse.includes('8 - 9')) {
-        setSelectedCourse('Robotics Lớp 8 — 9');
-      } else if (defaultCourse.includes('Trung') || defaultCourse.includes('trung-hoc')) {
-        setSelectedCourse('Robotics Lớp 6 — 7');
+        if (defaultCourse.includes('Nâng Cao')) setSelectedCourse('Robotics Mầm Non — Lớp Nâng Cao');
+        else if (defaultCourse.includes('Chuyên Sâu')) setSelectedCourse('Robotics Mầm Non — Lớp Chuyên Sâu');
+        else setSelectedCourse('Robotics Mầm Non — Lớp Cơ Bản');
+      } else if (defaultCourse.includes('Trung') || defaultCourse.includes('trung-hoc') || defaultCourse.includes('THCS')) {
+        if (defaultCourse.includes('Intren')) setSelectedCourse('Robotics THCS — Khóa Intren');
+        else if (defaultCourse.includes('Nâng Cao')) setSelectedCourse('Robotics THCS — Khóa Nâng Cao');
+        else if (defaultCourse.includes('Chuyên Gia')) setSelectedCourse('Robotics THCS — Khóa Chuyên Gia');
+        else setSelectedCourse('Robotics THCS — Khóa Bắt Đầu');
       } else {
-        setSelectedCourse('Robotics Lớp 3 — 4');
+        if (defaultCourse.includes('Intren')) setSelectedCourse('Robotics Tiểu Học — Khóa Intren');
+        else if (defaultCourse.includes('Nâng Cao')) setSelectedCourse('Robotics Tiểu Học — Khóa Nâng Cao');
+        else if (defaultCourse.includes('Chuyên Gia')) setSelectedCourse('Robotics Tiểu Học — Khóa Chuyên Gia');
+        else setSelectedCourse('Robotics Tiểu Học — Khóa Bắt Đầu');
       }
     }
   }, [defaultCourse, isOpen]);

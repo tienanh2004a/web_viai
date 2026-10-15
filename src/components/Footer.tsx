@@ -91,24 +91,40 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
             </ul>
           </div>
 
-          {/* Col 3: Programs */}
+          {/* Col 3: Programs (Chuẩn hóa đầy đủ danh sách khóa học) */}
           <div>
             <h3 className="font-heading font-black text-[#111827] text-sm uppercase tracking-wider mb-4">
               Khoá Học
             </h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <button
                   onClick={() => onSelectCourse?.('mam-non-co-ban')}
-                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                  className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
                 >
                   Mầm Non — Lớp Cơ Bản
                 </button>
               </li>
               <li>
                 <button
+                  onClick={() => onSelectCourse?.('mam-non-nang-cao')}
+                  className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
+                >
+                  Mầm Non — Lớp Nâng Cao
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onSelectCourse?.('mam-non-chuyen-sau')}
+                  className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
+                >
+                  Mầm Non — Lớp Chuyên Sâu
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => onSelectCourse?.('tieu-hoc-bat-dau')}
-                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                  className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
                 >
                   Tiểu Học — Khóa Bắt Đầu
                 </button>
@@ -116,7 +132,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
               <li>
                 <button
                   onClick={() => onSelectCourse?.('tieu-hoc-intren')}
-                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                  className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
                 >
                   Tiểu Học — Khóa Intren
                 </button>
@@ -124,7 +140,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
               <li>
                 <button
                   onClick={() => onSelectCourse?.('tieu-hoc-nang-cao')}
-                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                  className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
                 >
                   Tiểu Học — Khóa Nâng Cao
                 </button>
@@ -132,7 +148,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
               <li>
                 <button
                   onClick={() => onSelectCourse?.('tieu-hoc-chuyen-gia')}
-                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                  className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
                 >
                   Tiểu Học — Khóa Chuyên Gia
                 </button>
@@ -140,15 +156,23 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
               <li>
                 <button
                   onClick={() => onSelectCourse?.('trung-hoc-bat-dau')}
-                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                  className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
                 >
                   THCS — Khóa Bắt Đầu
                 </button>
               </li>
               <li>
                 <button
+                  onClick={() => onSelectCourse?.('trung-hoc-intren')}
+                  className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
+                >
+                  THCS — Khóa Intren
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => onSelectCourse?.('trung-hoc-nang-cao')}
-                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                  className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
                 >
                   THCS — Khóa Nâng Cao
                 </button>
@@ -156,7 +180,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
               <li>
                 <button
                   onClick={() => onSelectCourse?.('trung-hoc-chuyen-gia')}
-                  className="hover:text-[#111827] transition-colors text-left font-medium cursor-pointer"
+                  className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
                 >
                   THCS — Khóa Chuyên Gia
                 </button>

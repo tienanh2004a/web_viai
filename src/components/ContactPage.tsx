@@ -20,7 +20,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
   const [parentName, setParentName] = useState('');
   const [phone, setPhone] = useState('');
   const [phoneError, setPhoneError] = useState('');
-  const [course, setCourse] = useState('Robotics Lớp 3 — 4');
+  const [course, setCourse] = useState('Robotics Tiểu Học — Khóa Bắt Đầu');
   const [branch, setBranch] = useState('Hải Phòng');
   const [extraInfo, setExtraInfo] = useState('');
   const [agreed, setAgreed] = useState(true);
@@ -371,12 +371,17 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       onChange={(e) => setCourse(e.target.value)}
                       className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-base sm:text-sm text-neutral-900 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all cursor-pointer"
                     >
-                      <option value="Robotics Mầm Non">Robotics Mầm Non</option>
-                      <option value="Robotics Lớp 1 — 2">Robotics Lớp 1 — 2</option>
-                      <option value="Robotics Lớp 3 — 4">Robotics Lớp 3 — 4</option>
-                      <option value="Robotics Lớp 5">Robotics Lớp 5</option>
-                      <option value="Robotics Lớp 6 — 7">Robotics Lớp 6 — 7</option>
-                      <option value="Robotics Lớp 8 — 9">Robotics Lớp 8 — 9</option>
+                      <option value="Robotics Mầm Non — Lớp Cơ Bản">Robotics Mầm Non — Lớp Cơ Bản</option>
+                      <option value="Robotics Mầm Non — Lớp Nâng Cao">Robotics Mầm Non — Lớp Nâng Cao</option>
+                      <option value="Robotics Mầm Non — Lớp Chuyên Sâu">Robotics Mầm Non — Lớp Chuyên Sâu</option>
+                      <option value="Robotics Tiểu Học — Khóa Bắt Đầu">Robotics Tiểu Học — Khóa Bắt Đầu</option>
+                      <option value="Robotics Tiểu Học — Khóa Intren">Robotics Tiểu Học — Khóa Intren</option>
+                      <option value="Robotics Tiểu Học — Khóa Nâng Cao">Robotics Tiểu Học — Khóa Nâng Cao</option>
+                      <option value="Robotics Tiểu Học — Khóa Chuyên Gia">Robotics Tiểu Học — Khóa Chuyên Gia</option>
+                      <option value="Robotics THCS — Khóa Bắt Đầu">Robotics THCS — Khóa Bắt Đầu</option>
+                      <option value="Robotics THCS — Khóa Intren">Robotics THCS — Khóa Intren</option>
+                      <option value="Robotics THCS — Khóa Nâng Cao">Robotics THCS — Khóa Nâng Cao</option>
+                      <option value="Robotics THCS — Khóa Chuyên Gia">Robotics THCS — Khóa Chuyên Gia</option>
                     </select>
                   </div>
 
