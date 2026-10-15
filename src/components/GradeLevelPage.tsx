@@ -307,52 +307,53 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
         </div>
       </section>
 
-      {/* 5. PHƯƠNG PHÁP & CHUẨN ĐẦU RA ĐÀO TẠO (ĐÃ XÓA HOÀN TOÀN 4 CAM KẾT ẢNH 1) */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#faf8f5]">
+      {/* 5. PHƯƠNG PHÁP & CHUẨN ĐẦU RA ĐÀO TẠO (TIÊU ĐỀ 2 DÒNG CĂN GIỮA ĐẸP MẮT) */}
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#faf8f5]">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            
-            {/* Cột trái: Phương pháp đào tạo */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 border border-orange-200 px-3.5 py-1 text-xs font-bold text-[#c2410c]">
-                <ShieldCheck className="h-3.5 w-3.5" />
-                <span>PHƯƠNG PHÁP ĐÀO TẠO TIÊN TIẾN</span>
-              </div>
-              
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#111827] tracking-tight leading-tight">
-                Vì Sao Phụ Huynh Tin Chọn <br />
-                <span className="text-[#c2410c]">{currentLevel.name}</span> Tại VIAI?
-              </h2>
-
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                Phương pháp <strong>{currentLevel.methodology}</strong> được nghiên cứu và chuẩn hóa bởi đội ngũ chuyên gia giàu kinh nghiệm. Mỗi học sinh được cá nhân hóa lộ trình học, tiến bộ qua từng buổi học thực chiến.
-              </p>
-
-              <div>
-                <button
-                  onClick={() => onOpenTrialModal(currentLevel.name)}
-                  className="inline-flex items-center gap-2 rounded-2xl bg-[#c2410c] hover:bg-[#9a3412] px-6 py-3.5 text-sm font-bold text-white transition-all shadow-md hover:shadow-lg cursor-pointer"
-                >
-                  <Sparkles className="h-4 w-4 text-amber-200" />
-                  <span>Đăng ký nhận tư vấn lộ trình</span>
-                </button>
-              </div>
+          
+          {/* Header căn giữa đối xứng 2 dòng hoàn hảo */}
+          <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 border border-orange-200 px-4 py-1.5 text-xs font-bold text-[#c2410c]">
+              <ShieldCheck className="h-4 w-4" />
+              <span>PHƯƠNG PHÁP ĐÀO TẠO TIÊN TIẾN</span>
             </div>
 
-            {/* Cột phải: Chuẩn đầu ra và năng lực đạt được */}
-            <div className="lg:col-span-7 space-y-3.5">
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-2">
-                Năng lực học viên đạt được sau khóa học:
-              </span>
-              {currentLevel.learningOutcomes.map((outcome, idx) => (
-                <div key={idx} className="flex items-start gap-3.5 bg-white p-4 sm:p-5 rounded-2xl border border-orange-100 shadow-2xs hover:border-orange-200 transition-colors">
-                  <CheckCircle2 className="h-5 w-5 text-[#c2410c] shrink-0 mt-0.5" />
-                  <span className="text-xs sm:text-sm font-semibold text-gray-800 leading-relaxed">{outcome}</span>
-                </div>
-              ))}
-            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] tracking-tight leading-tight">
+              <span className="block">Vì Sao Phụ Huynh Tin Chọn</span>
+              <span className="block text-[#c2410c] mt-2">{currentLevel.name} Tại VIAI?</span>
+            </h2>
 
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto pt-1">
+              Phương pháp <strong>{currentLevel.methodology}</strong> được nghiên cứu và chuẩn hóa bởi đội ngũ chuyên gia giàu kinh nghiệm. Mỗi học sinh được cá nhân hóa lộ trình học, tiến bộ qua từng buổi học thực chiến.
+            </p>
           </div>
+
+          {/* Grid chuẩn đầu ra 2 cột cân xứng tuyệt đẹp */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 max-w-5xl mx-auto mb-10">
+            {currentLevel.learningOutcomes.map((outcome, idx) => (
+              <div 
+                key={idx} 
+                className="flex items-start gap-4 bg-white p-5 sm:p-6 rounded-2xl border border-orange-100 shadow-2xs hover:border-orange-300 hover:shadow-md transition-all duration-300"
+              >
+                <div className="h-7 w-7 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center shrink-0 mt-0.5">
+                  <CheckCircle2 className="h-4 w-4 text-[#c2410c]" />
+                </div>
+                <span className="text-sm font-semibold text-gray-800 leading-relaxed pt-0.5">{outcome}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Button căn giữa */}
+          <div className="text-center">
+            <button
+              onClick={() => onOpenTrialModal(currentLevel.name)}
+              className="inline-flex items-center gap-2.5 rounded-2xl bg-[#c2410c] hover:bg-[#9a3412] px-8 py-4 text-sm font-bold text-white transition-all shadow-md hover:shadow-xl cursor-pointer active:scale-98"
+            >
+              <Sparkles className="h-4 w-4 text-amber-200" />
+              <span>Đăng ký nhận tư vấn lộ trình chi tiết</span>
+            </button>
+          </div>
+
         </div>
       </section>
 

@@ -21,7 +21,7 @@ export const FaqSection: React.FC = () => {
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
-              <span><strong>Khối Trung học (11–15 tuổi):</strong> Lập trình văn bản Python/C++, vi điều khiển, ứng dụng Trí tuệ nhân tạo (AI) và luyện thi đấu trường Robocon toàn quốc.</span>
+              <span><strong>Khối Trung học (11–15 tuổi):</strong> Lập trình Scratch/Python, vi điều khiển, ứng dụng Trí tuệ nhân tạo (AI) và luyện thi đấu trường Robocon toàn quốc.</span>
             </li>
           </ul>
         </div>

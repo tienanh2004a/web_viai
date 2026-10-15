@@ -171,7 +171,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
             </h3>
             <div className="flex flex-wrap gap-2.5 mb-6">
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/profile.php?id=61593732361552"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1877F2]/10 hover:opacity-85 transition-opacity overflow-hidden"
@@ -181,7 +181,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
               </a>
 
               <a
-                href="https://www.tiktok.com"
+                href="https://www.tiktok.com/@cerobotics?is_from_webapp=1&sender_device=pc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 hover:opacity-85 transition-opacity overflow-hidden"

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  ArrowLeft, CheckCircle2, Clock, Users, MapPin, Award, 
-  Sparkles, Calendar, Cpu, ArrowRight, ShieldCheck, 
-  BookOpen, Layers, Gift, ListOrdered, Bot
+  ArrowLeft, Clock, Users, MapPin, Award, 
+  Sparkles, Cpu, ArrowRight, ShieldCheck, 
+  BookOpen, Layers, ListOrdered, Bot
 } from 'lucide-react';
 import { coursesData, getGradeLevelByCourseSlug, type CourseDetail } from '../data/coursesData';
 
@@ -25,7 +25,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
 }) => {
   const course: CourseDetail = coursesData[courseSlug] || coursesData['robotics-mam-non'];
   const parentLevel = getGradeLevelByCourseSlug(courseSlug);
-  const [activeTab, setActiveTab] = useState<'syllabus' | 'hardware' | 'skills' | 'schedule'>('syllabus');
+  const [activeTab, setActiveTab] = useState<'syllabus' | 'hardware' | 'skills'>('syllabus');
   const [selectedModuleId, setSelectedModuleId] = useState<string>(course?.modules?.[0]?.id || 'HP1');
 
   useEffect(() => {
@@ -263,17 +263,6 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
             <span>Kỹ năng &amp; Chuẩn đầu ra</span>
           </button>
 
-          <button
-            onClick={() => setActiveTab('schedule')}
-            className={`px-4 py-2 rounded-[8px] text-xs sm:text-sm font-semibold transition-all whitespace-nowrap flex items-center gap-2 cursor-pointer ${
-              activeTab === 'schedule'
-                ? 'bg-[#111827] text-white shadow-none font-bold'
-                : 'text-[#444444] hover:text-[#000000] hover:bg-[#f3f3f3]'
-            }`}
-          >
-            <Calendar className="h-4 w-4" />
-            <span>Lịch học &amp; Học phí</span>
-          </button>
         </div>
       </section>
 
@@ -554,84 +543,6 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
           )}
 
           {/* TAB 4: SCHEDULE & TUITION */}
-          {activeTab === 'schedule' && (
-            <div id="lich-hoc" className="space-y-8 animate-fadeIn max-w-4xl mx-auto">
-              <div>
-                <h2 className="text-2xl sm:text-3xl font-black text-[#111827] mb-2 tracking-tight">
-                  Lịch Học Tại 3 Cơ Sở &amp; Học Phí Ưu Đãi
-                </h2>
-                <p className="text-sm text-zinc-600">
-                  Lịch học linh hoạt vào các buổi sáng và chiều cuối tuần tại Hải Phòng, Hưng Yên và Ninh Bình.
-                </p>
-              </div>
-
-              {/* Lịch học */}
-              <div className="rounded-3xl border border-gray-200/90 bg-white p-6 sm:p-8 shadow-xs">
-                <h3 className="text-lg font-bold text-[#111827] mb-4 flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-orange-600" />
-                  <span>Các ca học mở lớp tại các cơ sở</span>
-                </h3>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {course.schedule.map((sch, idx) => (
-                    <div key={idx} className="rounded-2xl border border-gray-100 bg-[#faf9f6] p-4 space-y-1.5">
-                      <span className="text-xs font-bold text-orange-600 uppercase tracking-wide block">
-                        {sch.shift}
-                      </span>
-                      <div className="text-sm font-bold text-[#111827]">{sch.time}</div>
-                      <div className="text-xs text-zinc-500">{sch.days}</div>
-                      <div className="text-xs text-zinc-400 pt-1">{sch.branch}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Học phí & Quà tặng */}
-              <div className="rounded-3xl border border-orange-200 bg-white p-6 sm:p-8 shadow-xs space-y-6">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-gray-100">
-                  <div>
-                    <span className="text-xs font-bold text-zinc-500 uppercase tracking-wide block mb-1">HỌC PHÍ NIÊM YẾT</span>
-                    <div className="text-2xl sm:text-3xl font-black text-orange-600">
-                      {course.tuition.discountedPrice}
-                    </div>
-                    <span className="text-xs text-zinc-400 line-through">
-                      Giá gốc: {course.tuition.originalPrice}
-                    </span>
-                  </div>
-
-                  <button
-                    onClick={() => onOpenTrialModal(course.name)}
-                    className="rounded-2xl bg-[#c2410c] hover:bg-[#9a3412] px-8 py-4 text-sm font-bold text-white shadow-sm transition-all cursor-pointer shrink-0"
-                  >
-                    Đăng ký giữ ưu đãi khai giảng
-                  </button>
-                </div>
-
-                <div className="space-y-3">
-                  <span className="text-xs font-bold text-zinc-500 uppercase tracking-wider block">ƯU ĐÃI &amp; QUÀ TẶNG:</span>
-                  <div className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700">
-                    <Gift className="h-4 w-4 text-orange-600 shrink-0 mt-0.5" />
-                    <span>{course.tuition.offerNote}</span>
-                  </div>
-                  <div className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700">
-                    <Award className="h-4 w-4 text-orange-600 shrink-0 mt-0.5" />
-                    <span>Bộ quà tặng kỹ sư nhí: {course.tuition.giftValue}</span>
-                  </div>
-                </div>
-
-                {/* Cam kết */}
-                <div className="pt-4 border-t border-gray-100 space-y-2">
-                  <span className="text-xs font-bold text-zinc-500 uppercase tracking-wider block">CAM KẾT TỪ VIAI ACADEMY:</span>
-                  {course.commitments.map((cmt, cIdx) => (
-                    <div key={cIdx} className="flex items-start gap-2 text-xs sm:text-sm text-zinc-700">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
-                      <span>{cmt}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </section>
 

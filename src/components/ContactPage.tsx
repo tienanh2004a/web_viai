@@ -549,7 +549,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
             <div className="flex justify-center gap-4 flex-wrap">
               {/* Facebook */}
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/profile.php?id=61593732361552"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col items-center gap-2 p-4 sm:p-5 rounded-2xl border border-neutral-200 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[100px] sm:min-w-[110px] hover:shadow-md"
@@ -562,7 +562,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
               {/* TikTok */}
               <a
-                href="https://www.tiktok.com"
+                href="https://www.tiktok.com/@cerobotics?is_from_webapp=1&sender_device=pc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col items-center gap-2 p-4 sm:p-5 rounded-2xl border border-neutral-200 bg-white hover:-translate-y-1 transition-all duration-200 min-w-[100px] sm:min-w-[110px] hover:shadow-md"

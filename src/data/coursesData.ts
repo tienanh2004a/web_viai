@@ -5165,8 +5165,8 @@ export const GRADE_LEVELS: Record<string, GradeLevel> = {
     "shortName": "Khối Trung Học Cơ Sở",
     "academicName": "Nhà Sáng Tạo Công Nghệ",
     "badge": "TRUNG HỌC CƠ SỞ",
-    "tagline": "Lập trình thực chiến Python/C++, giải thuật PID, Vision AI & AGV",
-    "headline": "Nâng tầm tư duy lập trình chuyên sâu với Python/C++, thuật toán PID đối kháng, thị giác AI và kiến tạo Robot AGV",
+    "tagline": "Lập trình thực chiến Scratch/Python, giải thuật PID, Vision AI & AGV",
+    "headline": "Scratch/Python, thuật toán PID đối kháng, thị giác AI và kiến tạo Robot AGV",
     "ageRange": "Lớp 6 — 9",
     "displayAge": "11 — 15 tuổi",
     "coverImage": "/images/courses/trung-hoc-ai-1.jpg",
@@ -5196,7 +5196,7 @@ export const GRADE_LEVELS: Record<string, GradeLevel> = {
     "learningOutcomes": [
       "Lập trình thành thạo hệ thống robot tự hành với tư duy giải thuật tối ưu",
       "Làm chủ module Camera AI nhận diện hình ảnh và điều khiển robot tự động",
-      "Thiết kế cơ cấu cơ điện tử chịu lực cao và xử lý sự cố kỹ thuật độc lập",
+      "Lắp ráp robot và xử lý sự cố kỹ thuật",
       "Tự tin tranh tài tại các giải đấu Robocon và bảo vệ đồ án KHKT"
     ],
     "methodology": "Competition-Driven Learning (Đào tạo định hướng nghiên cứu & Chinh phục giải đấu)."

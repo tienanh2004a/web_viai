@@ -488,7 +488,7 @@ export const ContactSection: React.FC = () => {
             
             {/* Facebook */}
             <a
-              href="https://www.facebook.com"
+              href="https://www.facebook.com/profile.php?id=61593732361552"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook VIAI Academy"
@@ -506,7 +506,7 @@ export const ContactSection: React.FC = () => {
 
             {/* TikTok */}
             <a
-              href="https://www.tiktok.com"
+              href="https://www.tiktok.com/@cerobotics?is_from_webapp=1&sender_device=pc"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok VIAI Academy"
