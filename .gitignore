@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw generated images in root
+/Gemini_Generated_Image_*.png
