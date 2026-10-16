@@ -518,23 +518,24 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {course.skillsGained.map((skill, idx) => (
-                  <div key={idx} className="rounded-2xl border border-gray-200/90 bg-white p-6 shadow-xs">
-                    <div className="flex items-center justify-between mb-3">
-                      <h4 className="font-bold text-[#111827] text-base">{skill.title}</h4>
-                      <span className="text-xs font-extrabold text-orange-600 bg-orange-50 border border-orange-200 px-2 py-0.5 rounded-md">
-                        {skill.percent}%
-                      </span>
-                    </div>
-                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed mb-4">
-                      {skill.desc}
-                    </p>
-                    <div className="h-2 w-full rounded-full bg-gray-100 overflow-hidden">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-orange-500 to-amber-500 transition-all duration-1000"
-                        style={{ width: `${skill.percent}%` }}
-                      />
+                  <div 
+                    key={idx} 
+                    className="rounded-2xl border border-orange-100/90 bg-white p-5 sm:p-6 shadow-2xs hover:shadow-xs hover:border-[#c2410c]/30 transition-all flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center gap-3 mb-2.5">
+                        <span className="w-8 h-8 rounded-xl bg-orange-50 border border-orange-200/80 text-[#c2410c] font-black text-xs flex items-center justify-center shrink-0">
+                          0{idx + 1}
+                        </span>
+                        <h4 className="font-bold text-[#111827] text-base leading-snug">
+                          {skill.title}
+                        </h4>
+                      </div>
+                      <p className="text-xs sm:text-sm text-[#4b5563] leading-relaxed">
+                        {skill.desc}
+                      </p>
                     </div>
                   </div>
                 ))}

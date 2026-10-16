@@ -96,15 +96,9 @@ export const ContactSection: React.FC = () => {
       <div className="pointer-events-none absolute top-1/2 -right-20 w-[500px] h-[500px] bg-gradient-to-bl from-orange-400/20 via-rose-200/15 to-transparent rounded-full blur-[140px] -z-10" />
       <div className="pointer-events-none absolute -bottom-10 left-1/3 w-96 h-96 bg-gradient-to-tr from-amber-300/20 via-orange-200/15 to-transparent rounded-full blur-[120px] -z-10" />
 
-      {/* Bong bóng cam thủy tinh trôi nổi góc trên */}
-      <div className="pointer-events-none absolute top-10 right-4 sm:right-12 w-24 sm:w-32 h-24 sm:h-32 rounded-full border border-orange-300/45 bg-gradient-to-tr from-orange-400/22 via-amber-200/15 to-white/50 backdrop-blur-xs shadow-[0_8px_32px_rgba(251,146,60,0.16),inset_0_0_20px_rgba(255,255,255,0.7)] animate-bubble-float -z-10">
-        <div className="absolute top-3 left-4 w-6 h-3 rounded-full bg-white/70 rotate-[-35deg]" />
-      </div>
 
-      {/* Bong bóng cam thủy tinh trôi nổi góc dưới */}
-      <div className="pointer-events-none absolute bottom-24 left-4 sm:left-10 w-20 sm:w-28 h-20 sm:h-28 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_6px_24px_rgba(251,146,60,0.14),inset_0_0_15px_rgba(255,255,255,0.7)] animate-bubble-float-delayed -z-10">
-        <div className="absolute top-2.5 left-3 w-5 h-2.5 rounded-full bg-white/70 rotate-[-35deg]" />
-      </div>
+
+
 
       
       {/* 1. THÔNG TIN LIÊN HỆ TRỰC TIẾP — Side-by-side layout */}
@@ -357,7 +351,7 @@ export const ContactSection: React.FC = () => {
                     onChange={(e) => setBranch(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl border border-neutral-300 bg-white text-base sm:text-sm text-[#111827] focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20 focus:outline-none transition-all"
                   >
-                    <option value="Hải Phòng">Cơ sở Hải Phòng (Cung Văn hoá Thiếu nhi HP)</option>
+                    <option value="Hải Phòng">Cơ sở Hải Phòng (Cung Văn hoá Thiếu nhi Hải Phòng)</option>
                     <option value="Hưng Yên">Cơ sở Hưng Yên (25 Đinh Tiên Hoàng, Trần Lãm)</option>
                     <option value="Online Toàn Quốc">Học Trực Tuyến Toàn Quốc (Phòng Lab 3D)</option>
                   </select>

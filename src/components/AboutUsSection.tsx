@@ -13,15 +13,9 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenTrialModal
       <div className="pointer-events-none absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-br from-orange-300/20 via-amber-200/15 to-transparent rounded-full blur-[130px] -z-10" />
       <div className="pointer-events-none absolute bottom-10 -right-20 w-[450px] h-[450px] bg-gradient-to-tl from-orange-400/18 via-amber-200/12 to-transparent rounded-full blur-[140px] -z-10" />
 
-      {/* Bong bóng cam thủy tinh trôi nổi */}
-      <div className="pointer-events-none absolute top-16 left-4 sm:left-10 w-20 sm:w-28 h-20 sm:h-28 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_30px_rgba(251,146,60,0.14),inset_0_0_18px_rgba(255,255,255,0.7)] animate-bubble-float z-0">
-        <div className="absolute top-2.5 left-3 w-5 h-2.5 rounded-full bg-white/70 rotate-[-35deg]" />
-      </div>
-      <div className="pointer-events-none absolute bottom-16 right-6 sm:right-16 w-24 sm:w-32 h-24 sm:h-32 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_32px_rgba(251,146,60,0.15),inset_0_0_20px_rgba(255,255,255,0.7)] animate-bubble-float-delayed z-0">
-        <div className="absolute top-3 left-4 w-6 h-3 rounded-full bg-white/70 rotate-[-35deg]" />
-      </div>
 
-      <div className="mx-auto max-w-7xl">
+
+      <div className="mx-auto max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Cột trái: Giới thiệu súc tích về VIAI Academy */}

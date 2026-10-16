@@ -145,6 +145,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Tự tin giao tiếp & Hợp tác",
         "desc": "Biết chia sẻ khối ghép, cùng bạn chơi và khoe sản phẩm với bố mẹ",
         "percent": 90
+      },
+      {
+        "title": "Nhận thức không gian & Khối hình học",
+        "desc": "Nhận biết cấu trúc đối xứng, cơ cấu bánh răng và định hướng chuyển động",
+        "percent": 94
+      },
+      {
+        "title": "Rèn luyện kiên nhẫn & Tự giác ngăn nắp",
+        "desc": "Tập trung kiên trì hoàn thành mô hình và tự giác thu dọn giáo cụ gọn gàng",
+        "percent": 95
       }
     ],
     "schedule": [
@@ -472,6 +482,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Tự tin giao tiếp & Hợp tác",
         "desc": "Biết chia sẻ khối ghép, cùng bạn chơi và khoe sản phẩm với bố mẹ",
         "percent": 90
+      },
+      {
+        "title": "Nhận thức không gian & Khối hình học",
+        "desc": "Nhận biết cấu trúc đối xứng, cơ cấu bánh răng và định hướng chuyển động",
+        "percent": 94
+      },
+      {
+        "title": "Rèn luyện kiên nhẫn & Tự giác ngăn nắp",
+        "desc": "Tập trung kiên trì hoàn thành mô hình và tự giác thu dọn giáo cụ gọn gàng",
+        "percent": 95
       }
     ],
     "schedule": [
@@ -799,6 +819,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Tự tin giao tiếp & Hợp tác",
         "desc": "Biết chia sẻ khối ghép, cùng bạn chơi và khoe sản phẩm với bố mẹ",
         "percent": 90
+      },
+      {
+        "title": "Nhận thức không gian & Khối hình học",
+        "desc": "Nhận biết cấu trúc đối xứng, cơ cấu bánh răng và định hướng chuyển động",
+        "percent": 94
+      },
+      {
+        "title": "Rèn luyện kiên nhẫn & Tự giác ngăn nắp",
+        "desc": "Tập trung kiên trì hoàn thành mô hình và tự giác thu dọn giáo cụ gọn gàng",
+        "percent": 95
       }
     ],
     "schedule": [
@@ -1126,6 +1156,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Tự tin giao tiếp & Hợp tác",
         "desc": "Biết chia sẻ khối ghép, cùng bạn chơi và khoe sản phẩm với bố mẹ",
         "percent": 90
+      },
+      {
+        "title": "Nhận thức không gian & Khối hình học",
+        "desc": "Nhận biết cấu trúc đối xứng, cơ cấu bánh răng và định hướng chuyển động",
+        "percent": 94
+      },
+      {
+        "title": "Rèn luyện kiên nhẫn & Tự giác ngăn nắp",
+        "desc": "Tập trung kiên trì hoàn thành mô hình và tự giác thu dọn giáo cụ gọn gàng",
+        "percent": 95
       }
     ],
     "schedule": [
@@ -1453,6 +1493,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Debug cơ khí & Thuyết trình sản phẩm",
         "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
         "percent": 95
+      },
+      {
+        "title": "Làm chủ cảm biến & Tương tác thông minh",
+        "desc": "Ứng dụng cảm biến khoảng cách, màu sắc và va chạm để robot phản xạ linh hoạt",
+        "percent": 95
+      },
+      {
+        "title": "Làm việc nhóm & Chiến thuật sa bàn",
+        "desc": "Phối hợp đồng đội, phân công nhiệm vụ và xây dựng chiến lược thi đấu đối kháng",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -1702,6 +1752,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Debug cơ khí & Thuyết trình sản phẩm",
         "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
         "percent": 95
+      },
+      {
+        "title": "Làm chủ cảm biến & Tương tác thông minh",
+        "desc": "Ứng dụng cảm biến khoảng cách, màu sắc và va chạm để robot phản xạ linh hoạt",
+        "percent": 95
+      },
+      {
+        "title": "Làm việc nhóm & Chiến thuật sa bàn",
+        "desc": "Phối hợp đồng đội, phân công nhiệm vụ và xây dựng chiến lược thi đấu đối kháng",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -1951,6 +2011,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Debug cơ khí & Thuyết trình sản phẩm",
         "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
         "percent": 95
+      },
+      {
+        "title": "Làm chủ cảm biến & Tương tác thông minh",
+        "desc": "Ứng dụng cảm biến khoảng cách, màu sắc và va chạm để robot phản xạ linh hoạt",
+        "percent": 95
+      },
+      {
+        "title": "Làm việc nhóm & Chiến thuật sa bàn",
+        "desc": "Phối hợp đồng đội, phân công nhiệm vụ và xây dựng chiến lược thi đấu đối kháng",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -2200,6 +2270,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Debug cơ khí & Thuyết trình sản phẩm",
         "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
         "percent": 95
+      },
+      {
+        "title": "Làm chủ cảm biến & Tương tác thông minh",
+        "desc": "Ứng dụng cảm biến khoảng cách, màu sắc và va chạm để robot phản xạ linh hoạt",
+        "percent": 95
+      },
+      {
+        "title": "Làm việc nhóm & Chiến thuật sa bàn",
+        "desc": "Phối hợp đồng đội, phân công nhiệm vụ và xây dựng chiến lược thi đấu đối kháng",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -2449,6 +2529,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Debug cơ khí & Thuyết trình sản phẩm",
         "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
         "percent": 95
+      },
+      {
+        "title": "Làm chủ cảm biến & Tương tác thông minh",
+        "desc": "Ứng dụng cảm biến khoảng cách, màu sắc và va chạm để robot phản xạ linh hoạt",
+        "percent": 95
+      },
+      {
+        "title": "Làm việc nhóm & Chiến thuật sa bàn",
+        "desc": "Phối hợp đồng đội, phân công nhiệm vụ và xây dựng chiến lược thi đấu đối kháng",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -2698,6 +2788,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Debug cơ khí & Thuyết trình sản phẩm",
         "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
         "percent": 95
+      },
+      {
+        "title": "Làm chủ cảm biến & Tương tác thông minh",
+        "desc": "Ứng dụng cảm biến khoảng cách, màu sắc và va chạm để robot phản xạ linh hoạt",
+        "percent": 95
+      },
+      {
+        "title": "Làm việc nhóm & Chiến thuật sa bàn",
+        "desc": "Phối hợp đồng đội, phân công nhiệm vụ và xây dựng chiến lược thi đấu đối kháng",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -2947,6 +3047,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Debug cơ khí & Thuyết trình sản phẩm",
         "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
         "percent": 95
+      },
+      {
+        "title": "Làm chủ cảm biến & Tương tác thông minh",
+        "desc": "Ứng dụng cảm biến khoảng cách, màu sắc và va chạm để robot phản xạ linh hoạt",
+        "percent": 95
+      },
+      {
+        "title": "Làm việc nhóm & Chiến thuật sa bàn",
+        "desc": "Phối hợp đồng đội, phân công nhiệm vụ và xây dựng chiến lược thi đấu đối kháng",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -3196,6 +3306,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Debug cơ khí & Thuyết trình sản phẩm",
         "desc": "Tự quan sát sai sót, thử nghiệm giải pháp mới và bảo vệ đồ án",
         "percent": 95
+      },
+      {
+        "title": "Làm chủ cảm biến & Tương tác thông minh",
+        "desc": "Ứng dụng cảm biến khoảng cách, màu sắc và va chạm để robot phản xạ linh hoạt",
+        "percent": 95
+      },
+      {
+        "title": "Làm việc nhóm & Chiến thuật sa bàn",
+        "desc": "Phối hợp đồng đội, phân công nhiệm vụ và xây dựng chiến lược thi đấu đối kháng",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -3445,6 +3565,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
         "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
         "percent": 96
+      },
+      {
+        "title": "Quy trình Kỹ thuật KHKT chuẩn Quốc tế",
+        "desc": "Ghi chép Engineering Notebook bài bản, phân tích yêu cầu đề bài và tối ưu thiết kế",
+        "percent": 94
+      },
+      {
+        "title": "Tối ưu hệ thống & Tự động hóa IoT",
+        "desc": "Kết nối truyền thông không dây, thu thập dữ liệu thời gian thực và tự động hóa tác vụ",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -3694,6 +3824,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
         "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
         "percent": 96
+      },
+      {
+        "title": "Quy trình Kỹ thuật KHKT chuẩn Quốc tế",
+        "desc": "Ghi chép Engineering Notebook bài bản, phân tích yêu cầu đề bài và tối ưu thiết kế",
+        "percent": 94
+      },
+      {
+        "title": "Tối ưu hệ thống & Tự động hóa IoT",
+        "desc": "Kết nối truyền thông không dây, thu thập dữ liệu thời gian thực và tự động hóa tác vụ",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -3943,6 +4083,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
         "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
         "percent": 96
+      },
+      {
+        "title": "Quy trình Kỹ thuật KHKT chuẩn Quốc tế",
+        "desc": "Ghi chép Engineering Notebook bài bản, phân tích yêu cầu đề bài và tối ưu thiết kế",
+        "percent": 94
+      },
+      {
+        "title": "Tối ưu hệ thống & Tự động hóa IoT",
+        "desc": "Kết nối truyền thông không dây, thu thập dữ liệu thời gian thực và tự động hóa tác vụ",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -4124,6 +4274,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
         "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
         "percent": 96
+      },
+      {
+        "title": "Quy trình Kỹ thuật KHKT chuẩn Quốc tế",
+        "desc": "Ghi chép Engineering Notebook bài bản, phân tích yêu cầu đề bài và tối ưu thiết kế",
+        "percent": 94
+      },
+      {
+        "title": "Tối ưu hệ thống & Tự động hóa IoT",
+        "desc": "Kết nối truyền thông không dây, thu thập dữ liệu thời gian thực và tự động hóa tác vụ",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -4373,6 +4533,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
         "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
         "percent": 96
+      },
+      {
+        "title": "Quy trình Kỹ thuật KHKT chuẩn Quốc tế",
+        "desc": "Ghi chép Engineering Notebook bài bản, phân tích yêu cầu đề bài và tối ưu thiết kế",
+        "percent": 94
+      },
+      {
+        "title": "Tối ưu hệ thống & Tự động hóa IoT",
+        "desc": "Kết nối truyền thông không dây, thu thập dữ liệu thời gian thực và tự động hóa tác vụ",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -4622,6 +4792,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
         "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
         "percent": 96
+      },
+      {
+        "title": "Quy trình Kỹ thuật KHKT chuẩn Quốc tế",
+        "desc": "Ghi chép Engineering Notebook bài bản, phân tích yêu cầu đề bài và tối ưu thiết kế",
+        "percent": 94
+      },
+      {
+        "title": "Tối ưu hệ thống & Tự động hóa IoT",
+        "desc": "Kết nối truyền thông không dây, thu thập dữ liệu thời gian thực và tự động hóa tác vụ",
+        "percent": 93
       }
     ],
     "schedule": [
@@ -4871,6 +5051,16 @@ export const coursesData: Record<string, CourseDetail> = {
         "title": "Bản lĩnh thi đấu & Thuyết trình đồ án",
         "desc": "Rèn luyện tinh thần thi đấu đối kháng và kỹ năng bảo vệ đồ án KHKT",
         "percent": 96
+      },
+      {
+        "title": "Quy trình Kỹ thuật KHKT chuẩn Quốc tế",
+        "desc": "Ghi chép Engineering Notebook bài bản, phân tích yêu cầu đề bài và tối ưu thiết kế",
+        "percent": 94
+      },
+      {
+        "title": "Tối ưu hệ thống & Tự động hóa IoT",
+        "desc": "Kết nối truyền thông không dây, thu thập dữ liệu thời gian thực và tự động hóa tác vụ",
+        "percent": 93
       }
     ],
     "schedule": [

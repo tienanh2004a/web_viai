@@ -73,7 +73,7 @@ export const BRANCH_OPTIONS = [
   {
     value: 'Cơ sở Hải Phòng',
     label: 'Cơ sở Hải Phòng',
-    sublabel: 'Cung Văn hoá Thiếu nhi HP',
+    sublabel: 'Cung Văn hoá Thiếu nhi Hải Phòng',
     iconType: 'building' as const,
   },
   {
@@ -611,9 +611,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                     Khóa học quan tâm cho bé <span className="text-orange-600">*</span>
                   </label>
                 </div>
-                <p className="text-[11px] sm:text-xs text-[#6B7D96] mb-1.5 font-normal">
-                  Chọn khóa học phù hợp với độ tuổi và định hướng phát triển của bé.
-                </p>
+
 
                 {/* Hidden input for standard forms */}
                 <input type="hidden" name="selectedCourse" value={selectedCourse} />
@@ -703,9 +701,7 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
                     Chọn cơ sở thuận tiện cho gia đình <span className="text-orange-600">*</span>
                   </label>
                 </div>
-                <p className="text-[11px] sm:text-xs text-[#6B7D96] mb-1.5 font-normal">
-                  Chọn cơ sở gần bạn nhất để tiện di chuyển và học thuận tiện hơn.
-                </p>
+
 
                 {/* Hidden input for form integrity */}
                 <input type="hidden" name="branch" value={branch} />

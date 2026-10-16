@@ -83,11 +83,9 @@ export const GradeLevelPage: React.FC<GradeLevelPageProps> = ({
 
       {/* Bong bóng cam phát sáng điểm xuyết */}
       <div className="pointer-events-none absolute -top-16 -right-16 w-96 h-96 bg-gradient-to-bl from-orange-400/20 via-amber-200/15 to-transparent rounded-full blur-[130px] -z-10" />
-      <div className="pointer-events-none absolute top-12 right-6 sm:right-16 w-24 sm:w-28 h-24 sm:h-28 rounded-full border border-orange-300/40 bg-gradient-to-tr from-orange-400/20 via-amber-200/15 to-white/45 backdrop-blur-xs shadow-[0_8px_30px_rgba(251,146,60,0.14),inset_0_0_18px_rgba(255,255,255,0.7)] animate-bubble-float -z-10">
-        <div className="absolute top-2.5 left-3 w-5 h-2.5 rounded-full bg-white/70 rotate-[-35deg]" />
-      </div>
 
-        <div className="max-w-7xl mx-auto">
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             {/* Left Column: Heading & Value Prop */}
