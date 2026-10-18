@@ -1702,10 +1702,10 @@ export const coursesData: Record<string, CourseDetail> = {
       }
     ]
   },
-  "tieu-hoc-intren": {
-    "slug": "tieu-hoc-intren",
+  "tieu-hoc-intern": {
+    "slug": "tieu-hoc-intern",
     "code": "Sata-Primary-Intern",
-    "name": "Robotics Tiểu Học — Khóa Intren",
+    "name": "Robotics Tiểu Học — Khóa Intern",
     "academicName": "Mô Phỏng Động Vật & Năng Lượng Tái Tạo",
     "headline": "Chế tạo các robot mô phỏng sinh vật thông minh và phương tiện năng lượng xanh",
     "category": "Tiểu học",
@@ -1718,9 +1718,9 @@ export const coursesData: Record<string, CourseDetail> = {
     "rating": 4.97,
     "totalStudents": 320,
     "coverImage": "/images/courses/tieu-hoc-ai-2.jpg",
-    "badge": "KHÓA INTREN",
+    "badge": "KHÓA INTERN",
     "glowColor": "cyan",
-    "overview": "Khóa Intren giúp học sinh mở rộng tư duy chế tạo mô phỏng thế giới tự nhiên và các giải pháp môi trường hiện đại: robot thỏ, voi, chim, khỉ, hệ thống phân loại rác, xe năng lượng và tàu tuần dương.",
+    "overview": "Khóa Intern giúp học sinh mở rộng tư duy chế tạo mô phỏng thế giới tự nhiên và các giải pháp môi trường hiện đại: robot thỏ, voi, chim, khỉ, hệ thống phân loại rác, xe năng lượng và tàu tuần dương.",
     "hardwareKit": {
       "name": "Hệ Sinh Thái Alpha + Beta & Cảm Biến Đa Tầng Chuẩn Quốc Tế",
       "description": "Bộ linh kiện cơ khí chính xác, động cơ giảm tốc, servo, vi điều khiển Alpha/Beta và hệ thống cảm biến thông minh.",
@@ -3774,10 +3774,10 @@ export const coursesData: Record<string, CourseDetail> = {
       }
     ]
   },
-  "trung-hoc-intren": {
-    "slug": "trung-hoc-intren",
+  "trung-hoc-intern": {
+    "slug": "trung-hoc-intern",
     "code": "Sata-Sec-Intern",
-    "name": "Robotics THCS — Khóa Intren",
+    "name": "Robotics THCS — Khóa Intern",
     "academicName": "Tự Động Hóa Công Nghiệp & Đô Thị Thông Minh",
     "headline": "Chế tạo cánh tay robot, máy bay không người lái, máy bán hàng tự động và hệ thống năng lượng tái tạo",
     "category": "Trung học",
@@ -3790,9 +3790,9 @@ export const coursesData: Record<string, CourseDetail> = {
     "rating": 4.98,
     "totalStudents": 240,
     "coverImage": "/images/courses/trung-hoc-ai-2.jpg",
-    "badge": "KHÓA INTREN",
+    "badge": "KHÓA INTERN",
     "glowColor": "purple",
-    "overview": "Khóa Intren THCS ứng dụng công nghệ vào sản xuất tự động và cơ sở hạ tầng đô thị: máy đóng gói, máy phân loại sản phẩm, xe nâng, cần cẩu, máy bán hàng, siêu thị thông minh và trạm dự báo thời tiết.",
+    "overview": "Khóa Intern THCS ứng dụng công nghệ vào sản xuất tự động và cơ sở hạ tầng đô thị: máy đóng gói, máy phân loại sản phẩm, xe nâng, cần cẩu, máy bán hàng, siêu thị thông minh và trạm dự báo thời tiết.",
     "hardwareKit": {
       "name": "Hệ Thống Robot Thi Đấu Intelligent Storm, Cảm Biến AI & Vi Điều Khiển Nâng Cao",
       "description": "Bộ vi điều khiển công nghiệp, động cơ encoder công suất cao, cảm biến thị giác AI, camera thông minh và sa bàn thử nghiệm.",
@@ -5262,6 +5262,11 @@ export const coursesData: Record<string, CourseDetail> = {
   }
 };
 
+
+// Backward compatibility aliases for old URLs with 'intren'
+coursesData['tieu-hoc-intren'] = coursesData['tieu-hoc-intern'];
+coursesData['trung-hoc-intren'] = coursesData['trung-hoc-intern'];
+
 export const GRADE_LEVELS: Record<string, GradeLevel> = {
   "mam-non": {
     "id": "mam-non",
@@ -5318,12 +5323,12 @@ export const GRADE_LEVELS: Record<string, GradeLevel> = {
     "displayAge": "6 — 11 tuổi",
     "coverImage": "/images/courses/tieu-hoc-ai-2.jpg",
     "hardwareKitSummary": "Hệ sinh thái Alpha + Beta, cảm biến đa tầng & phần mềm mô phỏng 3D RoboSim chuẩn quốc tế",
-    "description": "Chương trình chuẩn hóa gồm 4 khóa học: Khóa Bắt Đầu, Khóa Intren, Khóa Nâng Cao và Khóa Chuyên Gia. Mỗi khóa học gồm 2 lộ trình học phần bài bản, giúp học sinh phát triển từ cơ cấu cơ khí, bản vẽ lắp ráp đến lập trình thông minh và thám hiểm không gian.",
+    "description": "Chương trình chuẩn hóa gồm 4 khóa học: Khóa Bắt Đầu, Khóa Intern, Khóa Nâng Cao và Khóa Chuyên Gia. Mỗi khóa học gồm 2 lộ trình học phần bài bản, giúp học sinh phát triển từ cơ cấu cơ khí, bản vẽ lắp ráp đến lập trình thông minh và thám hiểm không gian.",
     "detailedOverview": "Bậc Tiểu học là giai đoạn hình thành tư duy trừu tượng và tư duy thuật toán. Lộ trình Robotics Tiểu Học tại VIAI kết hợp phương pháp Virtual-to-Physical độc quyền: học sinh học bản chất cơ cấu cơ học, thực hành trên nền tảng số RoboSim 3D để kiểm thử giải thuật, sau đó trực tiếp lắp ráp và lập trình cho Robot vật lý chạy trên sa bàn thi đấu.",
     "highlights": [
       {
         "title": "4 Khóa học phân cấp khoa học",
-        "desc": "Khóa Bắt Đầu (Học cụ & Vận tốc), Khóa Intren (Sinh vật & Năng lượng), Khóa Nâng Cao (Xe công trình), Khóa Chuyên Gia (Logistics & Không gian)."
+        "desc": "Khóa Bắt Đầu (Học cụ & Vận tốc), Khóa Intern (Sinh vật & Năng lượng), Khóa Nâng Cao (Xe công trình), Khóa Chuyên Gia (Logistics & Không gian)."
       },
       {
         "title": "Làm chủ cơ cấu cơ giới & lực truyền động",
@@ -5336,7 +5341,7 @@ export const GRADE_LEVELS: Record<string, GradeLevel> = {
     ],
     "childCourseSlugs": [
       "tieu-hoc-bat-dau",
-      "tieu-hoc-intren",
+      "tieu-hoc-intern",
       "tieu-hoc-nang-cao",
       "tieu-hoc-chuyen-gia"
     ],
@@ -5361,12 +5366,12 @@ export const GRADE_LEVELS: Record<string, GradeLevel> = {
     "displayAge": "11 — 15 tuổi",
     "coverImage": "/images/courses/trung-hoc-ai-1.jpg",
     "hardwareKitSummary": "Robot thi đấu Intelligent Storm, vi điều khiển nâng cao, Camera Vision AI & hệ thống Arena thực tế",
-    "description": "Chương trình đào tạo đỉnh cao gồm 4 khóa học: Khóa Bắt Đầu, Khóa Intren, Khóa Nâng Cao và Khóa Chuyên Gia. Học sinh làm chủ từ điều khiển giọng nói, cảm biến đa tầng, giải thuật rò đường vượt mê cung đến thị giác AI và xe tự hành.",
+    "description": "Chương trình đào tạo đỉnh cao gồm 4 khóa học: Khóa Bắt Đầu, Khóa Intern, Khóa Nâng Cao và Khóa Chuyên Gia. Học sinh làm chủ từ điều khiển giọng nói, cảm biến đa tầng, giải thuật rò đường vượt mê cung đến thị giác AI và xe tự hành.",
     "detailedOverview": "Bậc Trung học cơ sở tại VIAI trang bị năng lực nghiên cứu khoa học thực thụ. Học sinh được học cùng các giảng viên chuyên gia, làm việc với linh kiện công nghiệp, viết giải thuật điều khiển tự hành và phát triển các dự án có tính ứng dụng cao, sẵn sàng tham gia các cuộc thi Sáng tạo Khoa học Kỹ thuật cấp Tỉnh/Thành phố và Quốc gia.",
     "highlights": [
       {
         "title": "4 Khóa học chuyên sâu vượt bậc",
-        "desc": "Khóa Bắt Đầu (Giọng nói & Intelligent Storm), Khóa Intren (Logistics & Đô thị), Khóa Nâng Cao (Giải thuật rò đường & Mê cung), Khóa Chuyên Gia (AI Vision & Xe tự hành)."
+        "desc": "Khóa Bắt Đầu (Giọng nói & Intelligent Storm), Khóa Intern (Logistics & Đô thị), Khóa Nâng Cao (Giải thuật rò đường & Mê cung), Khóa Chuyên Gia (AI Vision & Xe tự hành)."
       },
       {
         "title": "Giải thuật PID & Điều khiển chuyển động chính xác",
@@ -5379,7 +5384,7 @@ export const GRADE_LEVELS: Record<string, GradeLevel> = {
     ],
     "childCourseSlugs": [
       "trung-hoc-bat-dau",
-      "trung-hoc-intren",
+      "trung-hoc-intern",
       "trung-hoc-nang-cao",
       "trung-hoc-chuyen-gia"
     ],
@@ -5399,11 +5404,11 @@ export const PRIMARY_COURSE_SLUGS = [
   'mam-non-nang-cao',
   'mam-non-chuyen-sau',
   'tieu-hoc-bat-dau',
-  'tieu-hoc-intren',
+  'tieu-hoc-intern',
   'tieu-hoc-nang-cao',
   'tieu-hoc-chuyen-gia',
   'trung-hoc-bat-dau',
-  'trung-hoc-intren',
+  'trung-hoc-intern',
   'trung-hoc-nang-cao',
   'trung-hoc-chuyen-gia'
 ];

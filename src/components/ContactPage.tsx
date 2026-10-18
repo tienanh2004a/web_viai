@@ -366,11 +366,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       <option value="Robotics Mầm Non — Lớp Nâng Cao">Robotics Mầm Non — Lớp Nâng Cao</option>
                       <option value="Robotics Mầm Non — Lớp Chuyên Sâu">Robotics Mầm Non — Lớp Chuyên Sâu</option>
                       <option value="Robotics Tiểu Học — Khóa Bắt Đầu">Robotics Tiểu Học — Khóa Bắt Đầu</option>
-                      <option value="Robotics Tiểu Học — Khóa Intren">Robotics Tiểu Học — Khóa Intren</option>
+                      <option value="Robotics Tiểu Học — Khóa Intern">Robotics Tiểu Học — Khóa Intern</option>
                       <option value="Robotics Tiểu Học — Khóa Nâng Cao">Robotics Tiểu Học — Khóa Nâng Cao</option>
                       <option value="Robotics Tiểu Học — Khóa Chuyên Gia">Robotics Tiểu Học — Khóa Chuyên Gia</option>
                       <option value="Robotics THCS — Khóa Bắt Đầu">Robotics THCS — Khóa Bắt Đầu</option>
-                      <option value="Robotics THCS — Khóa Intren">Robotics THCS — Khóa Intren</option>
+                      <option value="Robotics THCS — Khóa Intern">Robotics THCS — Khóa Intern</option>
                       <option value="Robotics THCS — Khóa Nâng Cao">Robotics THCS — Khóa Nâng Cao</option>
                       <option value="Robotics THCS — Khóa Chuyên Gia">Robotics THCS — Khóa Chuyên Gia</option>
                     </select>

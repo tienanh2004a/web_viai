@@ -60,11 +60,11 @@ export const COURSE_OPTIONS = [
   { value: 'Robotics Mầm Non — Lớp Nâng Cao', label: 'Robotics Mầm Non — Lớp Nâng Cao', robotColor: '#F59E0B' },
   { value: 'Robotics Mầm Non — Lớp Chuyên Sâu', label: 'Robotics Mầm Non — Lớp Chuyên Sâu', robotColor: '#F59E0B' },
   { value: 'Robotics Tiểu Học — Khóa Bắt Đầu', label: 'Robotics Tiểu Học — Khóa Bắt Đầu', robotColor: '#EA580C' },
-  { value: 'Robotics Tiểu Học — Khóa Intren', label: 'Robotics Tiểu Học — Khóa Intren', robotColor: '#EA580C' },
+  { value: 'Robotics Tiểu Học — Khóa Intern', label: 'Robotics Tiểu Học — Khóa Intern', robotColor: '#EA580C' },
   { value: 'Robotics Tiểu Học — Khóa Nâng Cao', label: 'Robotics Tiểu Học — Khóa Nâng Cao', robotColor: '#EA580C' },
   { value: 'Robotics Tiểu Học — Khóa Chuyên Gia', label: 'Robotics Tiểu Học — Khóa Chuyên Gia', robotColor: '#EA580C' },
   { value: 'Robotics THCS — Khóa Bắt Đầu', label: 'Robotics THCS — Khóa Bắt Đầu', robotColor: '#8B5CF6' },
-  { value: 'Robotics THCS — Khóa Intren', label: 'Robotics THCS — Khóa Intren', robotColor: '#8B5CF6' },
+  { value: 'Robotics THCS — Khóa Intern', label: 'Robotics THCS — Khóa Intern', robotColor: '#8B5CF6' },
   { value: 'Robotics THCS — Khóa Nâng Cao', label: 'Robotics THCS — Khóa Nâng Cao', robotColor: '#8B5CF6' },
   { value: 'Robotics THCS — Khóa Chuyên Gia', label: 'Robotics THCS — Khóa Chuyên Gia', robotColor: '#8B5CF6' },
 ];
@@ -257,12 +257,12 @@ export const FreeTrialModal: React.FC<FreeTrialModalProps> = ({
         else if (defaultCourse.includes('Chuyên Sâu')) setSelectedCourse('Robotics Mầm Non — Lớp Chuyên Sâu');
         else setSelectedCourse('Robotics Mầm Non — Lớp Cơ Bản');
       } else if (defaultCourse.includes('Trung') || defaultCourse.includes('trung-hoc') || defaultCourse.includes('THCS')) {
-        if (defaultCourse.includes('Intren')) setSelectedCourse('Robotics THCS — Khóa Intren');
+        if ((defaultCourse.includes('Intern') || defaultCourse.includes('Intren'))) setSelectedCourse('Robotics THCS — Khóa Intern');
         else if (defaultCourse.includes('Nâng Cao')) setSelectedCourse('Robotics THCS — Khóa Nâng Cao');
         else if (defaultCourse.includes('Chuyên Gia')) setSelectedCourse('Robotics THCS — Khóa Chuyên Gia');
         else setSelectedCourse('Robotics THCS — Khóa Bắt Đầu');
       } else {
-        if (defaultCourse.includes('Intren')) setSelectedCourse('Robotics Tiểu Học — Khóa Intren');
+        if ((defaultCourse.includes('Intern') || defaultCourse.includes('Intren'))) setSelectedCourse('Robotics Tiểu Học — Khóa Intern');
         else if (defaultCourse.includes('Nâng Cao')) setSelectedCourse('Robotics Tiểu Học — Khóa Nâng Cao');
         else if (defaultCourse.includes('Chuyên Gia')) setSelectedCourse('Robotics Tiểu Học — Khóa Chuyên Gia');
         else setSelectedCourse('Robotics Tiểu Học — Khóa Bắt Đầu');

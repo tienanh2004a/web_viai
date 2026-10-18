@@ -123,10 +123,10 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('tieu-hoc-intren')}
+                  onClick={() => onSelectCourse?.('tieu-hoc-intern')}
                   className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
                 >
-                  Tiểu Học — Khóa Intren
+                  Tiểu Học — Khóa Intern
                 </button>
               </li>
               <li>
@@ -155,10 +155,10 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCourse?.('trung-hoc-intren')}
+                  onClick={() => onSelectCourse?.('trung-hoc-intern')}
                   className="hover:text-[#c2410c] transition-colors text-left font-medium cursor-pointer"
                 >
-                  THCS — Khóa Intren
+                  THCS — Khóa Intern
                 </button>
               </li>
               <li>
