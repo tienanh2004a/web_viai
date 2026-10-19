@@ -135,7 +135,7 @@ export const ContactSection: React.FC = () => {
 
             {/* Thẻ 2: Email */}
             <a
-              href="mailto:contact@viai.edu.vn"
+              href="mailto:viairobo@gmail.com"
               className="group bg-white/95 border-orange-100 shadow-2xs hover:bg-orange-50/40 p-5 sm:p-6 rounded-2xl border border-orange-100 hover:border-[#c2410c]/40 hover:bg-white hover:shadow-sm transition-all h-full block cursor-pointer"
             >
               <div className="flex items-center gap-3 mb-2">
@@ -145,7 +145,7 @@ export const ContactSection: React.FC = () => {
                 </span>
               </div>
               <p className="font-bold text-[#111827] text-sm break-all group-hover:text-[#c2410c] transition-colors pl-8">
-                contact@viai.edu.vn
+                viairobo@gmail.com
               </p>
             </a>
 

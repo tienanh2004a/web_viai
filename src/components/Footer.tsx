@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCourse, onGoContact }) =
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-[#c2410c]" />
-                <a href="mailto:contact@viai.edu.vn" className="hover:text-[#111827] font-semibold">contact@viai.edu.vn</a>
+                <a href="mailto:viairobo@gmail.com" className="hover:text-[#111827] font-semibold">viairobo@gmail.com</a>
               </p>
             </div>
           </div>

@@ -172,7 +172,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
               {/* Thẻ 2: Email */}
               <a
-                href="mailto:contact@viai.edu.vn"
+                href="mailto:viairobo@gmail.com"
                 className="group bg-white p-6 rounded-2xl border border-neutral-200 hover:border-orange-300 hover:shadow-md transition-all h-full block"
               >
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-orange-50 text-orange-500 mb-4 group-hover:scale-105 transition-transform">
@@ -182,7 +182,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   Email
                 </p>
                 <p className="font-semibold text-neutral-900 text-base break-all group-hover:text-orange-600 transition-colors">
-                  contact@viai.edu.vn
+                  viairobo@gmail.com
                 </p>
               </a>
 
