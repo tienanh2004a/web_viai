@@ -281,7 +281,7 @@ export const CourseDetailPage: React.FC<CourseDetailPageProps> = ({
                   Lộ Trình Đào Tạo Chi Tiết Từng Buổi Học
                 </h2>
                 <p className="text-sm text-zinc-600">
-                  Mỗi học phần gồm các buổi học (90 phút/buổi) với các dự án thực tế, buổi ôn tập định kỳ và đồ án thuyết trình, bảo vệ sản phẩm sáng tạo cuối học phần.
+                  Mỗi học phần gồm các buổi học ({course.category === 'Mầm non' ? '80 phút/buổi' : course.category === 'Trung học' ? '120 phút/buổi' : '90 phút/buổi'}) với các dự án thực tế, buổi ôn tập định kỳ và đồ án thuyết trình, bảo vệ sản phẩm sáng tạo cuối học phần.
                 </p>
               </div>
 
